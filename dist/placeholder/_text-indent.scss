@@ -1,0 +1,10 @@
+/// Hides text inside an element, using positive indent value (better performance) rather than negative goku value.
+/// @group tools
+/// @access public
+
+%text-indent {
+  overflow: hidden;
+  padding: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+}

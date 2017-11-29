@@ -1,0 +1,6 @@
+element {
+  /* color */
+  transition: color 300ms;
+  /* color, opacity */
+  transition: color 300ms, opacity 300ms;
+}

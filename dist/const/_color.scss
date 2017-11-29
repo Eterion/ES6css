@@ -1,0 +1,26 @@
+// sass-lint:disable indentation
+// indentation is disabled because of a known bug with maps
+// https://github.com/sasstools/sass-lint/issues/927
+// -----
+
+$const-color-keys: map-merge((
+  'gray': dimgray,
+  'theme': blue,
+  'success': green,
+  'warn': yellow,
+  'err': red,
+), if(global-variable-exists(const-color-keys), $const-color-keys, ()));
+
+$const-color-scale: map-merge((
+  'heavy': -64,
+  'hard': -55,
+  'darkest': -50,
+  'darker': -36,
+  'dark': -25,
+  'regular': 0,
+  'light': 25,
+  'lighter': 42,
+  'lightest': 70,
+  'soft': 85,
+  'pastel': 95,
+), if(global-variable-exists(const-color-scale), $const-color-scale, ()));

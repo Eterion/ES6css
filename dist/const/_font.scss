@@ -1,0 +1,53 @@
+// sass-lint:disable indentation
+// indentation is disabled because of a known bug with maps
+// https://github.com/sasstools/sass-lint/issues/927
+// -----
+
+$const-font-family: arial, sans-serif !default;
+$const-font-line-height: 1.6 !default;
+$const-font-line-height-compact: 1.4 !default;
+$const-font-size: regular !default;
+$const-font-size-small: smaller !default;
+$const-font-weight: regular !default;
+$const-font-weight-strong: semibold !default;
+
+$const-font-monospace-family: 'Consolas', monospace !default;
+$const-font-monospace-line-height: 1.6 !default;
+$const-font-monospace-line-height-compact: 1.4 !default;
+$const-font-monospace-size: small !default;
+$const-font-monospace-size-small: smaller !default;
+$const-font-monospace-weight: regular !default;
+$const-font-monospace-weight-strong: semibold !default;
+
+$const-font-size-scale: map-merge((
+  'tiny': 8px,
+  'smallest': 9px,
+  'smaller': 10px,
+  'small': 11px,
+  'regular': 12px,
+  'large': 15px,
+  'larger': 18px,
+  'largest': 21px,
+  'xl': 24px,
+  'xxl': 30px,
+), if(global-variable-exists(const-font-size-scale), $const-font-size-scale, ()));
+
+$const-font-weight-scale: map-merge((
+  'thin': 100,
+  'light': 300,
+  'regular': 400,
+  'medium': 500,
+  'semibold': 600,
+  'bold': 700,
+  'extrabold': 800,
+  'ultrabold': 900,
+), if(global-variable-exists(const-font-weight-scale), $const-font-weight-scale, ()));
+
+$const-font-h-scale: map-merge((
+  'h1': xxl,
+  'h2': xl,
+  'h3': largest,
+  'h4': larger,
+  'h5': large,
+  'h6': regular,
+), if(global-variable-exists(const-font-h-scale), $const-font-h-scale, ()));

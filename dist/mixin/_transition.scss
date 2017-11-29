@@ -1,0 +1,19 @@
+/// Shortcut mixin for transition property. Allows to define multiple transition properties with identical options.
+/// @group tools
+/// @access public
+/// @example @include transition($animation-speed, width, height) // transition: width 0.3s, height 0.3s
+
+@mixin transition($options, $properties...) {
+
+  // default
+  $transition: ();
+
+  // iterate through properties
+  @each $prop in $properties {
+    $transition: append($transition, $prop $options, comma);
+  }
+
+  // definition
+  transition: $transition;
+
+}

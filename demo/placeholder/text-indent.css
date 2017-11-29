@@ -1,0 +1,6 @@
+.text-indent {
+  overflow: hidden;
+  padding: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+}

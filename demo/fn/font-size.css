@@ -1,0 +1,32 @@
+element {
+  /* value */
+  content: 3.5rem;
+  /* value (false) */
+  content: 42px;
+  /* value (em) */
+  content: 3.5em;
+  /* value (rem) */
+  content: 3.5rem;
+  /* key (inherit) */
+  content: inherit;
+  /* key (tiny) */
+  content: 0.66667rem;
+  /* key (smallest) */
+  content: 0.75rem;
+  /* key (smaller) */
+  content: 0.83333rem;
+  /* key (small) */
+  content: 0.91667rem;
+  /* key (regular) */
+  content: 1rem;
+  /* key (large) */
+  content: 1.25rem;
+  /* key (larger) */
+  content: 1.5rem;
+  /* key (largest) */
+  content: 1.75rem;
+  /* key (xl) */
+  content: 2rem;
+  /* key (xxl) */
+  content: 2.5rem;
+}

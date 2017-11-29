@@ -1,0 +1,30 @@
+/// Extracts and returns value from provided source **$map** based on provided **$scale** identifier. Includes error handling and **inherit** support.
+/// @group system
+/// @access private
+/// @param {map} $map - Source map of scale.
+/// @param {number|string} $scale - Number or scale identifier.
+/// @param {bool} $can-inherit [true] - Determines whetever inherit can be passed.
+
+@function compute-scale($map, $scale, $can-inherit: true) {
+
+  @if(type-of($scale) == 'string') {
+
+    // return inherit
+    @if($can-inherit == true and $scale == 'inherit') {
+      @return inherit;
+    }
+
+    // not found
+    @if(map-has-key($map, $scale) == false) {
+      @error err('key-not-found', $scale, '(scale)', map-keys($map));
+    }
+
+    // extracted value
+    @return map-get($map, $scale);
+
+  }
+
+  // return
+  @return $scale;
+
+}

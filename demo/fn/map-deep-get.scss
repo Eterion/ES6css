@@ -1,0 +1,13 @@
+@import '../app';
+
+$src: (
+  'level-1': (
+    'level-2': (
+      'level-3': nested-value,
+    ),
+  ),
+);
+
+element {
+  content: map-deep-get($src, level-1, level-2, level-3);
+}

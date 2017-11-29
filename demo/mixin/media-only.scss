@@ -1,0 +1,36 @@
+@import '../app';
+
+/* phone */
+element {
+  @include media-only(phone) {
+    content: 'phone';
+  }
+}
+
+/* tablet-portrait */
+element {
+  @include media-only(tablet-portrait) {
+    content: 'tablet-portrait';
+  }
+}
+
+/* tablet-landscape */
+element {
+  @include media-only(tablet-landscape) {
+    content: 'tablet-landscape';
+  }
+}
+
+/* notebook */
+element {
+  @include media-only(notebook) {
+    content: 'notebook';
+  }
+}
+
+/* desktop */
+element {
+  @include media-only(desktop) {
+    content: 'desktop';
+  }
+}

@@ -1,0 +1,37 @@
+@import '../dist/export';
+
+// z-index
+// map or list of z-index values
+// the extracted z-index value is always relative to its group
+// -----
+
+$const-z-index: (
+  'component-non-existent', 'component-component-name',
+);
+
+// groups
+// a map of predefined groups that export mixins can use
+// value for each group will be used for class generation
+// -----
+
+$const-export-group: (
+  'component': 'c',
+);
+
+// group
+// common group can be set for the following export, extend and import mixins
+// if not set, each of the mixin must have specified the export group individually
+// -----
+
+$export-group: 'component';
+
+// export
+// a map of properties that the specific import mixin can use
+// values defined in defaults property map will be overwritten
+// -----
+
+@include export(component-name, (
+  'background-color': red,
+  'box-sizing': content-box,
+  'width': 200px,
+));

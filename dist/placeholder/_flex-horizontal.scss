@@ -1,0 +1,11 @@
+/// Applies horizontal flex layout to a list element. The main purpose of this placeholder is to provide a shortcut to quickly create horizontal navigation from a list.
+/// @group tools
+/// @access public
+
+%flex-horizontal {
+  align-items: center;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

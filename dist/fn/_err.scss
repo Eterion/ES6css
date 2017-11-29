@@ -1,0 +1,19 @@
+/// Returns a message based on provided **$key** identifier. Message text contains variable interpolation for provided list of **$values**. No all messages have the same amount of variables.
+/// @group system
+/// @access private
+/// @param {string} $key - Message type identifier.
+/// @param {string|list} $values - Replacement values in message text.
+
+@function err($key, $values...) {
+
+  // not found
+  @if($key == 'key-not-found') {
+    @return 'The \"#{nth($values, 1)}\" in #{nth($values, 2)} was not found, use one of the following: #{nth($values, 3)}.';
+  }
+
+  // already exists
+  @if($key == 'key-exists') {
+    @return 'The \"#{nth($values, 1)}\" in #{nth($values, 2)} already exists, use different value.';
+  }
+
+}

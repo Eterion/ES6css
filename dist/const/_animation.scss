@@ -1,0 +1,14 @@
+$const-animation-scale: 0.15 !default;
+$const-animation-slide: 35% !default;
+$const-animation-fold-size: 100% !default;
+$const-animation-fold-angle: 70deg !default;
+$const-animation-fold-perspective: 400px !default;
+$const-animation-pulse-scale: 2 !default;
+
+$const-animation-speed: 300ms !default;
+$const-animation-speed-fast: $const-animation-speed / 2 !default;
+$const-animation-speed-faster: $const-animation-speed / 4 !default;
+$const-animation-speed-fastest: $const-animation-speed / 8 !default;
+$const-animation-speed-slow: $const-animation-speed * 2 !default;
+$const-animation-speed-slower: $const-animation-speed * 4 !default;
+$const-animation-speed-slowest: $const-animation-speed * 8 !default;

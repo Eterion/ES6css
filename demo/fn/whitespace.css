@@ -1,0 +1,26 @@
+element {
+  /* number */
+  content: 3.5rem;
+  /* number (false) */
+  content: 42px;
+  /* number (em) */
+  content: 3.5em;
+  /* number (rem) */
+  content: 3.5rem;
+  /* key (tiny) */
+  content: 0.41667rem;
+  /* key (smallest) */
+  content: 0.83333rem;
+  /* key (smaller) */
+  content: 1.25rem;
+  /* key (small) */
+  content: 1.66667rem;
+  /* key (regular) */
+  content: 2.5rem;
+  /* key (large) */
+  content: 3.75rem;
+  /* key (larger) */
+  content: 5rem;
+  /* key (largest) */
+  content: 7.5rem;
+}

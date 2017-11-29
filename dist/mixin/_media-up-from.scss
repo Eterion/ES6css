@@ -1,0 +1,21 @@
+/// Wraps the content with a specified media query from provided **$scale** in upward direction. Use of this mixin is highly preferred before any other media mixin (not a requirement).
+/// @group media
+/// @access public
+/// @param {number|string} $scale - Scale.
+/// @param {string} $prop [width] - Determines what value is returned, can be **width**, **height** or **both**.
+/// @param {string} $operator [and] - Media query operator, can be **and** or **or**.
+/// @example @include media-up-from(phone) { ... }
+
+@mixin media-up-from($scale, $prop: width, $operator: and) {
+
+  // not found
+  @if(type-of($scale) == 'string' and map-has-key($const-media-scale, $scale) == false) {
+    @error err('key-not-found', $scale, '(media-up-from)', map-keys($const-media-scale));
+  }
+
+  // definition
+  @media #{compute-media-query(min, $scale, $prop, $operator)} {
+    @content;
+  }
+
+}

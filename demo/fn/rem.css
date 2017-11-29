@@ -1,0 +1,16 @@
+element {
+  /* number */
+  content: 3.5rem;
+  /* number (px) */
+  content: 3.5rem;
+  /* number (em) */
+  content: 42em;
+  /* number (rem) */
+  content: 42rem;
+  /* number (%) */
+  content: 42%;
+  /* number (vw) */
+  content: 42vw;
+  /* number (vh) */
+  content: 42vh;
+}

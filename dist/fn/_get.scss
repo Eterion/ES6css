@@ -1,0 +1,11 @@
+/// Returns property value from currently active scope of definition set. Can be used inside a [**import**](#mixin-import) mixin without the need of specifying **$name** and **$group**. If the requested value is used in additional calculations, use [***get-value**](#function-get-value) function instead. **This function is identical to [get-value](#function-get-value) function with the addition of recalculation to rem units.**
+/// @access public
+/// @param {string} $prop - Property name.
+/// @param {string} $name [false] - Nname.
+/// @param {string} $group [$export-group] - Group identifier.
+/// @param {map} $data [$system-import] - Source map.
+/// @example element { height: get(height); }
+
+@function get($prop, $name: false, $group: $export-group, $data: $system-import) {
+  @return rem(get-value($prop, $name, $group, $data));
+}

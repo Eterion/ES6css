@@ -1,0 +1,18 @@
+@import '../app';
+
+element {
+  /* number */
+  content: clear-unit(42);
+  /* number (px) */
+  content: clear-unit(42px);
+  /* number (em) */
+  content: clear-unit(42em);
+  /* number (rem) */
+  content: clear-unit(42rem);
+  /* number (%) */
+  content: clear-unit(42%);
+  /* number (vw) */
+  content: clear-unit(42vw);
+  /* number (vh) */
+  content: clear-unit(42vh);
+}

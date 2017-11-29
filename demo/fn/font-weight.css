@@ -1,0 +1,36 @@
+element {
+  /* inherit */
+  content: inherit;
+  /* 100 */
+  content: 100;
+  /* thin */
+  content: 100;
+  /* 300 */
+  content: 300;
+  /* light */
+  content: 300;
+  /* 400 */
+  content: 400;
+  /* regular */
+  content: 400;
+  /* 500 */
+  content: 500;
+  /* medium */
+  content: 500;
+  /* 600 */
+  content: 600;
+  /* semibold */
+  content: 600;
+  /* 700 */
+  content: 700;
+  /* bold */
+  content: 700;
+  /* 800 */
+  content: 800;
+  /* extrabold */
+  content: 800;
+  /* 900 */
+  content: 900;
+  /* ultrabold */
+  content: 900;
+}

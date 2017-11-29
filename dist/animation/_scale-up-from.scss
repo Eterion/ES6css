@@ -1,0 +1,11 @@
+@keyframes scale-up-from {
+
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1 + $const-animation-scale);
+  }
+
+}

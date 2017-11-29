@@ -1,0 +1,6 @@
+@import '../app';
+@import '../../dist/placeholder/text-ellipsis';
+
+.text-ellipsis {
+  @extend %text-ellipsis;
+}

@@ -1,0 +1,31 @@
+/// Returns proper media query strings with calculated values.
+/// @group system
+/// @access private
+/// @param {string} $min-max - Determines whenever the **min** or **max** media query is used.
+/// @param {number|string} $value - Scale or number.
+/// @param {string} $prop [width] - Determines what value is returned, can be **width**, **height** or **both**.
+/// @param {string} $operator [and] - Media query operator, can be **and** or **or**.
+
+@function compute-media-query($min-max, $value, $prop: width, $operator: and) {
+
+  // both
+  @if($prop == both) {
+
+    // and
+    @if($operator == and) {
+      @return '(#{$min-max}-width: #{media($value, width) - if($min-max == min, 0, 1)}) and (#{$min-max}-height: #{media($value, height) - if($min-max == min, 0, 1)})';
+    }
+
+    // or
+    @else if($operator == or) {
+      @return '(#{$min-max}-width: #{media($value, width) - if($min-max == min, 0, 1)}), (#{$min-max}-height: #{media($value, height) - if($min-max == min, 0, 1)})';
+    }
+
+  }
+
+  // width, height
+  @else {
+    @return '(#{$min-max}-#{$prop}: #{media($value, $prop) - if($min-max == min, 0, 1)})';
+  }
+
+}

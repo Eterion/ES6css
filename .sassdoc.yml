@@ -1,0 +1,10 @@
+dest:
+  'docs'
+groups:
+  effects: 'Effects'
+  media: 'Media'
+  system: 'System'
+  tools: 'Tools'
+  undefined: 'API'
+theme:
+  'flippant'

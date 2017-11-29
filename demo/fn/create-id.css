@@ -1,0 +1,14 @@
+/* element */
+#element {
+  content: 'id';
+}
+
+/* '#element' */
+#element {
+  content: 'id';
+}
+
+/* 'div#element' */
+div#element {
+  content: 'id';
+}

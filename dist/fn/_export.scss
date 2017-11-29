@@ -1,0 +1,29 @@
+// sass-lint:disable indentation
+// indentation is disabled because of a known bug with maps
+// https://github.com/sasstools/sass-lint/issues/927
+// -----
+
+/// Creates a new definition and returns complete data map. Throws an error if definition with provided **$name** already exists in provided **$group**, to prevent duplicates.
+/// @group system
+/// @access private
+/// @param {string} $name - Name.
+/// @param {bool|map} $props [false] - Map of properties.
+/// @param {string} $group [$export-group] - Group identifier.
+
+@function export($name, $props: false, $group: $export-group) {
+
+  // already exists
+  @if(map-has-key($system-export, compute-key($name, $group))) {
+    @error err('key-exists', compute-key($name, $group), '(export)');
+  }
+
+  // create new definition
+  @return map-merge($system-export, (
+    '#{compute-key($name, $group)}': map-merge(if($props != false, $props, ()), (
+      'id': compute-key($name, $group),
+      'selector': create-class(compute-key($name, $group)),
+      'z-index': '#{$group}-#{$name}',
+    )),
+  ));
+
+}

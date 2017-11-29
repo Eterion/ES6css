@@ -1,0 +1,27 @@
+@import '../app';
+@import '../export';
+
+/* content-element */
+@include import(component-name) {
+  @include content-element;
+}
+
+/* content-element(this) */
+@include import(component-name) {
+  @include content-element(this);
+}
+
+/* content-element(div) */
+@include import(component-name) {
+  @include content-element(div);
+}
+
+/* content-element(this, div) */
+@include import(component-name) {
+  @include content-element(this, div);
+}
+
+/* content-element(class(element)) */
+@include import(component-name) {
+  @include content-element(class(element));
+}

@@ -1,0 +1,46 @@
+/// Inserts appropriate **z-index** property based on provided **$name**. The z-index value is automatically calculated based on the position in source map, meaning last value has the highest z-index assigned. Throws an error if z-index name doesn't exists in source map. Position property can be ommited if **$position** is set to **false**.
+/// @group tools
+/// @access public
+/// @param {string} $name [get(z-index)] - Name.
+/// @param {bool|string} $position [relative] - Position style definition, can be **false**.
+/// @param {map} $map [$const-z-index] - Source map.
+/// @example @include z-index
+
+@mixin z-index($name: get(z-index), $position: relative, $map: $const-z-index) {
+
+  // default
+  $keys: ();
+  $z-index: false;
+
+  // list
+  @if(type-of($map) == 'list') {
+    @if(index($map, $name) != null) {
+      $keys: $map;
+      $z-index: index($map, $name);
+    }
+  }
+
+  // groups (map)
+  @else if(type-of($map) == 'map') {
+    @each $key, $list in $map {
+      @if(index($list, $name) != null) {
+        $keys: append($key, $list);
+        $z-index: index($list, $name);
+      }
+    }
+  }
+
+  // not found
+  @if($z-index == false) {
+    @error 'The \"#{$name}\" z-index was not found, please use one of the following: #{$keys}.';
+  }
+
+  // position
+  @if($position != false) {
+    position: $position;
+  }
+
+  // definition
+  z-index: $z-index;
+
+}

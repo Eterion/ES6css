@@ -1,0 +1,16 @@
+@import '../app';
+
+/* default */
+element {
+  @include fold;
+}
+
+/* $perspective: 400px */
+element {
+  @include fold($perspective: 100px);
+}
+
+/* $perspective-origin: left */
+element {
+  @include fold($perspective-origin: left);
+}

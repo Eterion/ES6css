@@ -1,0 +1,41 @@
+/// Adds standardized bottom margin to an element. The **list** parameter controls which selectors will have reduced whitespace after each other. Keyword **this** can be used for element with identical selector to its parent.
+/// @access public
+/// @param {string|list} $list - List of connected selectors, can use **this** keyword.
+/// @example @include content-element(this)
+
+@mixin content-element($list...) {
+
+  // bottom margin
+  // adds standardized bottom margin
+  // size can be changed individually through 'whitespace-content-element' export property
+
+  margin-bottom: get(whitespace-content-element);
+
+  // compact
+  // for cases where the element is part of layout or bottom margin is undesirable
+  // and it's easier to include class instead of custom css
+
+  &.compact {
+    margin-bottom: 0;
+  }
+
+  // selectors
+  $connect: ();
+
+  // create selectors
+  @if(length($list) > 0) {
+    @each $selector in $list {
+      $connect: append($connect, '& + #{if($selector == this, get(selector), $selector)}', comma);
+    }
+  }
+
+  // definition
+  @if(length($connect) > 0) {
+    &:not(.compact) {
+      #{$connect} {
+        margin-top: -#{rem(get-value(whitespace-content-element) - get-value(whitespace-content-element-connect))};
+      }
+    }
+  }
+
+}

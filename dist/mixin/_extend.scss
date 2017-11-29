@@ -1,0 +1,10 @@
+/// Extends already existing definition. Throws an error if trying to extend non-existent definition.
+/// @access public
+/// @param {string} $name - Name.
+/// @param {bool|map} $props [false] - Property map.
+/// @param {string} $group [$export-group] - Group identifier.
+/// @example @include extend(component-name, ( ... ))
+
+@mixin extend($name, $props, $group: $export-group) {
+  $system-export: extend($name, $props, $group) !global;
+}

@@ -1,0 +1,54 @@
+element {
+  /* gray */
+  content: dimgray;
+  /* gray (false) */
+  content: dimgray;
+  /* gray (heavy) */
+  content: #262626;
+  /* gray (hard) */
+  content: #2f2f2f;
+  /* gray (darkest) */
+  content: #353535;
+  /* gray (darker) */
+  content: #434343;
+  /* gray (dark) */
+  content: #4f4f4f;
+  /* gray (regular) */
+  content: dimgray;
+  /* gray (light) */
+  content: #8f8f8f;
+  /* gray (lighter) */
+  content: #a8a8a8;
+  /* gray (lightest) */
+  content: #d2d2d2;
+  /* gray (soft) */
+  content: #e9e9e9;
+  /* gray (pastel) */
+  content: #f8f8f8;
+  /* #f00 */
+  content: #f00;
+  /* #f00 (false) */
+  content: #f00;
+  /* #f00 (heavy) */
+  content: #5c0000;
+  /* #f00 (hard) */
+  content: #730000;
+  /* #f00 (darkest) */
+  content: maroon;
+  /* #f00 (darker) */
+  content: #a30000;
+  /* #f00 (dark) */
+  content: #bf0000;
+  /* #f00 (regular) */
+  content: red;
+  /* #f00 (light) */
+  content: #ff4040;
+  /* #f00 (lighter) */
+  content: #ff6b6b;
+  /* #f00 (lightest) */
+  content: #ffb3b3;
+  /* #f00 (soft) */
+  content: #ffd9d9;
+  /* #f00 (pastel) */
+  content: #fff2f2;
+}

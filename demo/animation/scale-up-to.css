@@ -1,0 +1,8 @@
+@keyframes scale-up-to {
+  from {
+    transform: scale(0.85);
+  }
+  to {
+    transform: scale(1);
+  }
+}

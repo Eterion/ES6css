@@ -1,0 +1,11 @@
+@charset "UTF-8";
+element {
+  /* '' */
+  content: '';
+  /* '00a0' */
+  content: '\00a0';
+  /* '\00a0' */
+  content: ' ';
+  /* 'value' */
+  content: 'value';
+}

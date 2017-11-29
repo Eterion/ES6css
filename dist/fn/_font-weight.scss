@@ -1,0 +1,9 @@
+/// Returns proper numeric representation of font-weight value based on provided **$value**. Allows the use of readable values without knowledge of real values used by css.
+/// @group tools
+/// @access public
+/// @param {number|string} $value - Number or scale identifier.
+/// @example font-weight(regular) // returns 400
+
+@function font-weight($value) {
+  @return compute-scale($const-font-weight-scale, $value);
+}

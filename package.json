@@ -1,0 +1,21 @@
+{
+  "name": "es6css",
+  "version": "0.2.1",
+  "description": "",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "node-sass --output-style expanded demo --output demo",
+    "clean": "del-cli docs",
+    "docs": "sassdoc dist --config .sassdoc.yml",
+    "lint": "sass-lint --config .sasslint.yml --verbose --no-exit",
+    "start": "npm run clean && (npm run lint & npm run docs & npm run build)"
+  },
+  "devDependencies": {
+    "del-cli": "^1.1.0",
+    "node-sass": "^4.7.2",
+    "sass-lint": "^1.12.1",
+    "sassdoc": "^2.5.0",
+    "sassdoc-theme-flippant": "^0.1.0"
+  }
+}

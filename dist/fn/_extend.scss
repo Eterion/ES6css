@@ -1,0 +1,25 @@
+// sass-lint:disable indentation
+// indentation is disabled because of a known bug with maps
+// https://github.com/sasstools/sass-lint/issues/927
+// -----
+
+/// Extends already existing definition and returns a map of properties according to **$name** value. Throws an error if the requested definition does not exists.
+/// @group system
+/// @access private
+/// @param {string} $name - Name.
+/// @param {map} $props - Map of properties.
+/// @param {string} $group [$group] - Group identifier.
+
+@function extend($name, $props, $group: $export-group) {
+
+  // not found
+  @if(map-has-key($system-export, compute-key($name, $group)) == false) {
+    @error err('key-not-found', compute-key($name, $group), '(extend)', map-keys($system-export));
+  }
+
+  // extend definition
+  @return map-merge($system-export, (
+    '#{compute-key($name, $group)}': map-merge(import($name, $group), $props),
+  ));
+
+}

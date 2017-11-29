@@ -1,0 +1,58 @@
+// sass-lint:disable indentation
+// indentation is disabled because of a known bug with maps
+// https://github.com/sasstools/sass-lint/issues/927
+// -----
+
+/// Returns a new map with requested **$keys** only. Throws an error if any value in **$keys** doesn't exists.
+/// @group tools
+/// @access public
+/// @param {map} $map - Source map.
+/// @param {string|list} $keys - List of filtered keys.
+/// @example map-filter($map, key4, key5)
+
+@function map-filter($map, $keys...) {
+
+  // return value
+  $value: ();
+
+  // iterate through keys
+  @each $key in $keys {
+
+    // type: list
+    @if(type-of($key) == 'list') {
+      @each $list-key in $key {
+
+        // not found
+        @if(map-has-key($map, $list-key) == false) {
+          @error err('key-not-found', $list-key, '(map-filter)', map-keys($map));
+        }
+
+        // add value
+        $value: map-merge($value, (
+          '#{$list-key}': map-get($map, $list-key),
+        ));
+
+      }
+    }
+
+    // default
+    @else {
+
+      // not found
+      @if(map-has-key($map, $key) == false) {
+        @error err('key-not-found', $key, '(map-filter)', map-keys($map));
+      }
+
+      // add value
+      $value: map-merge($value, (
+        '#{$key}': map-get($map, $key)
+      ));
+
+    }
+
+  }
+
+  // return
+  @return $value;
+
+}

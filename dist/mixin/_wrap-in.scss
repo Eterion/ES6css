@@ -1,0 +1,9 @@
+/// Adds inner container class to group items. This mixin is used to standardize inner wrap elements.
+/// @access public
+/// @example @include wrap-in { ... }
+
+@mixin wrap-in {
+  & > .#{$const-class-wrap-in} {
+    @content;
+  }
+}

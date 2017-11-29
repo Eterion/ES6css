@@ -1,0 +1,16 @@
+@import '../app';
+
+/* default */
+@include pulse;
+
+/* $width: 5px */
+@include pulse($width: 5px);
+
+/* $color: red */
+@include pulse($color: red);
+
+/* $speed: 300ms */
+@include pulse($speed: 300ms);
+
+/* $pseudo: after */
+@include pulse($pseudo: after);

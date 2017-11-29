@@ -1,0 +1,34 @@
+element {
+  /* 480px */
+  content: 480px;
+  /* phone */
+  content: 600px;
+  /* phone (width) */
+  content: 600px;
+  /* phone (height) */
+  content: 480px;
+  /* tablet-portrait */
+  content: 768px;
+  /* tablet-portrait (width) */
+  content: 768px;
+  /* tablet-portrait (height) */
+  content: 1024px;
+  /* tablet-landscape */
+  content: 1024px;
+  /* tablet-landscape (width) */
+  content: 1024px;
+  /* tablet-landscape (height) */
+  content: 768px;
+  /* notebook */
+  content: 1366px;
+  /* notebook (width) */
+  content: 1366px;
+  /* notebook (height) */
+  content: 768px;
+  /* desktop */
+  content: 1680px;
+  /* desktop (width) */
+  content: 1680px;
+  /* desktop (height) */
+  content: 1050px;
+}

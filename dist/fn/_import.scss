@@ -1,0 +1,18 @@
+/// Extract a map of requested definition and returns it.
+/// @group system
+/// @access private
+/// @param {string} $name - Name.
+/// @param {string} $group [$export-group] - Group identifier.
+/// @param {map} $defaults [$export-defaults] - Map of default properties.
+
+@function import($name, $group: $export-group, $defaults: $export-defaults) {
+
+  // not found
+  @if(map-has-key($system-export, compute-key($name, $group)) == false) {
+    @error err('key-not-found', compute-key($name, $group), '(import)', map-keys($system-export));
+  }
+
+  // return
+  @return map-merge($defaults, map-get($system-export, compute-key($name, $group)));
+
+}

@@ -1,0 +1,30 @@
+// DOCUMENTATION
+// every function must be documented via sassdoc annotations
+// http://sassdoc.com/annotations/
+// -----
+
+// imports
+@import 'fn/clear-unit';
+@import 'fn/color';
+@import 'fn/create-class';
+@import 'fn/create-id';
+@import 'fn/em';
+@import 'fn/font-size';
+@import 'fn/font-weight';
+@import 'fn/get-value';
+@import 'fn/get';
+@import 'fn/map-deep-get';
+@import 'fn/map-filter';
+@import 'fn/media';
+@import 'fn/rem';
+@import 'fn/unicode';
+@import 'fn/whitespace';
+
+// import (system)
+@import 'fn/compute-key';
+@import 'fn/compute-media-query';
+@import 'fn/compute-scale';
+@import 'fn/err';
+@import 'fn/export';
+@import 'fn/extend';
+@import 'fn/import';

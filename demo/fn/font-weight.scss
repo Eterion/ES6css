@@ -1,0 +1,38 @@
+@import '../app';
+
+element {
+  /* inherit */
+  content: font-weight(inherit);
+  /* 100 */
+  content: font-weight(100);
+  /* thin */
+  content: font-weight(thin);
+  /* 300 */
+  content: font-weight(300);
+  /* light */
+  content: font-weight(light);
+  /* 400 */
+  content: font-weight(400);
+  /* regular */
+  content: font-weight(regular);
+  /* 500 */
+  content: font-weight(500);
+  /* medium */
+  content: font-weight(medium);
+  /* 600 */
+  content: font-weight(600);
+  /* semibold */
+  content: font-weight(semibold);
+  /* 700 */
+  content: font-weight(700);
+  /* bold */
+  content: font-weight(bold);
+  /* 800 */
+  content: font-weight(800);
+  /* extrabold */
+  content: font-weight(extrabold);
+  /* 900 */
+  content: font-weight(900);
+  /* ultrabold */
+  content: font-weight(ultrabold);
+}

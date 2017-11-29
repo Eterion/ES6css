@@ -1,0 +1,18 @@
+@import '../app';
+
+element {
+  /* number */
+  content: rem(42);
+  /* number (px) */
+  content: rem(42px);
+  /* number (em) */
+  content: rem(42em);
+  /* number (rem) */
+  content: rem(42rem);
+  /* number (%) */
+  content: rem(42%);
+  /* number (vw) */
+  content: rem(42vw);
+  /* number (vh) */
+  content: rem(42vh);
+}

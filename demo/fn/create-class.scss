@@ -1,0 +1,16 @@
+@import '../app';
+
+/* element */
+#{create-class(element)} {
+  content: 'class';
+}
+
+/* '.element' */
+#{create-class('.element')} {
+  content: 'class';
+}
+
+/* 'div.element' */
+#{create-class('div.element')} {
+  content: 'class';
+}

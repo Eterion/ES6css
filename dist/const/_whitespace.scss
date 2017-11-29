@@ -1,0 +1,17 @@
+// sass-lint:disable indentation
+// indentation is disabled because of a known bug with maps
+// https://github.com/sasstools/sass-lint/issues/927
+// -----
+
+$const-whitespace: 30px !default;
+
+$const-whitespace-scale: map-merge((
+  'tiny': $const-whitespace / 6,
+  'smallest': $const-whitespace / 3,
+  'smaller': $const-whitespace / 2,
+  'small': $const-whitespace / 1.5,
+  'regular': $const-whitespace,
+  'large': $const-whitespace * 1.5,
+  'larger': $const-whitespace * 2,
+  'largest': $const-whitespace * 3,
+), if(global-variable-exists(const-whitespace-scale), $const-whitespace-scale, ()));

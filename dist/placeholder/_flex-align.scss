@@ -1,0 +1,13 @@
+/// Adds flex content alignment options as simplified classes. Recommended to use with [flex-horizontal](#placeholder-flex-horizontal) placeholder when alignment support is expected.
+/// @group tools
+/// @access public
+
+%flex-align {
+  &.align {
+    &-left { justify-content: flex-start; }
+    &-center { justify-content: center; }
+    &-right { justify-content: flex-end; }
+    &-between { justify-content: space-between; }
+    &-around { justify-content: space-around; }
+  }
+}

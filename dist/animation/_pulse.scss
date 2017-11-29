@@ -1,0 +1,13 @@
+@keyframes pulse {
+
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale($const-animation-pulse-scale);
+  }
+
+}

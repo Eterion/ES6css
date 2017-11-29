@@ -1,0 +1,22 @@
+// (system)
+// must be always imported first
+// contains variables essential for import / export functionality
+// -----
+
+@import 'dist/system';
+
+// (const and var)
+// all of the constants and variables are defined with !default flag
+// or in case of maps, with the map-merge function
+// place your modification variables before these
+// -----
+
+@import 'dist/const';
+
+// (fn and mixin)
+// must be imported before variables
+// needed because variables use few of the functions
+// -----
+
+@import 'dist/fn';
+@import 'dist/mixin';

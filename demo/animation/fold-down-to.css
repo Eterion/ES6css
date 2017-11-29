@@ -1,0 +1,8 @@
+@keyframes fold-down-to {
+  from {
+    transform: translate3d(0, -100%, 0) rotateX(-70deg);
+  }
+  to {
+    transform: translate3d(0, 0, 0) rotateX(0);
+  }
+}

@@ -1,0 +1,18 @@
+// sass-lint:disable indentation
+// indentation is disabled because of a known bug with maps
+// https://github.com/sasstools/sass-lint/issues/927
+// -----
+
+// DOCUMENTATION
+// appropriate variables  must be documented via sassdoc annotations
+// http://sassdoc.com/annotations/
+// -----
+
+/// Any property map defined in this variable will automatically be added to every definition. Properties defined via export or extend mixins take precedence over defaults.
+/// @access public
+
+$export-defaults: map-merge((
+  'whitespace': $const-whitespace,
+  'whitespace-content-element': $const-whitespace,
+  'whitespace-content-element-connect': whitespace(smallest, false),
+), if(global-variable-exists(export-defaults), $export-defaults, ()));

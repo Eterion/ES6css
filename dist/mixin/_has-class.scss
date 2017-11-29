@@ -1,0 +1,22 @@
+/// Adds provided **$list** of classes to the root element using `@at-root` directive.
+/// @group tools
+/// @access public
+/// @param {string|list} $list - List of class names.
+/// @example @include has(open, active) { ... }
+
+@mixin has-class($list...) {
+
+  // selectors
+  $data: '';
+
+  // iterate through list
+  @each $selector in $list {
+    $data: str-insert($data, create-class($selector), str-length($data) + 1);
+  }
+
+  // definition
+  @at-root #{$data}#{&} {
+    @content;
+  }
+
+}

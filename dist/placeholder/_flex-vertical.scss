@@ -1,0 +1,12 @@
+/// Applies vertical flex layout to a list element. The main purpose of this placeholder is to provide a shortcut to quickly create vertical navigation from a list.
+/// @group tools
+/// @access public
+
+%flex-vertical {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

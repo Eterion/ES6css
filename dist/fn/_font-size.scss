@@ -1,0 +1,20 @@
+/// Returns provided **$value** recalculated to relative (rem) units. Allows the use of predefined scale values instead of direct numbers. If the **$method** parameter is set to **false**, conversion to relative units is disabled.
+/// @group tools
+/// @access public
+/// @param {number|string} $value - Number or scale identifier.
+/// @param {bool|string} $method [rem] - Function called on the value, use **em** or **rem**.
+/// @example font-size(regular) // returns 1rem
+
+@function font-size($value, $method: rem) {
+
+  // no conversion
+  @if($method == false) {
+    @return compute-scale($const-font-size-scale, $value);
+  }
+
+  // relative units
+  @else {
+    @return call($method, compute-scale($const-font-size-scale, $value));
+  }
+
+}

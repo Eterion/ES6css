@@ -1,0 +1,18 @@
+@import '../app';
+
+element {
+  /* unitless */
+  @include square(42);
+  /* px */
+  @include square(42px);
+  /* em */
+  @include square(42em);
+  /* rem */
+  @include square(42rem);
+  /* % */
+  @include square(42%);
+  /* vw */
+  @include square(42vw);
+  /* vh */
+  @include square(42vh);
+}

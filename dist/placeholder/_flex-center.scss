@@ -1,0 +1,9 @@
+/// Applies centered flex layout to an element.
+/// @group tools
+/// @access public
+
+%flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}

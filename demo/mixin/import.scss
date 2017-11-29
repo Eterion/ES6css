@@ -1,0 +1,6 @@
+@import '../app';
+@import '../export';
+
+@include import(component-name) {
+  width: get(width);
+}

@@ -1,0 +1,9 @@
+/* is-open */
+.is-open.c-component-name {
+  content: 'open';
+}
+
+/* is-open, is-active */
+.is-open.is-active.c-component-name {
+  content: 'open, active';
+}

@@ -1,0 +1,17 @@
+/// Return computed key string from **$name** and **$group**. Selectors are created using this function.
+/// @group system
+/// @access private
+/// @param {string} $name - Name.
+/// @param {string} $group - Group identifier.
+
+@function compute-key($name, $group) {
+
+  // not found
+  @if(map-has-key($const-export-group, $group) == false) {
+    @error err('key-not-found', $group, '(compute-key)', map-keys($const-export-group));
+  }
+
+  // computed key
+  @return '#{map-get($const-export-group, $group)}-#{$name}';
+
+}

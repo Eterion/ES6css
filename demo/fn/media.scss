@@ -1,0 +1,36 @@
+@import '../app';
+
+element {
+  /* 480px */
+  content: media(480px);
+  /* phone */
+  content: media(phone);
+  /* phone (width) */
+  content: media(phone, width);
+  /* phone (height) */
+  content: media(phone, height);
+  /* tablet-portrait */
+  content: media(tablet-portrait);
+  /* tablet-portrait (width) */
+  content: media(tablet-portrait, width);
+  /* tablet-portrait (height) */
+  content: media(tablet-portrait, height);
+  /* tablet-landscape */
+  content: media(tablet-landscape);
+  /* tablet-landscape (width) */
+  content: media(tablet-landscape, width);
+  /* tablet-landscape (height) */
+  content: media(tablet-landscape, height);
+  /* notebook */
+  content: media(notebook);
+  /* notebook (width) */
+  content: media(notebook, width);
+  /* notebook (height) */
+  content: media(notebook, height);
+  /* desktop */
+  content: media(desktop);
+  /* desktop (width) */
+  content: media(desktop, width);
+  /* desktop (height) */
+  content: media(desktop, height);
+}

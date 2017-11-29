@@ -1,0 +1,6 @@
+@import '../app';
+@import '../../dist/placeholder/flex-center';
+
+.flex-center {
+  @extend %flex-center;
+}

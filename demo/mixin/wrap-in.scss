@@ -1,0 +1,8 @@
+@import '../app';
+@import '../export';
+
+@include import(component-name) {
+  @include wrap-in {
+    width: get(width);
+  }
+}

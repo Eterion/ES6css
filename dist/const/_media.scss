@@ -1,0 +1,28 @@
+// sass-lint:disable indentation
+// indentation is disabled because of a known bug with maps
+// https://github.com/sasstools/sass-lint/issues/927
+// -----
+
+$const-media-scale: map-merge((
+  'phone': (width: 600px, height: 480px),
+  'tablet-portrait': (width: 768px, height: 1024px),
+  'tablet-landscape': (width: 1024px, height: 768px),
+  'notebook': (width: 1366px, height: 768px),
+  'desktop': (width: 1680px, height: 1050px)
+), if(global-variable-exists(const-media-scale), $const-media-scale, ()));
+
+$const-media-font-size: map-merge((
+  'phone': smaller,
+  'tablet-portrait': small,
+  'tablet-landscape': small,
+  'tablet-notebook': small,
+  'desktop': regular,
+), if(global-variable-exists(const-media-font-size), $const-media-font-size, ()));
+
+$const-media-font-monospace-size: map-merge((
+  'phone': smallest,
+  'tablet-portrait': smaller,
+  'tablet-landscape': smaller,
+  'tablet-notebook': smaller,
+  'desktop': small,
+), if(global-variable-exists(const-media-font-monospace-size), $const-media-font-monospace-size, ()));

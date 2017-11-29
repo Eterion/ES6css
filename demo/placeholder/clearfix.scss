@@ -1,0 +1,6 @@
+@import '../app';
+@import '../../dist/placeholder/clearfix';
+
+.clearfix {
+  @extend %clearfix;
+}

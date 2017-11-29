@@ -1,0 +1,34 @@
+@import '../app';
+
+element {
+  /* value */
+  content: font-size(42px);
+  /* value (false) */
+  content: font-size(42px, false);
+  /* value (em) */
+  content: font-size(42px, em);
+  /* value (rem) */
+  content: font-size(42px, rem);
+  /* key (inherit) */
+  content: font-size(inherit);
+  /* key (tiny) */
+  content: font-size(tiny);
+  /* key (smallest) */
+  content: font-size(smallest);
+  /* key (smaller) */
+  content: font-size(smaller);
+  /* key (small) */
+  content: font-size(small);
+  /* key (regular) */
+  content: font-size(regular);
+  /* key (large) */
+  content: font-size(large);
+  /* key (larger) */
+  content: font-size(larger);
+  /* key (largest) */
+  content: font-size(largest);
+  /* key (xl) */
+  content: font-size(xl);
+  /* key (xxl) */
+  content: font-size(xxl);
+}

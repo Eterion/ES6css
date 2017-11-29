@@ -1,0 +1,28 @@
+@import '../app';
+
+element {
+  /* number */
+  content: whitespace(42px);
+  /* number (false) */
+  content: whitespace(42px, false);
+  /* number (em) */
+  content: whitespace(42px, em);
+  /* number (rem) */
+  content: whitespace(42px, rem);
+  /* key (tiny) */
+  content: whitespace(tiny);
+  /* key (smallest) */
+  content: whitespace(smallest);
+  /* key (smaller) */
+  content: whitespace(smaller);
+  /* key (small) */
+  content: whitespace(small);
+  /* key (regular) */
+  content: whitespace(regular);
+  /* key (large) */
+  content: whitespace(large);
+  /* key (larger) */
+  content: whitespace(larger);
+  /* key (largest) */
+  content: whitespace(largest);
+}

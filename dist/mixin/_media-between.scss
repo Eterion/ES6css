@@ -1,0 +1,27 @@
+/// Wraps the content with a specified media query between **$lower** and **$upper** values. Use of [**media-up-from**](#mixin-media-up-from) mixin is highly preferred before any other media mixin (not a requirement).
+/// @group media
+/// @access public
+/// @param {number|string} $lower - Scale or number.
+/// @param {number|string} $upper - Scale or number.
+/// @param {string} $prop [width] - Determines what value is returned, can be **width**, **height** or **both**.
+/// @param {string} $operator [and] - Media query operator, can be **and** or **or**.
+/// @example @include media-between(phone, desktop) { ... }
+
+@mixin media-between($lower, $upper, $prop: width, $operator: and) {
+
+  // not found: lower
+  @if(type-of($lower) == 'string' and map-has-key($const-media-scale, $lower) == false) {
+    @error err('key-not-found', $lower, '(media-between: lower)', map-keys($const-media-scale));
+  }
+
+  // not found: upper
+  @if(type-of($upper) == 'string' and map-has-key($const-media-scale, $upper) == false) {
+    @error err('key-not-found', $upper, '(media-between: upper)', map-keys($const-media-scale));
+  }
+
+  // definition
+  @media #{compute-media-query(min, $lower, $prop, $operator)} and #{compute-media-query(max, $upper, $prop, $operator)} {
+    @content;
+  }
+
+}

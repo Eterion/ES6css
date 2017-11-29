@@ -1,0 +1,6 @@
+@import '../app';
+@import '../export';
+
+element {
+  width: get-value(width, component-name, component);
+}

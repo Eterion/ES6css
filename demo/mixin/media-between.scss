@@ -1,0 +1,29 @@
+@import '../app';
+
+/* phone, tablet-portrait */
+element {
+  @include media-between(phone, tablet-portrait) {
+    content: 'phone, tablet-portrait';
+  }
+}
+
+/* tablet-portrait, tablet-landscape */
+element {
+  @include media-between(tablet-portrait, tablet-landscape) {
+    content: 'tablet-portrait, tablet-landscape';
+  }
+}
+
+/* tablet-landscape, notebook */
+element {
+  @include media-between(tablet-landscape, notebook) {
+    content: 'tablet-landscape, notebook';
+  }
+}
+
+/* notebook, desktop */
+element {
+  @include media-between(notebook, desktop) {
+    content: 'notebook, desktop';
+  }
+}

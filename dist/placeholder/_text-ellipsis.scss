@@ -1,0 +1,9 @@
+/// Adds ellipsis (dots) text overflow to a single line of text. Block type element is required to work properly. Does not work on multi-line elements, use javascript instead.
+/// @group tools
+/// @access public
+
+%text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

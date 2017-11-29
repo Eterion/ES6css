@@ -1,0 +1,10 @@
+/// Creates a square element based on provided **$size**. Values are automatically converted to rem units, if possible.
+/// @group tools
+/// @access public
+/// @param {int|float} $size - Size of element
+/// @example @include square(100%)
+
+@mixin square($size) {
+  height: rem($size);
+  width: rem($size);
+}

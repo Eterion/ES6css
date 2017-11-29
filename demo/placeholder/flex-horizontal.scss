@@ -1,0 +1,6 @@
+@import '../app';
+@import '../../dist/placeholder/flex-horizontal';
+
+.flex-horizontal {
+  @extend %flex-horizontal;
+}

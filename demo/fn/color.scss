@@ -1,0 +1,56 @@
+@import '../app';
+
+element {
+  /* gray */
+  content: color(gray);
+  /* gray (false) */
+  content: color(gray, false);
+  /* gray (heavy) */
+  content: color(gray, heavy);
+  /* gray (hard) */
+  content: color(gray, hard);
+  /* gray (darkest) */
+  content: color(gray, darkest);
+  /* gray (darker) */
+  content: color(gray, darker);
+  /* gray (dark) */
+  content: color(gray, dark);
+  /* gray (regular) */
+  content: color(gray, regular);
+  /* gray (light) */
+  content: color(gray, light);
+  /* gray (lighter) */
+  content: color(gray, lighter);
+  /* gray (lightest) */
+  content: color(gray, lightest);
+  /* gray (soft) */
+  content: color(gray, soft);
+  /* gray (pastel) */
+  content: color(gray, pastel);
+  /* #f00 */
+  content: color(#f00);
+  /* #f00 (false) */
+  content: color(#f00, false);
+  /* #f00 (heavy) */
+  content: color(#f00, heavy);
+  /* #f00 (hard) */
+  content: color(#f00, hard);
+  /* #f00 (darkest) */
+  content: color(#f00, darkest);
+  /* #f00 (darker) */
+  content: color(#f00, darker);
+  /* #f00 (dark) */
+  content: color(#f00, dark);
+  /* #f00 (regular) */
+  content: color(#f00, regular);
+  /* #f00 (light) */
+  content: color(#f00, light);
+  /* #f00 (lighter) */
+  content: color(#f00, lighter);
+  /* #f00 (lightest) */
+  content: color(#f00, lightest);
+  /* #f00 (soft) */
+  content: color(#f00, soft);
+  /* #f00 (pastel) */
+  content: color(#f00, pastel);
+}

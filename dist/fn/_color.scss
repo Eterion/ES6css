@@ -1,0 +1,37 @@
+/// Returns scaled **$color** according to the provided **$scale** identifier. Allows easy color scaling without the need of additional variables for each new color variant. Scaling levels are completely customizable through constants.
+/// @group tools
+/// @access public
+/// @param {color|string} $color - Source color or key.
+/// @param {bool|string} $scale [false] - Scale identifier.
+/// @example color(gray, dark) // returns #484848
+
+@function color($value, $scale: false) {
+
+  // default
+  $color: $value;
+
+  // inspect
+  // convert provided value to string
+  // needed because color keys can be anything, including css colors
+
+  $value: inspect($value);
+
+  // color-keys
+  @if(map-has-key($const-color-keys, $value)) {
+    $color: map-get($const-color-keys, $value);
+  }
+
+  // not a color
+  @if(type-of($color) != 'color') {
+    @error 'Color \"#{$color}\" is not a color, use valid value or one of the following keys: #{map-keys($const-color-keys)}';
+  }
+
+  // scale is not provided
+  @if($scale == false) {
+    @return $color;
+  }
+
+  // calculate
+  @return scale-color($color, $lightness: percentage(map-get($const-color-scale, $scale) / 100));
+
+}

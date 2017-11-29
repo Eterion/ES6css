@@ -1,0 +1,20 @@
+/* default */
+element {
+  perspective: 33.33333rem;
+  perspective-origin: center;
+  transform: preserve-3d;
+}
+
+/* $perspective: 400px */
+element {
+  perspective: 8.33333rem;
+  perspective-origin: center;
+  transform: preserve-3d;
+}
+
+/* $perspective-origin: left */
+element {
+  perspective: 33.33333rem;
+  perspective-origin: left;
+  transform: preserve-3d;
+}

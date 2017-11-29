@@ -1,0 +1,60 @@
+/* content-element */
+.c-component-name {
+  margin-bottom: 2.5rem;
+}
+
+.c-component-name.compact {
+  margin-bottom: 0;
+}
+
+/* content-element(this) */
+.c-component-name {
+  margin-bottom: 2.5rem;
+}
+
+.c-component-name.compact {
+  margin-bottom: 0;
+}
+
+.c-component-name:not(.compact) + .c-component-name {
+  margin-top: -1.66667rem;
+}
+
+/* content-element(div) */
+.c-component-name {
+  margin-bottom: 2.5rem;
+}
+
+.c-component-name.compact {
+  margin-bottom: 0;
+}
+
+.c-component-name:not(.compact) + div {
+  margin-top: -1.66667rem;
+}
+
+/* content-element(this, div) */
+.c-component-name {
+  margin-bottom: 2.5rem;
+}
+
+.c-component-name.compact {
+  margin-bottom: 0;
+}
+
+.c-component-name:not(.compact) + .c-component-name, .c-component-name:not(.compact) + div {
+  margin-top: -1.66667rem;
+}
+
+/* content-element(class(element)) */
+.c-component-name {
+  margin-bottom: 2.5rem;
+}
+
+.c-component-name.compact {
+  margin-bottom: 0;
+}
+
+.c-component-name:not(.compact) + class(element) {
+  margin-top: -1.66667rem;
+}

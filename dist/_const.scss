@@ -1,0 +1,25 @@
+// DOCUMENTATION
+// appropriate variables  must be documented via sassdoc annotations
+// http://sassdoc.com/annotations/
+// -----
+
+$const-id: 0 !default;
+$const-content: '' !default;
+$const-min-height: 480px !default;
+$const-min-width: 320px !default;
+$const-min-number: 3px !default;
+$const-class-wrap-in: 'in' !default;
+$const-class-wrap-out: 'wrap' !default;
+$const-text-align: 'left', 'center', 'right', 'justify' !default;
+
+// imports
+@import 'const/animation';
+@import 'const/color';
+@import 'const/export';
+@import 'const/font';
+@import 'const/grid';
+@import 'const/media';
+@import 'const/path';
+@import 'const/size';
+@import 'const/whitespace';
+@import 'const/z-index';

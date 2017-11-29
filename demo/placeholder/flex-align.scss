@@ -1,0 +1,6 @@
+@import '../app';
+@import '../../dist/placeholder/flex-align';
+
+.flex-align {
+  @extend %flex-align;
+}

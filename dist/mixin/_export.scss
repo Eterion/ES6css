@@ -1,0 +1,10 @@
+/// Creates a new definition. Includes automatically computed properties (selector, z-index etc.), see [**export**](#function-export) function for more details. The [**extend**](#mixin-extend) mixin is used to modify property map on theme basis.
+/// @access public
+/// @param {string} $name - Name.
+/// @param {bool|map} $props [false] - Property map.
+/// @param {string} $group [$export-group] - Group identifier.
+/// @example @include export(component-name, ( ... ))
+
+@mixin export($name, $props: false, $group: $export-group) {
+  $system-export: export($name, $props, $group) !global;
+}

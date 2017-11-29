@@ -1,0 +1,17 @@
+/// Returns provided **$id** converted to id selector, if possible. Doesn't affect the input value if any id selector is already present.
+/// @group tools
+/// @access public
+/// @param {string} $id - Id name.
+/// @example create-id(element) // returns #element
+
+@function create-id($id) {
+
+  // add id
+  @if(str-index($id, '#') == null) {
+    $id: '##{$id}';
+  }
+
+  // return
+  @return $id;
+
+}

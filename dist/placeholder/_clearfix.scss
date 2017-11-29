@@ -1,0 +1,11 @@
+/// Inserts standardizes pseudo content to correct floats. Note, flexbox or grid properties are highly preferred over floats.
+/// @group tools
+/// @access public
+
+%clearfix {
+  &::after {
+    clear: both;
+    content: unicode($const-content);
+    display: table;
+  }
+}
