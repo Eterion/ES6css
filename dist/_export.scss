@@ -12,6 +12,7 @@
 /// @access public
 
 $export-defaults: map-merge((
+  'unique': false,
   'whitespace': $const-whitespace,
   'whitespace-content-element': $const-whitespace,
   'whitespace-content-element-connect': whitespace(smallest, false),

@@ -9,19 +9,23 @@
 // @param {string} $name - Name.
 // @param {bool|map} $props [false] - Map of properties.
 // @param {string} $group [$export-group] - Group identifier.
+// @param {map} $defaults [$export-defaults] - Map of default properties.
 
-@function export($name, $props: false, $group: $export-group) {
+@function export($name, $props: false, $group: $export-group, $defaults: $export-defaults) {
 
   // already exists
   @if(map-has-key($system-export, compute-key($name, $group))) {
     @error err('key-exists', compute-key($name, $group), '(export)');
   }
 
-  // create new definition
+  // defaults
+  $props: map-merge($export-defaults, if($props != false, $props, ()));
+
+  // add new export
   @return map-merge($system-export, (
-    '#{compute-key($name, $group)}': map-merge(if($props != false, $props, ()), (
-      'id': compute-key($name, $group),
-      'selector': class(compute-key($name, $group)),
+    '#{compute-key($name, $group)}': map-merge($props, (
+      'name': compute-key($name, $group),
+      'selector': call(if(map-key-get($props, unique), 'id', 'class'), compute-key($name, $group)),
       'z-index': '#{$group}-#{$name}',
     )),
   ));
