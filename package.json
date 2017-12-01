@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "build": "node-sass --output-style expanded demo --output demo",
-    "clean": "del-cli docs",
+    "clean": "del-cli docs demo/**/*.css",
     "docs": "sassdoc dist --config .sassdoc.yml",
     "lint": "sass-lint --config .sasslint.yml --verbose --no-exit",
     "start": "npm run clean && (npm run lint & npm run docs & npm run build)"
