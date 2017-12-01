@@ -1,8 +1,3 @@
-// sass-lint:disable indentation
-// indentation is disabled because of a known bug with maps
-// https://github.com/sasstools/sass-lint/issues/927
-// -----
-
 /// Extracts a definition set according to provided **$name** and **$group**, automatically includes calculated selector class. Allows the use of [**get**](#function-get) and [**get-value**](#function-get-value) functions without the need of providing a group. To avoid the automatically generated selector class, use the native `@at-root` directive.
 /// @access public
 /// @param {string} $name - Name.
@@ -22,7 +17,14 @@
   // class is generated for each mixin as well
 
   $system-data: map-merge($system-data, (
+
+    // sass-lint:disable-block indentation
+    // indentation is disabled because of a known bug with maps
+    // https://github.com/sasstools/sass-lint/issues/927
+    // -----
+
     '#{compute-key($name, $group)}': import($name, $group),
+
   )) !global;
 
   // import

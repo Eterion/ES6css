@@ -1,8 +1,3 @@
-// sass-lint:disable indentation
-// indentation is disabled because of a known bug with maps
-// https://github.com/sasstools/sass-lint/issues/927
-// -----
-
 /// Returns a new map with requested **$keys** only. Throws an error if any value in **$keys** doesn't exists.
 /// @group tools
 /// @access public
@@ -29,7 +24,14 @@
 
         // add value
         $value: map-merge($value, (
+
+          // sass-lint:disable-block indentation
+          // indentation is disabled because of a known bug with maps
+          // https://github.com/sasstools/sass-lint/issues/927
+          // -----
+
           '#{$list-key}': map-get($map, $list-key),
+
         ));
 
       }
@@ -45,7 +47,14 @@
 
       // add value
       $value: map-merge($value, (
-        '#{$key}': map-get($map, $key)
+
+        // sass-lint:disable-block indentation
+        // indentation is disabled because of a known bug with maps
+        // https://github.com/sasstools/sass-lint/issues/927
+        // -----
+
+        '#{$key}': map-get($map, $key),
+
       ));
 
     }

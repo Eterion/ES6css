@@ -1,8 +1,3 @@
-// sass-lint:disable indentation
-// indentation is disabled because of a known bug with maps
-// https://github.com/sasstools/sass-lint/issues/927
-// -----
-
 // Private functions are intentionally left out of documentation.
 // Creates a new definition and returns complete data map. Throws an error if definition with provided **$name** already exists in provided **$group**, to prevent duplicates.
 // @access private
@@ -23,11 +18,18 @@
 
   // add new export
   @return map-merge($system-export, (
+
+    // sass-lint:disable-block indentation
+    // indentation is disabled because of a known bug with maps
+    // https://github.com/sasstools/sass-lint/issues/927
+    // -----
+
     '#{compute-key($name, $group)}': map-merge($props, (
       'name': compute-key($name, $group),
       'selector': call(if(map-key-get($props, unique), 'id', 'class'), compute-key($name, $group)),
       'z-index': '#{$group}-#{$name}',
     )),
+
   ));
 
 }
