@@ -9,7 +9,7 @@
 
 @mixin grid($container, $item, $width, $whitespace, $trim-viewport-by: 0) {
 
-  #{create-class($container)} {
+  #{class($container)} {
     display: grid;
     margin: -#{rem($whitespace / 2)};
   }
@@ -24,7 +24,7 @@
     // these browsers don't support modern W3C standard
     // number of columns must be therefore specified
 
-    #{create-class($container)} {
+    #{class($container)} {
 
       // grid
       @include grid-container($width, $whitespace, $trim-viewport-by);
@@ -34,7 +34,7 @@
       // appropriate number of styles must be generated
       // see $const-grid-count in constants to define number of children
 
-      & > #{create-class($item)} {
+      & > #{class($item)} {
         @for $index from 1 through $const-grid-count {
           @include grid-item($width, $whitespace, $index, $trim-viewport-by);
         }
@@ -53,7 +53,7 @@
             @include grid-container($this-width, $whitespace, $trim-viewport-by);
 
             // children
-            & > #{create-class($item)} {
+            & > #{class($item)} {
               @for $index from 1 through $const-grid-count {
                 @include grid-item($this-width, $whitespace, $index, $trim-viewport-by);
               }
@@ -71,7 +71,7 @@
   // modern W3C standard doesn't require column specification
   // auto-fill takes care of the layout automatically (awesome)
 
-  #{create-class($container)} {
+  #{class($container)} {
 
     // grid
     @include grid-container($width, $whitespace, $trim-viewport-by, auto-fill);

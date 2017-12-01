@@ -1,16 +1,16 @@
 @import '../app';
 
 /* element */
-#{create-class(element)} {
+#{class(element)} {
   content: 'class';
 }
 
 /* '.element' */
-#{create-class('.element')} {
+#{class('.element')} {
   content: 'class';
 }
 
 /* 'div.element' */
-#{create-class('div.element')} {
+#{class('div.element')} {
   content: 'class';
 }

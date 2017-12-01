@@ -2,9 +2,9 @@
 /// @group tools
 /// @access public
 /// @param {string} $class - Class name.
-/// @example create-class(element) // returns .element
+/// @example class(element) // returns .element
 
-@function create-class($class) {
+@function class($class) {
 
   // add class
   @if(str-index($class, '.') == null) {

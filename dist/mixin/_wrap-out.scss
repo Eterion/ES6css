@@ -4,7 +4,7 @@
 /// @example @include wrap-out { ... }
 
 @mixin wrap-out($name: false) {
-  @at-root #{if($name == false, get-value(selector), create-class($name))}-#{$const-class-wrap-out} {
+  @at-root #{if($name == false, get-value(selector), class($name))}-#{$const-class-wrap-out} {
     @content;
   }
 }

@@ -21,7 +21,7 @@
   @return map-merge($system-export, (
     '#{compute-key($name, $group)}': map-merge(if($props != false, $props, ()), (
       'id': compute-key($name, $group),
-      'selector': create-class(compute-key($name, $group)),
+      'selector': class(compute-key($name, $group)),
       'z-index': '#{$group}-#{$name}',
     )),
   ));
