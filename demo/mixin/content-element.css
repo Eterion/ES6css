@@ -46,7 +46,7 @@
   margin-top: -1.66667rem;
 }
 
-/* content-element(class(element)) */
+/* content-element(create-class(element)) */
 .c-component-name {
   margin-bottom: 2.5rem;
 }
@@ -55,6 +55,6 @@
   margin-bottom: 0;
 }
 
-.c-component-name:not(.compact) + class(element) {
+.c-component-name:not(.compact) + .element {
   margin-top: -1.66667rem;
 }

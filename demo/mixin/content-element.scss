@@ -21,7 +21,7 @@
   @include content-element(this, div);
 }
 
-/* content-element(class(element)) */
+/* content-element(create-class(element)) */
 @include import(component-name) {
-  @include content-element(class(element));
+  @include content-element(create-class(element));
 }
