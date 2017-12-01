@@ -1,4 +1,5 @@
 /// Adds standardized bottom margin to an element. The **list** parameter controls which selectors will have reduced whitespace after each other. Keyword **this** can be used for element with identical selector to its parent.
+/// @group tools
 /// @access public
 /// @param {string|list} $list - List of connected selectors, can use **this** keyword.
 /// @example @include content-element(this)
