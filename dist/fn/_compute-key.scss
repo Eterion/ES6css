@@ -1,8 +1,8 @@
-/// Return computed key string from **$name** and **$group**. Selectors are created using this function.
-/// @group system
-/// @access private
-/// @param {string} $name - Name.
-/// @param {string} $group - Group identifier.
+// Private functions are intentionally left out of documentation.
+// Return computed key string from **$name** and **$group**. Selectors are created using this function.
+// @access private
+// @param {string} $name - Name.
+// @param {string} $group - Group identifier.
 
 @function compute-key($name, $group) {
 

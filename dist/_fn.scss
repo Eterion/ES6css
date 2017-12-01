@@ -1,5 +1,5 @@
 // DOCUMENTATION
-// every function must be documented via sassdoc annotations
+// every public function must be documented via sassdoc annotations
 // http://sassdoc.com/annotations/
 // -----
 
@@ -22,7 +22,7 @@
 @import 'fn/unicode';
 @import 'fn/whitespace';
 
-// import (system)
+// import (private)
 @import 'fn/compute-key';
 @import 'fn/export';
 @import 'fn/extend';

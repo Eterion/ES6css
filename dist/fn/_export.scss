@@ -3,12 +3,12 @@
 // https://github.com/sasstools/sass-lint/issues/927
 // -----
 
-/// Creates a new definition and returns complete data map. Throws an error if definition with provided **$name** already exists in provided **$group**, to prevent duplicates.
-/// @group system
-/// @access private
-/// @param {string} $name - Name.
-/// @param {bool|map} $props [false] - Map of properties.
-/// @param {string} $group [$export-group] - Group identifier.
+// Private functions are intentionally left out of documentation.
+// Creates a new definition and returns complete data map. Throws an error if definition with provided **$name** already exists in provided **$group**, to prevent duplicates.
+// @access private
+// @param {string} $name - Name.
+// @param {bool|map} $props [false] - Map of properties.
+// @param {string} $group [$export-group] - Group identifier.
 
 @function export($name, $props: false, $group: $export-group) {
 

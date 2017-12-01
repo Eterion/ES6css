@@ -3,12 +3,12 @@
 // https://github.com/sasstools/sass-lint/issues/927
 // -----
 
-/// Extends already existing definition and returns a map of properties according to **$name** value. Throws an error if the requested definition does not exists.
-/// @group system
-/// @access private
-/// @param {string} $name - Name.
-/// @param {map} $props - Map of properties.
-/// @param {string} $group [$group] - Group identifier.
+// Private functions are intentionally left out of documentation.
+// Extends already existing definition and returns a map of properties according to **$name** value. Throws an error if the requested definition does not exists.
+// @access private
+// @param {string} $name - Name.
+// @param {map} $props - Map of properties.
+// @param {string} $group [$group] - Group identifier.
 
 @function extend($name, $props, $group: $export-group) {
 

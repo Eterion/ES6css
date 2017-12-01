@@ -1,5 +1,5 @@
 // DOCUMENTATION
-// every mixin must be documented via sassdoc annotations
+// every public mixin must be documented via sassdoc annotations
 // http://sassdoc.com/annotations/
 // -----
 
@@ -22,6 +22,6 @@
 @import 'mixin/wrap-out';
 @import 'mixin/z-index';
 
-// import (system)
+// import (private)
 @import 'mixin/grid-container';
 @import 'mixin/grid-item';

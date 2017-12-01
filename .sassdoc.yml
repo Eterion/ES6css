@@ -3,7 +3,6 @@ dest:
 groups:
   effects: 'Effects'
   media: 'Media'
-  system: 'System'
   tools: 'Tools'
   undefined: 'API'
 theme:
