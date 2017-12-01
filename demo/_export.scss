@@ -6,7 +6,7 @@
 // -----
 
 $const-z-index: (
-  'component-non-existent', 'component-component-name',
+  'component-example-1', 'component-example-2',
 );
 
 // groups
@@ -30,8 +30,14 @@ $export-group: 'component';
 // values defined in defaults property map will be overwritten
 // -----
 
-@include export(component-name, (
+@include export(example-1, (
   'background-color': red,
   'box-sizing': content-box,
   'width': 200px,
+));
+
+@include export(example-2, (
+  'background-color': blue,
+  'unique': true,
+  'width': 300px,
 ));

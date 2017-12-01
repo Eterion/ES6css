@@ -1,60 +1,60 @@
 /* content-element */
-.c-component-name {
+.c-example-1 {
   margin-bottom: 2.5rem;
 }
 
-.c-component-name.compact {
+.c-example-1.compact {
   margin-bottom: 0;
 }
 
 /* content-element(this) */
-.c-component-name {
+.c-example-1 {
   margin-bottom: 2.5rem;
 }
 
-.c-component-name.compact {
+.c-example-1.compact {
   margin-bottom: 0;
 }
 
-.c-component-name:not(.compact) + .c-component-name {
+.c-example-1:not(.compact) + .c-example-1 {
   margin-top: -1.66667rem;
 }
 
 /* content-element(div) */
-.c-component-name {
+.c-example-1 {
   margin-bottom: 2.5rem;
 }
 
-.c-component-name.compact {
+.c-example-1.compact {
   margin-bottom: 0;
 }
 
-.c-component-name:not(.compact) + div {
+.c-example-1:not(.compact) + div {
   margin-top: -1.66667rem;
 }
 
 /* content-element(this, div) */
-.c-component-name {
+.c-example-1 {
   margin-bottom: 2.5rem;
 }
 
-.c-component-name.compact {
+.c-example-1.compact {
   margin-bottom: 0;
 }
 
-.c-component-name:not(.compact) + .c-component-name, .c-component-name:not(.compact) + div {
+.c-example-1:not(.compact) + .c-example-1, .c-example-1:not(.compact) + div {
   margin-top: -1.66667rem;
 }
 
 /* content-element(class(element)) */
-.c-component-name {
+.c-example-1 {
   margin-bottom: 2.5rem;
 }
 
-.c-component-name.compact {
+.c-example-1.compact {
   margin-bottom: 0;
 }
 
-.c-component-name:not(.compact) + .element {
+.c-example-1:not(.compact) + .element {
   margin-top: -1.66667rem;
 }

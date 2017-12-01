@@ -2,26 +2,26 @@
 @import '../export';
 
 /* content-element */
-@include import(component-name) {
+@include import(example-1) {
   @include content-element;
 }
 
 /* content-element(this) */
-@include import(component-name) {
+@include import(example-1) {
   @include content-element(this);
 }
 
 /* content-element(div) */
-@include import(component-name) {
+@include import(example-1) {
   @include content-element(div);
 }
 
 /* content-element(this, div) */
-@include import(component-name) {
+@include import(example-1) {
   @include content-element(this, div);
 }
 
 /* content-element(class(element)) */
-@include import(component-name) {
+@include import(example-1) {
   @include content-element(class(element));
 }

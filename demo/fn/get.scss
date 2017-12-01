@@ -2,5 +2,5 @@
 @import '../export';
 
 element {
-  width: get(width, component-name, component);
+  width: get(width, example-1, component);
 }

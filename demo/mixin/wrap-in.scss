@@ -1,7 +1,7 @@
 @import '../app';
 @import '../export';
 
-@include import(component-name) {
+@include import(example-1) {
   @include wrap-in {
     width: get(width);
   }

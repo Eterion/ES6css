@@ -2,14 +2,14 @@
 @import '../export';
 
 /* is-open */
-@include import(component-name) {
+@include import(example-1) {
   @include has-class(is-open) {
     content: 'open';
   }
 }
 
 /* is-open, is-active */
-@include import(component-name) {
+@include import(example-1) {
   @include has-class(is-open, is-active) {
     content: 'open, active';
   }

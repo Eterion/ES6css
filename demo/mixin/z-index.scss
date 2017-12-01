@@ -1,6 +1,6 @@
 @import '../app';
 @import '../export';
 
-@include import(component-name) {
+@include import(example-2) {
   @include z-index;
 }
