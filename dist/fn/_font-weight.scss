@@ -5,5 +5,5 @@
 /// @example font-weight(regular) // returns 400
 
 @function font-weight($value) {
-  @return compute-scale($const-font-weight-scale, $value);
+  @return map-key-get($const-font-weight-scale, $value);
 }

@@ -9,12 +9,12 @@
 
   // no conversion
   @if($method == false) {
-    @return compute-scale($const-whitespace-scale, $value, $can-inherit: false);
+    @return map-key-get($const-whitespace-scale, $value, $can-inherit: false);
   }
 
   // relative units
   @else {
-    @return call($method, compute-scale($const-whitespace-scale, $value, $can-inherit: false));
+    @return call($method, map-key-get($const-whitespace-scale, $value, $can-inherit: false));
   }
 
 }

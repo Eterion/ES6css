@@ -1,0 +1,5 @@
+@import '../app';
+
+element {
+  color: map-key-get($const-color-keys, theme);
+}

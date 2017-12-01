@@ -9,12 +9,12 @@
 
   // no conversion
   @if($method == false) {
-    @return compute-scale($const-font-size-scale, $value);
+    @return map-key-get($const-font-size-scale, $value);
   }
 
   // relative units
   @else {
-    @return call($method, compute-scale($const-font-size-scale, $value));
+    @return call($method, map-key-get($const-font-size-scale, $value));
   }
 
 }
