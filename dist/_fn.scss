@@ -8,6 +8,7 @@
 @import 'fn/clear-unit';
 @import 'fn/color';
 @import 'fn/em';
+@import 'fn/err';
 @import 'fn/font-size';
 @import 'fn/font-weight';
 @import 'fn/get-value';
@@ -23,7 +24,6 @@
 
 // import (system)
 @import 'fn/compute-key';
-@import 'fn/err';
 @import 'fn/export';
 @import 'fn/extend';
 @import 'fn/import';
