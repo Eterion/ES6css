@@ -14,7 +14,7 @@
   }
 
   // definition
-  @media #{compute-media-query(min, $scale, $prop, $operator)} {
+  @media #{media-query(min, $scale, $prop, $operator)} {
     @content;
   }
 

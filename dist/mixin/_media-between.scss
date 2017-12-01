@@ -20,7 +20,7 @@
   }
 
   // definition
-  @media #{compute-media-query(min, $lower, $prop, $operator)} and #{compute-media-query(max, $upper, $prop, $operator)} {
+  @media #{media-query(min, $lower, $prop, $operator)} and #{media-query(max, $upper, $prop, $operator)} {
     @content;
   }
 

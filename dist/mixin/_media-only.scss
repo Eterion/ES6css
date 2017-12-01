@@ -23,7 +23,7 @@
 
   // first
   @if($index == 1) {
-    @media #{compute-media-query(max, $scale, $prop, $operator)} {
+    @media #{media-query(max, $scale, $prop, $operator)} {
       @content;
     }
   }
@@ -31,7 +31,7 @@
   // last
   @else if($index == length(map-keys($const-media-scale))) {
     $previous: nth(map-keys($const-media-scale), $index - 1);
-    @media #{compute-media-query(min, $previous, $prop, $operator)} {
+    @media #{media-query(min, $previous, $prop, $operator)} {
       @content;
     }
   }
@@ -39,7 +39,7 @@
   // between
   @else {
     $previous: nth(map-keys($const-media-scale), $index - 1);
-    @media #{compute-media-query(min, $previous, $prop, $operator)} and #{compute-media-query(max, $scale, $prop, $operator)} {
+    @media #{media-query(min, $previous, $prop, $operator)} and #{media-query(max, $scale, $prop, $operator)} {
       @content;
     }
   }

@@ -14,7 +14,7 @@
   }
 
   // definition
-  @media #{compute-media-query(max, $scale, $prop, $operator)} {
+  @media #{media-query(max, $scale, $prop, $operator)} {
     @content;
   }
 
