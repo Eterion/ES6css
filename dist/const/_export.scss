@@ -3,6 +3,4 @@
 // https://github.com/sasstools/sass-lint/issues/927
 // -----
 
-$const-export-group: map-merge((
-
-), if(global-variable-exists(const-export-group), $const-export-group, ()));
+$const-export-group: () !default;
