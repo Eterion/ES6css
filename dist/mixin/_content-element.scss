@@ -16,7 +16,7 @@
   // for cases where the element is part of layout or bottom margin is undesirable
   // and it's easier to include class instead of custom css
 
-  &.compact {
+  &.#{$const-class-compact} {
     margin-bottom: 0;
   }
 
@@ -32,7 +32,7 @@
 
   // definition
   @if(length($connect) > 0) {
-    &:not(.compact) {
+    &:not(#{class($const-class-compact)}) {
       #{$connect} {
         margin-top: -#{rem(get-value(whitespace-content-element) - get-value(whitespace-content-element-connect))};
       }
