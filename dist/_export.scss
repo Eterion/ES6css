@@ -3,11 +3,6 @@
 // https://github.com/sasstools/sass-lint/issues/927
 // -----
 
-// DOCUMENTATION
-// appropriate variables  must be documented via sassdoc annotations
-// http://sassdoc.com/annotations/
-// -----
-
 /// Any property map defined in this variable will automatically be added to every definition. Properties defined via export or extend mixins take precedence over defaults.
 /// @access public
 
