@@ -2,7 +2,7 @@
 /// @group tools
 /// @access public
 /// @param {string|list} $list - List of class names.
-/// @example @include has(open, active) { ... }
+/// @example @include has-class(open, active) { ... }
 
 @mixin has-class($list...) {
 
