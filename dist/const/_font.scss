@@ -42,12 +42,3 @@ $const-font-weight-scale: map-merge((
   'extrabold': 800,
   'ultrabold': 900,
 ), if(global-variable-exists(const-font-weight-scale), $const-font-weight-scale, ()));
-
-$const-font-h-scale: map-merge((
-  'h1': xxl,
-  'h2': xl,
-  'h3': largest,
-  'h4': larger,
-  'h5': large,
-  'h6': regular,
-), if(global-variable-exists(const-font-h-scale), $const-font-h-scale, ()));
