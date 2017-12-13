@@ -5,6 +5,12 @@ element {
   @include square(42);
   /* px */
   @include square(42px);
+  /* px (em) */
+  @include square(42px, em);
+  /* px (rem) */
+  @include square(42px, rem);
+  /* px (false) */
+  @include square(42px, false);
   /* em */
   @include square(42em);
   /* rem */

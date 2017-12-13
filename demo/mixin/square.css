@@ -5,6 +5,15 @@ element {
   /* px */
   height: 3.5rem;
   width: 3.5rem;
+  /* px (em) */
+  height: 3.5em;
+  width: 3.5em;
+  /* px (rem) */
+  height: 3.5rem;
+  width: 3.5rem;
+  /* px (false) */
+  height: 42px;
+  width: 42px;
   /* em */
   height: 42em;
   width: 42em;
