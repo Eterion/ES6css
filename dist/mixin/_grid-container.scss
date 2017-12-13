@@ -1,9 +1,9 @@
 // Private mixins are intentionally left out of documentation.
 // Adds grid layout to a container element. Includes legacy support, however the layout may not be identical to a modern W3C standard.
 // @access private
-// @param {number} $width - Column width, in pixels.
-// @param {number} $whitespace - Space between columns, in pixels.
-// @param {number} $trim-viewport-by [0] - Reduce available width considered into legacy calculation.
+// @param {number} $width - Column width, in pixels
+// @param {number} $whitespace - Space between columns, in pixels
+// @param {number} $trim-viewport-by [0] - Reduce available width considered into legacy calculation
 // @param {number} $count [1] - Internal variable.
 
 @mixin grid-container($width, $whitespace, $trim-viewport-by: 0, $count: 1) {

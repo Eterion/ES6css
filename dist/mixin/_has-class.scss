@@ -1,7 +1,7 @@
 /// Adds a **$list** of classes to a root element. Individual values are converted to a [**class**](#function-class) if possible.
 /// @group tools
 /// @access public
-/// @param {string|list} $list - List of class names.
+/// @param {string|list} $list - List of class names
 /// @example @include has-class(open, active) { ... }
 
 @mixin has-class($list...) {

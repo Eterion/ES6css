@@ -1,9 +1,9 @@
 /// Wraps the content with a specified media query between provided **$scale** and previous scale in map. Use of [**media-up-from**](#mixin-media-up-from) mixin is highly preferred before any other media mixin (not a requirement). Media breakpoints are completely customizable through **$const-media-scale** constant.
 /// @group media
 /// @access public
-/// @param {string} $scale - Scale.
-/// @param {string} $prop [width] - Determines what value is returned, can be **width**, **height** or **both**.
-/// @param {string} $operator [and] - Can be **and** or **or**, relevant only when **$prop** is set to **both**.
+/// @param {string} $scale - Scale
+/// @param {string} $prop [width] - Determines what value is returned, can be **width**, **height** or **both**
+/// @param {string} $operator [and] - Can be **and** or **or**, relevant only when **$prop** is set to **both**
 /// @example @include media-only(phone) { ... }
 
 @mixin media-only($scale, $prop: width, $operator: and) {

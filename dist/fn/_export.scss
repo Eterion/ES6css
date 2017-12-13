@@ -1,10 +1,10 @@
 // Private functions are intentionally left out of documentation.
 // Create new item in export groups and returns complete data map. Thros an error if a item with identical **$name** inside a **$group** already exists, to prevent duplicates.
 // @access private
-// @param {string} $name - Name.
-// @param {bool|map} $props [false] - Map of properties.
-// @param {string} $group [$export-group] - Group identifier.
-// @param {map} $defaults [$export-defaults] - Map of default properties.
+// @param {string} $name - Name
+// @param {bool|map} $props [false] - Map of properties
+// @param {string} $group [$export-group] - Group identifier
+// @param {map} $defaults [$export-defaults] - Map of default properties
 
 @function export($name, $props: false, $group: $export-group, $defaults: $export-defaults) {
 

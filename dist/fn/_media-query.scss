@@ -1,10 +1,10 @@
 // Private functions are intentionally left out of documentation.
 // Returns properly calculated media query strings for use in media query.
 // @access private
-// @param {string} $min-max - Determines whenever the **min** or **max** media query is used.
-// @param {number|string} $value - Scale or number.
-// @param {string} $prop [width] - Determines what value is returned, can be **width**, **height** or **both**.
-// @param {string} $operator [and] - Media query operator, can be **and** or **or**.
+// @param {string} $min-max - Determines whenever the **min** or **max** media query is used
+// @param {number|string} $value - Scale or number
+// @param {string} $prop [width] - Determines what value is returned, can be **width**, **height** or **both**
+// @param {string} $operator [and] - Media query operator, can be **and** or **or**
 
 @function media-query($min-max, $value, $prop: width, $operator: and) {
 

@@ -1,9 +1,9 @@
 /// Wraps the content with a specified media query from provided **$scale** in downward direction. Use of [**media-up-from**](#mixin-media-up-from) mixin is highly preferred before any other media mixin (not a requirement). Media breakpoints are completely customizable through **$const-media-scale** constant.
 /// @group media
 /// @access public
-/// @param {number|string} $scale - Scale.
-/// @param {string} $prop [width] - Determines what value is returned, can be **width**, **height** or **both**.
-/// @param {string} $operator [and] - Can be **and** or **or**, relevant only when **$prop** is set to **both**.
+/// @param {number|string} $scale - Scale
+/// @param {string} $prop [width] - Determines what value is returned, can be **width**, **height** or **both**
+/// @param {string} $operator [and] - Can be **and** or **or**, relevant only when **$prop** is set to **both**
 /// @example @include media-up-to(phone) { ... }
 
 @mixin media-up-to($scale, $prop: width, $operator: and) {

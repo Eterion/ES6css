@@ -1,10 +1,10 @@
 /// Adds pulsing effect to an element. This mixin is using pseudo content, so not all html elements can support it.
 /// @group effects
 /// @access public
-/// @param {number} $width [1px] - Width.
-/// @param {color} $color [inherit] - Color.
-/// @param {number} $speed [$const-animation-speed-slower] - Animation speed.
-/// @param {string} $pseudo [before] - Used pseudo content, can be **before** or **after**.
+/// @param {number} $width [1px] - Width
+/// @param {color} $color [inherit] - Color
+/// @param {number} $speed [$const-animation-speed-slower] - Animation speed
+/// @param {string} $pseudo [before] - Used pseudo content, can be **before** or **after**
 /// @example @include pulse
 
 @mixin pulse($width: 1px, $color: inherit, $speed: $const-animation-speed-slower, $pseudo: before) {

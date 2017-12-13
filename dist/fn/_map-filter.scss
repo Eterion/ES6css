@@ -1,8 +1,8 @@
 /// Returns a new map with filtered **$keys** only. Throws an error if any value from **$keys** in **$map** doesn't exists.
 /// @group tools
 /// @access public
-/// @param {map} $map - Source map.
-/// @param {string|list} $keys - List of filtered keys.
+/// @param {map} $map - Source map
+/// @param {string|list} $keys - List of filtered keys
 /// @example map-filter($map, key4, key5)
 
 @function map-filter($map, $keys...) {

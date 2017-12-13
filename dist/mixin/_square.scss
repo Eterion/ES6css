@@ -2,7 +2,7 @@
 /// @group tools
 /// @access public
 /// @param {int|float} $size - Size of element
-/// @param {bool|string} $method [rem] - Function called on the value, use **em** or **rem**.
+/// @param {bool|string} $method [rem] - Function called on the value, use **em** or **rem**
 /// @example @include square(100%)
 
 @mixin square($size, $method: rem) {

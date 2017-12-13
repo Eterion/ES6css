@@ -1,7 +1,7 @@
 /// Returns a **$number** stripped of its unit. Unmodified original value is returned in case the **$number** unit cannot be removed.
 /// @group tools
 /// @access public
-/// @param {number} $number - Input number.
+/// @param {number} $number - Input number
 /// @example clear-unit(16px) // returns 16
 
 @function clear-unit($number) {

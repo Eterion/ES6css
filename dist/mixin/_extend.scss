@@ -1,9 +1,9 @@
 /// Extends already existing export item created via [**export**](#mixin-export) mixin. Properties in the extend mixin takes precedence over already existing ones. Throws an error if **$name** in a **$group** doesn't exists.
 /// @group tools
 /// @access public
-/// @param {string} $name - Name.
-/// @param {bool|map} $props [false] - Property map.
-/// @param {string} $group [$export-group] - Group identifier.
+/// @param {string} $name - Name
+/// @param {bool|map} $props [false] - Property map
+/// @param {string} $group [$export-group] - Group identifier
 /// @example @include extend(component-name, ( ... ))
 
 @mixin extend($name, $props, $group: $export-group) {

@@ -1,8 +1,8 @@
 // Private functions are intentionally left out of documentation.
 // Returns a standardized message based on **$key** identifier. Message text contains variable interpolation for a list of **$values**. Not all messages have the same amount of variables.
 // @access private
-// @param {string} $key - Message type identifier.
-// @param {string|list} $values - Replacement values in message text.
+// @param {string} $key - Message type identifier
+// @param {string|list} $values - Replacement values in message text
 
 @function err($key, $values...) {
 

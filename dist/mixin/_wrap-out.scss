@@ -1,7 +1,7 @@
 /// Adds outer container class to a export item. This mixin is used to standardize outer wrap element selector, customizabe through **$const-class-wrap-out** constant. Custom class name of the wrap element can be set with **$name** parameter.
 /// @group tools
 /// @access public
-/// @param {string} $name [false] - Class name.
+/// @param {string} $name [false] - Class name
 /// @example @include wrap-out { ... }
 
 @mixin wrap-out($name: false) {
