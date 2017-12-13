@@ -1,4 +1,4 @@
-/// Creates a square element based on provided **$size**. Values are automatically converted to rem units, if possible.
+/// Adds width and height properties according to **$size** parameter. This mixin already includes unit conversion, use non-relative units for input value, can be disabled by setting **$method** parameter to **false**.
 /// @group tools
 /// @access public
 /// @param {int|float} $size - Size of element

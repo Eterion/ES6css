@@ -1,4 +1,4 @@
-/// Adds outer container class to group items. This mixin is used to standardize outer wrap elements. Custom class name of the wrap element can be set by providing **$name**.
+/// Adds outer container class to a export item. This mixin is used to standardize outer wrap element selector, customizabe through **$const-class-wrap-out** constant. Custom class name of the wrap element can be set with **$name** parameter.
 /// @group tools
 /// @access public
 /// @param {string} $name [false] - Class name.

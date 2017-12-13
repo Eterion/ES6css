@@ -1,10 +1,10 @@
-/// Adds standardized bottom margin to an element. The **list** parameter controls which selectors will have reduced whitespace after each other. Keyword **this** can be used for element with identical selector to its parent.
+/// Adds standardized bottom margin to an element to create whitespace. The **$reduce** parameter controls which selectors will have reduced whitespace after each other, keyword **this** can be used for element with identical selector to its parent. This mixin already includes unit ([**rem**](#function-rem)) conversion.
 /// @group tools
 /// @access public
-/// @param {string|list} $list - List of connected selectors, can use **this** keyword.
+/// @param {string|list} $reduce - List of connected selectors, can use **this** keyword.
 /// @example @include content-element(this)
 
-@mixin content-element($list...) {
+@mixin content-element($reduce...) {
 
   // bottom margin
   // adds standardized bottom margin
@@ -24,8 +24,8 @@
   $connect: ();
 
   // create selectors
-  @if(length($list) > 0) {
-    @each $selector in $list {
+  @if(length($reduce) > 0) {
+    @each $selector in $reduce {
       $connect: append($connect, '& + #{if($selector == this, get(selector), $selector)}', comma);
     }
   }

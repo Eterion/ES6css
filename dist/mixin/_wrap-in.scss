@@ -1,4 +1,4 @@
-/// Adds inner container class to group items. This mixin is used to standardize inner wrap elements.
+/// Adds inner container class to a export item. This mixin is used to standardize inner wrap element selector, customizabe through **$const-class-wrap-in** constant.
 /// @group tools
 /// @access public
 /// @example @include wrap-in { ... }

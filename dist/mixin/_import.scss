@@ -1,4 +1,5 @@
-/// Extracts a definition set according to provided **$name** and **$group**, automatically includes calculated selector class. Allows the use of [**get**](#function-get) and [**get-value**](#function-get-value) functions without the need of providing a group. To avoid the automatically generated selector class, use the native `@at-root` directive.
+/// Extracts an item set from extract group according to **$name** and **$group**, automatically adds calculated selector class (id selector is used when **unique** property is set to **true**). Allows the use of [**get**](#function-get) and [**get-value**](#function-get-value) functions without the need of a group. To avoid the automatically generated selector, use the native @at-root directive.
+/// @group tools
 /// @access public
 /// @param {string} $name - Name.
 /// @param {string} $group [$export-group] - Group identifier.
