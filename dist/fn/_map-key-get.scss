@@ -1,30 +1,30 @@
-/// Returns value from provided source **$map** based on **$value** key. Includes error handing and **inherit** support.
+/// Returns a value from source **$map** based on **$key**. This function is only a wrapper function around the native **map-get** function, with the support of inherit value and error handling.
 /// @group tools
 /// @access public
 /// @param {map} $map - Source map.
-/// @param {number|string} $value - Number or key identifier.
+/// @param {number|string} $key - Number or key identifier.
 /// @param {bool} $can-inherit [true] - Determines whetever inherit can be passed.
 
-@function map-key-get($map, $value, $can-inherit: true) {
+@function map-key-get($map, $key, $can-inherit: true) {
 
-  @if(type-of($value) == 'string') {
+  @if(type-of($key) == 'string') {
 
     // inherit
-    @if($can-inherit and $value == 'inherit') {
+    @if($can-inherit and $key == 'inherit') {
       @return inherit;
     }
 
     // not found
-    @if(map-has-key($map, $value) == false) {
-      @error err('key-not-found', $value, '(map-key-get)', map-keys($map));
+    @if(map-has-key($map, $key) == false) {
+      @error err('key-not-found', $key, '(map-key-get)', map-keys($map));
     }
 
     // extracted value
-    @return map-get($map, $value);
+    @return map-get($map, $key);
 
   }
 
   // return
-  @return $value;
+  @return $key;
 
 }

@@ -1,20 +1,20 @@
-/// Returns whitespace value according to provided **$value** identifier recalculated to (rem) units. If the **$method** parameter is set to **false**, conversion to relative units is disabled.
+/// Returns a whitespace value according to **$key** identifier. This function already includes unit conversion, use non-relative units for input value, can be disabled by setting **$method** parameter to **false**.
 /// @group tools
 /// @access public
-/// @param {number|string} $value [regular] - Number or scale identifier.
+/// @param {number|string} $key [regular] - Number or scale identifier.
 /// @param {bool|string} $method [rem] - Function called on the value, use **em** or **rem**.
 /// @example whitespace(regular) // returns 30px
 
-@function whitespace($value: regular, $method: rem) {
+@function whitespace($key: regular, $method: rem) {
 
   // no conversion
   @if($method == false) {
-    @return map-key-get($const-whitespace-scale, $value, $can-inherit: false);
+    @return map-key-get($const-whitespace-scale, $key, $can-inherit: false);
   }
 
   // relative units
   @else {
-    @return call($method, map-key-get($const-whitespace-scale, $value, $can-inherit: false));
+    @return call($method, map-key-get($const-whitespace-scale, $key, $can-inherit: false));
   }
 
 }

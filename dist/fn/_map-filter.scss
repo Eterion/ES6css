@@ -1,4 +1,4 @@
-/// Returns a new map with requested **$keys** only. Throws an error if any value in **$keys** doesn't exists.
+/// Returns a new map with filtered **$keys** only. Throws an error if any value from **$keys** in **$map** doesn't exists.
 /// @group tools
 /// @access public
 /// @param {map} $map - Source map.

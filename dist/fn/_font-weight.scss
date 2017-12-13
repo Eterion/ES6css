@@ -1,4 +1,4 @@
-/// Returns proper numeric representation of font-weight value based on provided **$value**. Allows the use of readable values without knowledge of real values used by css.
+/// Returns a numeric representation of font-weight based on **$value**. Allows the use of readable values without the knowledge of real numbers used by css. Complete map of keys and values is set through **$const-font-weight-scale** constant.
 /// @group tools
 /// @access public
 /// @param {number|string} $value - Number or scale identifier.

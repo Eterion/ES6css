@@ -1,4 +1,4 @@
-/// Returns provided **$id** converted to id selector, if possible. Doesn't affect the input value if any id selector is already present.
+/// Returns a **$id** string converted to id selector if possible. Doesn't affect the input value if a id selector is already present.
 /// @group tools
 /// @access public
 /// @param {string} $id - Id name.

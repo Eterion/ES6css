@@ -1,4 +1,4 @@
-/// Returns provided **$value** recalculated to relative (rem) units. Allows the use of predefined scale values instead of direct numbers. If the **$method** parameter is set to **false**, conversion to relative units is disabled.
+/// Returns a **$value** recalculated to relative (rem) units. Allows the use of predefined scale values instead of direct numbers. Scalings levels are completely customizable through **$const-font-size-scale** constant. This function already includes unit conversion, use non-relative units for input value, can be disabled by setting **$method** parameter to **false**.
 /// @group tools
 /// @access public
 /// @param {number|string} $value - Number or scale identifier.

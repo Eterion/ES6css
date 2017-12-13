@@ -1,4 +1,4 @@
-/// Returns a **$number** without its unit. Original value is returned in case the **$number** cannot be stripped of its unit.
+/// Returns a **$number** stripped of its unit. Unmodified original value is returned in case the **$number** unit cannot be removed.
 /// @group tools
 /// @access public
 /// @param {number} $number - Input number.
