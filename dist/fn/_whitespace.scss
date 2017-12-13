@@ -1,5 +1,4 @@
 /// Returns a whitespace value according to **$key** identifier. This function already includes unit conversion, use non-relative units for input value, can be disabled by setting **$method** parameter to **false**.
-/// @group tools
 /// @access public
 /// @param {number|string} $key [regular] - Number or scale identifier
 /// @param {bool|string} $method [rem] - Function called on the value, use **em** or **rem**

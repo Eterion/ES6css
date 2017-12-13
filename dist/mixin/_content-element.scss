@@ -1,5 +1,4 @@
 /// Adds standardized bottom margin to an element to create whitespace. The **$reduce** parameter controls which selectors will have reduced whitespace after each other, keyword **this** can be used for element with identical selector to its parent. This mixin already includes unit ([**rem**](#function-rem)) conversion.
-/// @group tools
 /// @access public
 /// @param {string|list} $reduce - List of connected selectors, can use **this** keyword
 /// @example @include content-element(this)

@@ -1,5 +1,4 @@
 /// Converts **$value** to a unicode string used by css content property. This function is available because of a known bug, more information in this github [**issue**](https://github.com/sass/sass/issues/1395). Only valid unicode values are automatically detected and converted, everything else is returned in its original input value.
-/// @group tools
 /// @access public
 /// @param {string} $value - Value
 /// @example unicode('e655') // returns '\e655'

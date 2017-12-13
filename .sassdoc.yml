@@ -1,9 +1,8 @@
 dest:
   'docs'
 groups:
-  effects: 'Effects'
+  animation: 'Animation'
   media: 'Media'
-  tools: 'Tools'
   undefined: 'API'
 theme:
   'flippant'

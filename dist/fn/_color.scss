@@ -1,5 +1,4 @@
 /// Returns scaled **$color** according to a **$scale** identifier. Allows easy color scaling without the need of additional variables for each new color variant. The source color can be passed as either direct color value or key identifier present in **$const-color-keys** constant. Scaling levels are completely customizable through **$const-color-scale** constant.
-/// @group tools
 /// @access public
 /// @param {color|string} $color - Source color or key
 /// @param {bool|string} $scale [false] - Scale identifier

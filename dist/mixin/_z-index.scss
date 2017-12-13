@@ -1,5 +1,4 @@
 /// Inserts appropriate **z-index** property according to **$name**. The z-index value is automatically calculated based on the position in a source map, meaning last value has the highest z-index assigned. Throws an error if z-index name doesn't exists in a source map. Automatically adds **$position** property, can be disabled by setting to **false**.
-/// @group tools
 /// @access public
 /// @param {string} $name [get(z-index)] - Name
 /// @param {bool|string} $position [relative] - Position style definition, can be **false**

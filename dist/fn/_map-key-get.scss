@@ -1,5 +1,4 @@
 /// Returns a value from source **$map** based on **$key**. This function is only a wrapper function around the native **map-get** function, with the support of inherit value and error handling.
-/// @group tools
 /// @access public
 /// @param {map} $map - Source map
 /// @param {number|string} $key - Number or key identifier

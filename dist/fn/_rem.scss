@@ -1,5 +1,4 @@
 /// Returns a **$number** recalculated to rem units. This function and its [**em**](#function-em) counterpart should be used on every pixel value, to allow scaling based on root font size. To ensure visibility of all elements, numbers equal or below **$const-min-number** are not recalculated.
-/// @group tools
 /// @access public
 /// @param {number} $number - Source number
 /// @example rem(12px) // returns 1rem

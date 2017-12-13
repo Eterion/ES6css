@@ -1,5 +1,4 @@
 /// Adds grid layout to a **$container** element. Includes legacy support, however the layout may not be identical toa modern W3C standard. Parameters **$container** and **$item** are automatically converted to a [**class**](#function-class) if possible. This mixin already includes unit ([**rem**](#function-rem)) conversion, use non-relative units for input values. Note that enabled legacy support can generate large amounts of code, can be disabled by setting **$const-grid-enable-legacy-mode** to **false**.
-/// @group tools
 /// @access public
 /// @param {string} $container - Class used for grid container
 /// @param {string} $item - Class name for children
