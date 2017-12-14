@@ -6,9 +6,13 @@ $const-animation-fold-perspective: 400px !default;
 $const-animation-pulse-scale: 2 !default;
 
 $const-animation-speed: 300ms !default;
-$const-animation-speed-fast: $const-animation-speed / 2 !default;
-$const-animation-speed-faster: $const-animation-speed / 4 !default;
-$const-animation-speed-fastest: $const-animation-speed / 8 !default;
-$const-animation-speed-slow: $const-animation-speed * 2 !default;
-$const-animation-speed-slower: $const-animation-speed * 4 !default;
-$const-animation-speed-slowest: $const-animation-speed * 8 !default;
+
+$const-animation-speed-scale: map-merge((
+  'fastest': $const-animation-speed / 8,
+  'faster': $const-animation-speed / 4,
+  'fast': $const-animation-speed / 2,
+  'regular': $const-animation-speed,
+  'slow': $const-animation-speed * 2,
+  'slower': $const-animation-speed * 4,
+  'slowest': $const-animation-speed * 8,
+), if(global-variable-exists(const-animation-speed-scale), $const-animation-speed-scale, ()));
