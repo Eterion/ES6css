@@ -1,8 +1,12 @@
+// sass-lint:disable indentation
+// indentation is disabled because of a known bug with maps
+// https://github.com/sasstools/sass-lint/issues/927
+// -----
+
 $const-animation-scale: 0.15 !default;
 $const-animation-slide: 35% !default;
 $const-animation-fold-size: 100% !default;
 $const-animation-fold-angle: 70deg !default;
-$const-animation-fold-perspective: 400px !default;
 $const-animation-pulse-scale: 2 !default;
 
 $const-animation-speed: 300ms !default;

@@ -1,7 +1,6 @@
 dest:
   'docs'
 groups:
-  animation: 'Animation'
   export: 'Export'
   media: 'Media'
   undefined: 'API'
