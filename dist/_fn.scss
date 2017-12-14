@@ -1,6 +1,5 @@
 // imports
-@import 'fn/animation';
-@import 'fn/class';
+@import 'fn/animation-speed';
 @import 'fn/clear-unit';
 @import 'fn/color';
 @import 'fn/em';
@@ -8,13 +7,14 @@
 @import 'fn/font-weight';
 @import 'fn/get-value';
 @import 'fn/get';
-@import 'fn/id';
 @import 'fn/map-deep-get';
 @import 'fn/map-filter';
 @import 'fn/map-key-get';
 @import 'fn/media';
 @import 'fn/rem';
-@import 'fn/unicode';
+@import 'fn/to-class';
+@import 'fn/to-id';
+@import 'fn/to-unicode';
 @import 'fn/whitespace';
 
 // import (private)

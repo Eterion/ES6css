@@ -1,9 +1,9 @@
 /// Returns a **$class** string converted to class selector if possible. Doesn't affect the input value if a class selector is already present.
 /// @access public
 /// @param {string} $class - Class name
-/// @example class(element) // returns .element
+/// @example to-class(element) // returns .element
 
-@function class($class) {
+@function to-class($class) {
 
   // add class
   @if(str-index($class, '.') == null) {

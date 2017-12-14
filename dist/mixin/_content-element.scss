@@ -31,7 +31,7 @@
 
   // definition
   @if(length($add) > 0) {
-    &:not(#{class($const-class-content-element-compact)}) {
+    &:not(#{to-class($const-class-content-element-compact)}) {
       #{$add} {
         margin-top: -#{rem(get-value(whitespace-content-element) - get-value(whitespace-content-element-connect))};
       }

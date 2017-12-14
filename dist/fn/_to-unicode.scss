@@ -1,9 +1,9 @@
 /// Converts **$value** to a unicode string used by css content property. This function is available because of a known bug, more information in this github [**issue**](https://github.com/sass/sass/issues/1395). Only valid unicode values are automatically detected and converted, everything else is returned in its original input value.
 /// @access public
 /// @param {string} $value - Value
-/// @example unicode('e655') // returns '\e655'
+/// @example to-unicode('e655') // returns '\e655'
 
-@function unicode($value) {
+@function to-unicode($value) {
 
   // unicode characters
   $unicode-chars: ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f');

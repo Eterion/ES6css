@@ -1,16 +1,16 @@
 @import '../app';
 
 /* element */
-#{class(element)} {
+#{to-class(element)} {
   content: 'class';
 }
 
 /* '.element' */
-#{class('.element')} {
+#{to-class('.element')} {
   content: 'class';
 }
 
 /* 'div.element' */
-#{class('div.element')} {
+#{to-class('div.element')} {
   content: 'class';
 }

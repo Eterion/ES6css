@@ -10,7 +10,7 @@
 
   // iterate through list
   @each $selector in $list {
-    $data: str-insert($data, class($selector), str-length($data) + 1);
+    $data: str-insert($data, to-class($selector), str-length($data) + 1);
   }
 
   // definition

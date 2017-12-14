@@ -1,16 +1,16 @@
 @import '../app';
 
 /* element */
-#{id(element)} {
+#{to-id(element)} {
   content: 'id';
 }
 
 /* '#element' */
-#{id('#element')} {
+#{to-id('#element')} {
   content: 'id';
 }
 
 /* 'div#element' */
-#{id('div#element')} {
+#{to-id('div#element')} {
   content: 'id';
 }

@@ -46,7 +46,7 @@
   margin-top: -1.66667rem;
 }
 
-/* content-element(class(element)) */
+/* content-element(to-class(element)) */
 .c-example-1 {
   margin-bottom: 2.5rem;
 }
