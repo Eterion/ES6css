@@ -1,4 +1,4 @@
-/// Adds a **$list** of classes to a root element. Individual values are converted to a [**class**](#function-class) if possible.
+/// Adds a **$list** of classes to a root element. Individual values are converted to a [**class**](#function-class) if possible. The root element must be either class or id selector, this mixin cannot be used on dom element selectors.
 /// @access public
 /// @param {string|list} $list - List of class names
 /// @example @include has-class(open, active) { ... }
