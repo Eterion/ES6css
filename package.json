@@ -6,14 +6,17 @@
   "private": true,
   "scripts": {
     "build": "node-sass --output-style expanded demo --output demo",
+    "postbuild": "postcss demo/**/*.css --replace",
     "clean": "del-cli docs demo/**/*.css",
     "docs": "sassdoc dist --config .sassdoc.yml",
     "lint": "sass-lint --config .sasslint.yml --verbose --no-exit",
     "start": "npm run clean && (npm run lint & npm run docs & npm run build)"
   },
   "devDependencies": {
+    "autoprefixer": "^7.2.3",
     "del-cli": "^1.1.0",
     "node-sass": "^4.7.2",
+    "postcss-cli": "^4.1.1",
     "sass-lint": "^1.12.1",
     "sassdoc": "^2.5.0",
     "sassdoc-theme-flippant": "^0.1.0"
