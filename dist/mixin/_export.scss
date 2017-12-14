@@ -1,4 +1,5 @@
 /// Creates a new export item, that can be extracted using the [**import**](#mixin-import) mixin. Includes few automatically computed properties (name, selector, z-index), see internal **export** function for more details. Throws an error if item with identical **$name** in a **$group** already exists. The [**extend**](#mixin-extend) mixin can be used to modify the already existing item.
+/// @group export
 /// @access public
 /// @param {string} $name - Name
 /// @param {bool|map} $props [false] - Property map

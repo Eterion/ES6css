@@ -4,18 +4,19 @@
 // -----
 
 /// Any property in this map is automatically added to every export item. Properties added via [**export**](#mixin-export) or [**extend**](#mixin-extend) mixins take precedence over defaults.
+/// @group export
 /// @access public
 
 $export-defaults: map-merge((
 
-  // unique
+  // (unique)
   // this property determines the uniqueness of exported item
   // essentially it changes states between class and id
   // property set to false equals to a class
 
   'unique': false,
 
-  // whitespace-content-element
+  // (whitespace-content-element)
   // amount of whitespace used by the content-element mixin
   // connect property specifies reduced amount of whitespace for connected elements
 

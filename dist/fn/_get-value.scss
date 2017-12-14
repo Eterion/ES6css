@@ -1,4 +1,5 @@
 /// Returns a property value from currently active item. Can be used inside a [**import**](#mixin-import) mixin wihout **$name** and **$group** parameters. If the requested property doesn't require any further calculations, use [**get**](#function-get) function instead. This function is identical to [**get**](#function-get) function, wihout the automatic unit conversion.
+/// @group export
 /// @access public
 /// @param {string} $prop - Property name
 /// @param {string} $name [false] - Name
