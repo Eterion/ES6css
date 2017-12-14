@@ -5,29 +5,29 @@
 /// @param {string} $prop [width] - Determines what value is returned, can be **width**, **height** or **both**
 /// @example media(desktop) // returns 1680px
 
-@function media($value, $prop: width) {
+@function media($scale, $prop: width) {
 
   // scale
-  @if(type-of($value) == 'string') {
+  @if(type-of($scale) == 'string') {
 
     // not found
-    @if(map-has-key($const-media-scale, $value) == false) {
-      @error err('key-not-found', $value, '(media)', map-keys($const-media-scale));
+    @if(map-has-key($const-media-scale, $scale) == false) {
+      @error err('key-not-found', $scale, '(media)', map-keys($const-media-scale));
     }
 
     // both
     @if($prop == both) {
-      $value: map-get($const-media-scale, $value);
+      $scale: map-get($const-media-scale, $scale);
     }
 
     // width, height
     @else {
-      $value: map-deep-get($const-media-scale, $value, $prop);
+      $scale: map-deep-get($const-media-scale, $scale, $prop);
     }
 
   }
 
   // return
-  @return $value;
+  @return $scale;
 
 }
