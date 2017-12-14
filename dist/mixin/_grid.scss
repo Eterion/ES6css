@@ -1,16 +1,35 @@
-/// Adds grid layout to a **$container** element. Includes legacy support, however the layout may not be identical toa modern W3C standard. Parameters **$container** and **$item** are automatically converted to a [**class**](#function-class) if possible. This mixin already includes unit ([**rem**](#function-rem)) conversion, use non-relative units for input values. Note that enabled legacy support can generate large amounts of code, can be disabled by setting **$const-grid-enable-legacy-mode** to **false**.
+/// Adds grid layout to a **$container** element. Includes legacy support, however the layout may not be identical toa modern W3C standard. Parameters **$container** and **$item** are automatically converted to a [**class**](#function-class) if possible. The **$whitespace-margin** parameter determines whenever the grid element margin property is positive or negative, to allow placement in element with padding property. This mixin already includes unit ([**rem**](#function-rem)) conversion, use non-relative units for input values. Note that enabled legacy support can generate large amounts of code, can be disabled by setting **$const-grid-enable-legacy-mode** to **false**.
 /// @access public
 /// @param {string} $container - Class used for grid container
 /// @param {string} $item - Class name for children
 /// @param {number} $width - Column width, in pixels
-/// @param {number} $whitespace - Space between columns, in pixels
-/// @param {number} $trim-viewport-by [0] - Reduce available width considered into legacy calculation
+/// @param {number|string} $whitespace [regular] - Space between columns, scale or number in pixels
+/// @param {string} $whitespace-margin [positive] - Determines the container margin, can be **positive** or **negative**
+/// @param {number} $reduce-viewport-by [0] - Reduce available width considered into legacy calculation
 
-@mixin grid($container, $item, $width, $whitespace, $trim-viewport-by: 0) {
+@mixin grid($container, $item, $width, $whitespace: regular, $whitespace-margin: positive, $reduce-viewport-by: 0) {
 
   #{to-class($container)} {
+
+    // container
     display: grid;
-    margin: -#{rem($whitespace / 2)};
+
+    // whitespace
+    // includes container margin according to $whitespace-margin parameter
+    // to allow placement in element with padding property
+
+    @if($whitespace != 0) {
+
+      margin: if($whitespace-margin == positive, rem(whitespace($whitespace, false) / 2), -#{rem(whitespace($whitespace, false) / 2)});
+
+      // item
+      & > #{to-class($item)} {
+        margin: rem(whitespace($whitespace, false) / 2);
+      }
+
+    }
+
+
   }
 
   // legacy
@@ -26,7 +45,7 @@
     #{to-class($container)} {
 
       // grid
-      @include grid-container($width, $whitespace, $trim-viewport-by);
+      @include grid-container($width, $whitespace, $reduce-viewport-by);
 
       // children
       // each grid items has specific position in the grid
@@ -35,7 +54,7 @@
 
       & > #{to-class($item)} {
         @for $index from 1 through $const-grid-count {
-          @include grid-item($width, $whitespace, $index, $trim-viewport-by);
+          @include grid-item($width, $whitespace, $index, $reduce-viewport-by);
         }
       }
 
@@ -49,12 +68,12 @@
 
             // grid
             $this-width: $width * map-get($const-size-scale, $key);
-            @include grid-container($this-width, $whitespace, $trim-viewport-by);
+            @include grid-container($this-width, $whitespace, $reduce-viewport-by);
 
             // children
             & > #{to-class($item)} {
               @for $index from 1 through $const-grid-count {
-                @include grid-item($this-width, $whitespace, $index, $trim-viewport-by);
+                @include grid-item($this-width, $whitespace, $index, $reduce-viewport-by);
               }
             }
 
@@ -73,7 +92,7 @@
   #{to-class($container)} {
 
     // grid
-    @include grid-container($width, $whitespace, $trim-viewport-by, auto-fill);
+    @include grid-container($width, $whitespace, $reduce-viewport-by, auto-fill);
 
     // size
     // create various sizes based on the list of provided keys
@@ -83,7 +102,7 @@
       @each $key in $const-grid-size {
         &.size-#{$key} {
           $this-width: $width * map-get($const-size-scale, $key);
-          @include grid-container($this-width, $whitespace, $trim-viewport-by, auto-fill);
+          @include grid-container($this-width, $whitespace, $reduce-viewport-by, auto-fill);
         }
       }
     }
