@@ -1,9 +1,9 @@
-/// Wraps the content with a specified media query from provided **$scale** in upward direction. Use of this mixin is highly preferred before any other media mixin (not a requirement). Media breakpoints are completely customizable through **$const-media-scale** constant.
+/// Wraps the content with a specified media query from provided **$scale** in upward direction. Use of this mixin is highly preferred before any other media mixin (not a requirement). The **$operator** parameter determines relationship between width and height properties, only relevant when **$prop** is set to **both**. Media breakpoints are completely customizable through **$const-media-scale** constant.
 /// @group media
 /// @access public
 /// @param {number|string} $scale - Scale or number
 /// @param {string} $prop [width] - Determines what value is returned, can be **width**, **height** or **both**
-/// @param {string} $operator [and] - Can be **and** or **or**, relevant only when **$prop** is set to **both**
+/// @param {string} $operator [and] - Determines relationship between width and height, can be **and** or **or**
 /// @example @include media-up-from(phone) { ... }
 
 @mixin media-up-from($scale, $prop: width, $operator: and) {
