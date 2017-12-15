@@ -5,17 +5,17 @@
 
 @import 'dist/system';
 
-// (const and var)
-// all of the constants and variables are defined with !default flag
-// or in case of maps, with the map-merge function
-// place your modification variables before these
+// (const)
+// constants are defined with !default flag to allow overwrite
+// maps are a special case that requires additional constant to allow overwrite and preserve functionality
+// place your modifications before this
 // -----
 
 @import 'dist/const';
 
 // (fn and mixin)
-// must be imported before variables
-// needed because variables use few of the functions
+// remaining functionality through functions and mixin
+// few of them are internal and marked as private, intentionally not documented
 // -----
 
 @import 'dist/fn';
