@@ -1,0 +1,21 @@
+// (system)
+// internal variables essential for proper functionality
+// must be imported before functions and mixins
+// -----
+
+@import 'dist/system';
+
+// (const)
+// constants are defined with !default flag to allow overwrite
+// maps are a special case that requires additional defaults constant
+// -----
+
+@import 'dist/const';
+
+// (fn and mixin)
+// remaining functionality through functions and mixins
+// private items are intentionally not documented
+// -----
+
+@import 'dist/fn';
+@import 'dist/mixin';
