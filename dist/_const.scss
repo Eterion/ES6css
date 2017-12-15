@@ -2,10 +2,8 @@ $const-class-content-element-compact: 'compact' !default;
 $const-class-wrap-in: 'in' !default;
 $const-class-wrap-out: 'wrap' !default;
 $const-id: 0 !default;
-$const-min-height: 480px !default;
 $const-min-number: 3px !default;
-$const-min-width: 320px !default;
-$const-text-align: 'left', 'center', 'right', 'justify' !default;
+$const-preserve-defaults: true !default;
 
 // imports
 @import 'const/animation';
