@@ -1,34 +1,104 @@
+/* 480px */
 element {
-  /* 480px */
-  content: 480px;
-  /* phone */
-  content: 600px;
-  /* phone (width) */
-  content: 600px;
-  /* phone (height) */
-  content: 480px;
-  /* tablet-portrait */
-  content: 768px;
-  /* tablet-portrait (width) */
-  content: 768px;
-  /* tablet-portrait (height) */
-  content: 1024px;
-  /* tablet-landscape */
-  content: 1024px;
-  /* tablet-landscape (width) */
-  content: 1024px;
-  /* tablet-landscape (height) */
-  content: 768px;
-  /* notebook */
-  content: 1366px;
-  /* notebook (width) */
-  content: 1366px;
-  /* notebook (height) */
-  content: 768px;
-  /* desktop */
-  content: 1680px;
-  /* desktop (width) */
-  content: 1680px;
-  /* desktop (height) */
-  content: 1050px;
+  content: "480px";
+}
+
+/* phone */
+element {
+  content: "600px";
+}
+
+/* phone ($prop: width) */
+element {
+  content: "600px";
+}
+
+/* phone ($prop: height) */
+element {
+  content: "480px";
+}
+
+/* phone ($prop: both) */
+element {
+  content: "(width: 600px, height: 480px)";
+}
+
+/* portrait */
+element {
+  content: "768px";
+}
+
+/* portrait ($prop: width) */
+element {
+  content: "768px";
+}
+
+/* portrait ($prop: height) */
+element {
+  content: "1024px";
+}
+
+/* portrait ($prop: both) */
+element {
+  content: "(width: 768px, height: 1024px)";
+}
+
+/* landscape */
+element {
+  content: "1024px";
+}
+
+/* landscape ($prop: width) */
+element {
+  content: "1024px";
+}
+
+/* landscape ($prop: height) */
+element {
+  content: "768px";
+}
+
+/* landscape ($prop: both) */
+element {
+  content: "(width: 1024px, height: 768px)";
+}
+
+/* notebook */
+element {
+  content: "1366px";
+}
+
+/* notebook ($prop: width) */
+element {
+  content: "1366px";
+}
+
+/* notebook ($prop: height) */
+element {
+  content: "768px";
+}
+
+/* notebook ($prop: both) */
+element {
+  content: "(width: 1366px, height: 768px)";
+}
+
+/* desktop */
+element {
+  content: "1680px";
+}
+
+/* desktop ($prop: width) */
+element {
+  content: "1680px";
+}
+
+/* desktop ($prop: height) */
+element {
+  content: "1050px";
+}
+
+/* desktop ($prop: both) */
+element {
+  content: "(width: 1680px, height: 1050px)";
 }

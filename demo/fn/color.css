@@ -1,54 +1,129 @@
+/* gray */
 element {
-  /* gray */
   content: dimgray;
-  /* gray (false) */
+}
+
+/* gray ($scale: false) */
+element {
   content: dimgray;
-  /* gray (heavy) */
+}
+
+/* gray ($scale: heavy) */
+element {
   content: #262626;
-  /* gray (hard) */
+}
+
+/* gray ($scale: hard) */
+element {
   content: #2f2f2f;
-  /* gray (darkest) */
+}
+
+/* gray ($scale: darkest) */
+element {
   content: #353535;
-  /* gray (darker) */
+}
+
+/* gray ($scale: darker) */
+element {
   content: #434343;
-  /* gray (dark) */
+}
+
+/* gray ($scale: dark) */
+element {
   content: #4f4f4f;
-  /* gray (regular) */
+}
+
+/* gray ($scale: regular) */
+element {
   content: dimgray;
-  /* gray (light) */
+}
+
+/* gray ($scale: light) */
+element {
   content: #8f8f8f;
-  /* gray (lighter) */
+}
+
+/* gray ($scale: lighter) */
+element {
   content: #a8a8a8;
-  /* gray (lightest) */
+}
+
+/* gray ($scale: lightest) */
+element {
   content: #d2d2d2;
-  /* gray (soft) */
+}
+
+/* gray ($scale: soft) */
+element {
   content: #e9e9e9;
-  /* gray (pastel) */
+}
+
+/* gray ($scale: pastel) */
+element {
   content: #f8f8f8;
-  /* #f00 */
+}
+
+/* #f00 */
+element {
   content: #f00;
-  /* #f00 (false) */
+}
+
+/* #f00 ($scale: false) */
+element {
   content: #f00;
-  /* #f00 (heavy) */
+}
+
+/* #f00 ($scale: heavy) */
+element {
   content: #5c0000;
-  /* #f00 (hard) */
+}
+
+/* #f00 ($scale: hard) */
+element {
   content: #730000;
-  /* #f00 (darkest) */
+}
+
+/* #f00 ($scale: darkest) */
+element {
   content: maroon;
-  /* #f00 (darker) */
+}
+
+/* #f00 ($scale: darker) */
+element {
   content: #a30000;
-  /* #f00 (dark) */
+}
+
+/* #f00 ($scale: dark) */
+element {
   content: #bf0000;
-  /* #f00 (regular) */
+}
+
+/* #f00 ($scale: regular) */
+element {
   content: red;
-  /* #f00 (light) */
+}
+
+/* #f00 ($scale: light) */
+element {
   content: #ff4040;
-  /* #f00 (lighter) */
+}
+
+/* #f00 ($scale: lighter) */
+element {
   content: #ff6b6b;
-  /* #f00 (lightest) */
+}
+
+/* #f00 ($scale: lightest) */
+element {
   content: #ffb3b3;
-  /* #f00 (soft) */
+}
+
+/* #f00 ($scale: soft) */
+element {
   content: #ffd9d9;
-  /* #f00 (pastel) */
+}
+
+/* #f00 ($scale: pastel) */
+element {
   content: #fff2f2;
 }

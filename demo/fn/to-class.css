@@ -1,14 +1,14 @@
 /* element */
 .element {
-  content: 'class';
+  content: 'to-class';
 }
 
 /* '.element' */
 .element {
-  content: 'class';
+  content: 'to-class';
 }
 
 /* 'div.element' */
 div.element {
-  content: 'class';
+  content: 'to-class';
 }

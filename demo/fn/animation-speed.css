@@ -1,0 +1,44 @@
+/* default */
+element {
+  content: 300ms;
+}
+
+/* 400ms */
+element {
+  content: 400ms;
+}
+
+/* fastest */
+element {
+  content: 37.5ms;
+}
+
+/* faster */
+element {
+  content: 75ms;
+}
+
+/* fast */
+element {
+  content: 150ms;
+}
+
+/* regular */
+element {
+  content: 300ms;
+}
+
+/* slow */
+element {
+  content: 600ms;
+}
+
+/* slower */
+element {
+  content: 1200ms;
+}
+
+/* slowest */
+element {
+  content: 2400ms;
+}

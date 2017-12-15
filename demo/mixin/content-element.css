@@ -58,3 +58,16 @@
 .c-example-1:not(.compact) + .element {
   margin-top: -1.66667rem;
 }
+
+/* content-element(to-id(element)) */
+.c-example-1 {
+  margin-bottom: 2.5rem;
+}
+
+.c-example-1.compact {
+  margin-bottom: 0;
+}
+
+.c-example-1:not(.compact) + #element {
+  margin-top: -1.66667rem;
+}

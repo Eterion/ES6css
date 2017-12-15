@@ -1,32 +1,95 @@
+/* unitless */
 element {
-  /* unitless */
   height: 3.5rem;
   width: 3.5rem;
-  /* px */
-  height: 3.5rem;
-  width: 3.5rem;
-  /* px (em) */
+}
+
+/* px ($method: em) */
+element {
   height: 3.5em;
   width: 3.5em;
-  /* px (rem) */
+}
+
+/* px ($method: rem) */
+element {
   height: 3.5rem;
   width: 3.5rem;
-  /* px (false) */
+}
+
+/* px ($method: false) */
+element {
   height: 42px;
   width: 42px;
-  /* em */
-  height: 42em;
-  width: 42em;
-  /* rem */
-  height: 42rem;
-  width: 42rem;
-  /* % */
+}
+
+/* % */
+element {
   height: 42%;
   width: 42%;
-  /* vw */
-  height: 42vw;
-  width: 42vw;
-  /* vh */
+}
+
+/* cm */
+element {
+  height: 42cm;
+  width: 42cm;
+}
+
+/* em */
+element {
+  height: 42em;
+  width: 42em;
+}
+
+/* ex */
+element {
+  height: 42ex;
+  width: 42ex;
+}
+
+/* in */
+element {
+  height: 42in;
+  width: 42in;
+}
+
+/* mm */
+element {
+  height: 42mm;
+  width: 42mm;
+}
+
+/* pc */
+element {
+  height: 42pc;
+  width: 42pc;
+}
+
+/* pt */
+element {
+  height: 42pt;
+  width: 42pt;
+}
+
+/* px */
+element {
+  height: 3.5rem;
+  width: 3.5rem;
+}
+
+/* rem */
+element {
+  height: 42rem;
+  width: 42rem;
+}
+
+/* vh */
+element {
   height: 42vh;
   width: 42vh;
+}
+
+/* vw */
+element {
+  height: 42vw;
+  width: 42vw;
 }

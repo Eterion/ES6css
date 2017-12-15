@@ -1,16 +1,64 @@
+/* unitless */
 element {
-  /* number */
   content: 3.5em;
-  /* number (px) */
-  content: 3.5em;
-  /* number (em) */
-  content: 42em;
-  /* number (rem) */
-  content: 42rem;
-  /* number (%) */
+}
+
+/* % */
+element {
   content: 42%;
-  /* number (vw) */
-  content: 42vw;
-  /* number (vh) */
+}
+
+/* cm */
+element {
+  content: 42cm;
+}
+
+/* em */
+element {
+  content: 42em;
+}
+
+/* ex */
+element {
+  content: 42ex;
+}
+
+/* in */
+element {
+  content: 42in;
+}
+
+/* mm */
+element {
+  content: 42mm;
+}
+
+/* pc */
+element {
+  content: 42pc;
+}
+
+/* pt */
+element {
+  content: 42pt;
+}
+
+/* px */
+element {
+  content: 3.5em;
+}
+
+/* rem */
+element {
+  content: 42rem;
+}
+
+/* vh */
+element {
   content: 42vh;
+}
+
+/* vw */
+element {
+  content: 42vw;
 }

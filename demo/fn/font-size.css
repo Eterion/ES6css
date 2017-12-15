@@ -1,32 +1,79 @@
+/* unitless */
 element {
-  /* value */
   content: 3.5rem;
-  /* value (false) */
+}
+
+/* number */
+element {
+  content: 3.5rem;
+}
+
+/* number ($method: false) */
+element {
   content: 42px;
-  /* value (em) */
+}
+
+/* number ($method: em) */
+element {
   content: 3.5em;
-  /* value (rem) */
+}
+
+/* number ($method: rem) */
+element {
   content: 3.5rem;
-  /* key (inherit) */
+}
+
+/* inherit */
+element {
   content: inherit;
-  /* key (tiny) */
+}
+
+/* tiny */
+element {
   content: 0.66667rem;
-  /* key (smallest) */
+}
+
+/* smallest */
+element {
   content: 0.75rem;
-  /* key (smaller) */
+}
+
+/* smaller */
+element {
   content: 0.83333rem;
-  /* key (small) */
+}
+
+/* small */
+element {
   content: 0.91667rem;
-  /* key (regular) */
+}
+
+/* regular */
+element {
   content: 1rem;
-  /* key (large) */
+}
+
+/* large */
+element {
   content: 1.25rem;
-  /* key (larger) */
+}
+
+/* larger */
+element {
   content: 1.5rem;
-  /* key (largest) */
+}
+
+/* largest */
+element {
   content: 1.75rem;
-  /* key (xl) */
+}
+
+/* xl */
+element {
   content: 2rem;
-  /* key (xxl) */
+}
+
+/* xxl */
+element {
   content: 2.5rem;
 }

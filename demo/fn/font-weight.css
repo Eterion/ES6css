@@ -1,36 +1,84 @@
+/* inherit */
 element {
-  /* inherit */
   content: inherit;
-  /* 100 */
+}
+
+/* 100 */
+element {
   content: 100;
-  /* thin */
-  content: 100;
-  /* 300 */
+}
+
+/* 300 */
+element {
   content: 300;
-  /* light */
-  content: 300;
-  /* 400 */
+}
+
+/* 400 */
+element {
   content: 400;
-  /* regular */
-  content: 400;
-  /* 500 */
+}
+
+/* 500 */
+element {
   content: 500;
-  /* medium */
-  content: 500;
-  /* 600 */
+}
+
+/* 600 */
+element {
   content: 600;
-  /* semibold */
-  content: 600;
-  /* 700 */
+}
+
+/* 700 */
+element {
   content: 700;
-  /* bold */
-  content: 700;
-  /* 800 */
+}
+
+/* 800 */
+element {
   content: 800;
-  /* extrabold */
-  content: 800;
-  /* 900 */
+}
+
+/* 900 */
+element {
   content: 900;
-  /* ultrabold */
+}
+
+/* thin */
+element {
+  content: 100;
+}
+
+/* light */
+element {
+  content: 300;
+}
+
+/* regular */
+element {
+  content: 400;
+}
+
+/* medium */
+element {
+  content: 500;
+}
+
+/* semibold */
+element {
+  content: 600;
+}
+
+/* bold */
+element {
+  content: 700;
+}
+
+/* extrabold */
+element {
+  content: 800;
+}
+
+/* ultrabold */
+element {
   content: 900;
 }

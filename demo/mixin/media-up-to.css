@@ -5,17 +5,17 @@
   }
 }
 
-/* tablet-portrait */
+/* portrait */
 @media (max-width: 767px) {
   element {
-    content: 'tablet-portrait';
+    content: 'portrait';
   }
 }
 
-/* tablet-landscape */
+/* landscape */
 @media (max-width: 1023px) {
   element {
-    content: 'tablet-landscape';
+    content: 'landscape';
   }
 }
 
@@ -28,6 +28,41 @@
 
 /* desktop */
 @media (max-width: 1679px) {
+  element {
+    content: 'desktop';
+  }
+}
+
+/* desktop ($prop: width) */
+@media (max-width: 1679px) {
+  element {
+    content: 'desktop';
+  }
+}
+
+/* desktop ($prop: height) */
+@media (max-height: 1049px) {
+  element {
+    content: 'desktop';
+  }
+}
+
+/* desktop ($prop: both) */
+@media (max-width: 1679px) and (max-height: 1049px) {
+  element {
+    content: 'desktop';
+  }
+}
+
+/* desktop ($prop: both, $operator: and) */
+@media (max-width: 1679px) and (max-height: 1049px) {
+  element {
+    content: 'desktop';
+  }
+}
+
+/* desktop ($prop: both, $operator: or) */
+@media (max-width: 1679px), (max-height: 1049px) {
   element {
     content: 'desktop';
   }

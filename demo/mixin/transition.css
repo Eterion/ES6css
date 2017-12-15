@@ -1,6 +1,13 @@
+/* color */
 element {
-  /* color */
+  -webkit-transition: color 300ms;
+  -o-transition: color 300ms;
   transition: color 300ms;
-  /* color, opacity */
+}
+
+/* color, opacity */
+element {
+  -webkit-transition: color 300ms, opacity 300ms;
+  -o-transition: color 300ms, opacity 300ms;
   transition: color 300ms, opacity 300ms;
 }

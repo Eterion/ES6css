@@ -1,14 +1,14 @@
 /* element */
 #element {
-  content: 'id';
+  content: 'to-id';
 }
 
 /* '#element' */
 #element {
-  content: 'id';
+  content: 'to-id';
 }
 
 /* 'div#element' */
 div#element {
-  content: 'id';
+  content: 'to-id';
 }

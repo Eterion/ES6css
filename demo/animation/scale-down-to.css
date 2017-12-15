@@ -1,8 +1,20 @@
-@keyframes scale-down-to {
+@-webkit-keyframes scale-down-to {
   from {
+    -webkit-transform: scale(1.15);
     transform: scale(1.15);
   }
   to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes scale-down-to {
+  from {
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+  }
+  to {
+    -webkit-transform: scale(1);
     transform: scale(1);
   }
 }

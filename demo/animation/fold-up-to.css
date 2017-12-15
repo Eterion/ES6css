@@ -1,8 +1,20 @@
-@keyframes fold-up-to {
+@-webkit-keyframes fold-up-to {
   from {
+    -webkit-transform: translate3d(0, 100%, 0) rotateX(70deg);
     transform: translate3d(0, 100%, 0) rotateX(70deg);
   }
   to {
+    -webkit-transform: translate3d(0, 0, 0) rotateX(0);
+    transform: translate3d(0, 0, 0) rotateX(0);
+  }
+}
+@keyframes fold-up-to {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0) rotateX(70deg);
+    transform: translate3d(0, 100%, 0) rotateX(70deg);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0) rotateX(0);
     transform: translate3d(0, 0, 0) rotateX(0);
   }
 }

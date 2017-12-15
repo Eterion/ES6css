@@ -1,26 +1,64 @@
+/* unitless */
 element {
-  /* number */
   content: 3.5rem;
-  /* number (false) */
+}
+
+/* number */
+element {
+  content: 3.5rem;
+}
+
+/* number ($method: false) */
+element {
   content: 42px;
-  /* number (em) */
+}
+
+/* number ($method: em) */
+element {
   content: 3.5em;
-  /* number (rem) */
+}
+
+/* number ($method: rem) */
+element {
   content: 3.5rem;
-  /* key (tiny) */
+}
+
+/* tiny */
+element {
   content: 0.41667rem;
-  /* key (smallest) */
+}
+
+/* smallest */
+element {
   content: 0.83333rem;
-  /* key (smaller) */
+}
+
+/* smaller */
+element {
   content: 1.25rem;
-  /* key (small) */
+}
+
+/* small */
+element {
   content: 1.66667rem;
-  /* key (regular) */
+}
+
+/* regular */
+element {
   content: 2.5rem;
-  /* key (large) */
+}
+
+/* large */
+element {
   content: 3.75rem;
-  /* key (larger) */
+}
+
+/* larger */
+element {
   content: 5rem;
-  /* key (largest) */
+}
+
+/* largest */
+element {
   content: 7.5rem;
 }

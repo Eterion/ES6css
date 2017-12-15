@@ -1,11 +1,20 @@
 @charset "UTF-8";
+/* empty */
 element {
-  /* '' */
   content: '';
-  /* '00a0' */
+}
+
+/* 00a0 */
+element {
   content: '\00a0';
-  /* '\00a0' */
+}
+
+/* \00a0 */
+element {
   content: ' ';
-  /* 'value' */
+}
+
+/* value */
+element {
   content: 'value';
 }
