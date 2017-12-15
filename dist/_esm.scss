@@ -19,3 +19,9 @@
 
 @import 'dist/fn';
 @import 'dist/mixin';
+
+// (export)
+// defaults required for proper import and export functionality
+// -----
+
+@import 'dist/export';
