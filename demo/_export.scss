@@ -1,5 +1,3 @@
-@import '../dist/export';
-
 // z-index
 // map or list of z-index values
 // the extracted z-index value is always relative to its group
@@ -17,6 +15,9 @@ $const-z-index: (
 $const-export-group: (
   'component': 'c',
 );
+
+// esm
+@import '../dist/esm';
 
 // group
 // common group can be set for the following export, extend and import mixins
