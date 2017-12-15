@@ -1,7 +1,6 @@
 $const-class-content-element-compact: 'compact' !default;
 $const-class-wrap-in: 'in' !default;
 $const-class-wrap-out: 'wrap' !default;
-$const-id: 0 !default;
 $const-min-number: 3px !default;
 $const-preserve-defaults: true !default;
 
@@ -12,7 +11,6 @@ $const-preserve-defaults: true !default;
 @import 'const/font';
 @import 'const/grid';
 @import 'const/media';
-@import 'const/path';
 @import 'const/size';
 @import 'const/whitespace';
 @import 'const/z-index';

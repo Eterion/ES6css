@@ -11,38 +11,10 @@ $const-media-scale-defaults: (
   'desktop': (width: 1680px, height: 1050px),
 ) !default;
 
-$const-media-font-size-defaults: (
-  'phone': smaller,
-  'portrait': small,
-  'landscape': small,
-  'notebook': small,
-  'desktop': regular,
-) !default;
-
-$const-media-font-monospace-size-defaults: (
-  'phone': smallest,
-  'portrait': smaller,
-  'landscape': smaller,
-  'notebook': smaller,
-  'desktop': small,
-) !default;
-
 // (preserve)
 
 $const-media-scale: if(
   $const-preserve-defaults,
   map-merge($const-media-scale-defaults, if(global-variable-exists(const-media-scale), $const-media-scale, ())),
   if(global-variable-exists(const-media-scale), $const-media-scale, $const-media-scale-defaults)
-);
-
-$const-media-font-size: if(
-  $const-preserve-defaults,
-  map-merge($const-media-font-size-defaults, if(global-variable-exists(const-media-font-size), $const-media-font-size, ())),
-  if(global-variable-exists(const-media-font-size), $const-media-font-size, $const-media-font-size-defaults)
-);
-
-$const-media-font-monospace-size: if(
-  $const-preserve-defaults,
-  map-merge($const-media-font-monospace-size-defaults, if(global-variable-exists(const-media-font-monospace-size), $const-media-font-monospace-size, ())),
-  if(global-variable-exists(const-media-font-monospace-size), $const-media-font-monospace-size, $const-media-font-monospace-size-defaults)
 );
