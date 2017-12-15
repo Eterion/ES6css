@@ -1,4 +1,4 @@
-@import '../app';
+@import '../../dist/esm';
 
 /* default */
 @include grid(to-class(grid), to-class(grid-item), 240px);
