@@ -3,7 +3,7 @@
 // https://github.com/sasstools/sass-lint/issues/927
 // -----
 
-$const-size-scale: map-merge((
+$const-size-scale-defaults: (
   'tiny': 0.2,
   'smallest': 0.25,
   'smaller': 0.5,
@@ -11,5 +11,13 @@ $const-size-scale: map-merge((
   'regular': 1,
   'large': 1.25,
   'larger': 1.5,
-  'largest': 1.75
-), if(global-variable-exists(const-size-scale), $const-size-scale, ()));
+  'largest': 1.75,
+) !default;
+
+// (preserve)
+
+$const-size-scale: if(
+  $const-preserve-defaults,
+  map-merge($const-size-scale-defaults, if(global-variable-exists(const-size-scale), $const-size-scale, ())),
+  if(global-variable-exists(const-size-scale), $const-size-scale, $const-size-scale-defaults)
+);

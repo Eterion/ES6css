@@ -3,15 +3,15 @@
 // https://github.com/sasstools/sass-lint/issues/927
 // -----
 
-$const-color-keys: map-merge((
+$const-color-keys-defaults: (
   'gray': dimgray,
   'theme': blue,
   'success': green,
   'warn': yellow,
   'err': red,
-), if(global-variable-exists(const-color-keys), $const-color-keys, ()));
+) !default;
 
-$const-color-scale: map-merge((
+$const-color-scale-defaults: (
   'heavy': -64,
   'hard': -55,
   'darkest': -50,
@@ -23,4 +23,18 @@ $const-color-scale: map-merge((
   'lightest': 70,
   'soft': 85,
   'pastel': 95,
-), if(global-variable-exists(const-color-scale), $const-color-scale, ()));
+) !default;
+
+// (preserve)
+
+$const-color-keys: if(
+  $const-preserve-defaults,
+  map-merge($const-color-keys-defaults, if(global-variable-exists(const-color-keys), $const-color-keys, ())),
+  if(global-variable-exists(const-color-keys), $const-color-keys, $const-color-keys-defaults)
+);
+
+$const-color-scale: if(
+  $const-preserve-defaults,
+  map-merge($const-color-scale-defaults, if(global-variable-exists(const-color-scale), $const-color-scale, ())),
+  if(global-variable-exists(const-color-scale), $const-color-scale, $const-color-scale-defaults)
+);

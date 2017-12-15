@@ -5,7 +5,7 @@
 
 $const-whitespace: 30px !default;
 
-$const-whitespace-scale: map-merge((
+$const-whitespace-scale-defaults: (
   'tiny': $const-whitespace / 6,
   'smallest': $const-whitespace / 3,
   'smaller': $const-whitespace / 2,
@@ -14,4 +14,12 @@ $const-whitespace-scale: map-merge((
   'large': $const-whitespace * 1.5,
   'larger': $const-whitespace * 2,
   'largest': $const-whitespace * 3,
-), if(global-variable-exists(const-whitespace-scale), $const-whitespace-scale, ()));
+) !default;
+
+// (preserve)
+
+$const-whitespace-scale: if(
+  $const-preserve-defaults,
+  map-merge($const-whitespace-scale-defaults, if(global-variable-exists(const-whitespace-scale), $const-whitespace-scale, ())),
+  if(global-variable-exists(const-whitespace-scale), $const-whitespace-scale, $const-whitespace-scale-defaults)
+);

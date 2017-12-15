@@ -19,7 +19,7 @@ $const-font-monospace-size-small: smaller !default;
 $const-font-monospace-weight: regular !default;
 $const-font-monospace-weight-strong: semibold !default;
 
-$const-font-size-scale: map-merge((
+$const-font-size-scale-defaults: (
   'tiny': 8px,
   'smallest': 9px,
   'smaller': 10px,
@@ -30,9 +30,9 @@ $const-font-size-scale: map-merge((
   'largest': 21px,
   'xl': 24px,
   'xxl': 30px,
-), if(global-variable-exists(const-font-size-scale), $const-font-size-scale, ()));
+) !default;
 
-$const-font-weight-scale: map-merge((
+$const-font-weight-scale-defaults: (
   'thin': 100,
   'light': 300,
   'regular': 400,
@@ -41,4 +41,18 @@ $const-font-weight-scale: map-merge((
   'bold': 700,
   'extrabold': 800,
   'ultrabold': 900,
-), if(global-variable-exists(const-font-weight-scale), $const-font-weight-scale, ()));
+) !default;
+
+// (preserve)
+
+$const-font-size-scale: if(
+  $const-preserve-defaults,
+  map-merge($const-font-size-scale-defaults, if(global-variable-exists(const-font-size-scale), $const-font-size-scale, ())),
+  if(global-variable-exists(const-font-size-scale), $const-font-size-scale, $const-font-size-scale-defaults)
+);
+
+$const-font-weight-scale: if(
+  $const-preserve-defaults,
+  map-merge($const-font-weight-scale-defaults, if(global-variable-exists(const-font-weight-scale), $const-font-weight-scale, ())),
+  if(global-variable-exists(const-font-weight-scale), $const-font-weight-scale, $const-font-weight-scale-defaults)
+);
