@@ -19,9 +19,18 @@
     @error err('key-not-found', $upper, '(media-between: upper)', map-keys($const-media-scale));
   }
 
-  // definition
-  @media #{media-query(min, $lower, $prop, $operator)} and #{media-query(max, $upper, $prop, $operator)} {
-    @content;
+  // definition (and)
+  @if($operator == and) {
+    @media #{media-query(min, $lower, $prop, $operator)} and #{media-query(max, $upper, $prop, $operator)} {
+      @content;
+    }
+  }
+
+  // definition (or)
+  @else if($operator == or) {
+    @media #{media-query(min, $lower, width, $operator)} and #{media-query(max, $upper, width, $operator)}, #{media-query(min, $lower, height, $operator)} and #{media-query(max, $upper, height, $operator)} {
+      @content;
+    }
   }
 
 }
