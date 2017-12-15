@@ -1,36 +1,106 @@
 @import '../app';
 
+/* 480px */
 element {
-  /* 480px */
-  content: media(480px);
-  /* phone */
-  content: media(phone);
-  /* phone (width) */
-  content: media(phone, width);
-  /* phone (height) */
-  content: media(phone, height);
-  /* tablet-portrait */
-  content: media(tablet-portrait);
-  /* tablet-portrait (width) */
-  content: media(tablet-portrait, width);
-  /* tablet-portrait (height) */
-  content: media(tablet-portrait, height);
-  /* tablet-landscape */
-  content: media(tablet-landscape);
-  /* tablet-landscape (width) */
-  content: media(tablet-landscape, width);
-  /* tablet-landscape (height) */
-  content: media(tablet-landscape, height);
-  /* notebook */
-  content: media(notebook);
-  /* notebook (width) */
-  content: media(notebook, width);
-  /* notebook (height) */
-  content: media(notebook, height);
-  /* desktop */
-  content: media(desktop);
-  /* desktop (width) */
-  content: media(desktop, width);
-  /* desktop (height) */
-  content: media(desktop, height);
+  content: '#{media(480px)}';
+}
+
+/* phone */
+element {
+  content: '#{media(phone)}';
+}
+
+/* phone ($prop: width) */
+element {
+  content: '#{media(phone, width)}';
+}
+
+/* phone ($prop: height) */
+element {
+  content: '#{media(phone, height)}';
+}
+
+/* phone ($prop: both) */
+element {
+  content: '#{media(phone, both)}';
+}
+
+/* portrait */
+element {
+  content: '#{media(portrait)}';
+}
+
+/* portrait ($prop: width) */
+element {
+  content: '#{media(portrait, width)}';
+}
+
+/* portrait ($prop: height) */
+element {
+  content: '#{media(portrait, height)}';
+}
+
+/* portrait ($prop: both) */
+element {
+  content: '#{media(portrait, both)}';
+}
+
+/* landscape */
+element {
+  content: '#{media(landscape)}';
+}
+
+/* landscape ($prop: width) */
+element {
+  content: '#{media(landscape, width)}';
+}
+
+/* landscape ($prop: height) */
+element {
+  content: '#{media(landscape, height)}';
+}
+
+/* landscape ($prop: both) */
+element {
+  content: '#{media(landscape, both)}';
+}
+
+/* notebook */
+element {
+  content: '#{media(notebook)}';
+}
+
+/* notebook ($prop: width) */
+element {
+  content: '#{media(notebook, width)}';
+}
+
+/* notebook ($prop: height) */
+element {
+  content: '#{media(notebook, height)}';
+}
+
+/* notebook ($prop: both) */
+element {
+  content: '#{media(notebook, both)}';
+}
+
+/* desktop */
+element {
+  content: '#{media(desktop)}';
+}
+
+/* desktop ($prop: width) */
+element {
+  content: '#{media(desktop, width)}';
+}
+
+/* desktop ($prop: height) */
+element {
+  content: '#{media(desktop, height)}';
+}
+
+/* desktop ($prop: both) */
+element {
+  content: '#{media(desktop, both)}';
 }

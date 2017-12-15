@@ -1,0 +1,46 @@
+@import '../app';
+
+/* default */
+element {
+  content: animation-speed();
+}
+
+/* 400ms */
+element {
+  content: animation-speed(400ms);
+}
+
+/* fastest */
+element {
+  content: animation-speed(fastest);
+}
+
+/* faster */
+element {
+  content: animation-speed(faster);
+}
+
+/* fast */
+element {
+  content: animation-speed(fast);
+}
+
+/* regular */
+element {
+  content: animation-speed(regular);
+}
+
+/* slow */
+element {
+  content: animation-speed(slow);
+}
+
+/* slower */
+element {
+  content: animation-speed(slower);
+}
+
+/* slowest */
+element {
+  content: animation-speed(slowest);
+}

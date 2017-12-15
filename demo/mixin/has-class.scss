@@ -1,16 +1,33 @@
 @import '../app';
-@import '../export';
 
 /* is-open */
-@include import(example-1) {
+.element {
   @include has-class(is-open) {
-    content: 'open';
+    content: 'has-class';
   }
 }
 
 /* is-open, is-active */
-@include import(example-1) {
+.element {
   @include has-class(is-open, is-active) {
-    content: 'open, active';
+    content: 'has-class';
+  }
+}
+
+/* nested (is-open) */
+.element {
+  .nested {
+    @include has-class(is-open) {
+      content: 'has-class';
+    }
+  }
+}
+
+/* nested (is-open, is-active) */
+.element {
+  .nested {
+    @include has-class(is-open, is-active) {
+      content: 'has-class';
+    }
   }
 }

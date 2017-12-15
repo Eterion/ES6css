@@ -7,17 +7,17 @@ element {
   }
 }
 
-/* tablet-portrait */
+/* portrait */
 element {
-  @include media-up-to(tablet-portrait) {
-    content: 'tablet-portrait';
+  @include media-up-to(portrait) {
+    content: 'portrait';
   }
 }
 
-/* tablet-landscape */
+/* landscape */
 element {
-  @include media-up-to(tablet-landscape) {
-    content: 'tablet-landscape';
+  @include media-up-to(landscape) {
+    content: 'landscape';
   }
 }
 
@@ -31,6 +31,41 @@ element {
 /* desktop */
 element {
   @include media-up-to(desktop) {
+    content: 'desktop';
+  }
+}
+
+/* desktop ($prop: width) */
+element {
+  @include media-up-to(desktop, $prop: width) {
+    content: 'desktop';
+  }
+}
+
+/* desktop ($prop: height) */
+element {
+  @include media-up-to(desktop, $prop: height) {
+    content: 'desktop';
+  }
+}
+
+/* desktop ($prop: both) */
+element {
+  @include media-up-to(desktop, $prop: both) {
+    content: 'desktop';
+  }
+}
+
+/* desktop ($prop: both, $operator: and) */
+element {
+  @include media-up-to(desktop, $prop: both, $operator: and) {
+    content: 'desktop';
+  }
+}
+
+/* desktop ($prop: both, $operator: or) */
+element {
+  @include media-up-to(desktop, $prop: both, $operator: or) {
     content: 'desktop';
   }
 }

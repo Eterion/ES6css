@@ -1,18 +1,66 @@
 @import '../app';
 
+/* unitless */
 element {
-  /* number */
   content: em(42);
-  /* number (px) */
-  content: em(42px);
-  /* number (em) */
-  content: em(42em);
-  /* number (rem) */
-  content: em(42rem);
-  /* number (%) */
+}
+
+/* % */
+element {
   content: em(42%);
-  /* number (vw) */
-  content: em(42vw);
-  /* number (vh) */
+}
+
+/* cm */
+element {
+  content: em(42cm);
+}
+
+/* em */
+element {
+  content: em(42em);
+}
+
+/* ex */
+element {
+  content: em(42ex);
+}
+
+/* in */
+element {
+  content: em(42in);
+}
+
+/* mm */
+element {
+  content: em(42mm);
+}
+
+/* pc */
+element {
+  content: em(42pc);
+}
+
+/* pt */
+element {
+  content: em(42pt);
+}
+
+/* px */
+element {
+  content: em(42px);
+}
+
+/* rem */
+element {
+  content: em(42rem);
+}
+
+/* vh */
+element {
   content: em(42vh);
+}
+
+/* vw */
+element {
+  content: em(42vw);
 }

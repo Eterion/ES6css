@@ -1,6 +1,12 @@
 @import '../app';
 @import '../export';
 
+/* default */
 @include import(example-2) {
   @include z-index;
+}
+
+/* $position: false */
+@include import(example-2) {
+  @include z-index($position: false);
 }

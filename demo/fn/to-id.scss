@@ -2,15 +2,15 @@
 
 /* element */
 #{to-id(element)} {
-  content: 'id';
+  content: 'to-id';
 }
 
 /* '#element' */
 #{to-id('#element')} {
-  content: 'id';
+  content: 'to-id';
 }
 
 /* 'div#element' */
 #{to-id('div#element')} {
-  content: 'id';
+  content: 'to-id';
 }

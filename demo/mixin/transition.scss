@@ -1,8 +1,11 @@
 @import '../app';
 
+/* color */
 element {
-  /* color */
-  @include transition($const-animation-speed, color);
-  /* color, opacity */
-  @include transition($const-animation-speed, color, opacity);
+  @include transition(animation-speed(), color);
+}
+
+/* color, opacity */
+element {
+  @include transition(animation-speed(), color, opacity);
 }

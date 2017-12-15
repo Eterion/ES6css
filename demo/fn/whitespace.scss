@@ -1,28 +1,66 @@
 @import '../app';
 
+/* unitless */
 element {
-  /* number */
+  content: whitespace(42);
+}
+
+/* number */
+element {
   content: whitespace(42px);
-  /* number (false) */
+}
+
+/* number ($method: false) */
+element {
   content: whitespace(42px, false);
-  /* number (em) */
+}
+
+/* number ($method: em) */
+element {
   content: whitespace(42px, em);
-  /* number (rem) */
+}
+
+/* number ($method: rem) */
+element {
   content: whitespace(42px, rem);
-  /* key (tiny) */
+}
+
+/* tiny */
+element {
   content: whitespace(tiny);
-  /* key (smallest) */
+}
+
+/* smallest */
+element {
   content: whitespace(smallest);
-  /* key (smaller) */
+}
+
+/* smaller */
+element {
   content: whitespace(smaller);
-  /* key (small) */
+}
+
+/* small */
+element {
   content: whitespace(small);
-  /* key (regular) */
+}
+
+/* regular */
+element {
   content: whitespace(regular);
-  /* key (large) */
+}
+
+/* large */
+element {
   content: whitespace(large);
-  /* key (larger) */
+}
+
+/* larger */
+element {
   content: whitespace(larger);
-  /* key (largest) */
+}
+
+/* largest */
+element {
   content: whitespace(largest);
 }

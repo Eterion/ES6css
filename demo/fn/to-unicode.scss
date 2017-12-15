@@ -1,12 +1,21 @@
 @import '../app';
 
+/* empty */
 element {
-  /* '' */
   content: to-unicode('');
-  /* '00a0' */
+}
+
+/* 00a0 */
+element {
   content: to-unicode('00a0');
-  /* '\00a0' */
+}
+
+/* \00a0 */
+element {
   content: to-unicode('\00a0');
-  /* 'value' */
+}
+
+/* value */
+element {
   content: to-unicode('value');
 }

@@ -1,29 +1,64 @@
 @import '../app';
 
-/* phone, tablet-portrait */
+/* phone, portrait */
 element {
-  @include media-between(phone, tablet-portrait) {
-    content: 'phone, tablet-portrait';
+  @include media-between(phone, portrait) {
+    content: 'phone, portrait';
   }
 }
 
-/* tablet-portrait, tablet-landscape */
+/* portrait, landscape */
 element {
-  @include media-between(tablet-portrait, tablet-landscape) {
-    content: 'tablet-portrait, tablet-landscape';
+  @include media-between(portrait, landscape) {
+    content: 'portrait, landscape';
   }
 }
 
-/* tablet-landscape, notebook */
+/* landscape, notebook */
 element {
-  @include media-between(tablet-landscape, notebook) {
-    content: 'tablet-landscape, notebook';
+  @include media-between(landscape, notebook) {
+    content: 'landscape, notebook';
   }
 }
 
 /* notebook, desktop */
 element {
   @include media-between(notebook, desktop) {
+    content: 'notebook, desktop';
+  }
+}
+
+/* notebook, desktop ($prop: width) */
+element {
+  @include media-between(notebook, desktop, $prop: width) {
+    content: 'notebook, desktop';
+  }
+}
+
+/* notebook, desktop ($prop: height) */
+element {
+  @include media-between(notebook, desktop, $prop: height) {
+    content: 'notebook, desktop';
+  }
+}
+
+/* notebook, desktop ($prop: both) */
+element {
+  @include media-between(notebook, desktop, $prop: both) {
+    content: 'notebook, desktop';
+  }
+}
+
+/* notebook, desktop ($prop: both, $operator: and) */
+element {
+  @include media-between(notebook, desktop, $prop: both, $operator: and) {
+    content: 'notebook, desktop';
+  }
+}
+
+/* notebook, desktop ($prop: both, $operator: or) */
+element {
+  @include media-between(notebook, desktop, $prop: both, $operator: or) {
     content: 'notebook, desktop';
   }
 }

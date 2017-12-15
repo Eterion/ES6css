@@ -1,4 +1,4 @@
 @import '../app';
 
 /* default */
-@include grid(grid, grid-item, 200px, $const-whitespace);
+@include grid(to-class(grid), to-class(grid-item), 240px);

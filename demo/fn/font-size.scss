@@ -1,34 +1,81 @@
 @import '../app';
 
+/* unitless */
 element {
-  /* value */
+  content: font-size(42);
+}
+
+/* number */
+element {
   content: font-size(42px);
-  /* value (false) */
+}
+
+/* number ($method: false) */
+element {
   content: font-size(42px, false);
-  /* value (em) */
+}
+
+/* number ($method: em) */
+element {
   content: font-size(42px, em);
-  /* value (rem) */
+}
+
+/* number ($method: rem) */
+element {
   content: font-size(42px, rem);
-  /* key (inherit) */
+}
+
+/* inherit */
+element {
   content: font-size(inherit);
-  /* key (tiny) */
+}
+
+/* tiny */
+element {
   content: font-size(tiny);
-  /* key (smallest) */
+}
+
+/* smallest */
+element {
   content: font-size(smallest);
-  /* key (smaller) */
+}
+
+/* smaller */
+element {
   content: font-size(smaller);
-  /* key (small) */
+}
+
+/* small */
+element {
   content: font-size(small);
-  /* key (regular) */
+}
+
+/* regular */
+element {
   content: font-size(regular);
-  /* key (large) */
+}
+
+/* large */
+element {
   content: font-size(large);
-  /* key (larger) */
+}
+
+/* larger */
+element {
   content: font-size(larger);
-  /* key (largest) */
+}
+
+/* largest */
+element {
   content: font-size(largest);
-  /* key (xl) */
+}
+
+/* xl */
+element {
   content: font-size(xl);
-  /* key (xxl) */
+}
+
+/* xxl */
+element {
   content: font-size(xxl);
 }

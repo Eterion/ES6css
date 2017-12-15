@@ -25,3 +25,8 @@
 @include import(example-1) {
   @include content-element(to-class(element));
 }
+
+/* content-element(to-id(element)) */
+@include import(example-1) {
+  @include content-element(to-id(element));
+}

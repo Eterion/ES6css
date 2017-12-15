@@ -1,56 +1,131 @@
 @import '../app';
 
+/* gray */
 element {
-  /* gray */
   content: color(gray);
-  /* gray (false) */
+}
+
+/* gray ($scale: false) */
+element {
   content: color(gray, false);
-  /* gray (heavy) */
+}
+
+/* gray ($scale: heavy) */
+element {
   content: color(gray, heavy);
-  /* gray (hard) */
+}
+
+/* gray ($scale: hard) */
+element {
   content: color(gray, hard);
-  /* gray (darkest) */
+}
+
+/* gray ($scale: darkest) */
+element {
   content: color(gray, darkest);
-  /* gray (darker) */
+}
+
+/* gray ($scale: darker) */
+element {
   content: color(gray, darker);
-  /* gray (dark) */
+}
+
+/* gray ($scale: dark) */
+element {
   content: color(gray, dark);
-  /* gray (regular) */
+}
+
+/* gray ($scale: regular) */
+element {
   content: color(gray, regular);
-  /* gray (light) */
+}
+
+/* gray ($scale: light) */
+element {
   content: color(gray, light);
-  /* gray (lighter) */
+}
+
+/* gray ($scale: lighter) */
+element {
   content: color(gray, lighter);
-  /* gray (lightest) */
+}
+
+/* gray ($scale: lightest) */
+element {
   content: color(gray, lightest);
-  /* gray (soft) */
+}
+
+/* gray ($scale: soft) */
+element {
   content: color(gray, soft);
-  /* gray (pastel) */
+}
+
+/* gray ($scale: pastel) */
+element {
   content: color(gray, pastel);
-  /* #f00 */
+}
+
+/* #f00 */
+element {
   content: color(#f00);
-  /* #f00 (false) */
+}
+
+/* #f00 ($scale: false) */
+element {
   content: color(#f00, false);
-  /* #f00 (heavy) */
+}
+
+/* #f00 ($scale: heavy) */
+element {
   content: color(#f00, heavy);
-  /* #f00 (hard) */
+}
+
+/* #f00 ($scale: hard) */
+element {
   content: color(#f00, hard);
-  /* #f00 (darkest) */
+}
+
+/* #f00 ($scale: darkest) */
+element {
   content: color(#f00, darkest);
-  /* #f00 (darker) */
+}
+
+/* #f00 ($scale: darker) */
+element {
   content: color(#f00, darker);
-  /* #f00 (dark) */
+}
+
+/* #f00 ($scale: dark) */
+element {
   content: color(#f00, dark);
-  /* #f00 (regular) */
+}
+
+/* #f00 ($scale: regular) */
+element {
   content: color(#f00, regular);
-  /* #f00 (light) */
+}
+
+/* #f00 ($scale: light) */
+element {
   content: color(#f00, light);
-  /* #f00 (lighter) */
+}
+
+/* #f00 ($scale: lighter) */
+element {
   content: color(#f00, lighter);
-  /* #f00 (lightest) */
+}
+
+/* #f00 ($scale: lightest) */
+element {
   content: color(#f00, lightest);
-  /* #f00 (soft) */
+}
+
+/* #f00 ($scale: soft) */
+element {
   content: color(#f00, soft);
-  /* #f00 (pastel) */
+}
+
+/* #f00 ($scale: pastel) */
+element {
   content: color(#f00, pastel);
 }

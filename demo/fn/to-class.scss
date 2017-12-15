@@ -2,15 +2,15 @@
 
 /* element */
 #{to-class(element)} {
-  content: 'class';
+  content: 'to-class';
 }
 
 /* '.element' */
 #{to-class('.element')} {
-  content: 'class';
+  content: 'to-class';
 }
 
 /* 'div.element' */
 #{to-class('div.element')} {
-  content: 'class';
+  content: 'to-class';
 }

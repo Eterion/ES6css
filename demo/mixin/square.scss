@@ -1,24 +1,81 @@
 @import '../app';
 
+/* unitless */
 element {
-  /* unitless */
   @include square(42);
-  /* px */
-  @include square(42px);
-  /* px (em) */
+}
+
+/* px ($method: em) */
+element {
   @include square(42px, em);
-  /* px (rem) */
+}
+
+/* px ($method: rem) */
+element {
   @include square(42px, rem);
-  /* px (false) */
+}
+
+/* px ($method: false) */
+element {
   @include square(42px, false);
-  /* em */
-  @include square(42em);
-  /* rem */
-  @include square(42rem);
-  /* % */
+}
+
+/* % */
+element {
   @include square(42%);
-  /* vw */
-  @include square(42vw);
-  /* vh */
+}
+
+/* cm */
+element {
+  @include square(42cm);
+}
+
+/* em */
+element {
+  @include square(42em);
+}
+
+/* ex */
+element {
+  @include square(42ex);
+}
+
+/* in */
+element {
+  @include square(42in);
+}
+
+/* mm */
+element {
+  @include square(42mm);
+}
+
+/* pc */
+element {
+  @include square(42pc);
+}
+
+/* pt */
+element {
+  @include square(42pt);
+}
+
+/* px */
+element {
+  @include square(42px);
+}
+
+/* rem */
+element {
+  @include square(42rem);
+}
+
+/* vh */
+element {
   @include square(42vh);
+}
+
+/* vw */
+element {
+  @include square(42vw);
 }
