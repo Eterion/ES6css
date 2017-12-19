@@ -1,10 +1,10 @@
-.text-monospace {
+.monospace {
   font-family: "Consolas", monospace;
   font-size: 0.91667rem;
   font-weight: 400;
   line-height: 1.6;
 }
 
-.text-monospace strong {
+.monospace strong {
   font-weight: 600;
 }
