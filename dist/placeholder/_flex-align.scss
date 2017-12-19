@@ -3,10 +3,10 @@
 
 %flex-align {
   &.align {
-    &-left { justify-content: flex-start; }
-    &-center { justify-content: center; }
-    &-right { justify-content: flex-end; }
-    &-between { justify-content: space-between; }
     &-around { justify-content: space-around; }
+    &-between { justify-content: space-between; }
+    &-center { justify-content: center; }
+    &-left { justify-content: flex-start; }
+    &-right { justify-content: flex-end; }
   }
 }
