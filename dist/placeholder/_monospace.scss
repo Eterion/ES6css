@@ -1,7 +1,7 @@
 /// Applies monospace font to an element.
 /// @access public
 
-%text-monospace {
+%monospace {
 
   font-family: $const-font-monospace-family;
   font-size: font-size($const-font-monospace-size);

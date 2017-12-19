@@ -1,0 +1,6 @@
+@import '../../dist/esm';
+@import '../../dist/placeholder/monospace';
+
+.monospace {
+  @extend %monospace;
+}
