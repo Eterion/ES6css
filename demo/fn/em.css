@@ -1,64 +1,64 @@
 /* unitless */
 element {
-  content: 3.5em;
+  content: 1px;
 }
 
 /* % */
 element {
-  content: 42%;
+  content: 1%;
 }
 
 /* cm */
 element {
-  content: 42cm;
+  content: 3.14965em;
 }
 
 /* em */
 element {
-  content: 42em;
+  content: 1em;
 }
 
 /* ex */
 element {
-  content: 42ex;
+  content: 1ex;
 }
 
 /* in */
 element {
-  content: 42in;
+  content: 7.99974em;
 }
 
 /* mm */
 element {
-  content: 42mm;
+  content: 0.31496em;
 }
 
 /* pc */
 element {
-  content: 42pc;
+  content: 1.33333em;
 }
 
 /* pt */
 element {
-  content: 42pt;
+  content: 1px;
 }
 
 /* px */
 element {
-  content: 3.5em;
+  content: 1px;
 }
 
 /* rem */
 element {
-  content: 42rem;
+  content: 1rem;
 }
 
 /* vh */
 element {
-  content: 42vh;
+  content: 1vh;
 }
 
 /* vw */
 element {
-  content: 42vw;
+  content: 1vw;
 }
