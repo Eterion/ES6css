@@ -6,14 +6,12 @@
 
 @function whitespace($key: regular, $method: rem) {
 
-  // no conversion
-  @if($method == false) {
-    @return map-key-get($const-whitespace-scale, $key, $can-inherit: false);
-  }
-
   // relative units
-  @else {
+  @if($method) {
     @return call($method, map-key-get($const-whitespace-scale, $key, $can-inherit: false));
   }
+
+  // no conversion
+  @return map-key-get($const-whitespace-scale, $key, $can-inherit: false);
 
 }

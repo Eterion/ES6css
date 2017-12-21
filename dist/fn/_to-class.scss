@@ -5,12 +5,12 @@
 
 @function to-class($class) {
 
-  // add class
-  @if(str-index($class, '.') == null) {
-    $class: '.#{$class}';
+  // return
+  @if(str-index($class, '.')) {
+    @return $class;
   }
 
-  // return
-  @return $class;
+  // add class
+  @return '.#{$class}';
 
 }

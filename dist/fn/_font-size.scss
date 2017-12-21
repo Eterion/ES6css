@@ -4,16 +4,15 @@
 /// @param {bool|string} $method [rem] - Function called on the value, use **em** or **rem**
 /// @example font-size(regular) // returns 1rem
 
+
 @function font-size($value, $method: rem) {
 
-  // no conversion
-  @if($method == false) {
-    @return map-key-get($const-font-size-scale, $value);
-  }
-
   // relative units
-  @else {
+  @if($method) {
     @return call($method, map-key-get($const-font-size-scale, $value));
   }
+
+  // no conversion
+  @return map-key-get($const-font-size-scale, $value);
 
 }

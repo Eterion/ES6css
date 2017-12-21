@@ -18,7 +18,7 @@
     $char-4: str-slice($value, 4, 4);
 
     // add backslash if passed as unicode
-    @if(index($unicode-chars, $char-1) != null and index($unicode-chars, $char-2) != null and index($unicode-chars, $char-3) != null and index($unicode-chars, $char-4) != null) {
+    @if(index($unicode-chars, $char-1) and index($unicode-chars, $char-2) and index($unicode-chars, $char-3) and index($unicode-chars, $char-4)) {
       $value: str-insert($value, '\\', 1);
     }
 

@@ -6,16 +6,16 @@
 
 @mixin square($size, $method: rem) {
 
-  // no conversion
-  @if($method == false) {
-    height: $size;
-    width: $size;
-  }
-
   // relative units
-  @else {
+  @if($method) {
     height: call($method, $size);
     width: call($method, $size);
+  }
+
+  // no conversion
+  @else {
+    height: $size;
+    width: $size;
   }
 
 }

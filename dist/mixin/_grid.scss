@@ -61,7 +61,7 @@
       // create various sizes based on the list of provided keys
       // keys must be available in const-size-scale map
 
-      @if(length($const-grid-size) != 0) {
+      @if(length($const-grid-size) > 0) {
         @each $key in $const-grid-size {
           &.size-#{$key} {
 
@@ -97,7 +97,7 @@
     // create various sizes based on the list of provided keys
     // keys must be available in const-size-scale map
 
-    @if(length($const-grid-size) != false) {
+    @if(length($const-grid-size) > 0) {
       @each $key in $const-grid-size {
         &.size-#{$key} {
           $this-width: $width * map-get($const-size-scale, $key);

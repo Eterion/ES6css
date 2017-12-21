@@ -13,7 +13,7 @@
 
   // list
   @if(type-of($map) == 'list') {
-    @if(index($map, $name) != null) {
+    @if(index($map, $name)) {
       $keys: $map;
       $z-index: index($map, $name);
     }
@@ -22,7 +22,7 @@
   // groups (map)
   @else if(type-of($map) == 'map') {
     @each $key, $list in $map {
-      @if(index($list, $name) != null) {
+      @if(index($list, $name)) {
         $keys: append($key, $list);
         $z-index: index($list, $name);
       }
@@ -35,7 +35,7 @@
   }
 
   // position
-  @if($position != false) {
+  @if($position) {
     position: $position;
   }
 

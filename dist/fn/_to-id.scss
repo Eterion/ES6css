@@ -5,12 +5,12 @@
 
 @function to-id($id) {
 
-  // add id
-  @if(str-index($id, '#') == null) {
-    $id: '##{$id}';
+  // return
+  @if(str-index($id, '#')) {
+    @return $id;
   }
 
-  // return
-  @return $id;
+  // add id
+  @return '##{$id}';
 
 }

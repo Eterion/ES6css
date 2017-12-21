@@ -14,7 +14,7 @@
   }
 
   // defaults
-  $props: map-merge($export-defaults, if($props != false, $props, ()));
+  $props: map-merge($export-defaults, if($props, $props, ()));
 
   // add new export
   @return map-merge($system-export, (
