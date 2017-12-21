@@ -16,7 +16,7 @@ The main feature is the **export** and **import** mechanics, inspired by ES6 spe
 - [Modules](#modules)
 
 ## Docs
-Documentation can be generated via `npm run docs` command (using [sassdoc](http://sassdoc.com/) package) and will be available in the `/docs` directory. Note that the documentation contains mostly just mixins, functions and placeholders. Variables are described in the [constants](#constants) below.
+Documentation can be generated via `npm run docs` command (using [sassdoc](http://sassdoc.com/) package) and will be available in the `/docs` directory. Note that the documentation contains mostly just mixins, functions and placeholders. Variables are described in the [constants](#constants) section below.
 
 ## Setup
 Everything needed is included in the `esm` file.
@@ -25,7 +25,7 @@ Everything needed is included in the `esm` file.
 @import 'dist/esm';
 ```
 
-View the demo[export](demo/_export.scss) file for a example. Notice all the constants are placed before the esm import, while non-constants after. This works perfectly thanks to the sass `!default` flag. Optional `animation` and `placeholder` files can be imported after `esm` if desired.
+View the demo [export](demo/_export.scss) file for a example. Notice all the constants are placed before the esm import, while non-constants after. This works perfectly thanks to the sass `!default` flag. Optional `animation` and `placeholder` files can be imported after `esm` if desired.
 
 ## Constants
 Fair amount of options can be set through sass variables. Always prefixed with the `const` keyword, must be placed before the `esm` import.
