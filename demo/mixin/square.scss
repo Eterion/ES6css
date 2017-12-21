@@ -2,80 +2,80 @@
 
 /* unitless */
 element {
-  @include square(42);
+  @include square(1);
 }
 
 /* px ($method: em) */
 element {
-  @include square(42px, em);
+  @include square(1px, em);
 }
 
 /* px ($method: rem) */
 element {
-  @include square(42px, rem);
+  @include square(1px, rem);
 }
 
 /* px ($method: false) */
 element {
-  @include square(42px, false);
+  @include square(1px, false);
 }
 
 /* % */
 element {
-  @include square(42%);
+  @include square(1%);
 }
 
 /* cm */
 element {
-  @include square(42cm);
+  @include square(1cm);
 }
 
 /* em */
 element {
-  @include square(42em);
+  @include square(1em);
 }
 
 /* ex */
 element {
-  @include square(42ex);
+  @include square(1ex);
 }
 
 /* in */
 element {
-  @include square(42in);
+  @include square(1in);
 }
 
 /* mm */
 element {
-  @include square(42mm);
+  @include square(1mm);
 }
 
 /* pc */
 element {
-  @include square(42pc);
+  @include square(1pc);
 }
 
 /* pt */
 element {
-  @include square(42pt);
+  @include square(1pt);
 }
 
 /* px */
 element {
-  @include square(42px);
+  @include square(1px);
 }
 
 /* rem */
 element {
-  @include square(42rem);
+  @include square(1rem);
 }
 
 /* vh */
 element {
-  @include square(42vh);
+  @include square(1vh);
 }
 
 /* vw */
 element {
-  @include square(42vw);
+  @include square(1vw);
 }
