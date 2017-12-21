@@ -69,7 +69,6 @@ rules:
         - media-only
         - media-up-from
         - media-up-to
-        - pulse
         - wrap-in
         - wrap-out
   nesting-depth:
