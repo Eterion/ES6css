@@ -1,9 +1,10 @@
-/// Returns a **$number** recalculated to em units. This function and its [**rem**](#function-rem) counterpart should be used on every pixel value, to allow scaling based on root font size. To ensure visibility of all elements, numbers equal or below **$const-relative-units-min** are not recalculated.
+/// Returns a **$number** recalculated to em units. This function and its [**rem**](#function-rem) counterpart should be used on every absolute value, to allow scaling based on root font size. This function returns its original input number if **$const-relative-units-enabled** is set to **false**. To ensure visibility of all elements, numbers equal or below **$const-relative-units-min** are not recalculated.
 /// @access public
 /// @param {number} $number - Input number
+/// @param {string} $unit [em] - Returned unit
 /// @example em(12px) // returns 1em
 
-@function em($number) {
+@function em($number, $unit: em) {
 
   @if($const-relative-units-enabled) {
     @if(type-of($number) == 'number') {
@@ -14,8 +15,8 @@
           @return $number;
         }
 
-        // recalculate to em
-        @return #{clear-unit($number) / clear-unit(map-get($const-font-size-scale, $const-font-size))}em;
+        // recalculate to relative
+        @return #{clear-unit($number) / clear-unit(map-get($const-font-size-scale, $const-font-size))}#{$unit};
 
       }
     }
