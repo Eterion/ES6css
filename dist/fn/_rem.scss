@@ -1,21 +1,23 @@
-/// Returns a **$number** recalculated to rem units. This function and its [**em**](#function-em) counterpart should be used on every pixel value, to allow scaling based on root font size. To ensure visibility of all elements, numbers equal or below **$const-min-number** are not recalculated.
+/// Returns a **$number** recalculated to rem units. This function and its [**em**](#function-em) counterpart should be used on every pixel value, to allow scaling based on root font size. To ensure visibility of all elements, numbers equal or below **$const-relative-units-min** are not recalculated.
 /// @access public
 /// @param {number} $number - Source number
 /// @example rem(12px) // returns 1rem
 
 @function rem($number) {
 
-  @if(type-of($number) == 'number') {
-    @if(unit($number) == 'px' or unitless($number)) {
+  @if($const-relative-units-enabled) {
+    @if(type-of($number) == 'number') {
+      @if(unit($number) == 'px' or unitless($number)) {
 
-      // is equal or below minimum
-      @if(abs(clear-unit($number)) > 0 and abs(clear-unit($number)) <= clear-unit($const-min-number)) {
-        @return $number;
+        // is equal or below minimum
+        @if(abs(clear-unit($number)) > 0 and abs(clear-unit($number)) <= clear-unit($const-relative-units-min)) {
+          @return $number;
+        }
+
+        // recalculate to rem
+        @return #{clear-unit($number) / clear-unit(map-get($const-font-size-scale, $const-font-size))}rem;
+
       }
-
-      // recalculate to rem
-      @return #{clear-unit($number) / clear-unit(map-get($const-font-size-scale, $const-font-size))}rem;
-
     }
   }
 
