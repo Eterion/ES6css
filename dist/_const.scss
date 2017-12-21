@@ -1,11 +1,9 @@
-$const-class-content-element-compact: 'compact' !default;
-$const-class-wrap-in: 'in' !default;
-$const-class-wrap-out: 'wrap' !default;
 $const-min-number: 3px !default;
 $const-preserve-defaults: true !default;
 
 // imports
 @import 'const/animation';
+@import 'const/class';
 @import 'const/color';
 @import 'const/export';
 @import 'const/font';
