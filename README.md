@@ -1,19 +1,22 @@
 # ES6css
-Tools for frond-end web development, using [sass](http://sass-lang.com/) preprocessor (scss syntax).
+Engine for front-end web development of css, using [sass](http://sass-lang.com/) preprocessor (scss syntax).
 
-## About
-This project started as a experimental custom framework for web application, that would eliminate the need for multiple variables for a single component. It had much more things going on, so I've decided to make it more simple and independent from the web project.
+## What's this?
+The word engine may be a little too strong (sounds cool though). Essentially it's a collection of functions, mixins and variables. However it's not a framework, it doesn't have any predefined appearance you can use.
 
-The main feature is the export and import mechanics, inspired by ES6 specification, that allows to create components (modules) with properties and using those properties in css definitions, all without the need of multiple variables.
+It started as a experimental custom framework for web application, that would eliminate the need for multiple variables for a single component. Eventually, I've reduced the complexity, removed bunch of stuff that are too specific for a given project and made it more simple and independent.
+
+The main feature is the **export** and **import** mechanics, inspired by ES6 specification, that allows to create modules (components) with properties and using those properties in css definitions, all without the need of multiple variables for each module.
 
 ## Contents
 
 - [Docs](#docs)
 - [Setup](#setup)
-- Options (TBD)
+- [Constants](#constants)
+- [Modules](#modules)
 
 ## Docs
-Not all functions, mixins etc. are mentioned in this readme. Documentation can be generated via `npm run docs` command (using [sassdoc](http://sassdoc.com/) package) and  will be available in the `/docs` directory.
+Documentation can be generated via `npm run docs` command (using [sassdoc](http://sassdoc.com/) package) and will be available in the `/docs` directory. Note that the documentation contains mostly just mixins, functions and placeholders. Variables are described in the [constants](#constants) below.
 
 ## Setup
 Everything needed is included in the `esm` file.
@@ -22,4 +25,10 @@ Everything needed is included in the `esm` file.
 @import 'dist/esm';
 ```
 
-View the demo [export](demo/_export.scss) file for a real example. Notice that all the constants are placed before the esm import, and non-constants after. This works thanks to the sass `!default` flag, see [options](#options) for more details on what is available. Optional `animation` and `placeholder` files can be imported after `esm` if needed.
+View the demo[export](demo/_export.scss) file for a example. Notice all the constants are placed before the esm import, while non-constants after. This works perfectly thanks to the sass `!default` flag. Optional `animation` and `placeholder` files can be imported after `esm` if desired.
+
+## Constants
+Fair amount of options can be set through sass variables. Always prefixed with the `const` keyword, must be placed before the `esm` import.
+
+## Modules
+TBD
