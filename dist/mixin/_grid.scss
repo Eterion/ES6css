@@ -1,4 +1,4 @@
-/// Adds grid layout to a **$container** element. Includes legacy support, however the layout may not be identical toa modern W3C standard. The **$whitespace-margin** parameter determines whenever the grid element margin property is positive or negative, to allow placement in element with padding property. This mixin already includes unit ([**rem**](#function-rem)) conversion, use non-relative units for input values. Note that enabled legacy support can generate large amounts of code, can be disabled by setting **$const-grid-enable-legacy-mode** to **false**. The legacy mode is also limited by number of items set through **$const-grid-count** constant.
+/// Adds grid layout to a **$container** element. Includes legacy support, however the layout may not be identical toa modern W3C standard. The **$whitespace-margin** parameter determines whenever the grid element margin property is positive or negative, to allow placement in element with padding property. This mixin already includes unit ([**rem**](#function-rem)) conversion, use non-relative units for input values. Note that enabled legacy support can generate large amounts of code, can be disabled by setting **$const-grid-legacy-mode-enabled** to **false**. The legacy mode is also limited by number of items set through **$const-grid-count** constant.
 /// @access public
 /// @param {string} $container - Container selector
 /// @param {string} $item - Children selector
@@ -35,7 +35,7 @@
   // include legacy support only if $const-grid-enable-legacy is true
   // may generate large amount of code
 
-  @if($const-grid-enable-legacy-mode == true) {
+  @if($const-grid-legacy-mode-enabled == true) {
 
     // layout (legacy)
     // these browsers don't support modern W3C standard
