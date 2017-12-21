@@ -1,24 +1,43 @@
-/// Returns a **$number** recalculated to em units. This function and its [**rem**](#function-rem) counterpart should be used on every absolute value, to allow scaling based on root font size. This function returns its original input number if **$const-relative-units-enabled** is set to **false**. To ensure visibility of all elements, numbers equal or below **$const-relative-units-min** are not recalculated.
+/// Returns a **$number** recalculated to em units, if possible. This functions and its [**rem**](#function-rem) counterpart should be used on every absolute value, to allow scaling based on **$const-font-size** constant. This function returns its original source number if **const-relative-units-enabled** is set to **false**. To ensure visibility of all elements, resulting numbers equal or below **$const-relative-units-min** are not recalculated.
 /// @access public
-/// @param {number} $number - Input number
+/// @param {number} $number - Source number
 /// @param {boolean|string} $unit [em] - Returned unit
-/// @example em(12px) // returns 1em
+/// @example em(14px) // returns 1em
 
 @function em($number, $unit: em) {
 
   @if($const-relative-units-enabled and $unit) {
     @if(type-of($number) == 'number') {
+
+      // rates relative to pixels
+      $conversion-rates-of: (
+        'cm': 0.026458,
+        'in': 0.010417,
+        'mm': 0.264583,
+        'pc': 0.0625,
+        'pt': 0.75,
+      );
+
+      // to pixels
+      @if(not unitless($number)) {
+        @if(map-has-key($conversion-rates-of, unit($number))) {
+          $number: clear-unit($number) / map-get($conversion-rates-of, unit($number));
+        }
+      }
+
+      // to relative units
       @if(unit($number) == 'px' or unitless($number)) {
 
         // is equal or below minimum
         @if(abs(clear-unit($number)) > 0 and abs(clear-unit($number)) <= clear-unit($const-relative-units-min)) {
-          @return $number;
+          @return #{round(clear-unit($number))}px;
         }
 
         // recalculate to relative
         @return #{clear-unit($number) / clear-unit(map-get($const-font-size-scale, $const-font-size))}#{$unit};
 
       }
+
     }
   }
 
