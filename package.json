@@ -13,7 +13,7 @@
     "start": "npm run clean && (npm run lint & npm run docs & npm run build)"
   },
   "devDependencies": {
-    "autoprefixer": "^7.2.3",
+    "autoprefixer": "^7.2.4",
     "del-cli": "^1.1.0",
     "node-sass": "^4.7.2",
     "postcss-cli": "^4.1.1",
