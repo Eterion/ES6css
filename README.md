@@ -25,7 +25,7 @@ Everything needed is included in the `esm` file.
 @import 'dist/esm';
 ```
 
-View the demo [export](demo/_export.scss) file for a example. Notice all the constants are placed before the esm import, while non-constants after. This works perfectly thanks to the sass `!default` flag. Optional `animation` and `placeholder` files can be imported after `esm` if desired.
+View the demo [export](demo/_export.scss) file for a example. Notice all the constants are placed before the esm import, while non-constants after. This works perfectly thanks to the sass `!default` flag. Optional [animation](dist/_animation.scss) and [placeholder](dist/_placeholder.scss) files can be imported after `esm` if desired.
 
 ## Constants
 Fair amount of options can be set through sass variables. Always prefixed with the `const` keyword, must be placed before the `esm` import.
