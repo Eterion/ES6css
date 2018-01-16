@@ -16,11 +16,4 @@ $export-defaults: map-merge((
 
   'unique': false,
 
-  // (whitespace-content-element)
-  // amount of whitespace used by the content-element mixin
-  // connect property specifies reduced amount of whitespace for connected elements
-
-  'whitespace-content-element': $const-whitespace,
-  'whitespace-content-element-connect': whitespace(smallest, false),
-
 ), if(global-variable-exists(export-defaults), $export-defaults, ()));

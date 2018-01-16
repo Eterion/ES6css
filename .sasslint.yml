@@ -61,7 +61,6 @@ rules:
     - 2
     -
       exclude:
-        - content-element
         - grid
         - has-class
         - import
