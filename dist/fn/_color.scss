@@ -25,12 +25,12 @@
     @error 'Color \"#{$color}\" is not a color, use valid color value or one of the following keys: #{map-keys($const-color-keys)}';
   }
 
-  // scale is not provided
+  // no scale
   @if($scale == false) {
     @return $color;
   }
 
   // calculate
-  @return scale-color($color, $lightness: percentage(map-get($const-color-scale, $scale) / 100));
+  @return scale-color($color, $lightness: percentage(map-key-get($const-color-scale, $scale, $can-inherit: false) / 100));
 
 }
