@@ -4,22 +4,22 @@ element {
   width: 1px;
 }
 
-/* px ($method: em) */
+/* px - 14px (method: em) */
 element {
-  height: 1px;
-  width: 1px;
+  height: 0.875em;
+  width: 0.875em;
 }
 
-/* px ($method: rem) */
+/* px - 14px (method: rem) */
 element {
-  height: 1px;
-  width: 1px;
+  height: 0.875rem;
+  width: 0.875rem;
 }
 
-/* px ($method: false) */
+/* px - 14px (method: false) */
 element {
-  height: 1px;
-  width: 1px;
+  height: 14px;
+  width: 14px;
 }
 
 /* % */
@@ -30,8 +30,8 @@ element {
 
 /* cm */
 element {
-  height: 3.14965rem;
-  width: 3.14965rem;
+  height: 2.36223rem;
+  width: 2.36223rem;
 }
 
 /* em */
@@ -48,20 +48,20 @@ element {
 
 /* in */
 element {
-  height: 7.99974rem;
-  width: 7.99974rem;
+  height: 5.99981rem;
+  width: 5.99981rem;
 }
 
 /* mm */
 element {
-  height: 0.31496rem;
-  width: 0.31496rem;
+  height: 0.23622rem;
+  width: 0.23622rem;
 }
 
 /* pc */
 element {
-  height: 1.33333rem;
-  width: 1.33333rem;
+  height: 1rem;
+  width: 1rem;
 }
 
 /* pt */

@@ -10,7 +10,7 @@ element {
 
 /* cm */
 element {
-  content: 3.14965rem;
+  content: 2.36223rem;
 }
 
 /* em */
@@ -25,17 +25,17 @@ element {
 
 /* in */
 element {
-  content: 7.99974rem;
+  content: 5.99981rem;
 }
 
 /* mm */
 element {
-  content: 0.31496rem;
+  content: 0.23622rem;
 }
 
 /* pc */
 element {
-  content: 1.33333rem;
+  content: 1rem;
 }
 
 /* pt */

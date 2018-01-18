@@ -8,17 +8,17 @@ element {
   content: "600px";
 }
 
-/* phone ($prop: width) */
+/* phone (prop: width) */
 element {
   content: "600px";
 }
 
-/* phone ($prop: height) */
+/* phone (prop: height) */
 element {
   content: "480px";
 }
 
-/* phone ($prop: both) */
+/* phone (prop: both) */
 element {
   content: "(width: 600px, height: 480px)";
 }
@@ -28,17 +28,17 @@ element {
   content: "768px";
 }
 
-/* portrait ($prop: width) */
+/* portrait (prop: width) */
 element {
   content: "768px";
 }
 
-/* portrait ($prop: height) */
+/* portrait (prop: height) */
 element {
   content: "1024px";
 }
 
-/* portrait ($prop: both) */
+/* portrait (prop: both) */
 element {
   content: "(width: 768px, height: 1024px)";
 }
@@ -48,17 +48,17 @@ element {
   content: "1024px";
 }
 
-/* landscape ($prop: width) */
+/* landscape (prop: width) */
 element {
   content: "1024px";
 }
 
-/* landscape ($prop: height) */
+/* landscape (prop: height) */
 element {
   content: "768px";
 }
 
-/* landscape ($prop: both) */
+/* landscape (prop: both) */
 element {
   content: "(width: 1024px, height: 768px)";
 }
@@ -68,17 +68,17 @@ element {
   content: "1366px";
 }
 
-/* notebook ($prop: width) */
+/* notebook (prop: width) */
 element {
   content: "1366px";
 }
 
-/* notebook ($prop: height) */
+/* notebook (prop: height) */
 element {
   content: "768px";
 }
 
-/* notebook ($prop: both) */
+/* notebook (prop: both) */
 element {
   content: "(width: 1366px, height: 768px)";
 }
@@ -88,17 +88,17 @@ element {
   content: "1680px";
 }
 
-/* desktop ($prop: width) */
+/* desktop (prop: width) */
 element {
   content: "1680px";
 }
 
-/* desktop ($prop: height) */
+/* desktop (prop: height) */
 element {
   content: "1050px";
 }
 
-/* desktop ($prop: both) */
+/* desktop (prop: both) */
 element {
   content: "(width: 1680px, height: 1050px)";
 }

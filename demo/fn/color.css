@@ -1,61 +1,66 @@
+/* #f00 */
+element {
+  content: #f00;
+}
+
+/* #f00 (heavy) */
+element {
+  content: #5c0000;
+}
+
+/* #f00 (hard) */
+element {
+  content: #730000;
+}
+
+/* #f00 (darkest) */
+element {
+  content: maroon;
+}
+
+/* #f00 (darker) */
+element {
+  content: #a30000;
+}
+
+/* #f00 (dark) */
+element {
+  content: #bf0000;
+}
+
+/* #f00 (regular) */
+element {
+  content: red;
+}
+
+/* #f00 (light) */
+element {
+  content: #ff4040;
+}
+
+/* #f00 (lighter) */
+element {
+  content: #ff6b6b;
+}
+
+/* #f00 (lightest) */
+element {
+  content: #ffb3b3;
+}
+
+/* #f00 (soft) */
+element {
+  content: #ffd9d9;
+}
+
+/* #f00 (pastel) */
+element {
+  content: #fff2f2;
+}
+
 /* gray */
 element {
   content: dimgray;
-}
-
-/* gray (heavy) */
-element {
-  content: #262626;
-}
-
-/* gray (hard) */
-element {
-  content: #2f2f2f;
-}
-
-/* gray (darkest) */
-element {
-  content: #353535;
-}
-
-/* gray (darker) */
-element {
-  content: #434343;
-}
-
-/* gray (dark) */
-element {
-  content: #4f4f4f;
-}
-
-/* gray (regular) */
-element {
-  content: dimgray;
-}
-
-/* gray (light) */
-element {
-  content: #8f8f8f;
-}
-
-/* gray (lighter) */
-element {
-  content: #a8a8a8;
-}
-
-/* gray (lightest) */
-element {
-  content: #d2d2d2;
-}
-
-/* gray (soft) */
-element {
-  content: #e9e9e9;
-}
-
-/* gray (pastel) */
-element {
-  content: #f8f8f8;
 }
 
 /* theme */
@@ -63,119 +68,9 @@ element {
   content: blue;
 }
 
-/* theme (heavy) */
-element {
-  content: #00005c;
-}
-
-/* theme (hard) */
-element {
-  content: #000073;
-}
-
-/* theme (darkest) */
-element {
-  content: navy;
-}
-
-/* theme (darker) */
-element {
-  content: #0000a3;
-}
-
-/* theme (dark) */
-element {
-  content: #0000bf;
-}
-
-/* theme (regular) */
-element {
-  content: blue;
-}
-
-/* theme (light) */
-element {
-  content: #4040ff;
-}
-
-/* theme (lighter) */
-element {
-  content: #6b6bff;
-}
-
-/* theme (lightest) */
-element {
-  content: #b3b3ff;
-}
-
-/* theme (soft) */
-element {
-  content: #d9d9ff;
-}
-
-/* theme (pastel) */
-element {
-  content: #f2f2ff;
-}
-
 /* success */
 element {
   content: green;
-}
-
-/* success (heavy) */
-element {
-  content: #002e00;
-}
-
-/* success (hard) */
-element {
-  content: #003a00;
-}
-
-/* success (darkest) */
-element {
-  content: #004000;
-}
-
-/* success (darker) */
-element {
-  content: #005200;
-}
-
-/* success (dark) */
-element {
-  content: #006000;
-}
-
-/* success (regular) */
-element {
-  content: green;
-}
-
-/* success (light) */
-element {
-  content: #00e000;
-}
-
-/* success (lighter) */
-element {
-  content: #21ff21;
-}
-
-/* success (lightest) */
-element {
-  content: #8cff8c;
-}
-
-/* success (soft) */
-element {
-  content: #c6ffc6;
-}
-
-/* success (pastel) */
-element {
-  content: #ecffec;
 }
 
 /* warn */
@@ -183,117 +78,7 @@ element {
   content: yellow;
 }
 
-/* warn (heavy) */
-element {
-  content: #5c5c00;
-}
-
-/* warn (hard) */
-element {
-  content: #737300;
-}
-
-/* warn (darkest) */
-element {
-  content: olive;
-}
-
-/* warn (darker) */
-element {
-  content: #a3a300;
-}
-
-/* warn (dark) */
-element {
-  content: #bfbf00;
-}
-
-/* warn (regular) */
-element {
-  content: yellow;
-}
-
-/* warn (light) */
-element {
-  content: #ffff40;
-}
-
-/* warn (lighter) */
-element {
-  content: #ffff6b;
-}
-
-/* warn (lightest) */
-element {
-  content: #ffffb3;
-}
-
-/* warn (soft) */
-element {
-  content: #ffffd9;
-}
-
-/* warn (pastel) */
-element {
-  content: #fffff2;
-}
-
 /* err */
 element {
   content: red;
-}
-
-/* err (heavy) */
-element {
-  content: #5c0000;
-}
-
-/* err (hard) */
-element {
-  content: #730000;
-}
-
-/* err (darkest) */
-element {
-  content: maroon;
-}
-
-/* err (darker) */
-element {
-  content: #a30000;
-}
-
-/* err (dark) */
-element {
-  content: #bf0000;
-}
-
-/* err (regular) */
-element {
-  content: red;
-}
-
-/* err (light) */
-element {
-  content: #ff4040;
-}
-
-/* err (lighter) */
-element {
-  content: #ff6b6b;
-}
-
-/* err (lightest) */
-element {
-  content: #ffb3b3;
-}
-
-/* err (soft) */
-element {
-  content: #ffd9d9;
-}
-
-/* err (pastel) */
-element {
-  content: #fff2f2;
 }

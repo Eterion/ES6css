@@ -1,64 +1,64 @@
 /* unitless */
 element {
-  content: 3.5rem;
+  content: 1px;
 }
 
 /* number */
 element {
-  content: 3.5rem;
+  content: 1px;
 }
 
-/* number ($method: false) */
+/* number - 14px (method: false) */
 element {
-  content: 42px;
+  content: 14px;
 }
 
-/* number ($method: em) */
+/* number - 14px (method: em) */
 element {
-  content: 3.5em;
+  content: 0.875em;
 }
 
-/* number ($method: rem) */
+/* number - 14px (method: rem) */
 element {
-  content: 3.5rem;
+  content: 0.875rem;
 }
 
 /* tiny */
 element {
-  content: 0.41667rem;
+  content: 0.3125rem;
 }
 
 /* smallest */
 element {
-  content: 0.83333rem;
+  content: 0.625rem;
 }
 
 /* smaller */
 element {
-  content: 1.25rem;
+  content: 0.9375rem;
 }
 
 /* small */
 element {
-  content: 1.66667rem;
+  content: 1.25rem;
 }
 
 /* regular */
 element {
-  content: 2.5rem;
+  content: 1.875rem;
 }
 
 /* large */
 element {
-  content: 3.75rem;
+  content: 2.8125rem;
 }
 
 /* larger */
 element {
-  content: 5rem;
+  content: 3.75rem;
 }
 
 /* largest */
 element {
-  content: 7.5rem;
+  content: 5.625rem;
 }

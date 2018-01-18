@@ -2,11 +2,11 @@
 .grid {
   display: -ms-grid;
   display: grid;
-  margin: 1.25rem;
+  margin: 0.9375rem;
 }
 
 .grid > .grid-item {
-  margin: 1.25rem;
+  margin: 0.9375rem;
 }
 
 .grid {
