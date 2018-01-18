@@ -4,7 +4,6 @@
 /// @param {bool|string} $method [rem] - Function called on the value, use **em** or **rem**
 /// @example font-size(regular) // returns 1rem
 
-
 @function font-size($value, $method: rem) {
 
   // relative units
