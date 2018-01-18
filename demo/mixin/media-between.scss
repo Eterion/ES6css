@@ -1,64 +1,51 @@
 @import '../../dist/esm';
 
-/* phone, portrait */
-element {
-  @include media-between(phone, portrait) {
-    content: 'phone, portrait';
-  }
-}
+@each $scale in map-keys($const-media-scale) {
+  @if(index(map-keys($const-media-scale), $scale) < length($const-media-scale)) {
 
-/* portrait, landscape */
-element {
-  @include media-between(portrait, landscape) {
-    content: 'portrait, landscape';
-  }
-}
+    $next: nth(map-keys($const-media-scale), index(map-keys($const-media-scale), $scale) + 1);
 
-/* landscape, notebook */
-element {
-  @include media-between(landscape, notebook) {
-    content: 'landscape, notebook';
-  }
-}
+    /* #{$scale}, #{$next} */
+    element {
+      @include media-between($scale, $next) {
+        content: '#{$scale}, #{$next}';
+      }
+    }
 
-/* notebook, desktop */
-element {
-  @include media-between(notebook, desktop) {
-    content: 'notebook, desktop';
-  }
-}
+    /* #{$scale}, #{$next} (prop: width) */
+    element {
+      @include media-between($scale, $next, $prop: width) {
+        content: '#{$scale}, #{$next}';
+      }
+    }
 
-/* notebook, desktop ($prop: width) */
-element {
-  @include media-between(notebook, desktop, $prop: width) {
-    content: 'notebook, desktop';
-  }
-}
+    /* #{$scale}, #{$next} (prop: height) */
+    element {
+      @include media-between($scale, $next, $prop: height) {
+        content: '#{$scale}, #{$next}';
+      }
+    }
 
-/* notebook, desktop ($prop: height) */
-element {
-  @include media-between(notebook, desktop, $prop: height) {
-    content: 'notebook, desktop';
-  }
-}
+    /* #{$scale}, #{$next} (prop: both) */
+    element {
+      @include media-between($scale, $next, $prop: both) {
+        content: '#{$scale}, #{$next}';
+      }
+    }
 
-/* notebook, desktop ($prop: both) */
-element {
-  @include media-between(notebook, desktop, $prop: both) {
-    content: 'notebook, desktop';
-  }
-}
+    /* #{$scale}, #{$next} (prop: both, operator: and) */
+    element {
+      @include media-between($scale, $next, $prop: both, $operator: and) {
+        content: '#{$scale}, #{$next}';
+      }
+    }
 
-/* notebook, desktop ($prop: both, $operator: and) */
-element {
-  @include media-between(notebook, desktop, $prop: both, $operator: and) {
-    content: 'notebook, desktop';
-  }
-}
+    /* #{$scale}, #{$next} (prop: both, operator: or) */
+    element {
+      @include media-between($scale, $next, $prop: both, $operator: or) {
+        content: '#{$scale}, #{$next}';
+      }
+    }
 
-/* notebook, desktop ($prop: both, $operator: or) */
-element {
-  @include media-between(notebook, desktop, $prop: both, $operator: or) {
-    content: 'notebook, desktop';
   }
 }

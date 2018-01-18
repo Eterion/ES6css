@@ -1,17 +1,20 @@
 @import '../../dist/esm';
 
-@each $color in map-keys($const-color-keys) {
+/* #f00 */
+element {
+  content: color(#f00);
+}
 
+@each $scale in map-keys($const-color-scale) {
+  /* #f00 (#{$scale}) */
+  element {
+    content: color(#f00, $scale);
+  }
+}
+
+@each $color in map-keys($const-color-keys) {
   /* #{$color} */
   element {
     content: color($color);
   }
-
-  @each $key, $scale in $const-color-scale {
-    /* #{$color} (#{$key}) */
-    element {
-      content: color($color, $scale);
-    }
-  }
-
 }

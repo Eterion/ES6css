@@ -1,71 +1,47 @@
 @import '../../dist/esm';
 
-/* phone */
-element {
-  @include media-up-from(phone) {
-    content: 'phone';
-  }
-}
+@each $scale in map-keys($const-media-scale) {
 
-/* portrait */
-element {
-  @include media-up-from(portrait) {
-    content: 'portrait';
+  /* #{$scale} */
+  element {
+    @include media-up-from($scale) {
+      content: '#{$scale}';
+    }
   }
-}
 
-/* landscape */
-element {
-  @include media-up-from(landscape) {
-    content: 'landscape';
+  /* #{$scale} (prop: width) */
+  element {
+    @include media-up-from($scale, $prop: width) {
+      content: '#{$scale}';
+    }
   }
-}
 
-/* notebook */
-element {
-  @include media-up-from(notebook) {
-    content: 'notebook';
+  /* #{$scale} (prop: height) */
+  element {
+    @include media-up-from($scale, $prop: height) {
+      content: '#{$scale}';
+    }
   }
-}
 
-/* desktop */
-element {
-  @include media-up-from(desktop) {
-    content: 'desktop';
+  /* #{$scale} (prop: both) */
+  element {
+    @include media-up-from($scale, $prop: both) {
+      content: '#{$scale}';
+    }
   }
-}
 
-/* desktop ($prop: width) */
-element {
-  @include media-up-from(desktop, $prop: width) {
-    content: 'desktop';
+  /* #{$scale} (prop: both, operator: and) */
+  element {
+    @include media-up-from($scale, $prop: both, $operator: and) {
+      content: '#{$scale}';
+    }
   }
-}
 
-/* desktop ($prop: height) */
-element {
-  @include media-up-from(desktop, $prop: height) {
-    content: 'desktop';
+  /* #{$scale} (prop: both, operator: or) */
+  element {
+    @include media-up-from($scale, $prop: both, $operator: or) {
+      content: '#{$scale}';
+    }
   }
-}
 
-/* desktop ($prop: both) */
-element {
-  @include media-up-from(desktop, $prop: both) {
-    content: 'desktop';
-  }
-}
-
-/* desktop ($prop: both, $operator: and) */
-element {
-  @include media-up-from(desktop, $prop: both, $operator: and) {
-    content: 'desktop';
-  }
-}
-
-/* desktop ($prop: both, $operator: or) */
-element {
-  @include media-up-from(desktop, $prop: both, $operator: or) {
-    content: 'desktop';
-  }
 }

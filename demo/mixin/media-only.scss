@@ -1,71 +1,47 @@
 @import '../../dist/esm';
 
-/* phone */
-element {
-  @include media-only(phone) {
-    content: 'phone';
-  }
-}
+@each $scale in map-keys($const-media-scale) {
 
-/* portrait */
-element {
-  @include media-only(portrait) {
-    content: 'portrait';
+  /* #{$scale} */
+  element {
+    @include media-only($scale) {
+      content: '#{$scale}';
+    }
   }
-}
 
-/* landscape */
-element {
-  @include media-only(landscape) {
-    content: 'landscape';
+  /* #{$scale} (prop: width) */
+  element {
+    @include media-only($scale, $prop: width) {
+      content: '#{$scale}';
+    }
   }
-}
 
-/* notebook */
-element {
-  @include media-only(notebook) {
-    content: 'notebook';
+  /* #{$scale} (prop: height) */
+  element {
+    @include media-only($scale, $prop: height) {
+      content: '#{$scale}';
+    }
   }
-}
 
-/* desktop */
-element {
-  @include media-only(desktop) {
-    content: 'desktop';
+  /* #{$scale} (prop: both) */
+  element {
+    @include media-only($scale, $prop: both) {
+      content: '#{$scale}';
+    }
   }
-}
 
-/* desktop ($prop: width) */
-element {
-  @include media-only(desktop, $prop: width) {
-    content: 'desktop';
+  /* #{$scale} (prop: both, operator: and) */
+  element {
+    @include media-only($scale, $prop: both, $operator: and) {
+      content: '#{$scale}';
+    }
   }
-}
 
-/* desktop ($prop: height) */
-element {
-  @include media-only(desktop, $prop: height) {
-    content: 'desktop';
+  /* #{$scale} (prop: both, operator: or) */
+  element {
+    @include media-only($scale, $prop: both, $operator: or) {
+      content: '#{$scale}';
+    }
   }
-}
 
-/* desktop ($prop: both) */
-element {
-  @include media-only(desktop, $prop: both) {
-    content: 'desktop';
-  }
-}
-
-/* desktop ($prop: both, $operator: and) */
-element {
-  @include media-only(desktop, $prop: both, $operator: and) {
-    content: 'desktop';
-  }
-}
-
-/* desktop ($prop: both, $operator: or) */
-element {
-  @include media-only(desktop, $prop: both, $operator: or) {
-    content: 'desktop';
-  }
 }

@@ -5,19 +5,19 @@ element {
   @include square(1);
 }
 
-/* px ($method: em) */
+/* px - 14px (method: em) */
 element {
-  @include square(1px, em);
+  @include square(14px, em);
 }
 
-/* px ($method: rem) */
+/* px - 14px (method: rem) */
 element {
-  @include square(1px, rem);
+  @include square(14px, rem);
 }
 
-/* px ($method: false) */
+/* px - 14px (method: false) */
 element {
-  @include square(1px, false);
+  @include square(14px, false);
 }
 
 /* % */

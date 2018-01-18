@@ -2,27 +2,27 @@
 
 /* unitless */
 element {
-  content: font-size(42);
+  content: font-size(1);
 }
 
 /* number */
 element {
-  content: font-size(42px);
+  content: font-size(1px);
 }
 
-/* number ($method: false) */
+/* number - 14px (method: false) */
 element {
-  content: font-size(42px, false);
+  content: font-size(14px, false);
 }
 
-/* number ($method: em) */
+/* number - 14px (method: em) */
 element {
-  content: font-size(42px, em);
+  content: font-size(14px, em);
 }
 
-/* number ($method: rem) */
+/* number - 14px (method: rem) */
 element {
-  content: font-size(42px, rem);
+  content: font-size(14px, rem);
 }
 
 /* inherit */
@@ -30,52 +30,9 @@ element {
   content: font-size(inherit);
 }
 
-/* tiny */
-element {
-  content: font-size(tiny);
-}
-
-/* smallest */
-element {
-  content: font-size(smallest);
-}
-
-/* smaller */
-element {
-  content: font-size(smaller);
-}
-
-/* small */
-element {
-  content: font-size(small);
-}
-
-/* regular */
-element {
-  content: font-size(regular);
-}
-
-/* large */
-element {
-  content: font-size(large);
-}
-
-/* larger */
-element {
-  content: font-size(larger);
-}
-
-/* largest */
-element {
-  content: font-size(largest);
-}
-
-/* xl */
-element {
-  content: font-size(xl);
-}
-
-/* xxl */
-element {
-  content: font-size(xxl);
+@each $scale in map-keys($const-font-size-scale) {
+  /* #{$scale} */
+  element {
+    content: font-size($scale);
+  }
 }

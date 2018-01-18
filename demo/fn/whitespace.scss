@@ -2,65 +2,32 @@
 
 /* unitless */
 element {
-  content: whitespace(42);
+  content: whitespace(1);
 }
 
 /* number */
 element {
-  content: whitespace(42px);
+  content: whitespace(1px);
 }
 
-/* number ($method: false) */
+/* number - 14px (method: false) */
 element {
-  content: whitespace(42px, false);
+  content: whitespace(14px, false);
 }
 
-/* number ($method: em) */
+/* number - 14px (method: em) */
 element {
-  content: whitespace(42px, em);
+  content: whitespace(14px, em);
 }
 
-/* number ($method: rem) */
+/* number - 14px (method: rem) */
 element {
-  content: whitespace(42px, rem);
+  content: whitespace(14px, rem);
 }
 
-/* tiny */
-element {
-  content: whitespace(tiny);
-}
-
-/* smallest */
-element {
-  content: whitespace(smallest);
-}
-
-/* smaller */
-element {
-  content: whitespace(smaller);
-}
-
-/* small */
-element {
-  content: whitespace(small);
-}
-
-/* regular */
-element {
-  content: whitespace(regular);
-}
-
-/* large */
-element {
-  content: whitespace(large);
-}
-
-/* larger */
-element {
-  content: whitespace(larger);
-}
-
-/* largest */
-element {
-  content: whitespace(largest);
+@each $scale in map-keys($const-whitespace-scale) {
+  /* #{$scale} */
+  element {
+    content: whitespace($scale);
+  }
 }

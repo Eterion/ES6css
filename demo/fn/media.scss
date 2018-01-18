@@ -5,102 +5,24 @@ element {
   content: '#{media(480px)}';
 }
 
-/* phone */
-element {
-  content: '#{media(phone)}';
-}
+@each $scale in map-keys($const-media-scale) {
+  /* #{$scale} */
+  element {
+    content: '#{media($scale)}';
+  }
 
-/* phone ($prop: width) */
-element {
-  content: '#{media(phone, width)}';
-}
+  /* #{$scale} (prop: width) */
+  element {
+    content: '#{media($scale, width)}';
+  }
 
-/* phone ($prop: height) */
-element {
-  content: '#{media(phone, height)}';
-}
+  /* #{$scale} (prop: height) */
+  element {
+    content: '#{media($scale, height)}';
+  }
 
-/* phone ($prop: both) */
-element {
-  content: '#{media(phone, both)}';
-}
-
-/* portrait */
-element {
-  content: '#{media(portrait)}';
-}
-
-/* portrait ($prop: width) */
-element {
-  content: '#{media(portrait, width)}';
-}
-
-/* portrait ($prop: height) */
-element {
-  content: '#{media(portrait, height)}';
-}
-
-/* portrait ($prop: both) */
-element {
-  content: '#{media(portrait, both)}';
-}
-
-/* landscape */
-element {
-  content: '#{media(landscape)}';
-}
-
-/* landscape ($prop: width) */
-element {
-  content: '#{media(landscape, width)}';
-}
-
-/* landscape ($prop: height) */
-element {
-  content: '#{media(landscape, height)}';
-}
-
-/* landscape ($prop: both) */
-element {
-  content: '#{media(landscape, both)}';
-}
-
-/* notebook */
-element {
-  content: '#{media(notebook)}';
-}
-
-/* notebook ($prop: width) */
-element {
-  content: '#{media(notebook, width)}';
-}
-
-/* notebook ($prop: height) */
-element {
-  content: '#{media(notebook, height)}';
-}
-
-/* notebook ($prop: both) */
-element {
-  content: '#{media(notebook, both)}';
-}
-
-/* desktop */
-element {
-  content: '#{media(desktop)}';
-}
-
-/* desktop ($prop: width) */
-element {
-  content: '#{media(desktop, width)}';
-}
-
-/* desktop ($prop: height) */
-element {
-  content: '#{media(desktop, height)}';
-}
-
-/* desktop ($prop: both) */
-element {
-  content: '#{media(desktop, both)}';
+  /* #{$scale} (prop: both) */
+  element {
+    content: '#{media($scale, both)}';
+  }
 }

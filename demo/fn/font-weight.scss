@@ -5,82 +5,16 @@ element {
   content: font-weight(inherit);
 }
 
-/* 100 */
-element {
-  content: font-weight(100);
+@each $value in map-values($const-font-weight-scale) {
+  /* #{$value} */
+  element {
+    content: font-weight($value);
+  }
 }
 
-/* 300 */
-element {
-  content: font-weight(300);
-}
-
-/* 400 */
-element {
-  content: font-weight(400);
-}
-
-/* 500 */
-element {
-  content: font-weight(500);
-}
-
-/* 600 */
-element {
-  content: font-weight(600);
-}
-
-/* 700 */
-element {
-  content: font-weight(700);
-}
-
-/* 800 */
-element {
-  content: font-weight(800);
-}
-
-/* 900 */
-element {
-  content: font-weight(900);
-}
-
-/* thin */
-element {
-  content: font-weight(thin);
-}
-
-/* light */
-element {
-  content: font-weight(light);
-}
-
-/* regular */
-element {
-  content: font-weight(regular);
-}
-
-/* medium */
-element {
-  content: font-weight(medium);
-}
-
-/* semibold */
-element {
-  content: font-weight(semibold);
-}
-
-/* bold */
-element {
-  content: font-weight(bold);
-}
-
-/* extrabold */
-element {
-  content: font-weight(extrabold);
-}
-
-/* ultrabold */
-element {
-  content: font-weight(ultrabold);
+@each $scale in map-keys($const-font-weight-scale) {
+  /* #{$scale} */
+  element {
+    content: font-weight($scale);
+  }
 }
