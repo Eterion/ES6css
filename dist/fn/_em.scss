@@ -1,4 +1,4 @@
-/// Returns a **$number** recalculated to em units, if possible. This functions and its [**rem**](#function-rem) counterpart should be used on every absolute value, to allow scaling based on **$const-font-size** constant. This function returns its original source number if **const-relative-units-enabled** is set to **false**. To ensure visibility of all elements, resulting numbers equal or below **$const-relative-units-min** are not recalculated.
+/// Returns a **$number** recalculated to em units, if possible. This functions and its [**rem**](#function-rem) counterpart should be used on every absolute value, to allow scaling based on **$const-default-key** key of the **$const-font-size-scale** constant. This function returns its original source number if **const-relative-units-enabled** is set to **false**. To ensure visibility of all elements, resulting numbers equal or below **$const-relative-units-min** are not recalculated.
 /// @access public
 /// @param {number} $number - Source number
 /// @param {boolean|string} $unit [em] - Returned unit
@@ -34,7 +34,7 @@
         }
 
         // recalculate to relative
-        @return #{clear-unit($number) / clear-unit(map-get($const-font-size-scale, $const-font-size))}#{$unit};
+        @return #{clear-unit($number) / clear-unit(map-get($const-font-size-scale, $const-default-key))}#{$unit};
 
       }
 

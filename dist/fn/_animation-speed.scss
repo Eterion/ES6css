@@ -1,8 +1,8 @@
 /// Returns animation speed value according to **$key** identifier. Scaling levels are completely customizable through **$const-animation-speed-scale** constant.
 /// @access public
-/// @param {number|string} $key [regular] - Number or scale identifier
+/// @param {number|string} $key [$const-default-key] - Number or scale identifier
 /// @example animation-speed(regular) // returns 300ms
 
-@function animation-speed($key: regular) {
+@function animation-speed($key: $const-default-key) {
   @return map-key-get($const-animation-speed-scale, $key, $can-inherit: false);
 }
