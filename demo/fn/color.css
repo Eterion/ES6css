@@ -3,127 +3,297 @@ element {
   content: dimgray;
 }
 
-/* gray ($scale: false) */
-element {
-  content: dimgray;
-}
-
-/* gray ($scale: heavy) */
+/* gray (heavy) */
 element {
   content: #262626;
 }
 
-/* gray ($scale: hard) */
+/* gray (hard) */
 element {
   content: #2f2f2f;
 }
 
-/* gray ($scale: darkest) */
+/* gray (darkest) */
 element {
   content: #353535;
 }
 
-/* gray ($scale: darker) */
+/* gray (darker) */
 element {
   content: #434343;
 }
 
-/* gray ($scale: dark) */
+/* gray (dark) */
 element {
   content: #4f4f4f;
 }
 
-/* gray ($scale: regular) */
+/* gray (regular) */
 element {
   content: dimgray;
 }
 
-/* gray ($scale: light) */
+/* gray (light) */
 element {
   content: #8f8f8f;
 }
 
-/* gray ($scale: lighter) */
+/* gray (lighter) */
 element {
   content: #a8a8a8;
 }
 
-/* gray ($scale: lightest) */
+/* gray (lightest) */
 element {
   content: #d2d2d2;
 }
 
-/* gray ($scale: soft) */
+/* gray (soft) */
 element {
   content: #e9e9e9;
 }
 
-/* gray ($scale: pastel) */
+/* gray (pastel) */
 element {
   content: #f8f8f8;
 }
 
-/* #f00 */
+/* theme */
 element {
-  content: #f00;
+  content: blue;
 }
 
-/* #f00 ($scale: false) */
+/* theme (heavy) */
 element {
-  content: #f00;
+  content: #00005c;
 }
 
-/* #f00 ($scale: heavy) */
+/* theme (hard) */
 element {
-  content: #5c0000;
+  content: #000073;
 }
 
-/* #f00 ($scale: hard) */
+/* theme (darkest) */
 element {
-  content: #730000;
+  content: navy;
 }
 
-/* #f00 ($scale: darkest) */
+/* theme (darker) */
 element {
-  content: maroon;
+  content: #0000a3;
 }
 
-/* #f00 ($scale: darker) */
+/* theme (dark) */
 element {
-  content: #a30000;
+  content: #0000bf;
 }
 
-/* #f00 ($scale: dark) */
+/* theme (regular) */
 element {
-  content: #bf0000;
+  content: blue;
 }
 
-/* #f00 ($scale: regular) */
+/* theme (light) */
+element {
+  content: #4040ff;
+}
+
+/* theme (lighter) */
+element {
+  content: #6b6bff;
+}
+
+/* theme (lightest) */
+element {
+  content: #b3b3ff;
+}
+
+/* theme (soft) */
+element {
+  content: #d9d9ff;
+}
+
+/* theme (pastel) */
+element {
+  content: #f2f2ff;
+}
+
+/* success */
+element {
+  content: green;
+}
+
+/* success (heavy) */
+element {
+  content: #002e00;
+}
+
+/* success (hard) */
+element {
+  content: #003a00;
+}
+
+/* success (darkest) */
+element {
+  content: #004000;
+}
+
+/* success (darker) */
+element {
+  content: #005200;
+}
+
+/* success (dark) */
+element {
+  content: #006000;
+}
+
+/* success (regular) */
+element {
+  content: green;
+}
+
+/* success (light) */
+element {
+  content: #00e000;
+}
+
+/* success (lighter) */
+element {
+  content: #21ff21;
+}
+
+/* success (lightest) */
+element {
+  content: #8cff8c;
+}
+
+/* success (soft) */
+element {
+  content: #c6ffc6;
+}
+
+/* success (pastel) */
+element {
+  content: #ecffec;
+}
+
+/* warn */
+element {
+  content: yellow;
+}
+
+/* warn (heavy) */
+element {
+  content: #5c5c00;
+}
+
+/* warn (hard) */
+element {
+  content: #737300;
+}
+
+/* warn (darkest) */
+element {
+  content: olive;
+}
+
+/* warn (darker) */
+element {
+  content: #a3a300;
+}
+
+/* warn (dark) */
+element {
+  content: #bfbf00;
+}
+
+/* warn (regular) */
+element {
+  content: yellow;
+}
+
+/* warn (light) */
+element {
+  content: #ffff40;
+}
+
+/* warn (lighter) */
+element {
+  content: #ffff6b;
+}
+
+/* warn (lightest) */
+element {
+  content: #ffffb3;
+}
+
+/* warn (soft) */
+element {
+  content: #ffffd9;
+}
+
+/* warn (pastel) */
+element {
+  content: #fffff2;
+}
+
+/* err */
 element {
   content: red;
 }
 
-/* #f00 ($scale: light) */
+/* err (heavy) */
+element {
+  content: #5c0000;
+}
+
+/* err (hard) */
+element {
+  content: #730000;
+}
+
+/* err (darkest) */
+element {
+  content: maroon;
+}
+
+/* err (darker) */
+element {
+  content: #a30000;
+}
+
+/* err (dark) */
+element {
+  content: #bf0000;
+}
+
+/* err (regular) */
+element {
+  content: red;
+}
+
+/* err (light) */
 element {
   content: #ff4040;
 }
 
-/* #f00 ($scale: lighter) */
+/* err (lighter) */
 element {
   content: #ff6b6b;
 }
 
-/* #f00 ($scale: lightest) */
+/* err (lightest) */
 element {
   content: #ffb3b3;
 }
 
-/* #f00 ($scale: soft) */
+/* err (soft) */
 element {
   content: #ffd9d9;
 }
 
-/* #f00 ($scale: pastel) */
+/* err (pastel) */
 element {
   content: #fff2f2;
 }
