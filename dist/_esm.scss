@@ -3,25 +3,25 @@
 // must be imported before functions and mixins
 // -----
 
-@import 'dist/system';
+@import 'system';
 
 // (const)
 // constants are defined with !default flag to allow overwrite
 // maps are a special case that requires additional defaults constant
 // -----
 
-@import 'dist/const';
+@import 'const';
 
 // (fn and mixin)
 // remaining functionality through functions and mixins
 // private items are intentionally not documented
 // -----
 
-@import 'dist/fn';
-@import 'dist/mixin';
+@import 'fn';
+@import 'mixin';
 
 // (export)
 // defaults required for proper import and export functionality
 // -----
 
-@import 'dist/export';
+@import 'export';
