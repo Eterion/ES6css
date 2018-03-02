@@ -1,9 +1,0 @@
-/// Adds outer container class to a export item. This mixin is used to standardize outer wrap element selector, customizabe through **$const-class-wrap-out** constant.
-/// @access public
-/// @example @include wrap-out { ... }
-
-@mixin wrap-out {
-  @at-root #{get-value(selector)}-#{$const-class-wrap-out} {
-    @content;
-  }
-}
