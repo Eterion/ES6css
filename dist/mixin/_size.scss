@@ -1,0 +1,48 @@
+/// Allows to use shorthand properties to represent width and height in css. Aspect ratio support is included. This mixin already includes unit conversion, use non-relative units for input value, can be disabled by setting **$method** parameter to **false**. This mixin is alternative to [postcss-short-size](https://github.com/jonathantneal/postcss-short-size) plugin.
+/// @access public
+/// @param {number|list} $size - Size or list of width and height
+/// @param {bool|string} $method [rem] - Function called on the value, use **em** or **rem**
+/// @example @include size(640px 4/3)
+
+@mixin size($size, $method: rem) {
+
+  // default
+  $width: $size;
+  $height: $size;
+
+  // size
+  @if(type-of($size) == 'list') {
+
+    // number
+    $width: nth($size, 1);
+
+    // calculate width according to height aspect ratio
+    @if(type-of($width) == 'number') {
+      @if(unitless($width) and str-index(quote($size), '/')) {
+        $width: $width * nth($size, 2);
+      }
+    }
+
+    // number
+    $height: nth($size, 2);
+
+    // calculate height according to width aspect ratio
+    @if(type-of($height) == 'number') {
+      @if(unitless($height) and str-index(quote($size), '/')) {
+        $height: nth($size, 1) / $height;
+      }
+    }
+
+  }
+
+  // width
+  @if($width) {
+    width: if($method, call($method, $width), $width);
+  }
+
+  // height
+  @if($height) {
+    height: if($method, call($method, $height), $height);
+  }
+
+}

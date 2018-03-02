@@ -1,0 +1,45 @@
+/* 1920 */
+element {
+  width: 120rem;
+  height: 120rem;
+}
+
+/* 1920px */
+element {
+  width: 120rem;
+  height: 120rem;
+}
+
+/* 1920px 16/9 */
+element {
+  width: 120rem;
+  height: 67.5rem;
+}
+
+/* 1024px 4/3 */
+element {
+  width: 64rem;
+  height: 48rem;
+}
+
+/* 16/9 1080px */
+element {
+  width: 120rem;
+  height: 67.5rem;
+}
+
+/* 4/3 768 */
+element {
+  width: 64rem;
+  height: 48rem;
+}
+
+/* 1920px false */
+element {
+  width: 120rem;
+}
+
+/* false 1920px */
+element {
+  height: 120rem;
+}

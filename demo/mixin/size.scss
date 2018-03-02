@@ -1,0 +1,122 @@
+@import '../../dist/esm';
+
+// /* unitless */
+// element {
+//   @include square(1);
+// }
+
+// /* px - 14px (method: em) */
+// element {
+//   @include square(14px, em);
+// }
+
+// /* px - 14px (method: rem) */
+// element {
+//   @include square(14px, rem);
+// }
+
+// /* px - 14px (method: false) */
+// element {
+//   @include square(14px, false);
+// }
+
+// /* % */
+// element {
+//   @include square(1%);
+// }
+
+// /* cm */
+// element {
+//   @include square(1cm);
+// }
+
+// /* em */
+// element {
+//   @include square(1em);
+// }
+
+// /* ex */
+// element {
+//   @include square(1ex);
+// }
+
+// /* in */
+// element {
+//   @include square(1in);
+// }
+
+// /* mm */
+// element {
+//   @include square(1mm);
+// }
+
+// /* pc */
+// element {
+//   @include square(1pc);
+// }
+
+// /* pt */
+// element {
+//   @include square(1pt);
+// }
+
+// /* px */
+// element {
+//   @include square(1px);
+// }
+
+// /* rem */
+// element {
+//   @include square(1rem);
+// }
+
+// /* vh */
+// element {
+//   @include square(1vh);
+// }
+
+// /* vw */
+// element {
+//   @include square(1vw);
+// }
+
+
+/* 1920 */
+element {
+  @include size(1920);
+}
+
+/* 1920px */
+element {
+  @include size(1920px);
+}
+
+/* 1920px 16/9 */
+element {
+  @include size(1920px 16/9);
+}
+
+/* 1024px 4/3 */
+element {
+  @include size(1024px 4/3);
+}
+
+/* 16/9 1080px */
+element {
+  @include size(16/9 1080px);
+}
+
+/* 4/3 768 */
+element {
+  @include size(4/3 768px);
+}
+
+/* 1920px false */
+element {
+  @include size(1920px false);
+}
+
+/* false 1920px */
+element {
+  @include size(false 1920px);
+}
