@@ -8,9 +8,34 @@ element {
   content: 100;
 }
 
+/* 200 */
+element {
+  content: 200;
+}
+
+/* 200 */
+element {
+  content: 200;
+}
+
 /* 300 */
 element {
   content: 300;
+}
+
+/* 400 */
+element {
+  content: 400;
+}
+
+/* 400 */
+element {
+  content: 400;
+}
+
+/* 400 */
+element {
+  content: 400;
 }
 
 /* 400 */
@@ -28,9 +53,19 @@ element {
   content: 600;
 }
 
+/* 600 */
+element {
+  content: 600;
+}
+
 /* 700 */
 element {
   content: 700;
+}
+
+/* 800 */
+element {
+  content: 800;
 }
 
 /* 800 */
@@ -43,9 +78,24 @@ element {
   content: 900;
 }
 
+/* 900 */
+element {
+  content: 900;
+}
+
 /* thin */
 element {
   content: 100;
+}
+
+/* extralight */
+element {
+  content: 200;
+}
+
+/* ultralight */
+element {
+  content: 200;
 }
 
 /* light */
@@ -53,7 +103,22 @@ element {
   content: 300;
 }
 
+/* book */
+element {
+  content: 400;
+}
+
+/* normal */
+element {
+  content: 400;
+}
+
 /* regular */
+element {
+  content: 400;
+}
+
+/* roman */
 element {
   content: 400;
 }
@@ -64,6 +129,11 @@ element {
 }
 
 /* semibold */
+element {
+  content: 600;
+}
+
+/* demibold */
 element {
   content: 600;
 }
@@ -79,6 +149,16 @@ element {
 }
 
 /* ultrabold */
+element {
+  content: 800;
+}
+
+/* black */
+element {
+  content: 900;
+}
+
+/* heavy */
 element {
   content: 900;
 }
