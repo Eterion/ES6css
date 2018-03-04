@@ -6,6 +6,12 @@
 
 @function em($number, $unit: em) {
 
+  // unitless
+  @if(type-of($number) == 'number' and unitless($number)) {
+    @error 'Number \"#{$number}\" is unitless, use a number with a defined unit.';
+  }
+
+  // conversion
   @if($const-relative-units-enabled and $unit) {
     @if(type-of($number) == 'number') {
 
