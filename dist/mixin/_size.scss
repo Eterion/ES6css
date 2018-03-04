@@ -1,46 +1,71 @@
-/// Allows to use shorthand properties to represent width and height in css. Aspect ratio support is included. This mixin already includes unit conversion, use non-relative units for input value, can be disabled by setting **$method** parameter to **false**. This mixin is alternative to [postcss-short-size](https://github.com/jonathantneal/postcss-short-size) plugin.
+/// Allows to use shorthand properties to represent width and height. Unitless values are handled as aspect ratio. Skip token **false** can be used to skip width or height property. This mixin already includes unit conversion, use non-relative units for input value, can be disabled by setting **$method** parameter to **false**. This mixin is alternative to [postcss-short-size](https://github.com/jonathantneal/postcss-short-size) plugin.
 /// @access public
-/// @param {number|list} $size - Size or list of width and height
+/// @param {number|list} $size - Size, or space separated list of width and height (set **false** to skip)
 /// @param {bool|string} $method [rem] - Function called on the value, use **em** or **rem**
 /// @example @include size(640px 4/3)
 
 @mixin size($size, $method: rem) {
 
   // default
+  // save width and height into separate variables
+  // in case where width should equal to height
+
   $width: $size;
   $height: $size;
 
   // size
+  // detect whenever size is provided as two parameters
+  // width as first, height as second, unitless numbers are handled as aspect ratio
+
   @if(type-of($size) == 'list') {
 
-    // number
+    // properties
     $width: nth($size, 1);
-
-    // calculate width according to height aspect ratio
-    @if(type-of($width) == 'number') {
-      @if(unitless($width) and str-index(quote($size), '/')) {
-        $width: $width * nth($size, 2);
-      }
-    }
-
-    // number
     $height: nth($size, 2);
 
-    // calculate height according to width aspect ratio
-    @if(type-of($height) == 'number') {
-      @if(unitless($height) and str-index(quote($size), '/')) {
-        $height: nth($size, 1) / $height;
+    // aspect ratio (on height)
+    // calculate width according to height aspect ratio
+    // must be unitless number
+
+    @if(type-of($width) == 'number' and unitless($width)) {
+
+      // cannot be calculated
+      @if(type-of($height) != 'number' or unitless($height)) {
+        @error 'Height property (size) cannot be calculated, because width is skipped or defined as aspect ratio as well.';
       }
+
+      // calculate
+      $width: $width * $height;
+
+    }
+
+    // aspect ratio (on width)
+    // calculate height according to width aspect ratio
+    // must be unitless number
+
+    @if(type-of($height) == 'number' and unitless($height)) {
+
+      // cannot be calculated
+      @if(type-of($width) != 'number' or unitless($width)) {
+        @error 'Width property (size) cannot be calculated, because height is skipped or defined as aspect ratio as well.';
+      }
+
+      // calculate
+      $height: $width / $height;
     }
 
   }
 
-  // width
+  // definition (width)
+  // output width property only when it's set
+
   @if($width) {
     width: if($method, call($method, $width), $width);
   }
 
-  // height
+  // definition (height)
+  // output height property only when it's set
+
   @if($height) {
     height: if($method, call($method, $height), $height);
   }

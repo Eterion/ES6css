@@ -1,10 +1,5 @@
 @import '../../dist/esm';
 
-/* unitless */
-element {
-  content: em(1);
-}
-
 /* % */
 element {
   content: em(1%);

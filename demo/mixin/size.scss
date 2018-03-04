@@ -1,122 +1,96 @@
 @import '../../dist/esm';
 
-// /* unitless */
-// element {
-//   @include square(1);
-// }
-
-// /* px - 14px (method: em) */
-// element {
-//   @include square(14px, em);
-// }
-
-// /* px - 14px (method: rem) */
-// element {
-//   @include square(14px, rem);
-// }
-
-// /* px - 14px (method: false) */
-// element {
-//   @include square(14px, false);
-// }
-
-// /* % */
-// element {
-//   @include square(1%);
-// }
-
-// /* cm */
-// element {
-//   @include square(1cm);
-// }
-
-// /* em */
-// element {
-//   @include square(1em);
-// }
-
-// /* ex */
-// element {
-//   @include square(1ex);
-// }
-
-// /* in */
-// element {
-//   @include square(1in);
-// }
-
-// /* mm */
-// element {
-//   @include square(1mm);
-// }
-
-// /* pc */
-// element {
-//   @include square(1pc);
-// }
-
-// /* pt */
-// element {
-//   @include square(1pt);
-// }
-
-// /* px */
-// element {
-//   @include square(1px);
-// }
-
-// /* rem */
-// element {
-//   @include square(1rem);
-// }
-
-// /* vh */
-// element {
-//   @include square(1vh);
-// }
-
-// /* vw */
-// element {
-//   @include square(1vw);
-// }
-
-
-/* 1920 */
+/* 100px ($method: em) */
 element {
-  @include size(1920);
+  @include size(100px, $method: em);
 }
 
-/* 1920px */
+/* 100px ($method: rem) */
 element {
-  @include size(1920px);
+  @include size(100px, $method: rem);
 }
 
-/* 1920px 16/9 */
+/* 100px ($method: false) */
 element {
-  @include size(1920px 16/9);
+  @include size(100px, $method: false);
 }
 
-/* 1024px 4/3 */
+/* % */
 element {
-  @include size(1024px 4/3);
+  @include size(1%);
 }
 
-/* 16/9 1080px */
+/* cm */
+element {
+  @include size(1cm);
+}
+
+/* em */
+element {
+  @include size(1em);
+}
+
+/* ex */
+element {
+  @include size(1ex);
+}
+
+/* in */
+element {
+  @include size(1in);
+}
+
+/* mm */
+element {
+  @include size(1mm);
+}
+
+/* pc */
+element {
+  @include size(1pc);
+}
+
+/* pt */
+element {
+  @include size(1pt);
+}
+
+/* px */
+element {
+  @include size(1px);
+}
+
+/* rem */
+element {
+  @include size(1rem);
+}
+
+/* vh */
+element {
+  @include size(1vh);
+}
+
+/* vw */
+element {
+  @include size(1vw);
+}
+
+/* width aspect (16/9 1080px) */
 element {
   @include size(16/9 1080px);
 }
 
-/* 4/3 768 */
+/* height aspect (1920px 16/9) */
 element {
-  @include size(4/3 768px);
+  @include size(1920px 16/9);
 }
 
-/* 1920px false */
+/* width skip (false 1080px) */
+element {
+  @include size(false 1080px);
+}
+
+/* height skip (1920px false) */
 element {
   @include size(1920px false);
-}
-
-/* false 1920px */
-element {
-  @include size(false 1920px);
 }

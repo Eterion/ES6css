@@ -1,45 +1,111 @@
-/* 1920 */
+/* 100px ($method: em) */
 element {
-  width: 120rem;
-  height: 120rem;
+  width: 6.25em;
+  height: 6.25em;
 }
 
-/* 1920px */
+/* 100px ($method: rem) */
 element {
-  width: 120rem;
-  height: 120rem;
+  width: 6.25rem;
+  height: 6.25rem;
 }
 
-/* 1920px 16/9 */
+/* 100px ($method: false) */
+element {
+  width: 100px;
+  height: 100px;
+}
+
+/* % */
+element {
+  width: 1%;
+  height: 1%;
+}
+
+/* cm */
+element {
+  width: 2.36223rem;
+  height: 2.36223rem;
+}
+
+/* em */
+element {
+  width: 1em;
+  height: 1em;
+}
+
+/* ex */
+element {
+  width: 1ex;
+  height: 1ex;
+}
+
+/* in */
+element {
+  width: 5.99981rem;
+  height: 5.99981rem;
+}
+
+/* mm */
+element {
+  width: 0.23622rem;
+  height: 0.23622rem;
+}
+
+/* pc */
+element {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* pt */
+element {
+  width: 1px;
+  height: 1px;
+}
+
+/* px */
+element {
+  width: 1px;
+  height: 1px;
+}
+
+/* rem */
+element {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* vh */
+element {
+  width: 1vh;
+  height: 1vh;
+}
+
+/* vw */
+element {
+  width: 1vw;
+  height: 1vw;
+}
+
+/* width aspect (16/9 1080px) */
 element {
   width: 120rem;
   height: 67.5rem;
 }
 
-/* 1024px 4/3 */
-element {
-  width: 64rem;
-  height: 48rem;
-}
-
-/* 16/9 1080px */
+/* height aspect (1920px 16/9) */
 element {
   width: 120rem;
   height: 67.5rem;
 }
 
-/* 4/3 768 */
+/* width skip (false 1080px) */
 element {
-  width: 64rem;
-  height: 48rem;
+  height: 67.5rem;
 }
 
-/* 1920px false */
+/* height skip (1920px false) */
 element {
   width: 120rem;
-}
-
-/* false 1920px */
-element {
-  height: 120rem;
 }
