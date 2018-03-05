@@ -6,7 +6,7 @@
 /// @param {string} $operator [and] - Determines relationship between width and height, can be **and** or **or**
 /// @example @include media-up-to(phone) { ... }
 
-@mixin media-up-to($scale, $prop: width, $operator: and) {
+@mixin media-up-to($scale, $prop: $const-default-media, $operator: and) {
 
   // not found
   @if(type-of($scale) == 'string' and map-has-key($const-media-scale, $scale) == false) {

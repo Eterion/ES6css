@@ -6,7 +6,7 @@
 // @param {string} $prop [width] - Determines what value is returned, can be **width**, **height** or **both**
 // @param {string} $operator [and] - Media query operator, can be **and** or **or**
 
-@function media-query($min-max, $value, $prop: width, $operator: and) {
+@function media-query($min-max, $value, $prop: $const-default-media, $operator: and) {
 
   // both
   @if($prop == both) {

@@ -28,10 +28,10 @@
       // recalculates item position in grid in media query
 
       @for $column-index from ($const-grid-column-min + 1) through $const-grid-column-max {
-        @include media-up-from($column-index * $real-width) {
+        @include media-up-from($column-index * $real-width, width) {
 
           // calculate number of columns
-          $available: media($column-index * $real-width) - $reduce-viewport-by;
+          $available: media($column-index * $real-width, width) - $reduce-viewport-by;
           $add: if($available <= $column-index * $real-width, floor(($available - ($const-grid-column-min * $real-width)) / $real-width) , 0);
           $repeat-restricted: $const-grid-column-min + $add;
 

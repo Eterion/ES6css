@@ -7,7 +7,7 @@
 /// @param {string} $operator [and] - Determines relationship between width and height, can be **and** or **or**
 /// @example @include media-between(phone, desktop) { ... }
 
-@mixin media-between($lower, $upper, $prop: width, $operator: and) {
+@mixin media-between($lower, $upper, $prop: $const-default-media, $operator: and) {
 
   // not found: lower
   @if(type-of($lower) == 'string' and map-has-key($const-media-scale, $lower) == false) {

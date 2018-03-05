@@ -31,7 +31,7 @@
     // media query is based on the item width
 
     @for $column-index from ($const-grid-column-min + 1) through $const-grid-column-max {
-      @include media-up-from($column-index * $real-width) {
+      @include media-up-from($column-index * $real-width, width) {
 
         // calculate number of columns
         $available: media($column-index * $real-width) - $reduce-viewport-by;

@@ -6,7 +6,7 @@
 /// @param {string} $operator [and] - Determines relationship between width and height, can be **and** or **or**
 /// @example @include media-only(phone) { ... }
 
-@mixin media-only($scale, $prop: width, $operator: and) {
+@mixin media-only($scale, $prop: $const-default-media, $operator: and) {
 
   // not key
   @if(type-of($scale) != 'string') {
