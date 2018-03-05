@@ -8,7 +8,7 @@
 @function em($number, $unit: em, $ignore-const-relative-units-enabled: false) {
 
   // unitless
-  @if(type-of($number) == 'number' and unitless($number)) {
+  @if(type-of($number) == number and unitless($number)) {
     @error 'Number \"#{$number}\" is unitless, use a number with a defined unit.';
   }
 
