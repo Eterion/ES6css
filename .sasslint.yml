@@ -68,8 +68,6 @@ rules:
         - media-only
         - media-up-from
         - media-up-to
-        - wrap-in
-        - wrap-out
   nesting-depth:
     - 0
   no-color-keywords:
