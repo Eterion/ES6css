@@ -1,0 +1,5 @@
+/// @access public
+
+@function rem-always($number) {
+  @return em($number, rem, $ignore-const-relative-units-enabled: true);
+}
