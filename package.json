@@ -10,14 +10,17 @@
     "clean": "del-cli docs demo/**/*.css",
     "docs": "sassdoc dist --config .sassdoc.yml",
     "lint": "sass-lint --config .sasslint.yml --verbose --no-exit",
-    "start": "yarn run clean && (yarn run lint & yarn run docs & yarn run build)"
+    "start": "yarn run clean && (yarn run lint & yarn run docs & yarn run build)",
+    "test": "mocha"
   },
   "devDependencies": {
     "autoprefixer": "^8.0.0",
     "del-cli": "^1.1.0",
+    "mocha": "^5.0.1",
     "node-sass": "^4.7.2",
     "postcss-cli": "^5.0.0",
     "sass-lint": "^1.12.1",
+    "sass-true": "^3.0.2",
     "sassdoc": "^2.5.0",
     "sassdoc-theme-flippant": "^0.1.0"
   }
