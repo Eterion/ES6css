@@ -1,13 +1,13 @@
 /* 100px ($method: em) */
 element {
-  width: 6.25em;
-  height: 6.25em;
+  width: 100px;
+  height: 100px;
 }
 
 /* 100px ($method: rem) */
 element {
-  width: 6.25rem;
-  height: 6.25rem;
+  width: 100px;
+  height: 100px;
 }
 
 /* 100px ($method: false) */
@@ -24,8 +24,8 @@ element {
 
 /* cm */
 element {
-  width: 2.36223rem;
-  height: 2.36223rem;
+  width: 1cm;
+  height: 1cm;
 }
 
 /* em */
@@ -42,26 +42,26 @@ element {
 
 /* in */
 element {
-  width: 5.99981rem;
-  height: 5.99981rem;
+  width: 1in;
+  height: 1in;
 }
 
 /* mm */
 element {
-  width: 0.23622rem;
-  height: 0.23622rem;
+  width: 1mm;
+  height: 1mm;
 }
 
 /* pc */
 element {
-  width: 1rem;
-  height: 1rem;
+  width: 1pc;
+  height: 1pc;
 }
 
 /* pt */
 element {
-  width: 1px;
-  height: 1px;
+  width: 1pt;
+  height: 1pt;
 }
 
 /* px */
@@ -90,22 +90,22 @@ element {
 
 /* width aspect (16/9 1080px) */
 element {
-  width: 120rem;
-  height: 67.5rem;
+  width: 1920px;
+  height: 1080px;
 }
 
 /* height aspect (1920px 16/9) */
 element {
-  width: 120rem;
-  height: 67.5rem;
+  width: 1920px;
+  height: 1080px;
 }
 
 /* width skip (false 1080px) */
 element {
-  height: 67.5rem;
+  height: 1080px;
 }
 
 /* height skip (1920px false) */
 element {
-  width: 120rem;
+  width: 1920px;
 }

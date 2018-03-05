@@ -10,50 +10,50 @@ element {
 
 /* number - 14px (method: em) */
 element {
-  content: 0.875em;
+  content: 14px;
 }
 
 /* number - 14px (method: rem) */
 element {
-  content: 0.875rem;
+  content: 14px;
 }
 
 /* tiny */
 element {
-  content: 0.3125rem;
+  content: 5px;
 }
 
 /* smallest */
 element {
-  content: 0.625rem;
+  content: 10px;
 }
 
 /* smaller */
 element {
-  content: 0.9375rem;
+  content: 15px;
 }
 
 /* small */
 element {
-  content: 1.25rem;
+  content: 20px;
 }
 
 /* regular */
 element {
-  content: 1.875rem;
+  content: 30px;
 }
 
 /* large */
 element {
-  content: 2.8125rem;
+  content: 45px;
 }
 
 /* larger */
 element {
-  content: 3.75rem;
+  content: 60px;
 }
 
 /* largest */
 element {
-  content: 5.625rem;
+  content: 90px;
 }

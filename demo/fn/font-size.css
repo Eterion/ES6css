@@ -10,12 +10,12 @@ element {
 
 /* number - 14px (method: em) */
 element {
-  content: 0.875em;
+  content: 14px;
 }
 
 /* number - 14px (method: rem) */
 element {
-  content: 0.875rem;
+  content: 14px;
 }
 
 /* inherit */
@@ -25,40 +25,40 @@ element {
 
 /* tiny */
 element {
-  content: 0.625rem;
+  content: 10px;
 }
 
 /* smallest */
 element {
-  content: 0.6875rem;
+  content: 11px;
 }
 
 /* smaller */
 element {
-  content: 0.75rem;
+  content: 12px;
 }
 
 /* small */
 element {
-  content: 0.875rem;
+  content: 14px;
 }
 
 /* regular */
 element {
-  content: 1rem;
+  content: 16px;
 }
 
 /* large */
 element {
-  content: 1.125rem;
+  content: 18px;
 }
 
 /* larger */
 element {
-  content: 1.25rem;
+  content: 20px;
 }
 
 /* largest */
 element {
-  content: 1.375rem;
+  content: 22px;
 }
