@@ -19,7 +19,17 @@
     @error err('key-not-found', $prop, '(get-value)', map-keys($data));
   }
 
-  // extracted value
-  @return map-get($data, $prop);
+  // value
+  $value: map-get($data, $prop);
+
+  // unit protection, can be anything except em and rem
+  @if(type-of($value) == number) {
+    @if(unit($value) == em or unit($value) == rem) {
+      @error 'Cannot be relative unit.';
+    }
+  }
+
+  // return
+  @return $value;
 
 }
