@@ -12,7 +12,7 @@
   $z-index: false;
 
   // list
-  @if(type-of($map) == 'list') {
+  @if(type-of($map) == list) {
     @if(index($map, $name)) {
       $keys: $map;
       $z-index: index($map, $name);
@@ -20,7 +20,7 @@
   }
 
   // groups (map)
-  @else if(type-of($map) == 'map') {
+  @else if(type-of($map) == map) {
     @each $key, $list in $map {
       @if(index($list, $name)) {
         $keys: append($key, $list);

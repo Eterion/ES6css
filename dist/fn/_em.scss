@@ -1,7 +1,8 @@
-/// Returns a **$number** recalculated to em units, if possible. This functions and its [**rem**](#function-rem) counterpart should be used on every absolute value, to allow scaling based on **$const-default-key** key of the **$const-font-size-scale** constant. This function returns its original source number if **const-relative-units-enabled** is set to **false**. To ensure visibility of all elements, resulting numbers equal or below **$const-relative-units-min** are not recalculated.
+/// Returns a **$number** recalculated to em units, if possible. It's recommended to use this function and its [**rem**](#function-rem) counterpart on every non-relative value, to allow scaling based on **const-default-key** key of the **const-font-size-scale** constant. To ensure visibility of all elements, resulting numbers equal or below **$const-relative-units-min** are not recalculated. By default, this function returns its original input number, unless enabled by setting **$const-relative-units-enabled** to **true**. Use [**em-always**](#function-em-always) if you wish to convert to relative units, regardless of global settings.
 /// @access public
 /// @param {number} $number - Source number
 /// @param {boolean|string} $unit [em] - Returned unit
+/// @param {boolean} $ignore-const-relative-units-enabled [false] - Internal option, use [**em-always**](#function-em-always) or [**rem-always**](#function-rem-always) instead
 /// @example em(14px) // returns 1em
 
 @function em($number, $unit: em, $ignore-const-relative-units-enabled: false) {

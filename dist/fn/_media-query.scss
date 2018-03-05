@@ -3,12 +3,15 @@
 // @access private
 // @param {string} $min-max - Determines whenever the **min** or **max** media query is used
 // @param {number|string} $value - Scale or number
-// @param {string} $prop [width] - Determines what value is returned, can be **width**, **height** or **both**
+// @param {string} $prop [$const-default-media] - Determines what value is returned, can be **width**, **height** or **both**
 // @param {string} $operator [and] - Media query operator, can be **and** or **or**
 
 @function media-query($min-max, $value, $prop: $const-default-media, $operator: and) {
 
   // both
+  // returns media query composed of width and height property
+  // max values are subtracted by 1 to compensate for overlapping
+
   @if($prop == both) {
 
     // and

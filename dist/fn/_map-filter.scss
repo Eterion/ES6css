@@ -12,7 +12,7 @@
   @each $key in $keys {
 
     // type: list
-    @if(type-of($key) == 'list') {
+    @if(type-of($key) == list) {
       @each $list-key in $key {
 
         // not found

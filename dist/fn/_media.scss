@@ -1,8 +1,8 @@
-/// Returns pixel value of media scale according to **$scale** key. Use of [**media-between**](#mixin-media-between), [**media-only**](#mixin-media-only), [**media-up-from**](#mixin-media-up-from) and [**media-up-to**](#mixin-media-up-to) mixins is highly recommended instead of creating new media rules through this function. Media breakpoints are completely customizable through **$const-media-scale** constant.
+/// Returns pixel value of media scale according to **$value** property. Use of [**media-between**](#mixin-media-between), [**media-only**](#mixin-media-only), [**media-up-from**](#mixin-media-up-from) and [**media-up-to**](#mixin-media-up-to) mixins is highly recommended instead of creating new media rules through this function. Media breakpoints are completely customizable through **$const-media-scale** constant. Note that **both** option on **$prop** is relevant only when media breakpoint is defined as map of width and height properties. See readme for more details.
 /// @group media
 /// @access public
-/// @param {number|string} $scale - Scale or number
-/// @param {string} $prop [width] - Determines what value is returned, can be **width**, **height** or **both**
+/// @param {number|string} $value - Scale or number
+/// @param {string} $prop [$const-default-media] - Determines what value is returned, can be **width**, **height** or **both**
 /// @example media(desktop) // returns 1680px
 
 @function media($value, $prop: $const-default-media) {

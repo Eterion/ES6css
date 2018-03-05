@@ -1,4 +1,4 @@
-/// Returns a property value from currently active item. Can be used inside a [**import**](#mixin-import) mixin wihout **$name** and **$group** parameters. If the requested property doesn't require any further calculations, use [**get**](#function-get) function instead. This function is identical to [**get**](#function-get) function, wihout the automatic unit conversion.
+/// Returns a property value from currently active item. Can be used inside a [**import**](#mixin-import) mixin wihout **$name** and **$group** parameters. This function is identical to [**get**](#function-get) function, without the automatic unit conversion. If the requested property doesn't require any further calculations, use [**get**](#function-get) function instead. See readme for more details.
 /// @group export
 /// @access public
 /// @param {string} $prop - Property name
@@ -10,7 +10,7 @@
 @function get-value($prop, $name: false, $group: $export-group, $data: $system-import) {
 
   // name and group is provided
-  @if(type-of($name) == 'string' and type-of($group) == 'string') {
+  @if(type-of($name) == string and type-of($group) == string) {
     $data: import($name, $group);
   }
 

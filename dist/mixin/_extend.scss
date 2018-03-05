@@ -1,4 +1,4 @@
-/// Extends already existing export item created via [**export**](#mixin-export) mixin. Properties in the extend mixin takes precedence over already existing ones. Throws an error if **$name** in a **$group** doesn't exists.
+/// Extends already existing item created via [**export**](#mixin-export) mixin. Properties in the extend mixin takes precedence over already existing ones. Throws an error if **$name** in a **$group** doesn't exists. See readme for more details.
 /// @group export
 /// @access public
 /// @param {string} $name - Name

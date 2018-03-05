@@ -1,12 +1,12 @@
-/// Returns a **$number** stripped of its unit. Unmodified original value is returned in case the **$number** unit cannot be removed.
+/// Returns a **$number** stripped of its unit. Unmodified input value is returned in case the **$number** unit cannot be removed.
 /// @access public
 /// @param {number} $number - Input number
 /// @example clear-unit(16px) // returns 16
 
 @function clear-unit($number) {
 
-  // convert only when number or unitless
-  @if(type-of($number) == 'number' and not unitless($number)) {
+  // convert only when number and not unitless
+  @if(type-of($number) == number and not unitless($number)) {
     @return $number / ($number * 0 + 1);
   }
 

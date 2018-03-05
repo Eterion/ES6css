@@ -6,7 +6,7 @@
 
 @function map-key-get($map, $key, $can-inherit: true) {
 
-  @if(type-of($key) == 'string') {
+  @if(type-of($key) == string) {
 
     // inherit
     @if($can-inherit and $key == 'inherit') {
