@@ -1,0 +1,27 @@
+@import 'true';
+@import '../../dist/esm';
+
+@include describe('animation-speed') {
+
+  @include it('returns default animation speed') {
+    @include assert-equal(
+      animation-speed(),
+      $const-animation-speed
+    );
+  }
+
+  @include it('returns animation speed value as is') {
+    @include assert-equal(
+      animation-speed(400ms),
+      400ms
+    );
+  }
+
+  @include it('returns animation speed value accroding to a keyword') {
+    @include assert-equal(
+      animation-speed($const-default-key),
+      map-get($const-animation-speed-scale, $const-default-key)
+    );
+  }
+
+}
