@@ -14,7 +14,7 @@ const sassTrue = require('sass-true');
 
     // runSass
     else {
-      if(path.extname(file) == '.scss') {
+      if(path.extname(file) == '.scss' && path.basename(file, '.scss') != 'dependencies') {
         sassTrue.runSass({ file: path.join(dir, file) }, describe, it);
       }
     }
