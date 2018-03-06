@@ -1,5 +1,4 @@
-@import 'true';
-@import '../../dist/esm';
+@import '../dependencies';
 
 @include describe('animation-speed') {
 
