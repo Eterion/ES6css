@@ -1,0 +1,96 @@
+@import '../dependencies';
+
+@include describe('clear-unit') {
+
+  @include it('returns number as is') {
+    @include assert-equal(
+      clear-unit(100),
+      100
+    );
+  }
+
+  @include it('returns number without unit (%)') {
+    @include assert-equal(
+      clear-unit(100%),
+      100
+    );
+  }
+
+  @include it('returns number without unit (cm)') {
+    @include assert-equal(
+      clear-unit(100cm),
+      100
+    );
+  }
+
+  @include it('returns number without unit (em)') {
+    @include assert-equal(
+      clear-unit(100em),
+      100
+    );
+  }
+
+  @include it('returns number without unit (ex)') {
+    @include assert-equal(
+      clear-unit(100ex),
+      100
+    );
+  }
+
+  @include it('returns number without unit (in)') {
+    @include assert-equal(
+      clear-unit(100in),
+      100
+    );
+  }
+
+  @include it('returns number without unit (mm)') {
+    @include assert-equal(
+      clear-unit(100mm),
+      100
+    );
+  }
+
+  @include it('returns number without unit (pc)') {
+    @include assert-equal(
+      clear-unit(100pc),
+      100
+    );
+  }
+
+  @include it('returns number without unit (pt)') {
+    @include assert-equal(
+      clear-unit(100pt),
+      100
+    );
+  }
+
+  @include it('returns number without unit (px)') {
+    @include assert-equal(
+      clear-unit(100px),
+      100
+    );
+  }
+
+  @include it('returns number without unit (rem)') {
+    @include assert-equal(
+      clear-unit(100rem),
+      100
+    );
+  }
+
+  @include it('returns number without unit (vh)') {
+    @include assert-equal(
+      clear-unit(100vh),
+      100
+    );
+  }
+
+  @include it('returns number without unit (vw)') {
+    @include assert-equal(
+      clear-unit(100vw),
+      100
+    );
+  }
+
+}
