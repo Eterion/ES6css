@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Eterion/ES6css.svg?branch=master)](https://travis-ci.org/Eterion/ES6css)
+
 # ES6css
 Engine for front-end web development of css, using [sass](http://sass-lang.com/) preprocessor (scss syntax).
 
