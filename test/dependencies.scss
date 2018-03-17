@@ -1,2 +1,18 @@
 @import 'true';
 @import '../dist/esm';
+
+$test-units: (
+  100,
+  100%,
+  100cm,
+  100em,
+  100ex,
+  100in,
+  100mm,
+  100pc,
+  100pt,
+  100px,
+  100rem,
+  100vh,
+  100vw,
+) !default;
