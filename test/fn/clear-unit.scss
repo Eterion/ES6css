@@ -2,13 +2,6 @@
 
 @include describe('clear-unit') {
 
-  @include it('clear-unit(100)') {
-    @include assert-equal(
-      clear-unit(100),
-      100
-    );
-  }
-
   @each $unit in $test-units {
     @include it('clear-unit(#{$unit})') {
       @include assert-equal(
