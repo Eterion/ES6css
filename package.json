@@ -2,6 +2,7 @@
   "name": "es6css",
   "version": "0.2.1",
   "description": "",
+  "author": "Eterion",
   "license": "MIT",
   "private": true,
   "scripts": {
