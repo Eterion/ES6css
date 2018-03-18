@@ -2,7 +2,6 @@
   "name": "esm-scss",
   "version": "0.1.0",
   "description": "A collection of tools for css development, inspired by ES6 export and import mechanics.",
-  "main": "lib/_esm.scss",
   "repository": "https://github.com/Eterion/esm-scss.git",
   "author": "Eterion <Eterion@users.noreply.github.com>",
   "license": "MIT",
