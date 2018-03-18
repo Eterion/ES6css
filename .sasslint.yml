@@ -1,6 +1,6 @@
 files:
   include:
-    - 'dist/**/*.scss'
+    - 'lib/**/*.scss'
 rules:
   border-zero:
     - 1

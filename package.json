@@ -1,20 +1,20 @@
 {
-  "name": "es6css",
-  "version": "0.2.1",
-  "description": "",
-  "author": "Eterion",
+  "name": "esm-scss",
+  "version": "0.1.0",
+  "description": "A collection of tools for css development, inspired by ES6 export and import mechanics.",
+  "main": "lib/_esm.scss",
+  "repository": "https://github.com/Eterion/esm-scss.git",
+  "author": "Eterion <Eterion@users.noreply.github.com>",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "clean": "del-cli docs *.log",
-    "docs": "sassdoc dist --config .sassdoc.yml",
+    "docs": "sassdoc lib --config .sassdoc.yml",
     "lint": "sass-lint --config .sasslint.yml --verbose",
     "test": "mocha"
   },
   "devDependencies": {
     "del-cli": "^1.1.0",
     "mocha": "^5.0.4",
-    "node-sass": "^4.7.2",
     "sass-lint": "^1.12.1",
     "sass-true": "^3.1.0",
     "sassdoc": "^2.5.0",
