@@ -2,10 +2,10 @@
 // Extends already existing item **$name** and returns a map of properties. Throws an error if the requested item does not exists.
 // @access private
 // @param {string} $name - Name
-// @param {map} $props - Map of properties
-// @param {string} $group [$group] - Group identifier
+// @param {map} $props [$export-group] - Map of properties
+// @param {string} $group - Group identifier
 
-@function extend($name, $props, $group: $export-group) {
+@function extend($name, $props, $group: if(global-variable-exists(export-group), $export-group, $system-default-group)) {
 
   // not found
   @if(map-has-key($system-export, compute-key($name, $group)) == false) {

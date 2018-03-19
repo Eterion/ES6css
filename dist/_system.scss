@@ -24,3 +24,9 @@ $system-data: ();
 // this variable is truncated outside of current mixin scope
 
 $system-import: ();
+
+// (default-group)
+// default name for groups
+// this is used in case when export groups feature is not used
+
+$system-default-group: '[default]' !default;

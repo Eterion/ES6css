@@ -6,6 +6,6 @@
 /// @param {string} $group [$export-group] - Group identifier
 /// @example @include export(component-name, ( ... ))
 
-@mixin export($name, $props: false, $group: $export-group) {
+@mixin export($name, $props: false, $group: if(global-variable-exists(export-group), $export-group, $system-default-group)) {
   $system-export: export($name, $props, $group) !global;
 }

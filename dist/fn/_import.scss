@@ -4,7 +4,7 @@
 // @param {string} $name - Name
 // @param {string} $group [$export-group] - Group identifier
 
-@function import($name, $group: $export-group) {
+@function import($name, $group: if(global-variable-exists(export-group), $export-group, $system-default-group)) {
 
   // not found
   @if(map-has-key($system-export, compute-key($name, $group)) == false) {

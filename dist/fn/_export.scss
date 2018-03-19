@@ -6,7 +6,7 @@
 // @param {string} $group [$export-group] - Group identifier
 // @param {map} $defaults [$export-defaults] - Map of default properties
 
-@function export($name, $props: false, $group: $export-group, $defaults: $export-defaults) {
+@function export($name, $props: false, $group: if(global-variable-exists(export-group), $export-group, $system-default-group), $defaults: $export-defaults) {
 
   // already exists
   @if(map-has-key($system-export, compute-key($name, $group))) {
@@ -26,8 +26,8 @@
 
     '#{compute-key($name, $group)}': map-merge($props, (
       'name': compute-key($name, $group),
-      'selector': call(if(map-key-get($props, unique), 'to-id', 'to-class'), compute-key($name, $group)),
-      'z-index': '#{$group}-#{$name}',
+      'selector': call(if(map-key-get($props, unique), 'to-id', 'to-class'), if($group != $system-default-group, compute-key($name, $group), $name)),
+      'z-index': if($group != $system-default-group, '#{$group}-#{$name}', $name),
     )),
 
   ));

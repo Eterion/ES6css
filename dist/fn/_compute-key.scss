@@ -6,6 +6,11 @@
 
 @function compute-key($name, $group) {
 
+  // default
+  @if($group == $system-default-group) {
+    @return '#{$system-default-group}-#{$name}';
+  }
+
   // not found
   @if(map-has-key($const-export-group, $group) == false) {
     @error err('key-not-found', $group, '(compute-key)', map-keys($const-export-group));

@@ -7,6 +7,6 @@
 /// @param {map} $data [$system-import] - Source map
 /// @example element { height: get(height); }
 
-@function get($prop, $name: false, $group: $export-group, $data: $system-import) {
+@function get($prop, $name: false, $group: if(global-variable-exists(export-group), $export-group, $system-default-group), $data: $system-import) {
   @return rem(get-value($prop, $name, $group, $data));
 }

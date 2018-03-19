@@ -5,7 +5,7 @@
 /// @param {string} $group [$export-group] - Group identifier
 /// @example @include import(component-name) { ... }
 
-@mixin import($name, $group: $export-group) {
+@mixin import($name, $group: if(global-variable-exists(export-group), $export-group, $system-default-group)) {
 
   // group
   // set group name to provided export group
