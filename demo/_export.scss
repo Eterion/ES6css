@@ -1,10 +1,4 @@
 $const-export-group: ("component": "c");
-
 @import "../dist/esm";
-
 $export-group: "component";
 @include export(example-1, ("background-color": red, "width": 200px));
-@include import(example-1) {
-  background-color: get(background-color);
-  width: get(width);
-}
