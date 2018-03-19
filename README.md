@@ -10,7 +10,7 @@ yarn add esm-scss
 ```
 
 ## Setup
-Everything needed is included in the `esm` file. Read [wiki](wiki) for more information.
+Everything needed is included in the `esm` file. Read [wiki](https://github.com/Eterion/esm-scss/wiki) for more information.
 
 ```scss
 @import '~esm-scss/dist/esm';
