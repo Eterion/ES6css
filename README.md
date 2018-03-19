@@ -28,8 +28,8 @@ Let's say your project is based on components, each component has unique name an
 // variables.scss
 @include export(component-name, (
   'background-color': red,
-  'width': 200px,
   'height': 100px,
+  'width': 200px,
 ));
 
 // component.scss
