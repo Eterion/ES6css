@@ -13,7 +13,7 @@ yarn add esm-scss
 Everything needed is included in the `esm` file. Read [wiki](https://github.com/Eterion/esm-scss/wiki) for more information.
 
 ```scss
-@import '~esm-scss/dist/esm';
+@import 'dist/esm';
 ```
 
 ## What's this?
