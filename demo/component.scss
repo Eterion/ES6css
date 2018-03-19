@@ -1,5 +1,0 @@
-@import "export";
-@include import(example-1) {
-  background-color: get(background-color);
-  width: get(width);
-}

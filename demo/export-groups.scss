@@ -1,0 +1,28 @@
+@import "../dist/esm";
+
+// define export groups and their prefix keys for selectors
+$const-export-group: (
+  'component': 'c',
+);
+
+// any following export, extend and import mixin will have this group added automatically
+$export-group: 'component';
+
+// export mixin defines the properties
+@include export(component, (
+  'background-color': blue,
+  'width': 200px,
+));
+
+// extend mixin is used to modify already created export
+@include extend(component, (
+  'background-color': red,
+  'color': white,
+));
+
+// import mixin includes calculated class and allows to use get and get-value functions
+@include import(component) {
+  background-color: get(background-color);
+  color: get(color);
+  width: get(width);
+}
