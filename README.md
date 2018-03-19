@@ -4,8 +4,10 @@
 
 ## Install
 
+You can use your favorite package manager with access to npm registry.
+
 ```
-$ yarn add esm-scss
+yarn add esm-scss
 ```
 
 ## Setup
