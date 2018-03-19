@@ -1,9 +1,10 @@
-@import "../dist/esm";
-
 // define export groups and their prefix keys for selectors
 $const-export-group: (
   'component': 'c',
 );
+
+// esm
+@import "../dist/esm";
 
 // any following export, extend and import mixin will have this group added automatically
 $export-group: 'component';
