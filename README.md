@@ -1,6 +1,8 @@
 [![Build Status](https://img.shields.io/travis/Eterion/esm-scss/master.svg?style=flat-square)](https://travis-ci.org/Eterion/esm-scss)
 [![Npm](https://img.shields.io/npm/v/esm-scss.svg?style=flat-square)](https://www.npmjs.com/package/esm-scss)
 
+**_Please note, this package is still in development. I don't recommend to use in production until version 1.0.0 is released. Any suggestions for improvements or changes are welcomed._**
+
 > A collection of tools for css development, inspired by ES6 export and import mechanics, using [sass](http://sass-lang.com/) preprocessor.
 
 ## Contents
