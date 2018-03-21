@@ -11,7 +11,7 @@
 * [Setup](#setup)
 * [What's this?](#whats-this)
 * [Example](#example)
-* [Wiki](https://github.com/Eterion/esm-scss/wiki)
+* [Wiki](#wiki)
 
 ## Install
 
