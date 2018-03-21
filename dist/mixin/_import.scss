@@ -1,4 +1,4 @@
-/// Extracts an item set from extract group according to **$name** and **$group**, automatically adds calculated selector class (id selector is used when **unique** property is set to **true**). Allows the use of [**get**](#function-get) and [**get-value**](#function-get-value) functions without the need of a group. To avoid the automatically generated selector, use the native @at-root directive. See readme for more details.
+/// Extracts an item, previously defined via [**export**](#mixin-export) mixin, and allows the use of [**get**](#function-get) and [**get-value**](#function-get-value) functions without the need of specified group. This mixin internally uses [**props**](#mixin-props) mixin, with the addition of automatically generated selector. The selector is class by default, set **unique** property to true.
 /// @group export
 /// @access public
 /// @param {string} $name - Name
@@ -6,52 +6,9 @@
 /// @example @include import(component-name) { ... }
 
 @mixin import($name, $group: if(global-variable-exists(export-group), $export-group, $system-default-group)) {
-
-  // group
-  // set group name to provided export group
-  // needed in case when the $export-group variable is not used
-
-  $export-group: $group !global;
-
-  // import (data)
-  // allows the use of nested import mixins
-  // class is generated for each mixin as well
-
-  $system-data: map-merge($system-data, (
-
-    // sass-lint:disable-block indentation
-    // indentation is disabled because of a known bug with maps
-    // https://github.com/sasstools/sass-lint/issues/927
-    // -----
-
-    '#{compute-key($name, $group)}': import($name, $group),
-
-  )) !global;
-
-  // import
-  // global variable used for storing of currently active module
-  // truncated at the end
-
-  $system-import: nth(nth($system-data, length($system-data)), 2) !global;
-
-  // definition
-  // automatically generates selector class
-  // allows the use of get and get-value functions without group
-
-  #{get(selector)} {
-    @content;
+  @include props($name, $group) {
+    #{get(selector)} {
+      @content;
+    }
   }
-
-  // truncate (data)
-  // removes last item in map
-  // thus activating the next to last item
-
-  $system-data: map-remove($system-data, '#{compute-key($name, $group)}') !global;
-
-  // truncate
-  // if system data are available, set to last item
-  // otherwise truncate the variable
-
-  $system-import: if(length($system-data) > 0, nth(nth($system-data, length($system-data)), 2), ()) !global;
-
 }
