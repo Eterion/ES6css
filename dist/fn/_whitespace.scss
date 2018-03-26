@@ -8,7 +8,7 @@
 
   // relative units
   @if($method) {
-    @return call($method, map-key-get($const-whitespace-scale, $key, $can-inherit: false));
+    @return call(get-function($method), map-key-get($const-whitespace-scale, $key, $can-inherit: false));
   }
 
   // no conversion

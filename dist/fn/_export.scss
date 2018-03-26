@@ -26,7 +26,7 @@
 
     '#{compute-key($name, $group)}': map-merge($props, (
       'name': compute-key($name, $group),
-      'selector': call(if(map-key-get($props, unique), 'to-id', 'to-class'), if($group != $system-default-group, compute-key($name, $group), $name)),
+      'selector': call(get-function(if(map-key-get($props, unique), 'to-id', 'to-class')), if($group != $system-default-group, compute-key($name, $group), $name)),
       'z-index': if($group != $system-default-group, '#{$group}-#{$name}', $name),
     )),
 
