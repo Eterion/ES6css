@@ -62,7 +62,8 @@ Let's say your project is based on components, each component has unique name an
 }
 ```
 
-The `export` mixin creates a module with unique name (within groups, if used) and properties. Then, the `import` mixin automatically creates selector and gives access to properties through `get` function.
+- The `export` mixin creates a module with unique name (within groups, if used) and properties.
+- After that, the `import` mixin automatically creates selector and gives access to properties through `get` function.
 
 ## Wiki
 
