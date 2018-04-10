@@ -60,14 +60,14 @@
   // output width property only when it's set
 
   @if($width) {
-    width: if($method, call(get-function($method), $width), $width);
+    width: if($method, call($method, $width), $width);
   }
 
   // definition (height)
   // output height property only when it's set
 
   @if($height) {
-    height: if($method, call(get-function($method), $height), $height);
+    height: if($method, call($method, $height), $height);
   }
 
 }
