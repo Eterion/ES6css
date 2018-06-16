@@ -14,10 +14,6 @@
       // calculate real occupied width
       $real-width: $width + whitespace($whitespace, false);
 
-      // sass-lint:disable-block no-vendor-prefixes
-      // microsoft prefixes are needed because of the legacy syntax
-      // -----
-
       // calculate item position in grid
       $repeat-restricted: $repeat;
       -ms-grid-column: $index - ((ceil($index / $repeat-restricted) - 1) * $repeat-restricted);

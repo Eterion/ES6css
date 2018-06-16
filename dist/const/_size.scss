@@ -1,8 +1,3 @@
-// sass-lint:disable indentation
-// indentation is disabled because of a known bug with maps
-// https://github.com/sasstools/sass-lint/issues/927
-// -----
-
 $const-size-scale-defaults: (
   'tiny': 0.2,
   'smallest': 0.25,
@@ -14,8 +9,7 @@ $const-size-scale-defaults: (
   'largest': 1.75,
 ) !default;
 
-// (preserve)
-
+// prettier-ignore
 $const-size-scale: if(
   $const-preserve-defaults,
   map-merge($const-size-scale-defaults, if(global-variable-exists(const-size-scale), $const-size-scale, ())),

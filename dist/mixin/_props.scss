@@ -18,14 +18,7 @@
   // class is generated for each mixin as well
 
   $system-data: map-merge($system-data, (
-
-    // sass-lint:disable-block indentation
-    // indentation is disabled because of a known bug with maps
-    // https://github.com/sasstools/sass-lint/issues/927
-    // -----
-
     '#{compute-key($name, $group)}': import($name, $group),
-
   )) !global;
 
   // import

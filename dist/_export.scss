@@ -1,8 +1,3 @@
-// sass-lint:disable indentation
-// indentation is disabled because of a known bug with maps
-// https://github.com/sasstools/sass-lint/issues/927
-// -----
-
 /// Any property in this map is automatically added to every export item. Properties added via [**export**](#mixin-export) or [**extend**](#mixin-extend) mixins take precedence over defaults.
 /// @group export
 /// @access public

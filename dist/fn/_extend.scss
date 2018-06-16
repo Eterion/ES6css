@@ -14,14 +14,7 @@
 
   // extend definition
   @return map-merge($system-export, (
-
-    // sass-lint:disable-block indentation
-    // indentation is disabled because of a known bug with maps
-    // https://github.com/sasstools/sass-lint/issues/927
-    // -----
-
     '#{compute-key($name, $group)}': map-merge(import($name, $group), $props),
-
   ));
 
 }

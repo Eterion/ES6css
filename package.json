@@ -17,16 +17,19 @@
     "build": "node-sass demo --output-style expanded --output demo",
     "clean": "del-cli docs *.log",
     "docs": "sassdoc dist --config .sassdoc.yml",
-    "lint": "sass-lint --config .sasslint.yml --verbose",
+    "lint-staged": "lint-staged",
+    "stylelint": "stylelint \"**/*.scss\" --fix",
     "test": "mocha"
   },
   "devDependencies": {
     "del-cli": "^1.1.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.0",
     "mocha": "^5.2.0",
     "node-sass": "^4.9.0",
-    "sass-lint": "^1.12.1",
     "sass-true": "^4.0.0",
     "sassdoc": "^2.5.0",
-    "sassdoc-theme-flippant": "^0.1.0"
+    "sassdoc-theme-flippant": "^0.1.0",
+    "stylelint": "^9.3.0"
   }
 }

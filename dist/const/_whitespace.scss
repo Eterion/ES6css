@@ -1,8 +1,3 @@
-// sass-lint:disable indentation
-// indentation is disabled because of a known bug with maps
-// https://github.com/sasstools/sass-lint/issues/927
-// -----
-
 $const-whitespace: 30px !default;
 
 $const-whitespace-scale-defaults: (
@@ -16,8 +11,7 @@ $const-whitespace-scale-defaults: (
   'largest': $const-whitespace * 3,
 ) !default;
 
-// (preserve)
-
+// prettier-ignore
 $const-whitespace-scale: if(
   $const-preserve-defaults,
   map-merge($const-whitespace-scale-defaults, if(global-variable-exists(const-whitespace-scale), $const-whitespace-scale, ())),
