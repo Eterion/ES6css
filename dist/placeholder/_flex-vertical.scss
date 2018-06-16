@@ -1,9 +1,0 @@
-/// Applies vertical flex layout to an element.
-/// @access public
-
-%flex-vertical {
-  align-items: stretch;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}

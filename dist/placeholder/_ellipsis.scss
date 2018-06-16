@@ -1,8 +1,0 @@
-/// Adds ellipsis (dots) text overflow to an element.
-/// @access public
-
-%ellipsis {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
