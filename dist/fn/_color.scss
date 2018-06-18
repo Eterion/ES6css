@@ -9,8 +9,10 @@
   // default
   $color: $value;
 
-  // (inspect) Converts value to a string. Needed because color keys can be
-  // anything, including valid color names.
+  // Inspect function converts value to a string. This is needed because color
+  // keys in $const-color-keys map can be anything, including valid color names.
+  // So this makes sure color keys are evaluated before actual valid color
+  // values.
 
   $value: inspect($value);
 

@@ -6,9 +6,9 @@
 
 @function media-query($min-max, $value, $prop: width, $operator: and) {
 
-  // both
-  // returns media query composed of width and height property
-  // max values are subtracted by 1 to compensate for overlapping
+  // Returns media query string composed of width and height property based on
+  // provided arguments. Max values are subtracted by 1 to compensate for media
+  // overlapping.
 
   @if($prop == both) {
 
