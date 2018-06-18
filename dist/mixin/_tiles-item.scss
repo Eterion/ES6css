@@ -1,0 +1,36 @@
+// This function is internal, and is intentionaly not documented. Adds
+// calculated position to items in tiles container, needed only for legacy
+// support. The $reduce-viewport-by argument reduces available width considered
+// into the legacy calculation.
+
+@mixin tiles-item($width, $whitespace, $index, $reduce-viewport-by: 0, $repeat: $const-tiles-column-min) {
+  @if(type-of($repeat) == 'number') {
+    &:nth-child(#{$index}) {
+
+      // calculate real occupied width
+      $real-width: $width + whitespace($whitespace, false);
+
+      // calculate item position in tiles
+      $repeat-restricted: $repeat;
+      -ms-grid-column: $index - ((ceil($index / $repeat-restricted) - 1) * $repeat-restricted);
+      -ms-grid-row: ceil($index / $repeat-restricted);
+
+      // calculate number of columns for each available width
+      @for $column-index from ($const-tiles-column-min + 1) through $const-tiles-column-max {
+        @include media-up-from($column-index * $real-width, width) {
+
+          // calculate number of columns
+          $available: media($column-index * $real-width, width) - $reduce-viewport-by;
+          $add: if($available <= $column-index * $real-width, floor(($available - ($const-tiles-column-min * $real-width)) / $real-width) , 0);
+          $repeat-restricted: $const-tiles-column-min + $add;
+
+          // legacy
+          -ms-grid-column: $index - ((ceil($index / $repeat-restricted) - 1) * $repeat-restricted);
+          -ms-grid-row: ceil($index / $repeat-restricted);
+
+        }
+      }
+
+    }
+  }
+}

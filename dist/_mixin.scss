@@ -1,7 +1,6 @@
 // imports
 @import 'mixin/export';
 @import 'mixin/extend';
-@import 'mixin/grid';
 @import 'mixin/has-class';
 @import 'mixin/import';
 @import 'mixin/media-between';
@@ -10,9 +9,10 @@
 @import 'mixin/media-up-to';
 @import 'mixin/props';
 @import 'mixin/size';
+@import 'mixin/tiles';
 @import 'mixin/transition';
 @import 'mixin/z-index';
 
 // import (private)
-@import 'mixin/grid-container';
-@import 'mixin/grid-item';
+@import 'mixin/tiles-container';
+@import 'mixin/tiles-item';

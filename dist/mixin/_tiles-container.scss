@@ -1,0 +1,40 @@
+// This function is internal, and is intentionaly not documented. Adds tiles
+// layout to a container element. Also includes legacy support, however the
+// layout may not be identical to a modern W3C standard. The $reduce-viewport-by
+// argument reduces available width considered into the legacy calculation.
+
+@mixin tiles-container($width, $whitespace, $reduce-viewport-by: 0, $repeat: $const-tiles-column-min) {
+
+  // calculate real occupied width
+  $real-width: $width + whitespace($whitespace, false);
+
+  // W3C standard
+  @if(type-of($repeat) != 'number') {
+    grid-template-columns: repeat($repeat, minmax($real-width, 1fr));
+  }
+
+  // legacy
+  @else {
+
+    // take into account minimum number of columns
+    $repeat-restricted: $repeat;
+    grid-template-columns: repeat($repeat-restricted, minmax($width, 1fr));
+
+    // calculate number of columns for each available width
+    @for $column-index from ($const-tiles-column-min + 1) through $const-tiles-column-max {
+      @include media-up-from($column-index * $real-width, width) {
+
+        // calculate number of columns
+        $available: media($column-index * $real-width) - $reduce-viewport-by;
+        $add: if($available <= $column-index * $real-width, floor(($available - ($const-tiles-column-min * $real-width)) / $real-width) , 0);
+        $repeat-restricted: $const-tiles-column-min + $add;
+
+        // legacy
+        grid-template-columns: repeat($repeat-restricted, minmax($width, 1fr));
+
+      }
+    }
+
+  }
+
+}

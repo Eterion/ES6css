@@ -1,4 +1,4 @@
-/// Adds grid layout to a **$container** element. Includes legacy support, however the layout may not be identical toa modern W3C standard. The **$whitespace-margin** parameter determines whenever the grid element margin property is positive or negative, to allow placement in element with padding property. This mixin already includes unit ([**rem**](#function-rem)) conversion, use non-relative units for input values. Note that enabled legacy support can generate large amounts of code, can be disabled by setting **$const-grid-legacy-mode-enabled** to **false**. The legacy mode is also limited by number of items set through **$const-grid-count** constant.
+/// Adds tiles layout to a **$container** element. Includes legacy support, however the layout may not be identical to a modern W3C standard. The **$whitespace-margin** parameter determines whenever the tiles element margin property is positive or negative, to allow placement in element with padding property. This mixin already includes unit ([**rem**](#function-rem)) conversion, use non-relative units for input values. Note that enabled legacy support can generate large amounts of code, can be disabled by setting **$const-tiles-legacy-mode-enabled** to **false**. The legacy mode is also limited by number of items set through **$const-tiles-count** constant.
 /// @access public
 /// @param {string} $container - Container selector
 /// @param {string} $item - Children selector
@@ -7,7 +7,7 @@
 /// @param {string} $whitespace-margin [positive] - Determines the container margin, can be **positive** or **negative**
 /// @param {number} $reduce-viewport-by [0] - Reduce available width considered into legacy calculation
 
-@mixin grid($container, $item, $width, $whitespace: regular, $whitespace-margin: positive, $reduce-viewport-by: 0) {
+@mixin tiles($container, $item, $width, $whitespace: regular, $whitespace-margin: positive, $reduce-viewport-by: 0) {
 
   #{$container} {
 
@@ -32,10 +32,10 @@
   }
 
   // legacy
-  // include legacy support only if $const-grid-enable-legacy is true
+  // include legacy support only if $const-tiles-enable-legacy is true
   // may generate large amount of code
 
-  @if($const-grid-legacy-mode-enabled == true) {
+  @if($const-tiles-legacy-mode-enabled == true) {
 
     // layout (legacy)
     // these browsers don't support modern W3C standard
@@ -43,17 +43,17 @@
 
     #{$container} {
 
-      // grid
-      @include grid-container($width, $whitespace, $reduce-viewport-by);
+      // tiles
+      @include tiles-container($width, $whitespace, $reduce-viewport-by);
 
       // children
-      // each grid items has specific position in the grid
+      // each tiles items has specific position in the tiles
       // appropriate number of styles must be generated
-      // see $const-grid-count in constants to define number of children
+      // see $const-tiles-count in constants to define number of children
 
       & > #{$item} {
-        @for $index from 1 through $const-grid-count {
-          @include grid-item($width, $whitespace, $index, $reduce-viewport-by);
+        @for $index from 1 through $const-tiles-count {
+          @include tiles-item($width, $whitespace, $index, $reduce-viewport-by);
         }
       }
 
@@ -61,18 +61,18 @@
       // create various sizes based on the list of provided keys
       // keys must be available in const-size-scale map
 
-      @if(length($const-grid-size) > 0) {
-        @each $key in $const-grid-size {
+      @if(length($const-tiles-size) > 0) {
+        @each $key in $const-tiles-size {
           &.size-#{$key} {
 
-            // grid
+            // tiles
             $this-width: $width * map-get($const-size-scale, $key);
-            @include grid-container($this-width, $whitespace, $reduce-viewport-by);
+            @include tiles-container($this-width, $whitespace, $reduce-viewport-by);
 
             // children
             & > #{$item} {
-              @for $index from 1 through $const-grid-count {
-                @include grid-item($this-width, $whitespace, $index, $reduce-viewport-by);
+              @for $index from 1 through $const-tiles-count {
+                @include tiles-item($this-width, $whitespace, $index, $reduce-viewport-by);
               }
             }
 
@@ -90,18 +90,18 @@
 
   #{$container} {
 
-    // grid
-    @include grid-container($width, $whitespace, $reduce-viewport-by, auto-fill);
+    // tiles
+    @include tiles-container($width, $whitespace, $reduce-viewport-by, auto-fill);
 
     // size
     // create various sizes based on the list of provided keys
     // keys must be available in const-size-scale map
 
-    @if(length($const-grid-size) > 0) {
-      @each $key in $const-grid-size {
+    @if(length($const-tiles-size) > 0) {
+      @each $key in $const-tiles-size {
         &.size-#{$key} {
           $this-width: $width * map-get($const-size-scale, $key);
-          @include grid-container($this-width, $whitespace, $reduce-viewport-by, auto-fill);
+          @include tiles-container($this-width, $whitespace, $reduce-viewport-by, auto-fill);
         }
       }
     }
