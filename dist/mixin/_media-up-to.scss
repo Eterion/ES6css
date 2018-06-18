@@ -2,11 +2,11 @@
 /// @group media
 /// @access public
 /// @param {number|string} $scale - Scale or number
-/// @param {string} $prop [$const-default-media] - Determines what value is returned, can be **width**, **height** or **both**
+/// @param {string} $prop [width] - Determines what value is returned, can be **width**, **height** or **both**
 /// @param {string} $operator [and] - Determines relationship between width and height, can be **and** or **or**
 /// @example @include media-up-to(phone) { ... }
 
-@mixin media-up-to($scale, $prop: $const-default-media, $operator: and) {
+@mixin media-up-to($scale, $prop: width, $operator: and) {
 
   // not found
   @if(type-of($scale) == string and map-has-key($const-media-scale, $scale) == false) {

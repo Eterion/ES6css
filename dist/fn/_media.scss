@@ -2,10 +2,10 @@
 /// @group media
 /// @access public
 /// @param {number|string} $value - Scale or number
-/// @param {string} $prop [$const-default-media] - Determines what value is returned, can be **width**, **height** or **both**
+/// @param {string} $prop [width] - Determines what value is returned, can be **width**, **height** or **both**
 /// @example media(desktop) // returns 1680px
 
-@function media($value, $prop: $const-default-media) {
+@function media($value, $prop: width) {
 
   // scale
   @if(type-of($value) == string) {

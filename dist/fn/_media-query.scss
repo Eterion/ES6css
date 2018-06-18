@@ -4,7 +4,7 @@
 // "both" values. The $operator arguments is used to generate media query
 // strings, accepts "and" (default) or "or".
 
-@function media-query($min-max, $value, $prop: $const-default-media, $operator: and) {
+@function media-query($min-max, $value, $prop: width, $operator: and) {
 
   // both
   // returns media query composed of width and height property
