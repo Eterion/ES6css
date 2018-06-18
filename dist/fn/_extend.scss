@@ -1,9 +1,6 @@
-// Private functions are intentionally left out of documentation.
-// Extends already existing item **$name** and returns a map of properties. Throws an error if the requested item does not exists.
-// @access private
-// @param {string} $name - Name
-// @param {map} $props [$export-group] - Map of properties
-// @param {string} $group - Group identifier
+// This function is internal, and is intentionaly not documented. Extends
+// already existing item $name and returns a map of properties. Throws an error
+// if the requested item does not exists.
 
 @function extend($name, $props, $group: if(global-variable-exists(export-group), $export-group, $system-default-group)) {
 

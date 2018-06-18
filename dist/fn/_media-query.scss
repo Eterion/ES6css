@@ -1,10 +1,8 @@
-// Private functions are intentionally left out of documentation.
-// Returns properly calculated media query strings for use in media query.
-// @access private
-// @param {string} $min-max - Determines whenever the **min** or **max** media query is used
-// @param {number|string} $value - Scale or number
-// @param {string} $prop [$const-default-media] - Determines what value is returned, can be **width**, **height** or **both**
-// @param {string} $operator [and] - Media query operator, can be **and** or **or**
+// This function is internal, and is intentionaly not documented. Returns
+// properly calculated media query strings for use in media query. The $prop
+// argument determines what value is returned, accepts "width", "height" or
+// "both" values. The $operator arguments is used to generate media query
+// strings, accepts "and" (default) or "or".
 
 @function media-query($min-max, $value, $prop: $const-default-media, $operator: and) {
 

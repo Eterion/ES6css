@@ -1,32 +1,25 @@
-// SYSTEM
-// system variables are not used for application
-// the content of these variables is rather dynamic during build process
-// primary purpose is to be a storage area
+// System variables are not used for application, the content of these variables
+// is rather dynamic during build process. Primary purpose is to be temporary
+// storage area.
 // -----
 
-// (export)
-// variable used by @include export(...) mixin
-// everytime a definition is created, new property map is added
+// Storage variable used by export() mixin. Everytime an export item is created,
+// new map of properties is added to this variables.
 
 $system-export: ();
 
-// (data)
-// variable used by @include import(...) mixin
-// needed for nesting functionality
-// stores list of property maps of currently active definitions
-// this variable is truncated outside of current mixin scope
+// Storage variable used by import() mixin, needed for proper nesting
+// functionality. Stores list of property maps of currently exported item. This
+// variable is truncated outside of current mixin scope.
 
 $system-data: ();
 
-// (import)
-// variable used by @include import(...) mixin
-// stores only last item from the $system-data list
-// this variable is truncated outside of current mixin scope
+// Storage variable used by import() mixin, stores only the last item from
+// currently available data ($system-data) list. This variable is truncated
+// outside of current mixin scope.
 
 $system-import: ();
 
-// (default-group)
-// default name for groups
-// this is used in case when export groups feature is not used
+// Default name of export groups.
 
 $system-default-group: '[default]' !default;

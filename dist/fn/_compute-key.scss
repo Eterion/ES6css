@@ -1,8 +1,6 @@
-// Private functions are intentionally left out of documentation.
-// Returns computed key calculated from **$name** and **$group**. Selectors are created using this function.
-// @access private
-// @param {string} $name - Name
-// @param {string} $group - Group identifier
+// This function is internal, and is intentionaly not documented. Returns
+// computed key calculated from $name and $group values. Import selectors are
+// created using this function.
 
 @function compute-key($name, $group) {
 

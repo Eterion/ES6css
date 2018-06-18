@@ -1,4 +1,4 @@
-/// Adds a **$list** of classes to a root element. Individual values are converted to a [**class**](#function-class) if possible. New classes are placed at the beginning of the selector, therefore the root element must be either class or id selector.
+/// Adds a **$list** of classes to a root element. Individual values are converted to a class if possible. New classes are placed at the beginning of the selector, therefore the root element must be either class or id selector.
 /// @access public
 /// @param {string|list} $list - List of class names
 /// @example @include has-class(is-open, is-active) { ... }

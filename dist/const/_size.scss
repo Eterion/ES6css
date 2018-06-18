@@ -9,7 +9,8 @@ $const-size-scale-defaults: (
   'largest': 1.75,
 ) !default;
 
-// prettier-ignore
+// (preserve)
+
 $const-size-scale: if(
   $const-preserve-defaults,
   map-merge($const-size-scale-defaults, if(global-variable-exists(const-size-scale), $const-size-scale, ())),

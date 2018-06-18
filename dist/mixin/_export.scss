@@ -1,9 +1,9 @@
-/// Creates a new export item, that can be extracted using the [**import**](#mixin-import) mixin. Includes few automatically computed properties (name, selector, z-index). Throws an error if item with identical **$name** in a **$group** already exists, use [**extend**](#mixin-extend) mixin if you need to modify already existing item. See readme for more details.
+/// Creates a new export item, that can be extracted using the [**import**](#mixin-import) mixin. Includes few automatically computed properties (name, selector, z-index). Throws an error if item with identical **$name** in a **$group** already exists, use [**extend**](#mixin-extend) mixin if you need to modify already existing item.
 /// @group export
 /// @access public
 /// @param {string} $name - Name
 /// @param {bool|map} $props [false] - Property map
-/// @param {string} $group [$export-group] - Group identifier
+/// @param {string} $group [$export-group] - Group key
 /// @example @include export(component-name, ( ... ))
 
 @mixin export($name, $props: false, $group: if(global-variable-exists(export-group), $export-group, $system-default-group)) {

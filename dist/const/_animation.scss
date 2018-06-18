@@ -10,7 +10,8 @@ $const-animation-speed-scale-defaults: (
   'slowest': $const-animation-speed * 8,
 ) !default;
 
-// prettier-ignore
+// (preserve)
+
 $const-animation-speed-scale: if(
   $const-preserve-defaults,
   map-merge($const-animation-speed-scale-defaults, if(global-variable-exists(const-animation-speed-scale), $const-animation-speed-scale, ())),

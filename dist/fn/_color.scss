@@ -1,7 +1,7 @@
-/// Returns scaled **$color** according to a **$scale** identifier. Allows easy color scaling without the need of additional variables for each new color variant. The source color can be passed as either direct color value or key identifier present in **$const-color-keys** constant. Scaling levels are completely customizable through **$const-color-scale** constant.
+/// Returns scaled **$color** according to a **$scale** key. Allows easy color scaling without the need of additional variables for each new color variant. The source color can be passed as either direct color value or key identifier present in **$const-color-keys** constant. Scaling levels are completely customizable through **$const-color-scale** constant.
 /// @access public
 /// @param {color|string} $color - Source color or key
-/// @param {bool|string} $scale [false] - Scale identifier
+/// @param {bool|string} $scale [false] - Scale key
 /// @example color(gray, dark) // returns #4f4f4f
 
 @function color($value, $scale: false) {
@@ -9,9 +9,8 @@
   // default
   $color: $value;
 
-  // inspect
-  // convert provided value to string
-  // needed because color keys can be anything, including css colors
+  // (inspect) Converts value to a string. Needed because color keys can be
+  // anything, including valid color names.
 
   $value: inspect($value);
 

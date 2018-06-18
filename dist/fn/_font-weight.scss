@@ -1,6 +1,6 @@
 /// Returns a numeric representation of font-weight based on **$value**. Allows the use of readable values without the knowledge of real numbers used by css. Complete map of keys and values is set through **$const-font-weight-scale** constant. This function is alternative to [**postcss-font-weights**](https://github.com/jonathantneal/postcss-font-weights) plugin.
 /// @access public
-/// @param {number|string} $value - Number or scale identifier
+/// @param {number|string} $value - Number or scale key
 /// @example font-weight(regular) // returns 400
 
 @function font-weight($value) {

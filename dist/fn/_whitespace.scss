@@ -1,8 +1,8 @@
 /// Returns a whitespace value according to **$key** identifier. Scalings levels are completely customizable through **$const-whitespace-scale** constant. This function already includes unit conversion, use non-relative units for input value, can be disabled by setting **$method** parameter to **false**.
 /// @access public
-/// @param {number|string} $key [$const-default-key] - Number or scale identifier
+/// @param {number|string} $key [$const-default-key] - Number or scale key
 /// @param {bool|string} $method [rem] - Function called on the value, use **em** or **rem**
-/// @example whitespace(regular) // returns 2.5rem
+/// @example whitespace(regular) // returns 1.875rem
 
 @function whitespace($key: $const-default-key, $method: rem) {
 

@@ -1,27 +1,23 @@
-// (system)
-// internal variables essential for proper functionality
-// must be imported before functions and mixins
+// Internal variables essential for proper functionality. Must be imported
+// before any functions and mixins.
 // -----
 
 @import 'system';
 
-// (const)
-// constants are defined with !default flag to allow overwrite
-// maps are a special case that requires additional defaults constant
+// Constants are awalys defined with !default flag to allow overwrite. Maps are
+// special case, that requires additional defauls contants, which can be
+// preserved based on other settings.
 // -----
 
 @import 'const';
 
-// (fn and mixin)
-// remaining functionality through functions and mixins
-// private items are intentionally not documented
+// Core functions and mixin, private items are intentionally not documented.
 // -----
 
 @import 'fn';
 @import 'mixin';
 
-// (export)
-// defaults required for proper import and export functionality
+// Defaults required for proper import and export functionality.
 // -----
 
 @import 'export';

@@ -1,4 +1,4 @@
-/// Returns a **$number** stripped of its unit. Unmodified input value is returned in case the **$number** unit cannot be removed.
+/// Returns a **$number** stripped of its unit. Original input value is returned in case the unit cannot be removed.
 /// @access public
 /// @param {number} $number - Input number
 /// @example clear-unit(16px) // returns 16

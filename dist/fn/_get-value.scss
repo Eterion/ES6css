@@ -1,9 +1,9 @@
-/// Returns a property value from currently active item. Can be used inside a [**import**](#mixin-import) mixin wihout **$name** and **$group** parameters. This function is identical to [**get**](#function-get) function, without the automatic unit conversion. If the requested property doesn't require any further calculations, use [**get**](#function-get) function instead. See readme for more details.
+/// Returns a property value from export item. Can be used inside a [**import**](#mixin-import) mixin without **$name** and **$group** parameters. This function is identical to [**get**](#function-get) function, without the automatic unit conversion. If the requested property doesn't require any further calculations, use [**get**](#function-get) function instead.
 /// @group export
 /// @access public
 /// @param {string} $prop - Property name
 /// @param {string} $name [false] - Name
-/// @param {string} $group [$export-group] - Group identifier
+/// @param {string} $group [$export-group] - Group key
 /// @param {map} $data [$system-import] - Source map
 /// @example element { height: rem(get-value(height) / 2); }
 

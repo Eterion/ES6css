@@ -7,15 +7,13 @@
 @mixin size($size, $method: rem) {
 
   // default
-  // save width and height into separate variables
-  // in case where width should equal to height
-
   $width: $size;
   $height: $size;
 
-  // size
-  // detect whenever size is provided as two parameters
-  // width as first, height as second, unitless numbers are handled as aspect ratio
+  // Detect whenever size property is provided as list of values (space
+  // separated width and height). Unitless numbers are handled as aspect ratio,
+  // that will calculate size relative to the other provided value. Cannot
+  // accept two aspect ratios.
 
   @if(type-of($size) == 'list') {
 
@@ -23,10 +21,7 @@
     $width: nth($size, 1);
     $height: nth($size, 2);
 
-    // aspect ratio (on height)
-    // calculate width according to height aspect ratio
-    // must be unitless number
-
+    // aspect ratio (relative to height)
     @if(type-of($width) == 'number' and unitless($width)) {
 
       // cannot be calculated
@@ -39,10 +34,7 @@
 
     }
 
-    // aspect ratio (on width)
-    // calculate height according to width aspect ratio
-    // must be unitless number
-
+    // aspect ratio (relative to width)
     @if(type-of($height) == 'number' and unitless($height)) {
 
       // cannot be calculated
@@ -56,16 +48,12 @@
 
   }
 
-  // definition (width)
-  // output width property only when it's set
-
+  // width
   @if($width) {
     width: if($method, call($method, $width), $width);
   }
 
-  // definition (height)
-  // output height property only when it's set
-
+  // height
   @if($height) {
     height: if($method, call($method, $height), $height);
   }

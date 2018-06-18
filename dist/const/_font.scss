@@ -28,14 +28,14 @@ $const-font-weight-scale-defaults: (
   'heavy': 900,
 ) !default;
 
-// prettier-ignore
+// (preserve)
+
 $const-font-size-scale: if(
   $const-preserve-defaults,
   map-merge($const-font-size-scale-defaults, if(global-variable-exists(const-font-size-scale), $const-font-size-scale, ())),
   if(global-variable-exists(const-font-size-scale), $const-font-size-scale, $const-font-size-scale-defaults)
 );
 
-// prettier-ignore
 $const-font-weight-scale: if(
   $const-preserve-defaults,
   map-merge($const-font-weight-scale-defaults, if(global-variable-exists(const-font-weight-scale), $const-font-weight-scale, ())),

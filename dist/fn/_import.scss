@@ -1,8 +1,5 @@
-// Private functions are intentionally left out of documentation.
-// Extract a map of requested item and returns it.
-// @access private
-// @param {string} $name - Name
-// @param {string} $group [$export-group] - Group identifier
+// This function is internal, and is intentionaly not documented. Extract a map
+// of requested item and returns it.
 
 @function import($name, $group: if(global-variable-exists(export-group), $export-group, $system-default-group)) {
 

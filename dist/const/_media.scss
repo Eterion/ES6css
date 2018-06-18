@@ -6,7 +6,8 @@ $const-media-scale-defaults: (
   'desktop': (width: 1680px, height: 1050px),
 ) !default;
 
-// prettier-ignore
+// (preserve)
+
 $const-media-scale: if(
   $const-preserve-defaults,
   map-merge($const-media-scale-defaults, if(global-variable-exists(const-media-scale), $const-media-scale, ())),

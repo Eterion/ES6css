@@ -1,10 +1,6 @@
-// Private functions are intentionally left out of documentation.
-// Create new item in export groups and returns complete data map. Thros an error if a item with identical **$name** inside a **$group** already exists, to prevent duplicates.
-// @access private
-// @param {string} $name - Name
-// @param {bool|map} $props [false] - Map of properties
-// @param {string} $group [$export-group] - Group identifier
-// @param {map} $defaults [$export-defaults] - Map of default properties
+// This function is internal, and is intentionaly not documented. Create new
+// item in export groups and returns complete data map. Throws an error if item
+// with identical $name inside a $group already exists, to prevent duplicates.
 
 @function export($name, $props: false, $group: if(global-variable-exists(export-group), $export-group, $system-default-group), $defaults: $export-defaults) {
 
