@@ -1,5 +1,5 @@
 dest:
-  'docs'
+  'api'
 groups:
   export: 'Export'
   media: 'Media'
