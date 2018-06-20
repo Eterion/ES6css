@@ -50,12 +50,12 @@
 
   // width
   @if($width) {
-    width: if($method, call($method, $width), $width);
+    width: if($method, call(get-function(inspect($method)), $width), $width);
   }
 
   // height
   @if($height) {
-    height: if($method, call($method, $height), $height);
+    height: if($method, call(get-function(inspect($method)), $height), $height);
   }
 
 }
