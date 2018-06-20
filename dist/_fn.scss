@@ -4,7 +4,6 @@
 @import 'fn/color';
 @import 'fn/em-always';
 @import 'fn/em';
-@import 'fn/font-size';
 @import 'fn/font-weight';
 @import 'fn/get-value';
 @import 'fn/get';
@@ -18,7 +17,7 @@
 @import 'fn/to-id';
 @import 'fn/to-unicode';
 
-// import (private)
+// imports (private)
 @import 'fn/compute-key';
 @import 'fn/err';
 @import 'fn/export';

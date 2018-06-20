@@ -2,6 +2,7 @@ $const-default-key: regular !default;
 $const-preserve-defaults: true !default;
 $const-relative-units-enable: false !default;
 $const-relative-units-min: 3px !default;
+$const-relative-units-root: 16px !default;
 
 // imports
 @import 'const/color';

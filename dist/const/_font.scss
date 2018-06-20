@@ -1,14 +1,3 @@
-$const-font-size-scale-defaults: (
-  'tiny': 10px,
-  'smallest': 11px,
-  'smaller': 12px,
-  'small': 14px,
-  'regular': 16px,
-  'large': 18px,
-  'larger': 20px,
-  'largest': 22px,
-) !default;
-
 $const-font-weight-scale-defaults: (
   'thin': 100,
   'extralight': 200,
@@ -29,12 +18,6 @@ $const-font-weight-scale-defaults: (
 ) !default;
 
 // (preserve)
-
-$const-font-size-scale: if(
-  $const-preserve-defaults,
-  map-merge($const-font-size-scale-defaults, if(global-variable-exists(const-font-size-scale), $const-font-size-scale, ())),
-  if(global-variable-exists(const-font-size-scale), $const-font-size-scale, $const-font-size-scale-defaults)
-);
 
 $const-font-weight-scale: if(
   $const-preserve-defaults,
