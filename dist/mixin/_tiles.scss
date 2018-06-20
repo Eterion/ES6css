@@ -3,13 +3,13 @@
 /// @param {number} $width - Column width, in pixels
 /// @param {number} $gap [0] - Gap between rows and columns, in pixels
 /// @param {string} $repeat [auto-fill] - Recurring pattern for repeat function, see [**mdn**](https://developer.mozilla.org/en-US/docs/Web/CSS/repeat)
-/// @param {map} $legacy [( enabled: false, item: to-class(item), max-columns: 1, max-items: 1 )] - Settings for legacy support
+/// @param {map} $legacy [()] - Settings for legacy support, see mixin code for defaults
 
 @mixin tiles($width, $gap: 0, $repeat: auto-fill, $legacy: ()) {
 
   // defaults
   $legacy: map-merge((
-    'enabled': false,
+    'enable': false,
     'item': to-class(item),
     'max-columns': 1,
     'max-items': 1,
@@ -18,12 +18,12 @@
   // layout
   display: grid;
 
-  // Include legacy support only when $legacy.enabled is set to true (false by
+  // Include legacy support only when $legacy.enable is set to true (false by
   // default). This may (and probably will) generate large amount of code,
   // because legacy code needs to have specified position for each item
   // individually.
 
-  @if(map-key-get($legacy, enabled)) {
+  @if(map-key-get($legacy, enable)) {
 
     // grid
     @include tiles-container($width, $gap, $legacy: $legacy);

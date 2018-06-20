@@ -11,7 +11,7 @@
   @if($repeat) {
 
     // disable autoprefixer (because of IE)
-    /* autoprefixer: #{if(map-key-get($legacy, enabled), off, on)} */
+    /* autoprefixer: #{if(map-key-get($legacy, enable), off, on)} */
 
     // columns
     grid-template-columns: repeat($repeat, minmax($width, 1fr));
