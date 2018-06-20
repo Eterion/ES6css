@@ -2,7 +2,7 @@
 /// @access public
 /// @param {string} $options - Options applied to every transition
 /// @param {string|list} $properties - List of properties
-/// @example @include transition(animation-speed(), width, height) // transition: width 0.3s, height 0.3s
+/// @example @include transition(300ms, width, height) // transition: width 300ms, height 300ms
 
 @mixin transition($options, $properties...) {
 
