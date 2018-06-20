@@ -1,4 +1,4 @@
-/// Returns a **$number** recalculated to rem units, if possible. Allows scaling based on **$const-default-key** key of the **$const-font-size-scale** constant. To ensure visibility of all elements, resulting numbers equal or below **$const-relative-units-min** are not recalculated. Requires **$const-relative-units-enabled** set to true. Use [**rem-always**](#function-rem-always) if you wish to convert to relative units, regardless of global settings.
+/// Returns a **$number** recalculated to rem units, if possible. Allows scaling based on **$const-default-key** key of the **$const-font-size-scale** constant. To ensure visibility of all elements, resulting numbers equal or below **$const-relative-units-min** are not recalculated. Requires **$const-relative-units-enable** set to true. Use [**rem-always**](#function-rem-always) if you wish to convert to relative units, regardless of global settings.
 /// @access public
 /// @param {number} $number - Source number
 /// @example rem(16px) // returns 1rem

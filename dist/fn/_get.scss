@@ -1,4 +1,4 @@
-/// Returns a property value from export item. Can be used inside a [**import**](#mixin-import) mixin without **$name** and **$group** parameters. This function already includes unit conversion (if **$const-relative-units-enabled** is set to true), use non-relative units for input value. Use [**get-value**](#function-get-value) function if the unit conversion is not needed. If the requested property is used in additional calculations, use [**get-value**](#function-get-value) function instead.
+/// Returns a property value from export item. Can be used inside a [**import**](#mixin-import) mixin without **$name** and **$group** parameters. This function already includes unit conversion (if **$const-relative-units-enable** is set to true), use non-relative units for input value. Use [**get-value**](#function-get-value) function if the unit conversion is not needed. If the requested property is used in additional calculations, use [**get-value**](#function-get-value) function instead.
 /// @group export
 /// @access public
 /// @param {string} $prop - Property name
