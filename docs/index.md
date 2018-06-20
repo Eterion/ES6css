@@ -1,10 +1,17 @@
-[Example](#example-simple) | [Install](#install) | [Constants](constants) | [Functions](functions) | [Mixins](mixins)
-
 # What's this?
 
 It started as an experimental custom framework for a web application, that would eliminate the need to repeat component name in each variable multiple times per file. Eventually, I've reduced the complexity, removed bunch of stuff that were too specific and made it more simple and independent.
 
 The main feature of this thing is the export and import mechanics, inspired by ES6 specification, that allows to create modules with properties and using those properties in css, only by using one mixin instead of multiple variables.
+
+## Contents
+
+This collection of tools consists of constants, functions and mixins. This also means it doesn't generate any css by it self just by importing it.
+
+- [Export](export) (includes extend and import)
+- [Constants](constants)
+- [Functions](functions)
+- [Mixins](mixins)
 
 ## Example (simple)
 
