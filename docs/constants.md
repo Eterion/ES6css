@@ -1,22 +1,22 @@
-[Back](./#contents)
-
 # Constants
 
 There are several variables (I've named them constants, because internally they're not changed) to configure this library. All of them have reasonable defaults (I hope so, seems reasonable to me), so configuration is totally optional.
 
 Constants variables always start with `const` prefix and are defined with `!default` flag, so your custom configuration must be added before the `esm` import.
 
-- Variables
-  - [default-key](#default-key)
-  - [preserve-defaults](#preserve-defaults)
-  - [relative-units](#relative-units)
-- Maps
-  - [color](#color)
-  - [export](#export)
-  - [font](#media)
-  - [z-index](#z-index)
+- [Variables](#variables)
+  - [Default Key](#default-key)
+  - [Preserve Defaults](#preserve-defaults)
+  - [Relative Units](#relative-units)
+- [Maps](#maps)
+  - [Color](#color)
+  - [Export](#export)
+  - [Font](#media)
+  - [Z-Index](#z-index)
 
-## default-key
+## Variables
+
+### Default Key
 
 ```scss
 $const-default-key: regular;
@@ -24,7 +24,7 @@ $const-default-key: regular;
 
 Determines what key in maps is used as default value in functions that make use of map constants. **If you change this value, make sure all the map constants contain this key as well, otherwise compilation may not be successful (probably).**
 
-## preserve-defaults
+### Preserve Defaults
 
 ```scss
 $const-preserve-defaults: true;
@@ -32,7 +32,7 @@ $const-preserve-defaults: true;
 
 This constant affects only map constants. When set to `true`, your custom map configuration will be merged with defaults (your values take precedence over defaults). If you wish to completely replace default map values with your custom properties, set this constant to `false`.
 
-## relative-units
+### Relative Units
 
 ```scss
 $const-relative-units-enable: false;
@@ -40,21 +40,21 @@ $const-relative-units-enable: false;
 
 When enabled, functions [em](./functions/#em), [rem](./functions/#rem) and other (all relevant functions should have mentioned whenever relative units settings affects them) will recalculate non-relative units to relative values. Resulting value is calculated relative to `$const-relative-units-root` constant.
 
-### Additional Settings
+#### Additional Settings
 
 - `$const-relative-units-min: 3px;` Any value equal or below this constant will not be converted to relative units. This may be useful to allow rendering of small values.
 
 - `$const-relative-unit-root: 16px;` This value is the basis for calculation of all relative units. Your `body` element should have set the same font-size property.
 
----
+### Maps
 
 > Note, the following map constants must have specified [default key](#default-key), if the default key is not present, compilation may not be successful. These maps can also be completely replaced with new custom definitions by setting [preserve defaults](#preserve-defaults) constants to `false`.
 
-## color
+### Color
 
 Source constants related to [color](./functions/#color) function.
 
-### Keys
+#### Keys
 
 ```scss
 $const-color-keys: (
@@ -72,7 +72,7 @@ List of keyword and color values. You probably want to define your colors here. 
 color(gray) // returns dimgray
 ```
 
-### Scale
+#### Scale
 
 ```scss
 $const-color-scale: (
@@ -96,7 +96,7 @@ List of available scale keys for the [color](./functions/#color) function, used 
 color(gray, dark) // returns #484848
 ```
 
-## export
+### Export
 
 ```scss
 $const-export-group: ();
@@ -104,11 +104,11 @@ $const-export-group: ();
 
 TBD
 
-## font
+### Font
 
 Source constants related to font functions.
 
-### Weight
+#### Weight
 
 ```scss
 $const-font-weight-scale-defaults: (
@@ -137,7 +137,7 @@ List of available keys for the [font-weight](./functions/#font-weight) function.
 font-weight(light) // returns 300
 ```
 
-## z-index
+### Z-Index
 
 ```scss
 $const-z-index: ();
