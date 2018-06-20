@@ -1,5 +1,5 @@
 dest:
-  'api'
+  'api-reference'
 groups:
   export: 'Export'
   media: 'Media'
