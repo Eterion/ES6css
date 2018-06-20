@@ -1,36 +1,43 @@
 // This function is internal, and is intentionaly not documented. Adds
-// calculated position to items in tiles container, needed only for legacy
-// support. The $reduce-viewport-by argument reduces available width considered
-// into the legacy calculation.
+// calculated position to item in tiles container, needed only for legacy
+// support.
 
-@mixin tiles-item($width, $whitespace, $index, $reduce-viewport-by: 0, $repeat: $const-tiles-column-min) {
-  @if(type-of($repeat) == 'number') {
-    &:nth-child(#{$index}) {
+@mixin tiles-item($index, $width, $gap: 0) {
+  &:nth-child(#{$index}) {
 
-      // calculate real occupied width
-      $real-width: $width + whitespace($whitespace, false);
+    // gap
+    $has-gap: if(clear-unit($gap) != 0, true, false);
 
-      // calculate item position in tiles
-      $repeat-restricted: $repeat;
-      -ms-grid-column: $index - ((ceil($index / $repeat-restricted) - 1) * $repeat-restricted);
-      -ms-grid-row: ceil($index / $repeat-restricted);
+    // 1 column
+    -ms-grid-column: 1;
+    -ms-grid-row: if($has-gap, ($index * 2) - 1, $index);
 
-      // calculate number of columns for each available width
-      @for $column-index from ($const-tiles-column-min + 1) through $const-tiles-column-max {
-        @include media-up-from($column-index * $real-width, width) {
+    // 2+ columns
+    @if($index > 1) {
+      @if($const-tiles-legacy-columns > 1) {
+        @for $column-index from 2 through $const-tiles-legacy-columns {
 
-          // calculate number of columns
-          $available: media($column-index * $real-width, width) - $reduce-viewport-by;
-          $add: if($available <= $column-index * $real-width, floor(($available - ($const-tiles-column-min * $real-width)) / $real-width) , 0);
-          $repeat-restricted: $const-tiles-column-min + $add;
+          // previous
+          $grid-column-previous: $index - (ceil($index / ($column-index - 1)) - 1) * ($column-index - 1);
+          $grid-row-previous: ceil($index / ($column-index - 1));
 
-          // legacy
-          -ms-grid-column: $index - ((ceil($index / $repeat-restricted) - 1) * $repeat-restricted);
-          -ms-grid-row: ceil($index / $repeat-restricted);
+          // current
+          $grid-column: $index - (ceil($index / $column-index) - 1) * $column-index;
+          $grid-row: ceil($index / $column-index);
+
+          // generate only when current is different from previous
+          @include media-up-from(if($has-gap, ($column-index * $width) + (($column-index - 1) * $gap), $column-index * $width), width) {
+            @if($grid-column != $grid-column-previous) {
+              -ms-grid-column: if($has-gap, ($grid-column * 2) - 1, $grid-column);
+            }
+            @if($grid-row != $grid-row-previous) {
+              -ms-grid-row: if($has-gap, ($grid-row * 2) - 1, $grid-row);
+            }
+          }
 
         }
       }
-
     }
+
   }
 }

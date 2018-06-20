@@ -1,111 +1,47 @@
-/// Adds tiles layout to a **$container** element. Includes legacy support, however the layout may not be identical to a modern W3C standard. The **$whitespace-margin** parameter determines whenever the tiles element margin property is positive or negative, to allow placement in element with padding property. This mixin already includes unit ([**rem**](#function-rem)) conversion, use non-relative units for input values. Note that enabled legacy support can generate large amounts of code, can be disabled by setting **$const-tiles-legacy-mode-enabled** to **false**. The legacy mode is also limited by number of items set through **$const-tiles-count** constant.
+/// Adds tiles layout to element. Includes legacy support, however the generated layout may not be identical to a modern W3C standard (because legacy syntax doesn't support automatic positioning). Note, enabled legacy support may generate large amount of code, can be disabled by setting **$const-tiles-legacy-enabled** to **false**.
 /// @access public
-/// @param {string} $container - Container selector
-/// @param {string} $item - Children selector
+/// @param {string} $item - Item selector (legacy)
 /// @param {number} $width - Column width, in pixels
-/// @param {number|string} $whitespace [regular] - Space between columns, scale or number in pixels
-/// @param {string} $whitespace-margin [positive] - Determines the container margin, can be **positive** or **negative**
-/// @param {number} $reduce-viewport-by [0] - Reduce available width considered into legacy calculation
+/// @param {number} $gap [0] - Gap between rows and columns, in pixels
+/// @param {string} $repeat [auto-fill] - Recurring pattern for repeat function, see [**mdn**](https://developer.mozilla.org/en-US/docs/Web/CSS/repeat)
 
-@mixin tiles($container, $item, $width, $whitespace: regular, $whitespace-margin: positive, $reduce-viewport-by: 0) {
+@mixin tiles($item, $width, $gap: 0, $repeat: auto-fill) {
 
-  #{$container} {
+  // layout
+  display: grid;
 
-    // container
-    display: grid;
+  // Include legacy support only when $const-tiles-legacy-enabled is set to true
+  // (false by default). This may (and probably will) generate large amount of
+  // code, because legacy code needs to have specified position for each item
+  // individually.
 
-    // whitespace
-    // includes container margin according to $whitespace-margin parameter
-    // to allow placement in element with padding property
+  @if($const-tiles-legacy-enabled) {
 
-    @if($whitespace != 0) {
+    // grid
+    @include tiles-container($width, $gap);
 
-      margin: if($whitespace-margin == positive, rem(whitespace($whitespace, false) / 2), -#{rem(whitespace($whitespace, false) / 2)});
+    // Each tiles item must have defined position in the grid, so amount of
+    // items must be known in order to generate appropriate amount of code.
+    // Number of expected items is controlled by $const-tiles-legacy-count
+    // constant.
 
-      // item
-      & > #{$item} {
-        margin: rem(whitespace($whitespace, false) / 2);
-      }
-
-    }
-
-  }
-
-  // legacy
-  // include legacy support only if $const-tiles-enable-legacy is true
-  // may generate large amount of code
-
-  @if($const-tiles-legacy-mode-enabled == true) {
-
-    // layout (legacy)
-    // these browsers don't support modern W3C standard
-    // number of columns must be therefore specified
-
-    #{$container} {
-
-      // tiles
-      @include tiles-container($width, $whitespace, $reduce-viewport-by);
-
-      // children
-      // each tiles items has specific position in the tiles
-      // appropriate number of styles must be generated
-      // see $const-tiles-count in constants to define number of children
-
-      & > #{$item} {
-        @for $index from 1 through $const-tiles-count {
-          @include tiles-item($width, $whitespace, $index, $reduce-viewport-by);
-        }
-      }
-
-      // size
-      // create various sizes based on the list of provided keys
-      // keys must be available in const-size-scale map
-
-      @if(length($const-tiles-size) > 0) {
-        @each $key in $const-tiles-size {
-          &.size-#{$key} {
-
-            // tiles
-            $this-width: $width * map-get($const-size-scale, $key);
-            @include tiles-container($this-width, $whitespace, $reduce-viewport-by);
-
-            // children
-            & > #{$item} {
-              @for $index from 1 through $const-tiles-count {
-                @include tiles-item($this-width, $whitespace, $index, $reduce-viewport-by);
-              }
-            }
-
-          }
-        }
-      }
-
-    }
-
-  }
-
-  // layout (evergreen)
-  // modern W3C standard doesn't require column specification
-  // auto-fill takes care of the layout automatically (awesome)
-
-  #{$container} {
-
-    // tiles
-    @include tiles-container($width, $whitespace, $reduce-viewport-by, auto-fill);
-
-    // size
-    // create various sizes based on the list of provided keys
-    // keys must be available in const-size-scale map
-
-    @if(length($const-tiles-size) > 0) {
-      @each $key in $const-tiles-size {
-        &.size-#{$key} {
-          $this-width: $width * map-get($const-size-scale, $key);
-          @include tiles-container($this-width, $whitespace, $reduce-viewport-by, auto-fill);
-        }
+    & > #{$item} {
+      @for $index from 1 through $const-tiles-legacy-count {
+        @include tiles-item($index, $width, $gap);
       }
     }
 
   }
+
+  // Modern W3C standard, doesn't require column and item specification, because
+  // it can automatically position items based on available width. The auto-fill
+  // value takes care of the number of columns automatically.
+
+  & {
+    @include tiles-container($width, $gap, $repeat);
+  }
+
+  // content
+  @content;
 
 }

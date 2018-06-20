@@ -1,37 +1,49 @@
 // This function is internal, and is intentionaly not documented. Adds tiles
-// layout to a container element. Also includes legacy support, however the
-// layout may not be identical to a modern W3C standard. The $reduce-viewport-by
-// argument reduces available width considered into the legacy calculation.
+// layout to element. Includes legacy support, however the layout may not be
+// identical to the modern W3C standard.
 
-@mixin tiles-container($width, $whitespace, $reduce-viewport-by: 0, $repeat: $const-tiles-column-min) {
+@mixin tiles-container($width, $gap: 0, $repeat: false) {
 
-  // calculate real occupied width
-  $real-width: $width + whitespace($whitespace, false);
+  // gap
+  $has-gap: if(clear-unit($gap) != 0, true, false);
 
-  // W3C standard
-  @if(type-of($repeat) != 'number') {
-    grid-template-columns: repeat($repeat, minmax($real-width, 1fr));
+  // W3C
+  @if($repeat) {
+
+    // disable autoprefixer (because of IE)
+    /* autoprefixer: #{if($const-tiles-legacy-enabled, off, on)} */
+
+    // columns
+    grid-template-columns: repeat($repeat, minmax($width, 1fr));
+
+    // rows (with gap between items)
+    @if($has-gap) {
+      grid-gap: $gap;
+      grid-template-rows: auto;
+    }
+
   }
 
   // legacy
   @else {
 
-    // take into account minimum number of columns
-    $repeat-restricted: $repeat;
-    grid-template-columns: repeat($repeat-restricted, minmax($width, 1fr));
+    // recurring column pattern
+    $pattern: minmax($width, 1fr);
 
-    // calculate number of columns for each available width
-    @for $column-index from ($const-tiles-column-min + 1) through $const-tiles-column-max {
-      @include media-up-from($column-index * $real-width, width) {
+    // columns (1 column)
+    grid-template-columns: $pattern;
 
-        // calculate number of columns
-        $available: media($column-index * $real-width) - $reduce-viewport-by;
-        $add: if($available <= $column-index * $real-width, floor(($available - ($const-tiles-column-min * $real-width)) / $real-width) , 0);
-        $repeat-restricted: $const-tiles-column-min + $add;
+    // rows
+    @if($has-gap) {
+      grid-template-rows: auto repeat($const-tiles-legacy-count, $gap auto);
+    }
 
-        // legacy
-        grid-template-columns: repeat($repeat-restricted, minmax($width, 1fr));
-
+    // columns (2+ columns)
+    @if($const-tiles-legacy-columns > 1) {
+      @for $index from 2 through $const-tiles-legacy-columns {
+        @include media-up-from(if($has-gap, ($index * $width) + (($index - 1) * $gap), $index * $width), width) {
+          grid-template-columns: if($has-gap, $pattern repeat($index - 1, $gap $pattern), repeat($index, $pattern));
+        }
       }
     }
 
