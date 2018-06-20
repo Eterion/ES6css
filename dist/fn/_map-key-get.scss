@@ -2,9 +2,9 @@
 /// @access public
 /// @param {map} $map - Source map
 /// @param {number|string} $key - Number or key
-/// @param {bool} $can-inherit [true] - Determines if inherit can be passed
+/// @param {bool} $can-inherit [false] - Determines if inherit can be passed
 
-@function map-key-get($map, $key, $can-inherit: true) {
+@function map-key-get($map, $key, $can-inherit: false) {
 
   @if(type-of($key) == string) {
 

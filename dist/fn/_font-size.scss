@@ -8,10 +8,10 @@
 
   // relative units
   @if($method) {
-    @return call($method, map-key-get($const-font-size-scale, $value));
+    @return call($method, map-key-get($const-font-size-scale, $value, $can-inherit: true));
   }
 
   // no conversion
-  @return map-key-get($const-font-size-scale, $value);
+  @return map-key-get($const-font-size-scale, $value, $can-inherit: true);
 
 }

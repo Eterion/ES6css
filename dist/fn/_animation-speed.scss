@@ -4,5 +4,5 @@
 /// @example animation-speed(regular) // returns 300ms
 
 @function animation-speed($key: $const-default-key) {
-  @return map-key-get($const-animation-speed-scale, $key, $can-inherit: false);
+  @return map-key-get($const-animation-speed-scale, $key);
 }

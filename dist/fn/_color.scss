@@ -32,6 +32,6 @@
   }
 
   // calculate
-  @return scale-color($color, $lightness: percentage(map-key-get($const-color-scale, $scale, $can-inherit: false) / 100));
+  @return scale-color($color, $lightness: percentage(map-key-get($const-color-scale, $scale) / 100));
 
 }
