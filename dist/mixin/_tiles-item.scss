@@ -2,7 +2,7 @@
 // calculated position to item in tiles container, needed only for legacy
 // support.
 
-@mixin tiles-item($index, $width, $gap: 0) {
+@mixin tiles-item($index, $width, $gap: 0, $legacy: ()) {
   &:nth-child(#{$index}) {
 
     // gap
@@ -14,8 +14,8 @@
 
     // 2+ columns
     @if($index > 1) {
-      @if($const-tiles-legacy-columns > 1) {
-        @for $column-index from 2 through $const-tiles-legacy-columns {
+      @if(map-key-get($legacy, max-columns) > 1) {
+        @for $column-index from 2 through map-key-get($legacy, max-columns) {
 
           // previous
           $grid-column-previous: $index - (ceil($index / ($column-index - 1)) - 1) * ($column-index - 1);

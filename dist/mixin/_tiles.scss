@@ -1,33 +1,40 @@
-/// Adds tiles layout to element. Includes legacy support, however the generated layout may not be identical to a modern W3C standard (because legacy syntax doesn't support automatic positioning). Note, enabled legacy support may generate large amount of code, can be disabled by setting **$const-tiles-legacy-enabled** to **false**.
+/// Adds tiles layout to element. Includes legacy support, however the generated layout may not be identical to a modern W3C standard (because legacy syntax doesn't support automatic positioning). Note, enabled legacy support may generate large amount of code.
 /// @access public
-/// @param {string} $item - Item selector (legacy)
 /// @param {number} $width - Column width, in pixels
 /// @param {number} $gap [0] - Gap between rows and columns, in pixels
 /// @param {string} $repeat [auto-fill] - Recurring pattern for repeat function, see [**mdn**](https://developer.mozilla.org/en-US/docs/Web/CSS/repeat)
+/// @param {map} $legacy [( enabled: false, item: to-class(item), max-columns: 1, max-items: 1 )] - Settings for legacy support
 
-@mixin tiles($item, $width, $gap: 0, $repeat: auto-fill) {
+@mixin tiles($width, $gap: 0, $repeat: auto-fill, $legacy: ()) {
+
+  // defaults
+  $legacy: map-merge((
+    'enabled': false,
+    'item': to-class(item),
+    'max-columns': 1,
+    'max-items': 1,
+  ), $legacy);
 
   // layout
   display: grid;
 
-  // Include legacy support only when $const-tiles-legacy-enabled is set to true
-  // (false by default). This may (and probably will) generate large amount of
-  // code, because legacy code needs to have specified position for each item
+  // Include legacy support only when $legacy.enabled is set to true (false by
+  // default). This may (and probably will) generate large amount of code,
+  // because legacy code needs to have specified position for each item
   // individually.
 
-  @if($const-tiles-legacy-enabled) {
+  @if(map-key-get($legacy, enabled)) {
 
     // grid
-    @include tiles-container($width, $gap);
+    @include tiles-container($width, $gap, $legacy: $legacy);
 
     // Each tiles item must have defined position in the grid, so amount of
     // items must be known in order to generate appropriate amount of code.
-    // Number of expected items is controlled by $const-tiles-legacy-count
-    // constant.
+    // Number of expected items is controlled by $legacy.max-items constant.
 
-    & > #{$item} {
-      @for $index from 1 through $const-tiles-legacy-count {
-        @include tiles-item($index, $width, $gap);
+    & > #{map-key-get($legacy, item)} {
+      @for $index from 1 through map-key-get($legacy, max-items) {
+        @include tiles-item($index, $width, $gap, $legacy);
       }
     }
 
@@ -38,7 +45,7 @@
   // value takes care of the number of columns automatically.
 
   & {
-    @include tiles-container($width, $gap, $repeat);
+    @include tiles-container($width, $gap, $repeat, $legacy);
   }
 
   // content
