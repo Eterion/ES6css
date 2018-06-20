@@ -46,9 +46,9 @@ When enabled, functions [em](./functions/#em), [rem](./functions/#rem) and other
 
 - `$const-relative-unit-root: 16px;` This value is the basis for calculation of all relative units. Your `body` element should have set the same font-size property.
 
-### Maps
+## Maps
 
-> Note, the following map constants must have specified [default key](#default-key), if the default key is not present, compilation may not be successful. These maps can also be completely replaced with new custom definitions by setting [preserve defaults](#preserve-defaults) constants to `false`.
+The following map constants must have specified [default key](#default-key), if the default key is not present, compilation may not be successful. These maps can also be completely replaced with new custom definitions by setting [preserve defaults](#preserve-defaults) constants to `false`.
 
 ### Color
 
