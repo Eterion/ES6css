@@ -2,8 +2,8 @@
 /// @group export
 /// @access public
 /// @param {string} $prop - Property name
-/// @param {string} $name [false] - Module name
-/// @param {string} $group [$export-group] - Group key
+/// @param {bool|string} $name [false] - Module name
+/// @param {bool|string} $group [$export-group] - Group key
 /// @param {map} $data [$system-import] - Source map
 /// @example element { height: rem(get(height) / 2); }
 
