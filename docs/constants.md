@@ -68,9 +68,10 @@ Represents how the selector and z-index properties of imported modules are creat
 
 #### Additional Settings
 
-- `$const-template-group-selector: '{id}-{module}';` Template for selector. This template is relevant only when export groups are used.
+The following templates are relevant only when export groups are used.
 
-- `$const-template-group-z-index: '{module}({group})';` Template for z-index value. This template is relevant only when export groups are used.
+- `$const-template-group-selector: '{id}-{module}';` Template for selector.
+- `$const-template-group-z-index: '{module}({group})';` Template for z-index value.
 
 ---
 ## Maps
