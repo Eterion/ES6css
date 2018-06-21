@@ -42,7 +42,13 @@ Let's say your fancy project is made of components. Each component comes with to
 
 ## Install
 
-You can use your favorite package manager with access to npm registry, eg. `yarn add esm-scss`. Once you've installed it, simply import `esm` file from node modules, it has everything that's needed for complete functionality.
+You can use your favorite package manager with access to npm registry.
+
+```
+$ yarn add esm-scss
+```
+
+Once installed, simply import `esm` file, it has everything that's needed for complete functionality.
 
 ```scss
 @import 'esm-scss/dist/esm';
