@@ -1,0 +1,9 @@
+// This function is internal, and is intentionaly not documented. Returns
+// computed selector from template string. This is to allow custom selectors for
+// exported modules.
+
+@function compute-template($template, $name: false, $group: false) {
+  @if($name) { $template: str-replace($template, '{name}', $name); }
+  @if($group) { $template: str-replace($template, '{group}', $group); }
+  @return $template;
+}

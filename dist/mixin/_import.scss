@@ -5,7 +5,7 @@
 /// @param {string} $group [$export-group] - Group key
 /// @example @include import(component-name) { ... }
 
-@mixin import($name, $group: if(global-variable-exists(export-group), $export-group, $system-default-group)) {
+@mixin import($name, $group: if(global-variable-exists(export-group), $export-group, false)) {
   @include props($name, $group) {
     #{get(selector)} {
       @content;

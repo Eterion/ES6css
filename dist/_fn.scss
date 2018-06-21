@@ -13,14 +13,13 @@
 @import 'fn/media';
 @import 'fn/rem-always';
 @import 'fn/rem';
+@import 'fn/str-replace';
 @import 'fn/to-class';
 @import 'fn/to-id';
 @import 'fn/to-unicode';
 
 // imports (private)
-@import 'fn/compute-key';
+@import 'fn/compute-props';
+@import 'fn/compute-template';
 @import 'fn/err';
-@import 'fn/export';
-@import 'fn/extend';
-@import 'fn/import';
 @import 'fn/media-query';

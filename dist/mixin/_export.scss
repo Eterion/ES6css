@@ -4,8 +4,31 @@
 /// @param {string} $name - Name
 /// @param {bool|map} $props [false] - Property map
 /// @param {string} $group [$export-group] - Group key
+/// @param {map} $defaults [$export-defaults] - Default properties
 /// @example @include export(component-name, ( ... ))
 
-@mixin export($name, $props: false, $group: if(global-variable-exists(export-group), $export-group, $system-default-group)) {
-  $system-export: export($name, $props, $group) !global;
+@mixin export($name, $props: false, $group: if(global-variable-exists(export-group), $export-group, false), $defaults: $export-defaults) {
+
+  $computed: compute-props($name, $group);
+  $id: map-get($computed, id);
+  $selector: map-get($computed, selector);
+  $z-index: map-get($computed, z-index);
+
+  // already exists
+  @if(map-has-key($system-export, $id)) {
+    @error err('key-exists', $id, '(export)');
+  }
+
+  // defaults
+  $props: map-merge($export-defaults, if($props, $props, ()));
+
+  // export
+  $system-export: map-merge($system-export, (
+    '#{$id}': map-merge($props, (
+      'name': $selector,
+      'selector': call(get-function(inspect(if(map-key-get($props, unique), 'to-id', 'to-class'))), $selector),
+      'z-index': $z-index,
+    ))
+  )) !global;
+
 }

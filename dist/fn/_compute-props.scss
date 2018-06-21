@@ -1,0 +1,11 @@
+// This function is internal, and is intentionaly not documented. Returns
+// computed values from provided name and group for use by export, extend and
+// import mixins.
+
+@function compute-props($name, $group: false) {
+  @return (
+    'id': compute-template(if($group, '{group}-{name}', '{name}'), $name, $group),
+    'selector': compute-template(if($group, $const-template-group-selector, $const-template), $name, map-key-get($const-export-group, $group)),
+    'z-index': compute-template(if($group, $const-template-group-z-index, $const-template), $name, $group),
+  );
+}

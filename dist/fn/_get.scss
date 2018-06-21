@@ -1,12 +1,35 @@
-/// Returns a property value from export item. Can be used inside a [**import**](#mixin-import) mixin without **$name** and **$group** parameters. This function already includes unit conversion (if **$const-relative-units-enable** is set to true), use non-relative units for input value. Use [**get-value**](#function-get-value) function if the unit conversion is not needed. If the requested property is used in additional calculations, use [**get-value**](#function-get-value) function instead.
+/// Returns a property value from export item. Can be used inside a [**import**](#mixin-import) mixin without **$name** and **$group** parameters.
 /// @group export
 /// @access public
 /// @param {string} $prop - Property name
 /// @param {string} $name [false] - Name
 /// @param {string} $group [$export-group] - Group key
 /// @param {map} $data [$system-import] - Source map
-/// @example element { height: get(height); }
+/// @example element { height: rem(get(height) / 2); }
 
-@function get($prop, $name: false, $group: if(global-variable-exists(export-group), $export-group, $system-default-group), $data: $system-import) {
-  @return rem(get-value($prop, $name, $group, $data));
+@function get($prop, $name: false, $group: if(global-variable-exists(export-group), $export-group, false), $data: $system-import) {
+
+  // name and group is provided
+  @if(type-of($name) == string and type-of($group) == string) {
+    $data: import($name, $group);
+  }
+
+  // not found
+  @if(map-has-key($data, $prop) == false) {
+    @error err('key-not-found', $prop, '(get)', map-keys($data));
+  }
+
+  // value
+  $value: map-get($data, $prop);
+
+  // unit protection, can be anything except em and rem
+  @if(type-of($value) == number) {
+    @if(unit($value) == em or unit($value) == rem) {
+      @error 'Cannot be relative unit.';
+    }
+  }
+
+  // return
+  @return $value;
+
 }
