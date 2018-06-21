@@ -36,7 +36,7 @@ clear-unit($number)
 | --------- | ------------ | -------- | ------- |
 | `$number` | Input number | `Number` | -       |
 
-[Top](#)
+[Back to top](#constants)
 
 ## color-spectrum
 
@@ -57,7 +57,7 @@ color-spectrum($list, $value, $saturation, $lightness)
 | `$saturation` | Saturation (percent)                         | `Number`             | 100     |
 | `$lightness`  | Lightness (percent)                          | `Number`             | 50      |
 
-[Top](#)
+[Back to top](#constants)
 
 ## color
 
@@ -76,7 +76,7 @@ color($color, $scale)
 | `$color`  | Input color or key | `Color` or `String` | -       |
 | `$scale`  | Scale key          | `Bool` or `String`  | false   |
 
-[Top](#)
+[Back to top](#constants)
 
 ## em-always
 
@@ -94,4 +94,4 @@ em-always($number)
 | --------- | ------------ | -------- | ------- |
 | `$number` | Input number | `Number` | -       |
 
-[Back](./#contents)
+[Back to top](#constants)
