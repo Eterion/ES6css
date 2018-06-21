@@ -4,13 +4,5 @@
 /// @example to-id(element) // returns #element
 
 @function to-id($id) {
-
-  // return
-  @if(str-index($id, '#')) {
-    @return $id;
-  }
-
-  // add id
-  @return '##{$id}';
-
+  @return if(str-index($id, '#'), $id, '##{$id}');
 }

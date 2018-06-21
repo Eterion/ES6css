@@ -16,25 +16,23 @@
     @if($index > 1) {
       @if(map-key-get($legacy, max-columns) > 1) {
         @for $column-index from 2 through map-key-get($legacy, max-columns) {
-
-          // previous
-          $grid-column-previous: $index - (ceil($index / ($column-index - 1)) - 1) * ($column-index - 1);
-          $grid-row-previous: ceil($index / ($column-index - 1));
-
-          // current
-          $grid-column: $index - (ceil($index / $column-index) - 1) * $column-index;
-          $grid-row: ceil($index / $column-index);
-
-          // generate only when current is different from previous
           @include media-up-from(if($has-gap, ($column-index * $width) + (($column-index - 1) * $gap), $column-index * $width), width) {
+
+            // previous
+            $grid-column-previous: $index - (ceil($index / ($column-index - 1)) - 1) * ($column-index - 1);
+            $grid-column: $index - (ceil($index / $column-index) - 1) * $column-index;
             @if($grid-column != $grid-column-previous) {
               -ms-grid-column: if($has-gap, ($grid-column * 2) - 1, $grid-column);
             }
+
+            // current
+            $grid-row-previous: ceil($index / ($column-index - 1));
+            $grid-row: ceil($index / $column-index);
             @if($grid-row != $grid-row-previous) {
               -ms-grid-row: if($has-gap, ($grid-row * 2) - 1, $grid-row);
             }
-          }
 
+          }
         }
       }
     }

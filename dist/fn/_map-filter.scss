@@ -5,13 +5,9 @@
 
 @function map-filter($map, $keys...) {
 
-  // return value
   $value: ();
-
-  // iterate through keys
   @each $key in $keys {
 
-    // type: list
     @if(type-of($key) == list) {
       @each $list-key in $key {
 
@@ -28,7 +24,6 @@
       }
     }
 
-    // default
     @else {
 
       // not found
@@ -45,7 +40,6 @@
 
   }
 
-  // return
   @return $value;
 
 }

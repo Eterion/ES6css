@@ -2,7 +2,7 @@
 /// @group export
 /// @access public
 /// @param {string} $prop - Property name
-/// @param {string} $name [false] - Name
+/// @param {string} $name [false] - Module name
 /// @param {string} $group [$export-group] - Group key
 /// @param {map} $data [$system-import] - Source map
 /// @example element { height: rem(get(height) / 2); }
@@ -10,8 +10,12 @@
 @function get($prop, $name: false, $group: if(global-variable-exists(export-group), $export-group, false), $data: $system-import) {
 
   // name and group is provided
+  $id: map-get(compute-props($name, $group), id);
   @if(type-of($name) == string and type-of($group) == string) {
-    $data: import($name, $group);
+    @if(map-has-key($system-export, $id) == false) {
+      @error err('key-not-found', $id, '(get)', map-keys($system-export));
+    }
+    $data: map-get($system-export, $id);
   }
 
   // not found
@@ -19,17 +23,6 @@
     @error err('key-not-found', $prop, '(get)', map-keys($data));
   }
 
-  // value
-  $value: map-get($data, $prop);
-
-  // unit protection, can be anything except em and rem
-  @if(type-of($value) == number) {
-    @if(unit($value) == em or unit($value) == rem) {
-      @error 'Cannot be relative unit.';
-    }
-  }
-
-  // return
-  @return $value;
+  @return map-get($data, $prop);
 
 }

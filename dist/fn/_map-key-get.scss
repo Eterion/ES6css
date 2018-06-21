@@ -18,12 +18,10 @@
       @error err('key-not-found', $key, '(map-key-get)', map-keys($map));
     }
 
-    // extracted value
     @return map-get($map, $key);
 
   }
 
-  // return
   @return $key;
 
 }

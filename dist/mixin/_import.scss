@@ -1,7 +1,7 @@
-/// Extracts an item, previously defined via [**export**](#mixin-export) mixin, and allows the use of [**get**](#function-get) and [**get-value**](#function-get-value) functions without the need of specified group. This mixin internally uses [**props**](#mixin-props) mixin, with the addition of automatically generated selector. The selector is class by default, set **unique** property to true to enable id selector.
+/// Extracts an item, previously defined via [**export**](#mixin-export) mixin, and allows the use of [**get**](#function-get) function without the need of specified group. This mixin internally uses [**props**](#mixin-props) mixin, with the addition of automatically generated selector. The selector is class by default, set **unique** property to true to enable id selector.
 /// @group export
 /// @access public
-/// @param {string} $name - Name
+/// @param {string} $name - Module name
 /// @param {string} $group [$export-group] - Group key
 /// @example @include import(component-name) { ... }
 

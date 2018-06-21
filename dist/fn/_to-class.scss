@@ -4,13 +4,5 @@
 /// @example to-class(element) // returns .element
 
 @function to-class($class) {
-
-  // return
-  @if(str-index($class, '.')) {
-    @return $class;
-  }
-
-  // add class
-  @return '.#{$class}';
-
+  @return if(str-index($class, '.'), $class, '.#{$class}');
 }

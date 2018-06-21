@@ -18,10 +18,8 @@
     @error err('key-not-found', $scale, '(media-only)', map-keys($const-media-scale));
   }
 
-  // key index
-  $index: index(map-keys($const-media-scale), $scale);
-
   // first
+  $index: index(map-keys($const-media-scale), $scale);
   @if($index == 1) {
     @media #{media-query(max, $scale, $prop, $operator)} {
       @content;

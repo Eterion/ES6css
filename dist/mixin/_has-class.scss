@@ -5,15 +5,13 @@
 
 @mixin has-class($list...) {
 
-  // selectors
+  // compose string of classes
   $data: '';
-
-  // iterate through list
   @each $selector in $list {
     $data: str-insert($data, to-class($selector), str-length($data) + 1);
   }
 
-  // definition
+  // add classes before root selector
   @at-root #{$data}#{&} {
     @content;
   }

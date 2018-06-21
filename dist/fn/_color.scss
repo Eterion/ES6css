@@ -1,6 +1,6 @@
 /// Returns scaled **$color** according to a **$scale** key. Allows easy color scaling without the need of additional variables for each new color variant. The source color can be passed as either direct color value or key identifier present in **$const-color-keys** constant. Scaling levels are completely customizable through **$const-color-scale** constant.
 /// @access public
-/// @param {color|string} $color - Source color or key
+/// @param {color|string} $color - Input color or key
 /// @param {bool|string} $scale [false] - Scale key
 /// @example color(gray, dark) // returns #4f4f4f
 
@@ -9,29 +9,17 @@
   // default
   $color: $value;
 
-  // Inspect function converts value to a string. This is needed because color
-  // keys in $const-color-keys map can be anything, including valid color names.
-  // So this makes sure color keys are evaluated before actual valid color
-  // values.
-
+  // in keys
   $value: inspect($value);
-
-  // color-keys
   @if(map-has-key($const-color-keys, $value)) {
     $color: map-get($const-color-keys, $value);
   }
 
-  // not a color
-  @if(type-of($color) != 'color') {
+  // not color
+  @if(type-of($color) != color) {
     @error 'Color \"#{$color}\" is not a color, use valid color value or one of the following keys: #{map-keys($const-color-keys)}';
   }
 
-  // no scale
-  @if($scale == false) {
-    @return $color;
-  }
-
-  // calculate
-  @return scale-color($color, $lightness: percentage(map-key-get($const-color-scale, $scale) / 100));
+  @return if($scale, scale-color($color, $lightness: percentage(map-key-get($const-color-scale, $scale) / 100)), $color);
 
 }

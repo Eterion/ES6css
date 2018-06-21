@@ -7,7 +7,6 @@
 
 @function media($value, $prop: width) {
 
-  // scale
   @if(type-of($value) == string) {
 
     // not found
@@ -15,10 +14,8 @@
       @error err('key-not-found', $value, '(media)', map-keys($const-media-scale));
     }
 
-    // default
-    $value: map-get($const-media-scale, $value);
-
     // width, height
+    $value: map-get($const-media-scale, $value);
     @if(type-of($value) == map) {
       @if(index((width, height), $prop)) {
         $value: map-get($value, $prop);
@@ -27,7 +24,6 @@
 
   }
 
-  // return
   @return $value;
 
 }

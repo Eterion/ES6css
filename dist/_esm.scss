@@ -6,14 +6,11 @@
 
 // Constants are awalys defined with !default flag to allow overwrite. Maps are
 // special case, that requires additional defauls contants, which can be
-// preserved based on other settings.
+// preserved based on other settings. Core functions and mixins (private items
+// are intentionaly not documented).
 // -----
 
 @import 'const';
-
-// Core functions and mixins, private items are intentionaly not documented.
-// -----
-
 @import 'fn';
 @import 'mixin';
 

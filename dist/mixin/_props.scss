@@ -1,7 +1,7 @@
-/// Extracts an item, previously defined via [**export**](#mixin-export) mixin, and allows the use of [**get**](#function-get) and [**get-value**](#function-get-value) functions without the need of specified group. This mixin is internally used by [**import**](#mixin-import) mixin. Unlike the [**import**](#mixin-import), this mixin doen't automatically adds generated selector.
+/// Extracts an item, previously defined via [**export**](#mixin-export) mixin, and allows the use of [**get**](#function-get) function without the need of specified group. This mixin is internally used by [**import**](#mixin-import) mixin. Unlike the [**import**](#mixin-import), this mixin doen't automatically adds generated selector.
 /// @group export
 /// @access public
-/// @param {string} $name - Name
+/// @param {string} $name - Module name
 /// @param {string} $group [$export-group] - Group key
 /// @example @include props(component-name) { ... }
 
@@ -13,10 +13,8 @@
 
   $export-group: $group !global;
 
-  $computed: compute-props($name, $group);
-  $id: map-get($computed, id);
-
   // not found
+  $id: map-get(compute-props($name, $group), id);
   @if(map-has-key($system-export, $id) == false) {
     @error err('key-not-found', $id, '(import)', map-keys($system-export));
   }

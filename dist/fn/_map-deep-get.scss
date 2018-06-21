@@ -5,12 +5,10 @@
 
 @function map-deep-get($map, $keys...) {
 
-  // iterate through keys
   @each $key in $keys {
     $map: map-get($map, $key);
   }
 
-  // path value
   @return $map;
 
 }

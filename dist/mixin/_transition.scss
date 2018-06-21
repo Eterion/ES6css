@@ -6,15 +6,12 @@
 
 @mixin transition($options, $properties...) {
 
-  // default
+  // add options to each transition property
   $transition: ();
-
-  // iterate through properties
   @each $prop in $properties {
     $transition: append($transition, $prop $options, comma);
   }
 
-  // definition
   transition: $transition;
 
 }

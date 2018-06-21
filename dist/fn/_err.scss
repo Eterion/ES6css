@@ -7,14 +7,10 @@
 
   // not found
   @if($key == 'key-not-found') {
-
-    // empty
-    @if(length(nth($values, 3)) == 0) {
-      @return 'The \"#{nth($values, 1)}\" in #{nth($values, 2)} was not found, the requested map is empty.';
-    }
-
-    @return 'The \"#{nth($values, 1)}\" in #{nth($values, 2)} was not found, use one of the following: #{nth($values, 3)}.';
-
+    @return if(length(nth($values, 3)) == 0,
+      'The \"#{nth($values, 1)}\" in #{nth($values, 2)} was not found, the requested map is empty.',
+      'The \"#{nth($values, 1)}\" in #{nth($values, 2)} was not found, use one of the following: #{nth($values, 3)}.'
+    );
   }
 
   // already exists

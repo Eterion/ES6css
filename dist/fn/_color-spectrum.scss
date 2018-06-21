@@ -1,22 +1,11 @@
-/// Returns color value according to its position in provided list, where the list represents the entire color spectrum.
+/// Returns color **$value** according to its position in provided **$list**, where the **$list** represents the entire color spectrum.
 /// @access public
-/// @param {number,string} $value - Value
 /// @param {list} $list - List of values that represent color spectrum
-/// @param {number} $saturation [100%] - Saturation
-/// @param {number} $lightness [50%] - Lightness
-/// @example color-spectrum(2, (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)) // returns #aaff00
+/// @param {number|string} $value - Searched value
+/// @param {number} $saturation [100] - Saturation (percent)
+/// @param {number} $lightness [50] - Lightness (percent)
+/// @example color-spectrum((0, 1, 2, 3, 4, 5, 6, 7, 8, 9), 2) // returns #aaff00
 
-@function color-spectrum($value, $list, $saturation: 100%, $lightness: 50%) {
-
-  // index
-  $index: index($list, $value);
-
-  // not found
-  @if($index == null) {
-    @error 'Value \"#{$value}\" was not found, use one of the following: #{$list}';
-  }
-
-  // return
-  @return hsl((360 / (length($list) - 1)) * ($index - 1), $saturation, $lightness);
-
+@function color-spectrum($list, $value, $saturation: 100%, $lightness: 50%) {
+  @return hsl((360 / (length($list) - 1)) * (index($list, $value) - 1), $saturation, $lightness);
 }

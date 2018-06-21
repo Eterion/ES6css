@@ -5,9 +5,6 @@
 
 @function to-unicode($value) {
 
-  // unicode characters
-  $unicode-chars: ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f');
-
   // detect unicode
   @if(str-length($value) == 4) {
 
@@ -18,13 +15,13 @@
     $char-4: str-slice($value, 4, 4);
 
     // add backslash if passed as unicode
+    $unicode-chars: ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f');
     @if(index($unicode-chars, $char-1) and index($unicode-chars, $char-2) and index($unicode-chars, $char-3) and index($unicode-chars, $char-4)) {
       $value: str-insert($value, '\\', 1);
     }
 
   }
 
-  // return
   @return unquote("'") + unquote($value) + unquote("'");
 
 }

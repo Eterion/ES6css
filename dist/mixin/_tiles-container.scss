@@ -27,10 +27,8 @@
   // legacy
   @else {
 
-    // recurring column pattern
-    $pattern: minmax($width, 1fr);
-
     // columns (1 column)
+    $pattern: minmax($width, 1fr);
     grid-template-columns: $pattern;
 
     // rows
