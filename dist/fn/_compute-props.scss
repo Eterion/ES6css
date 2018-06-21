@@ -3,9 +3,10 @@
 // import mixins.
 
 @function compute-props($name, $group: false) {
+  $key: map-key-get($const-export-group, $group);
   @return (
-    'id': compute-template(if($group, '{group}-{name}', '{name}'), $name, $group),
-    'selector': compute-template(if($group, $const-template-group-selector, $const-template), $name, map-key-get($const-export-group, $group)),
-    'z-index': compute-template(if($group, $const-template-group-z-index, $const-template), $name, $group),
+    'id': compute-template(if($group, '{group}-{module}', '{module}'), $name, $group, $key),
+    'selector': compute-template(if($group, $const-template-group-selector, $const-template), $name, $group, $key),
+    'z-index': compute-template(if($group, $const-template-group-z-index, $const-template), $name, $group, $key),
   );
 }

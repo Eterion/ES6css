@@ -2,8 +2,9 @@
 // computed selector from template string. This is to allow custom selectors for
 // exported modules.
 
-@function compute-template($template, $name: false, $group: false) {
-  @if($name) { $template: str-replace($template, '{name}', $name); }
+@function compute-template($template, $module: false, $group: false, $id: false) {
+  @if($module) { $template: str-replace($template, '{module}', $module); }
   @if($group) { $template: str-replace($template, '{group}', $group); }
+  @if($id) { $template: str-replace($template, '{id}', $id); }
   @return $template;
 }
