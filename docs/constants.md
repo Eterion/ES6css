@@ -22,6 +22,8 @@ Constants variables always start with `const` prefix and are defined with `!defa
 ---
 ## Variables
 
+[Top](#)
+
 ### Default Key
 
 ```scss
@@ -30,6 +32,8 @@ $const-default-key: regular;
 
 Determines what key in maps is used as default value in functions that make use of map constants. **If you change this value, make sure all the map constants contain this key as well, otherwise compilation may not be successful (probably).**
 
+[Top](#)
+
 ### Preserve Defaults
 
 ```scss
@@ -37,6 +41,8 @@ $const-preserve-defaults: true;
 ```
 
 This constant affects only map constants. When set to `true`, your custom map configuration will be merged with defaults (your values take precedence over defaults). If you wish to completely replace default map values with your custom properties, set this constant to `false`.
+
+[Top](#)
 
 ### Relative Units
 
@@ -51,6 +57,8 @@ When enabled, functions [em](./functions/#em), [rem](./functions/#rem) and other
 - `$const-relative-units-min: 0;` (pixels) Any value equal or below this constant will not be converted to relative units. This applies to the [em-always](./functions/#em-always) and [rem-always](./functions/#rem-always) functions as well.
 
 - `$const-relative-unit-root: 16px;` (pixels) Basis for calculation of relative units. Your `body` element should have set the same `font-size` property.
+
+[Top](#)
 
 ### Template
 
@@ -77,6 +85,8 @@ The following templates are relevant only when export groups are used.
 ## Maps
 
 The following map constants must have specified [default key](#default-key), if the default key is not present, compilation may not be successful. These maps can also be completely replaced with new custom definitions by setting [preserve defaults](#preserve-defaults) constants to `false`.
+
+[Top](#)
 
 ### Color
 
@@ -116,6 +126,8 @@ $const-color-scale: (
 
 List of available scale keys for the [color](./functions/#color) function, used as second argument. The number (positive or negative) represent lightness relative to the original color. Internally uses native sass [scale-color](http://sass-lang.com/documentation/Sass/Script/Functions.html#scale_color-instance_method) method.
 
+[Top](#)
+
 ### Export
 
 ```scss
@@ -125,6 +137,8 @@ $const-export-group: ();
 List of group names for export modules, where key represents group name ([template](#template) replacement of `{group}` substring), and value represents much shorter name ([template](#template) replacement of `{id}` substring), which is used as module selector by default.
 
 > More information about how to use export and import mechanics in the [export](./export) section.
+
+[Top](#)
 
 ### Font
 
@@ -155,6 +169,8 @@ $const-font-weight-scale-defaults: (
 
 List of available keys for the [font-weight](./functions/#font-weight) function. **Note, this function duplicates the [postcss-font-weight](https://github.com/jonathantneal/postcss-font-weights) plugin. If you're using this plugin, there's no need to use this function, use the keyword values directly.**
 
+[Top](#)
+
 ### Media
 
 Source constants related to media mixins and functions.
@@ -175,6 +191,8 @@ $const-media-scale: (
 ```
 
 List of media breakpoints. The values can be defined either directly as values or as map of width and height properties. However,  if used as direct values, some of the media functionality will not be available.
+
+[Top](#)
 
 ### Z-Index
 
