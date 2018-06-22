@@ -3,7 +3,7 @@
 // import mixins.
 
 @function compute-props($name, $group: false) {
-  $key: map-key-get($const-export-group, $group);
+  $key: map-key-get($const-export-groups, $group);
   @return (
     'id': compute-template(if($group, '{group}-{module}', '{module}'), $name, $group, $key),
     'selector': compute-template(if($group, $const-template-group-selector, $const-template), $name, $group, $key),
