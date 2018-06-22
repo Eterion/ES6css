@@ -76,6 +76,6 @@ complete functionality.
 This collection of tools consists of constants, functions and mixins. This also
 means it doesn't generate any css by it self just by importing it.
 
-- [Constants](readme/const)
-- [Export](readme/export) (including extend and import)
+- [Constants](readme/const.md)
+- [Export](readme/export.md) (including extend and import)
 - [Functions and Mixins](https://eterion.github.io/esm-scss/)

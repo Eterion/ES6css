@@ -172,7 +172,7 @@ List of group names for export modules, where key represents group name
 much shorter identificator ([template](#template) replacement of `{id}`
 substring).
 
-> More information about how export and import mechanics work [here](export).
+> More information about how export and import mechanics work [here](export.md).
 
 [Back to top](#constants)
 
