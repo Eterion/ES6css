@@ -10,10 +10,10 @@
   // provided arguments. Max values are subtracted by 1 to compensate for media
   // overlapping.
 
-  @if($prop == both) {
+  @if ($prop == both) {
 
     // and
-    @if($operator == and) {
+    @if ($operator == and) {
       @return '(#{$min-max}-width: #{media($value, width) - if($min-max == min, 0, 1)}) and (#{$min-max}-height: #{media($value, height) - if($min-max == min, 0, 1)})';
     }
 

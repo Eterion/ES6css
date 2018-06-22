@@ -6,7 +6,7 @@
 @function clear-unit($number) {
 
   // clear unit only when conditions apply
-  @if(type-of($number) == number and not unitless($number)) {
+  @if (type-of($number) == number and not unitless($number)) {
     @return $number / ($number * 0 + 1);
   }
 

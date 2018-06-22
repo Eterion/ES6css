@@ -11,12 +11,12 @@
 
   // in keys
   $value: inspect($value);
-  @if(map-has-key($const-color-keys, $value)) {
+  @if (map-has-key($const-color-keys, $value)) {
     $color: map-get($const-color-keys, $value);
   }
 
   // not color
-  @if(type-of($color) != color) {
+  @if (type-of($color) != color) {
     @error 'Color \"#{$color}\" is not a color, use valid color value or one of the following keys: #{map-keys($const-color-keys)}';
   }
 

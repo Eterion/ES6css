@@ -3,8 +3,8 @@
 // exported modules.
 
 @function compute-template($template, $module: false, $group: false, $id: false) {
-  @if($module) { $template: str-replace($template, '{module}', $module); }
-  @if($group) { $template: str-replace($template, '{group}', $group); }
-  @if($id) { $template: str-replace($template, '{id}', $id); }
+  @if ($module) { $template: str-replace($template, '{module}', $module); }
+  @if ($group) { $template: str-replace($template, '{group}', $group); }
+  @if ($id) { $template: str-replace($template, '{id}', $id); }
   @return $template;
 }

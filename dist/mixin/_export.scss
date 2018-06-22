@@ -11,7 +11,7 @@
 
   // already exists
   $id: map-get(compute-props($name, $group), id);
-  @if(map-has-key($system-export, $id)) {
+  @if (map-has-key($system-export, $id)) {
     @error err('key-exists', $id, '(export)');
   }
 

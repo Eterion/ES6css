@@ -23,7 +23,7 @@
   // because legacy code needs to have specified position for each item
   // individually.
 
-  @if(map-key-get($legacy, enable)) {
+  @if (map-key-get($legacy, enable)) {
 
     // grid
     @include tiles-container($width, $gap, $legacy: $legacy);

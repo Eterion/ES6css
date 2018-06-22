@@ -8,11 +8,11 @@
   $value: ();
   @each $key in $keys {
 
-    @if(type-of($key) == list) {
+    @if (type-of($key) == list) {
       @each $list-key in $key {
 
         // not found
-        @if(map-has-key($map, $list-key) == false) {
+        @if (map-has-key($map, $list-key) == false) {
           @error err('key-not-found', $list-key, '(map-filter)', map-keys($map));
         }
 
@@ -27,7 +27,7 @@
     @else {
 
       // not found
-      @if(map-has-key($map, $key) == false) {
+      @if (map-has-key($map, $key) == false) {
         @error err('key-not-found', $key, '(map-filter)', map-keys($map));
       }
 

@@ -3,6 +3,7 @@
 // support.
 
 @mixin tiles-item($index, $width, $gap: 0, $legacy: ()) {
+
   &:nth-child(#{$index}) {
 
     // gap
@@ -13,22 +14,22 @@
     -ms-grid-row: if($has-gap, ($index * 2) - 1, $index);
 
     // 2+ columns
-    @if($index > 1) {
-      @if(map-key-get($legacy, max-columns) > 1) {
+    @if ($index > 1) {
+      @if (map-key-get($legacy, max-columns) > 1) {
         @for $column-index from 2 through map-key-get($legacy, max-columns) {
           @include media-up-from(if($has-gap, ($column-index * $width) + (($column-index - 1) * $gap), $column-index * $width), width) {
 
             // previous
             $grid-column-previous: $index - (ceil($index / ($column-index - 1)) - 1) * ($column-index - 1);
             $grid-column: $index - (ceil($index / $column-index) - 1) * $column-index;
-            @if($grid-column != $grid-column-previous) {
+            @if ($grid-column != $grid-column-previous) {
               -ms-grid-column: if($has-gap, ($grid-column * 2) - 1, $grid-column);
             }
 
             // current
             $grid-row-previous: ceil($index / ($column-index - 1));
             $grid-row: ceil($index / $column-index);
-            @if($grid-row != $grid-row-previous) {
+            @if ($grid-row != $grid-row-previous) {
               -ms-grid-row: if($has-gap, ($grid-row * 2) - 1, $grid-row);
             }
 

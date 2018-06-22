@@ -15,17 +15,17 @@
   // that will calculate size relative to the other provided value. Cannot
   // accept two aspect ratios.
 
-  @if(type-of($size) == 'list') {
+  @if (type-of($size) == 'list') {
 
     // properties
     $width: nth($size, 1);
     $height: nth($size, 2);
 
     // aspect ratio (relative to height)
-    @if(type-of($width) == 'number' and unitless($width)) {
+    @if (type-of($width) == 'number' and unitless($width)) {
 
       // cannot be calculated
-      @if(type-of($height) != 'number' or unitless($height)) {
+      @if (type-of($height) != 'number' or unitless($height)) {
         @error 'Height property (size) cannot be calculated, because width is skipped or defined as aspect ratio as well.';
       }
 
@@ -35,10 +35,10 @@
     }
 
     // aspect ratio (relative to width)
-    @if(type-of($height) == 'number' and unitless($height)) {
+    @if (type-of($height) == 'number' and unitless($height)) {
 
       // cannot be calculated
-      @if(type-of($width) != 'number' or unitless($width)) {
+      @if (type-of($width) != 'number' or unitless($width)) {
         @error 'Width property (size) cannot be calculated, because height is skipped or defined as aspect ratio as well.';
       }
 
@@ -49,12 +49,12 @@
   }
 
   // width
-  @if($width) {
+  @if ($width) {
     width: if($method, call(get-function(inspect($method)), $width), $width);
   }
 
   // height
-  @if($height) {
+  @if ($height) {
     height: if($method, call(get-function(inspect($method)), $height), $height);
   }
 

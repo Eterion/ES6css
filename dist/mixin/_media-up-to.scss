@@ -9,7 +9,7 @@
 @mixin media-up-to($scale, $prop: width, $operator: and) {
 
   // not found
-  @if(type-of($scale) == string and map-has-key($const-media-scale, $scale) == false) {
+  @if (type-of($scale) == string and map-has-key($const-media-scale, $scale) == false) {
     @error err('key-not-found', $scale, '(media-up-to)', map-keys($const-media-scale));
   }
 

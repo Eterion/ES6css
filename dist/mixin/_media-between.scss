@@ -10,17 +10,17 @@
 @mixin media-between($lower, $upper, $prop: width, $operator: and) {
 
   // not found: lower
-  @if(type-of($lower) == string and map-has-key($const-media-scale, $lower) == false) {
+  @if (type-of($lower) == string and map-has-key($const-media-scale, $lower) == false) {
     @error err('key-not-found', $lower, '(media-between: lower)', map-keys($const-media-scale));
   }
 
   // not found: upper
-  @if(type-of($upper) == string and map-has-key($const-media-scale, $upper) == false) {
+  @if (type-of($upper) == string and map-has-key($const-media-scale, $upper) == false) {
     @error err('key-not-found', $upper, '(media-between: upper)', map-keys($const-media-scale));
   }
 
   // definition (and)
-  @if($operator == and) {
+  @if ($operator == and) {
     @media #{media-query(min, $lower, $prop, $operator)} and #{media-query(max, $upper, $prop, $operator)} {
       @content;
     }

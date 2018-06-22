@@ -8,7 +8,7 @@
   $has-gap: if(clear-unit($gap) != 0, true, false);
 
   // W3C
-  @if($repeat) {
+  @if ($repeat) {
 
     // disable autoprefixer (because of IE)
     /* autoprefixer: #{if(map-key-get($legacy, enable), off, on)} */
@@ -17,7 +17,7 @@
     grid-template-columns: repeat($repeat, minmax($width, 1fr));
 
     // rows (with gap between items)
-    @if($has-gap) {
+    @if ($has-gap) {
       grid-gap: $gap;
       grid-template-rows: auto;
     }
@@ -32,12 +32,12 @@
     grid-template-columns: $pattern;
 
     // rows
-    @if($has-gap) {
+    @if ($has-gap) {
       grid-template-rows: auto repeat(map-key-get($legacy, max-items), $gap auto);
     }
 
     // columns (2+ columns)
-    @if(map-key-get($legacy, max-columns) > 1) {
+    @if (map-key-get($legacy, max-columns) > 1) {
       @for $index from 2 through map-key-get($legacy, max-columns) {
         @include media-up-from(if($has-gap, ($index * $width) + (($index - 1) * $gap), $index * $width), width) {
           grid-template-columns: if($has-gap, $pattern repeat($index - 1, $gap $pattern), repeat($index, $pattern));

@@ -15,7 +15,7 @@
 
   // not found
   $id: map-get(compute-props($name, $group), id);
-  @if(map-has-key($system-export, $id) == false) {
+  @if (map-has-key($system-export, $id) == false) {
     @error err('key-not-found', $id, '(import)', map-keys($system-export));
   }
 
