@@ -1,4 +1,4 @@
 install: yarn install
 script:
-  - yarn stylelint
+  - yarn lint
   - yarn test

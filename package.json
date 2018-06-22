@@ -4,32 +4,39 @@
   "description": "A collection of tools for css development, inspired by ES6 export and import mechanics.",
   "keywords": [
     "css",
-    "scss",
-    "sass",
     "esm",
+    "export",
     "import",
-    "export"
+    "sass",
+    "scss"
   ],
   "repository": "https://github.com/Eterion/esm-scss.git",
   "author": "Eterion <Eterion@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "api-reference": "sassdoc dist --config .sassdoc.yml",
-    "build": "node-sass demo --output-style expanded --output demo",
-    "clean": "del-cli api-reference *.log",
+    "clean": "del-cli docs *.log",
+    "docs": "sassdoc dist --config .sassdoc.yml",
     "lint-staged": "lint-staged",
-    "stylelint": "stylelint \"**/*.scss\" --fix",
-    "test": "mocha"
+    "lint": "stylelint \"**/*.scss\" --fix",
+    "prettier": "prettier --write \"**/*.{js,scss,md}\"",
+    "test": "mocha -r @babel/register"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.51",
+    "@babel/preset-env": "^7.0.0-beta.51",
+    "@babel/register": "^7.0.0-beta.51",
     "del-cli": "^1.1.0",
+    "fs": "^0.0.1-security",
     "husky": "^0.14.3",
     "lint-staged": "^7.2.0",
     "mocha": "^5.2.0",
     "node-sass": "^4.9.0",
+    "path": "^0.12.7",
+    "prettier": "^1.13.5",
     "sass-true": "^4.0.0",
     "sassdoc": "^2.5.0",
     "sassdoc-theme-flippant": "^0.1.0",
-    "stylelint": "^9.3.0"
+    "stylelint": "^9.3.0",
+    "stylelint-config-prettier": "^3.3.0"
   }
 }

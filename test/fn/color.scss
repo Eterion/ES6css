@@ -1,41 +1,11 @@
-@import '../dependencies';
+@import 'test/resources';
 
 @include describe('color') {
-
-  @include it('color(#f00)') {
-    @include assert-equal(
-      color(#f00),
-      #f00
-    );
+  @include it('should return color (hex)') {
+    @include assert-equal(color(#f00), #f00);
   }
 
-  @each $scale in map-keys($const-color-scale) {
-    @include it('color(#f00, #{$scale})') {
-      @include assert-equal(
-        color(#f00, $scale),
-        scale-color(#f00, $lightness: percentage(map-get($const-color-scale, $scale) / 100))
-      );
-    }
+  @include it('should return color (named)') {
+    @include assert-equal(color(red), #f00);
   }
-
-  @each $key in map-keys($const-color-keys) {
-
-    @include it('color(#{$key})') {
-      @include assert-equal(
-        color($key),
-        map-get($const-color-keys, $key)
-      );
-    }
-
-    @each $scale in map-keys($const-color-scale) {
-      @include it('color(#{$key}, #{$scale})') {
-        @include assert-equal(
-          color($key, $scale),
-          scale-color(map-get($const-color-keys, $key), $lightness: percentage(map-get($const-color-scale, $scale) / 100))
-        );
-      }
-    }
-
-  }
-
 }
