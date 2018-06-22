@@ -16,7 +16,7 @@
   }
 
   // defaults
-  $props: map-merge($export-defaults, if($props, $props, ()));
+  $props: map-merge($defaults, if($props, $props, ()));
 
   // export
   $selector: map-get(compute-props($name, $group), selector);
