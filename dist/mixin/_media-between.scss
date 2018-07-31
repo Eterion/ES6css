@@ -5,9 +5,10 @@
 /// @param {number|string} $upper - Scale or number
 /// @param {string} $prop [width] - Determines what value is returned, can be **width**, **height** or **both**
 /// @param {string} $operator [and] - Determines relationship between width and height, can be **and** or **or**
+/// @param {string} $direction [$const-media-direction] - Determines the direction for media query, can be **up** or **down**
 /// @example @include media-between(phone, desktop) { ... }
 
-@mixin media-between($lower, $upper, $prop: width, $operator: and) {
+@mixin media-between($lower, $upper, $prop: width, $operator: and, $direction: $const-media-direction) {
 
   // not found: lower
   @if (type-of($lower) == string and map-has-key($const-media-scale, $lower) == false) {
@@ -21,14 +22,14 @@
 
   // definition (and)
   @if ($operator == and) {
-    @media #{media-query(min, $lower, $prop, $operator)} and #{media-query(max, $upper, $prop, $operator)} {
+    @media #{media-query(min, $lower, $prop, $operator, $direction)} and #{media-query(max, $upper, $prop, $operator, $direction)} {
       @content;
     }
   }
 
   // definition (or)
   @else if($operator == or) {
-    @media #{media-query(min, $lower, width, $operator)} and #{media-query(max, $upper, width, $operator)}, #{media-query(min, $lower, height, $operator)} and #{media-query(max, $upper, height, $operator)} {
+    @media #{media-query(min, $lower, width, $operator, $direction)} and #{media-query(max, $upper, width, $operator, $direction)}, #{media-query(min, $lower, height, $operator, $direction)} and #{media-query(max, $upper, height, $operator, $direction)} {
       @content;
     }
   }

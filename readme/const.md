@@ -216,6 +216,18 @@ well, use the keyword values directly.
 
 Source constants related to media mixins and functions.
 
+#### Direction
+
+```scss
+$const-media-direction: 'up';
+```
+
+Determines in which direction the media queries are generated. The `'up'` value
+indicates that lower scale keys generate media queries identical to scale
+values, while higher scale keys generate values with added one pixel. Can be set
+to `'down'` to reverse this behavior. This behavior can be disabled by setting
+to **false**.
+
 #### Scale
 
 ```scss
