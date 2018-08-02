@@ -4,7 +4,7 @@
 // "both" values. The $operator arguments is used to generate media query
 // strings, accepts "and" (default) or "or".
 
-@function media-query($min-max, $value, $prop: width, $operator: and, $direction: $const-media-direction) {
+@function media-query($min-max, $value, $prop: width, $operator: and, $direction: $const-mq-direction) {
 
   // Calculate amount of reduction.
   $reduction: if($min-max == if($direction == 'down', min, max), 0, if($direction == 'down', -1, 1));

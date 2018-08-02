@@ -4,10 +4,10 @@
 /// @param {string} $scale - Scale
 /// @param {string} $prop [width] - Determines what value is returned, can be **width**, **height** or **both**
 /// @param {string} $operator [and] - Determines relationship between width and height, can be **and** or **or**
-/// @param {string} $direction [$const-media-direction] - Determines the direction for media query, can be **up** or **down**
+/// @param {string} $direction [$const-mq-direction] - Determines the direction for media query, can be **up** or **down**
 /// @example @include media-only(phone) { ... }
 
-@mixin media-only($scale, $prop: width, $operator: and, $direction: $const-media-direction) {
+@mixin media-only($scale, $prop: width, $operator: and, $direction: $const-mq-direction) {
 
   // not key
   @if (type-of($scale) != string) {

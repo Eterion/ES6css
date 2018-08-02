@@ -4,10 +4,10 @@
 /// @param {number|string} $scale - Scale or number
 /// @param {string} $prop [width] - Determines what value is returned, can be **width**, **height** or **both**
 /// @param {string} $operator [and] - Determines relationship between width and height, can be **and** or **or**
-/// @param {string} $direction [$const-media-direction] - Determines the direction for media query, can be **up** or **down**
+/// @param {string} $direction [$const-mq-direction] - Determines the direction for media query, can be **up** or **down**
 /// @example @include media-up-from(phone) { ... }
 
-@mixin media-up-from($scale, $prop: width, $operator: and, $direction: $const-media-direction) {
+@mixin media-up-from($scale, $prop: width, $operator: and, $direction: $const-mq-direction) {
 
   // not found
   @if (type-of($scale) == string and map-has-key($const-media-scale, $scale) == false) {
