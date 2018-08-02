@@ -1,8 +1,0 @@
-/// This function is identical to [**em**](#function-em) function, except it will always convert to relative units, regardless of **$const-relative-units-enable** value.
-/// @access public
-/// @param {number} $number - Input number
-/// @example em-always(16px) // returns 1em
-
-@function em-always($number) {
-  @return em($number, em, $ignore-const-relative-units-enable: true);
-}

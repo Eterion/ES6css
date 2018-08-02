@@ -1,4 +1,0 @@
-{
-  "**/*.{js,scss,md}": ["prettier --write"],
-  "**/*.scss": ["stylelint --fix"]
-}

@@ -1,9 +1,0 @@
-@import 'test/resources';
-
-@include describe('clear-unit') {
-  @each $unit in $test-units {
-    @include it('should return unitless number (#{$unit})') {
-      @include assert-equal(clear-unit($unit), nth($test-units, 1));
-    }
-  }
-}
