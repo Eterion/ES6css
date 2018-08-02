@@ -1,8 +1,0 @@
-dest:
-  'docs'
-groups:
-  export: 'Export'
-  media: 'Media'
-  undefined: 'API'
-theme:
-  'flippant'
