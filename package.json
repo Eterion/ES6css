@@ -13,10 +13,11 @@
   "repository": "https://github.com/Eterion/esm-scss.git",
   "author": "Eterion <Eterion@users.noreply.github.com>",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "clean": "del-cli docs *.log",
-    "docs": "sassdoc dist --config .sassdoc.yml",
-    "lint-staged": "lint-staged",
+    "clean": "del-cli \"docs/.vuepress/dist\"",
     "lint": "stylelint \"**/*.scss\" --fix",
     "prettier": "prettier --write \"**/*.{js,scss,md}\"",
     "test": "mocha -r @babel/register"
@@ -34,8 +35,6 @@
     "path": "^0.12.7",
     "prettier": "^1.13.5",
     "sass-true": "^4.0.0",
-    "sassdoc": "^2.5.0",
-    "sassdoc-theme-flippant": "^0.1.0",
     "stylelint": "^9.3.0",
     "stylelint-config-prettier": "^3.3.0"
   }
