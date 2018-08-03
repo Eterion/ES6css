@@ -7,7 +7,7 @@
 @function media-query($min-max, $value, $prop: width, $operator: and, $direction: $const-mq-direction) {
 
   // Calculate amount of reduction.
-  $reduction: if($min-max == if($direction == 'down', min, max), 0, if($direction == 'down', -1, 1));
+  $reduction: if($min-max == if($direction == down, min, max), 0, if($direction == down, -1, 1));
 
   // Returns media query string composed of width and height property based on
   // provided arguments. Values are subtracted based on media direction
