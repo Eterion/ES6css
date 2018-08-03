@@ -1,9 +1,4 @@
-[![Npm](https://img.shields.io/npm/v/esm-scss.svg?style=flat-square)](https://www.npmjs.com/package/esm-scss)
-[![Build Status](https://img.shields.io/travis/Eterion/esm-scss/master.svg?style=flat-square)](https://travis-ci.org/Eterion/esm-scss)
-
 # About
-
-[https://eterion.github.io/esm-scss/](https://eterion.github.io/esm-scss/)
 
 A collection of tools for css development, inspired by ES6 export and import
 mechanics, using [sass](http://sass-lang.com/) pre-processor (scss syntax).
