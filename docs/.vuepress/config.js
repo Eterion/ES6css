@@ -8,9 +8,9 @@ module.exports = {
     lastUpdated: true,
     nav: [
       { text: 'Guide', link: '/guide' },
-      { text: 'Constants', link: '/constants' },
-      { text: 'Functions', link: '/functions' },
-      { text: 'Mixins', link: '/mixins' },
+      { text: 'Constants', link: '/const' },
+      { text: 'Functions', link: '/fn' },
+      { text: 'Mixins', link: '/mixin' },
     ],
     repo: 'Eterion/esm-scss',
     sidebar: 'auto',
