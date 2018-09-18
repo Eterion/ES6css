@@ -16,6 +16,7 @@ features:
     details:
       Does not output any css by it self. This library contains only constants,
       functions and mixins.
+footer: MIT License
 ---
 
 ## What's this?
