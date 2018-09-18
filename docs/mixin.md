@@ -12,18 +12,12 @@ Throws an error if item with identical `$name` in a `$group` already exists, use
 [extend](#extend) mixin if you need to modify already existing item.
 
 ```scss
-@include export(
-  $name,
-  $props: false,
-  $group: $export-group || false,
-  $defaults: $export-defaults
-);
+@include export($name, $props: false, $group: $export-group || false);
 ```
 
 - `$name: string` - Module name
 - `$props: boolean | map` - Property map
 - `$group: string` - Group key
-- `$defaults: map` - Default properties
 
 ## extend
 
