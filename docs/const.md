@@ -212,11 +212,9 @@ only when export groups are used.
 
 Available list of placeholders for template constants.
 
-| Placeholder | Description                                               |
-| ----------- | --------------------------------------------------------- |
-| `{group}`   | Represents **key** from `$const-export-group` map item.   |
-| `{id}`      | Represents **value** from `$const-export-group` map item. |
-| `{module}`  | Represents module name.                                   |
+- `{group}` - Represents **key** from `$const-export-groups` map item.
+- `{id}` - Represents **value** from `$const-export-groups` map item.
+- `{module}` - Represents module name.
 
 ## z-index
 
