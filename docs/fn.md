@@ -15,8 +15,8 @@ clear-unit($number)
 Returns scaled `$color` according to a `$scale` key. Allows easy color scaling
 without the need of additional variables for each new color variant. The source
 color can be passed as either direct color value or key identifier present in
-`$const-color-keys` constant. Scaling levels are completely customizable through
-`$const-color-scale` constant.
+[color-keys](/const.md#color-keys) constant. Scaling levels are completely
+customizable through [color-scale](/const.md#color-scale) constant.
 
 ```scss
 color($color, $scale: false)
@@ -44,9 +44,9 @@ color-spectrum($list, $value, $saturation: 100%, $lightness: 50%)
 Returns a `$number` recalculated to em units, if possible. Allows scaling based
 on `$const-relative-units-root` constant. To ensure visibility of all elements,
 resulting numbers equal or below `$const-relative-units-min` are not
-recalculated. Requires `$const-relative-units` set to true. Use
-[em-always](#em-always) if you wish to convert to relative units, regardless of
-global settings.
+recalculated. Requires [relative-units](/const.md#relative-units) set to true.
+Use [em-always](#em-always) if you wish to convert to relative units, regardless
+of global settings.
 
 ```scss
 em($number)
@@ -57,7 +57,8 @@ em($number)
 ## em-always
 
 This function is identical to [em](#em) function, except it will always convert
-to relative units, regardless of `$const-relative-units` value.
+to relative units, even if [relative-units](/const.md#relative-units) are
+disabled.
 
 ```scss
 em-always($number)
@@ -69,8 +70,9 @@ em-always($number)
 
 Returns a numeric representation of font-weight based on `$value`. Allows the
 use of readable values without the knowledge of real numbers used by css.
-Complete map of keys and values is set through `$const-font-weight-scale`
-constant. This function is alternative to
+Complete map of keys and values is set through
+[font-weight-scale](/const.md#font-weight-scale) constant. This function is
+alternative to
 [postcss-font-weights](https://github.com/jonathantneal/postcss-font-weights)
 plugin.
 
@@ -152,8 +154,9 @@ Returns pixel value of media scale according to `$value` property. Use of
 [media-up-from](#mixin-media-up-from) and [media-up-to](#mixin-media-up-to)
 mixins is highly recommended instead of creating new media rules through this
 function. Media breakpoints are completely customizable through
-`$const-media-scale` constant. Note that **both** option on `$prop` is relevant
-only when media breakpoint is defined as map of width and height properties.
+[media-scale](/const.md#media-scale) constant. Note that **both** option on
+`$prop` is relevant only when media breakpoint is defined as map of width and
+height properties.
 
 ```scss
 media($value, $prop: width)
@@ -167,9 +170,9 @@ media($value, $prop: width)
 Returns a `$number` recalculated to rem units, if possible. Allows scaling based
 on `$const-relative-units-root` constant. To ensure visibility of all elements,
 resulting numbers equal or below `$const-relative-units-min` are not
-recalculated. Requires `$const-relative-units` set to true. Use
-[rem-always](#rem-always) if you wish to convert to relative units, regardless
-of global settings.
+recalculated. Requires [relative-units](/const.md#relative-units) set to true.
+Use [rem-always](#rem-always) if you wish to convert to relative units,
+regardless of global settings.
 
 ```scss
 rem($number)
@@ -180,7 +183,8 @@ rem($number)
 ## rem-always
 
 This function is identical to [rem](#rem) function, except it will always
-convert to relative units, regardless of `$const-relative-units` value.
+convert to relative units, even if [relative-units](/const.md#relative-units)
+are disabled.
 
 ```scss
 rem-always($number)
