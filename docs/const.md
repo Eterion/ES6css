@@ -1,3 +1,8 @@
+---
+prev: /guide
+next: /fn
+---
+
 # Constants
 
 <Tip type="warn">

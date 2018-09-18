@@ -1,3 +1,8 @@
+---
+prev: /const
+next: /mixin
+---
+
 # Functions
 
 ## clear-unit
