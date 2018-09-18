@@ -178,7 +178,7 @@ set this constant to `false`.
 Type: `boolean`
 
 ```scss
-$const-relative-units-enable: false;
+$const-relative-units: false;
 ```
 
 When enabled, function [em](/fn.md#em), [rem](/fn.md#rem) and other (all

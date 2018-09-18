@@ -44,7 +44,7 @@ color-spectrum($list, $value, $saturation: 100%, $lightness: 50%)
 Returns a `$number` recalculated to em units, if possible. Allows scaling based
 on `$const-relative-units-root` constant. To ensure visibility of all elements,
 resulting numbers equal or below `$const-relative-units-min` are not
-recalculated. Requires `$const-relative-units-enable` set to true. Use
+recalculated. Requires `$const-relative-units` set to true. Use
 [em-always](#em-always) if you wish to convert to relative units, regardless of
 global settings.
 
@@ -57,7 +57,7 @@ em($number)
 ## em-always
 
 This function is identical to [em](#em) function, except it will always convert
-to relative units, regardless of `$const-relative-units-enable` value.
+to relative units, regardless of `$const-relative-units` value.
 
 ```scss
 em-always($number)
@@ -167,7 +167,7 @@ media($value, $prop: width)
 Returns a `$number` recalculated to rem units, if possible. Allows scaling based
 on `$const-relative-units-root` constant. To ensure visibility of all elements,
 resulting numbers equal or below `$const-relative-units-min` are not
-recalculated. Requires `$const-relative-units-enable` set to true. Use
+recalculated. Requires `$const-relative-units` set to true. Use
 [rem-always](#rem-always) if you wish to convert to relative units, regardless
 of global settings.
 
@@ -180,7 +180,7 @@ rem($number)
 ## rem-always
 
 This function is identical to [rem](#rem) function, except it will always
-convert to relative units, regardless of `$const-relative-units-enable` value.
+convert to relative units, regardless of `$const-relative-units` value.
 
 ```scss
 rem-always($number)

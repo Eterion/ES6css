@@ -1,12 +1,12 @@
 $const-default-key: regular !default;
 $const-mq-direction: up !default;
 $const-preserve-defaults: true !default;
-$const-relative-units-enable: false !default;
+$const-relative-units: false !default;
 $const-relative-units-min: 0 !default;
 $const-relative-units-root: 16px !default;
+$const-template: '{module}' !default;
 $const-template-group-selector: '{id}-{module}' !default;
 $const-template-group-z-index: '{module}({group})' !default;
-$const-template: '{module}' !default;
 
 // imports
 @import 'const/color';
