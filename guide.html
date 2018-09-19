@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Guide | ESM Scss</title>
+    <meta name="description" content="A collection of tools for css development, inspired by ES6 export and import mechanics.">
+    
+    
+    <link rel="preload" href="/esm-scss/assets/css/0.styles.0a1f4f31.css" as="style"><link rel="preload" href="/esm-scss/assets/js/app.e027cbbb.js" as="script"><link rel="preload" href="/esm-scss/assets/js/8.bcd50322.js" as="script"><link rel="preload" href="/esm-scss/assets/js/4.b978a730.js" as="script"><link rel="prefetch" href="/esm-scss/assets/js/2.fe21896a.js"><link rel="prefetch" href="/esm-scss/assets/js/3.c235d3b9.js"><link rel="prefetch" href="/esm-scss/assets/js/5.e48c4c3f.js"><link rel="prefetch" href="/esm-scss/assets/js/6.050aa36f.js"><link rel="prefetch" href="/esm-scss/assets/js/7.13ecc02a.js"><link rel="prefetch" href="/esm-scss/assets/js/9.3e7daa1e.js">
+    <link rel="stylesheet" href="/esm-scss/assets/css/0.styles.0a1f4f31.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/esm-scss/" class="home-link router-link-active"><!----> <span class="site-name">ESM Scss</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/esm-scss/guide.html" class="nav-link router-link-exact-active router-link-active">Guide</a></div><div class="nav-item"><a href="/esm-scss/const.html" class="nav-link">Constants</a></div><div class="nav-item"><a href="/esm-scss/fn.html" class="nav-link">Functions</a></div><div class="nav-item"><a href="/esm-scss/mixin.html" class="nav-link">Mixins</a></div> <a href="https://github.com/Eterion/esm-scss" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/esm-scss/guide.html" class="nav-link router-link-exact-active router-link-active">Guide</a></div><div class="nav-item"><a href="/esm-scss/const.html" class="nav-link">Constants</a></div><div class="nav-item"><a href="/esm-scss/fn.html" class="nav-link">Functions</a></div><div class="nav-item"><a href="/esm-scss/mixin.html" class="nav-link">Mixins</a></div> <a href="https://github.com/Eterion/esm-scss" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>Guide</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/esm-scss/guide.html#install" class="sidebar-link">Install</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/esm-scss/guide.html#usage" class="sidebar-link">Usage</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/esm-scss/guide.html#modules" class="sidebar-link">Modules</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/esm-scss/guide.html#create-module" class="sidebar-link">Create Module</a></li><li class="sidebar-sub-header"><a href="/esm-scss/guide.html#update-module" class="sidebar-link">Update Module</a></li><li class="sidebar-sub-header"><a href="/esm-scss/guide.html#use-module" class="sidebar-link">Use Module</a></li><li class="sidebar-sub-header"><a href="/esm-scss/guide.html#groups" class="sidebar-link">Groups</a></li><li class="sidebar-sub-header"><a href="/esm-scss/guide.html#export-defaults" class="sidebar-link">Export Defaults</a></li></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="guide"><a href="#guide" aria-hidden="true" class="header-anchor">#</a> Guide</h1> <h2 id="install"><a href="#install" aria-hidden="true" class="header-anchor">#</a> Install</h2> <p>You can use your favorite package manager with access to npm registry.</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># npm</span>
+<span class="token function">npm</span> <span class="token function">install</span> esm-scss
+
+<span class="token comment"># yarn</span>
+yarn add esm-scss
+</code></pre></div><h2 id="usage"><a href="#usage" aria-hidden="true" class="header-anchor">#</a> Usage</h2> <p>Everything that is needed is included in <code>dist/esm</code> file, simply import it and
+it's done.</p> <div vp-markdown="" class="tip custom-block"><p class="custom-block-title">TIP</p> <p>This of course must correctly point to <code>node_modules</code> directory, but that's up
+to you to make sure it's correct.</p></div> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token keyword">@import</span> <span class="token string">'esm-scss/dist/esm'</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="modules"><a href="#modules" aria-hidden="true" class="header-anchor">#</a> Modules</h2> <h3 id="create-module"><a href="#create-module" aria-hidden="true" class="header-anchor">#</a> Create Module</h3> <p>Modules are created via <a href="/esm-scss/mixin.html#export">export</a> mixin.</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token keyword">@include</span> <span class="token function">export</span><span class="token punctuation">(</span>&lt;module-name&gt;, &lt;props&gt;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><div vp-markdown="" class="tip custom-block"><p class="custom-block-title">TIP</p> <p>This mixin will throw error when multiple modules with identical names are
+created. If you want to have modules with same names, use <a href="#groups">groups</a> to
+recognize them between each other.</p></div> <p>For example, if I want to create a <strong><em>user</em></strong> module with <strong><em>background-color</em></strong>
+and <strong><em>size</em></strong> properties, the export mixin will look like this:</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token keyword">@include</span> <span class="token function">export</span><span class="token punctuation">(</span>
+  user,
+  <span class="token punctuation">(</span>
+    <span class="token string">'background-color'</span><span class="token punctuation">:</span> gray,
+    <span class="token string">'width'</span><span class="token punctuation">:</span> 40px,
+  <span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="update-module"><a href="#update-module" aria-hidden="true" class="header-anchor">#</a> Update Module</h3> <p>Updating or adding new properties to module is done via
+<a href="/esm-scss/mixin.html#extend">extend</a> mixin.</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token keyword">@include</span> <span class="token function">extend</span><span class="token punctuation">(</span>&lt;module-name&gt;, &lt;props&gt;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><div vp-markdown="" class="tip custom-block"><p class="custom-block-title">TIP</p> <p>This mixin will throw error when attempting to extend non-existing module.</p></div> <p>For example, if my <strong><em>user</em></strong> module has different <strong><em>background-color</em></strong> in
+another theme, I'll do the following:</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token keyword">@include</span> <span class="token function">extend</span><span class="token punctuation">(</span>
+  user,
+  <span class="token punctuation">(</span>
+    <span class="token string">'background-color'</span><span class="token punctuation">:</span> blue,
+  <span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="use-module"><a href="#use-module" aria-hidden="true" class="header-anchor">#</a> Use Module</h3> <p>Modules are used via <a href="/esm-scss/mixin.html#import">import</a> mixin, while properties are
+extracted using <a href="/esm-scss/fn.html#get">get</a> function.</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token keyword">@include</span> <span class="token function">import</span><span class="token punctuation">(</span>&lt;module-name&gt;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><div vp-markdown="" class="tip custom-block"><p class="custom-block-title">TIP</p> <p>The <strong>import</strong> mixin will automatically generate class from module name. Classes
+can be modified via <a href="/esm-scss/const.html#template">template</a> constants. If you don't want
+generated classes at all and use your own, use <a href="/esm-scss/mixin.html#props">props</a> mixin
+instead.</p></div> <p>For example, to use my <strong><em>user</em></strong> module:</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token keyword">@include</span> <span class="token function">import</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">get</span><span class="token punctuation">(</span>background-color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token function">get</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">get</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>My resulting <strong><em>user</em></strong> css would look like this:</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.user</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="groups"><a href="#groups" aria-hidden="true" class="header-anchor">#</a> Groups</h3> <p>Groups can be used to separame module types (or for whatever reason you like,
+it's up to you). Groups first need to be created via
+<a href="/esm-scss/const.html#export-groups">export-groups</a> constant, see <a href="/esm-scss/const.html">constants</a>.
+This constant is just a simple map, where map <em>key</em> is readable group
+representation, and map <em>value</em> is internal group id, also used for class
+generation.</p> <div vp-markdown="" class="tip custom-block"><p class="custom-block-title">TIP</p> <p>Add <code>$export-group: component;</code> before the initial <strong>export</strong> mixin. All
+subsequent <a href="/esm-scss/mixin.html#export">export</a>, <a href="/esm-scss/mixin.html#extend">extend</a>,
+<a href="/esm-scss/mixin.html#import">import</a> and <a href="/esm-scss/mixin.html#props">props</a> mixins will
+automatically select that group without dedicated group parameter.</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token property"><span class="token variable">$export-group</span></span><span class="token punctuation">:</span> component<span class="token punctuation">;</span>
+<span class="token keyword">@include</span> <span class="token function">export</span><span class="token punctuation">(</span>user, <span class="token punctuation">(</span> ... <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">@include</span> <span class="token function">import</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span> <span class="token punctuation">{</span> ... <span class="token punctuation">}</span>
+</code></pre></div></div> <p>For example, I want to have two module groups, <strong><em>component</em></strong> and <strong><em>design</em></strong>.
+First, I correctly add the group names and identifiers to the appropriate
+constant:</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token property"><span class="token variable">$const-export-groups</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
+  <span class="token string">'component'</span><span class="token punctuation">:</span> <span class="token string">'c'</span>,
+  <span class="token string">'design'</span><span class="token punctuation">:</span> <span class="token string">'d'</span>,
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>After that, I can create my <strong><em>user</em></strong> module with group as third parameter:</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token keyword">@include</span> <span class="token function">export</span><span class="token punctuation">(</span>
+  user,
+  <span class="token punctuation">(</span>
+    <span class="token string">'background-color'</span><span class="token punctuation">:</span> gray,
+    <span class="token string">'width'</span><span class="token punctuation">:</span> 40px,
+  <span class="token punctuation">)</span>,
+  component
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>Then use my <strong><em>user</em></strong> module with group as second parameter:</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token keyword">@include</span> <span class="token function">import</span><span class="token punctuation">(</span>user, component<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">get</span><span class="token punctuation">(</span>background-color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token function">get</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">get</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>My compiled css would look like this:</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.c-user</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> gray<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="export-defaults"><a href="#export-defaults" aria-hidden="true" class="header-anchor">#</a> Export Defaults</h3> <p>Map of default properties can be added to every created module. By default, only
+<code>unique</code> property is present, which determines whenever <em>class</em> or <em>id</em> is
+generated via <a href="/esm-scss/mixin.html#import">import</a> mixin, where <code>unique: true</code> will
+generate <em>id</em> instead of <em>class</em>.</p> <div vp-markdown="" class="warning custom-block"><p class="custom-block-title">WARNING</p> <p>This variable must be placed before any <strong>export</strong> mixins.</p></div> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token property"><span class="token variable">$export-defaults</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
+  <span class="token string">'unique'</span><span class="token punctuation">:</span> <span class="token boolean">false</span>,
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div></div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/Eterion/esm-scss/edit/master/docs/guide.md" target="_blank" rel="noopener noreferrer">Edit this page</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">9/19/2018, 7:13:49 AM</span></div></div> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/esm-scss/const.html">
+          Constants
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/esm-scss/assets/js/8.bcd50322.js" defer></script><script src="/esm-scss/assets/js/4.b978a730.js" defer></script><script src="/esm-scss/assets/js/app.e027cbbb.js" defer></script>
+  </body>
+</html>
