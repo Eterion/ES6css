@@ -1,11 +1,11 @@
-/// Returns a **$number** recalculated to em units, if possible. Allows scaling based on **$const-relative-units-root** constant. To ensure visibility of all elements, resulting numbers equal or below **$const-relative-units-min** are not recalculated. Requires **$const-relative-units-enable** set to true. Use [**em-always**](#function-em-always) if you wish to convert to relative units, regardless of global settings.
+/// Returns a **$number** recalculated to em units, if possible. Allows scaling based on **$const-relative-units-root** constant. To ensure visibility of all elements, resulting numbers equal or below **$const-relative-units-min** are not recalculated. Requires **$const-relative-units** set to true. Use [**em-always**](#function-em-always) if you wish to convert to relative units, regardless of global settings.
 /// @access public
 /// @param {number} $number - Input number
 /// @param {boolean|string} $unit [em] - Returned unit
-/// @param {boolean} $ignore-const-relative-units-enable [false] - Internal option, use [**em-always**](#function-em-always) or [**rem-always**](#function-rem-always) instead
+/// @param {boolean} $ignore-const-relative-units [false] - Internal option, use [**em-always**](#function-em-always) or [**rem-always**](#function-rem-always) instead
 /// @example em(16px) // returns 1em
 
-@function em($number, $unit: em, $ignore-const-relative-units-enable: false) {
+@function em($number, $unit: em, $ignore-const-relative-units: false) {
 
   // unitless
   @if (type-of($number) == number and unitless($number)) {
@@ -13,7 +13,7 @@
   }
 
   // conversion enabled
-  @if (($const-relative-units-enable or $ignore-const-relative-units-enable) and $unit) {
+  @if (($const-relative-units or $ignore-const-relative-units) and $unit) {
     @if (type-of($number) == 'number') {
 
       // Constant unit conversion rates relative to pixels. This is used to
