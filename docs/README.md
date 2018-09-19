@@ -14,27 +14,20 @@ features:
       modules with updated properties for each theme.
   - title: CSS
     details:
-      Does not output any css by it self. This library contains only constants,
+      Does not output any css by itself. This library contains only constants,
       functions and mixins.
 footer: MIT License
 ---
 
-## What's this?
+## Example
 
-It started as an experimental custom framework for a web application, that would
-eliminate the need to repeat component name multiple times per file. Eventually,
-I've reduced the complexity, removed bunch of stuff that were too specific and
-made it more simple and independent.
-
-The main feature of this thing is the export and import mechanics, inspired by
-ES6 specification, that allows to create modules with properties and using those
-properties in css, only by using mixin instead of multiple variables.
+Simple module example.
 
 ### 1. Export
 
 ```scss
 @include export(
-  component-name,
+  module-name,
   (
     'background-color': red,
     'width': 100px,
@@ -45,7 +38,7 @@ properties in css, only by using mixin instead of multiple variables.
 ### 2. Import
 
 ```scss
-@include import(component-name) {
+@include import(module-name) {
   background-color: get(background-color);
   width: get(width);
 }
@@ -54,8 +47,20 @@ properties in css, only by using mixin instead of multiple variables.
 ### 3. CSS
 
 ```css
-.component-name {
+.module-name {
   background-color: red;
   width: 100px;
 }
 ```
+
+## About
+
+It started as an experimental custom framework for a web application, that would
+eliminate the need to repeat component name multiple times per file. Eventually,
+I've reduced the complexity, removed bunch of stuff that were too specific and
+made it more simple and independent.
+
+The main feature of this thing is the **export** and **import** mechanics,
+inspired by ES6 specification, that allows to create modules with properties and
+using those properties in css, only by using mixin instead of multiple
+variables.

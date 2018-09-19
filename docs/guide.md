@@ -23,20 +23,14 @@ it's done.
 
 <Tip>
 
-This ofcourse must correctly point to `node_modules` directory, but that's up to
-you to make sure it's correct.
+This of course must correctly point to `node_modules` directory, but that's up
+to you to make sure it's correct.
 
 </Tip>
 
 ```scss
 @import 'esm-scss/dist/esm';
 ```
-
-## Constant Placement
-
-Customization and settings is available through [constants](/const.md). All
-constants are defined with `!default` flag, this means all constants must be
-placed **before** the `dist/esm` import.
 
 ## Modules
 
@@ -78,7 +72,7 @@ Updating or adding new properties to module is done via
 @include extend(<module-name>, <props>);
 ```
 
-<Tip type="warn">
+<Tip>
 
 This mixin will throw error when attempting to extend non-existing module.
 
@@ -136,19 +130,19 @@ My resulting **_user_** css would look like this:
 
 ### Groups
 
-Groups can be used to separame module types or for whatever reason you like,
-it's up to you. Groups first need to be created via
-[export-groups](/const.md#export-groups) constant, see constant
-[placemnet](#constant-placement). This constant is just a simple map, where map
-_key_ is readable group representation, and map _value_ is internal group id,
-also used for class generation.
+Groups can be used to separame module types (or for whatever reason you like,
+it's up to you). Groups first need to be created via
+[export-groups](/const.md#export-groups) constant, see [constants](/const.md).
+This constant is just a simple map, where map _key_ is readable group
+representation, and map _value_ is internal group id, also used for class
+generation.
 
 <Tip>
 
-Add `$export-group: component;` before the initial **export** definition. All
+Add `$export-group: component;` before the initial **export** mixin. All
 subsequent [export](/mixin.md#export), [extend](/mixin.md#extend),
-[import](/mixin.md#import) and [props](/mixin.md#props) mixin will automatically
-select that group without dedicated group parameter.
+[import](/mixin.md#import) and [props](/mixin.md#props) mixins will
+automatically select that group without dedicated group parameter.
 
 ```scss
 $export-group: component;
@@ -182,7 +176,7 @@ After that, I can create my **_user_** module with group as third parameter:
 );
 ```
 
-Then, to use my **_user_** module with group as second parameter:
+Then use my **_user_** module with group as second parameter:
 
 ```scss
 @include import(user, component) {

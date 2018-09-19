@@ -5,16 +5,19 @@ next: /fn
 
 # Constants
 
+<Tip title="IMPORTANT" type="danger">
+
+Constants are defined with `!default` flag, this means all constants, starting
+with `$const` prefix, must be placed **before** the `dist/esm` import.
+
+</Tip>
+
 <Tip type="warn">
 
 Because some of the constants rely on other constants, order is important.
 Recommended order of constants is [default-key](#default-key),
 [mq-direction](#mq-direciton), [preserve-defaults](#preserve-defaults),
-[relative-units-enable](#relative-units-enable),
-[relative-units-min](#relative-units-min),
-[relative-units-root](#relative-units-root), [template](#template),
-[template-group-selector](#template-group-selector),
-[template-group-z-index](#template-group-z-index), other...
+[relative-units](#relative-units), [template](#template), other...
 
 </Tip>
 
@@ -33,8 +36,8 @@ $const-color-keys: (
 ```
 
 List of keyword and color values. You probably want to define your colors here.
-The keyword for a color can pretty much anything, including a valid color value
-(for example `gray`), the [color](/fn.md#color) function takes care of
+The keyword for a color can be pretty much anything, including a valid color
+value (for example `gray`), the [color](/fn.md#color) function takes care of
 everything and will always check for color keys before using the actual color.
 
 ## color-scale
@@ -71,9 +74,9 @@ $const-default-key: regular;
 ```
 
 Determines what key in maps is used as the default value in functions that make
-use of map constants. If you change this value, make sure all the relevant map
-constants contain this key as well, otherwise compilation may not be successful
-(probably).
+use of certain map constants. If you change this value, make sure all the
+relevant map constants contain this key as well, otherwise compilation may not
+be successful (probably).
 
 ## export-groups
 
@@ -86,7 +89,7 @@ $const-export-groups: ();
 List of group names for export modules, where key represents group name
 ([template](#template) replacement of `{group}` substring), and value represents
 much shorter identificator ([template](#template) replacement of `{id}`
-substring).
+substring). See [groups](/guide.md#groups) for more information.
 
 ## font-weight-scale
 
@@ -190,12 +193,12 @@ When enabled, function [em](/fn.md#em), [rem](/fn.md#rem) and other (all
 relevant function should have mentioned whenever relative units settings affects
 them) will recalculate non-relative units to relative values (if possible).
 Resulting value is calculated relative to `$const-relative-units-root` constant.
-Relative units can be further controlled by additional constants (in pixels).
+Relative units can be further controlled by additional constants.
 
-| Constant                                 | Default | Description                                                                                                                                                                              |
-| ---------------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <nobr>`$const-relative-units-min`</nobr> | 0       | Any value equal or below this constant will not be converted to relative units. This applies to the [em-always](/fn.md#em-always) and [rem-always](/fn.md#rem-always) functions as well. |
-| <nobr>`$const-relative-unit-root`</nobr> | 16px    | Basis for calculation of relative units. Your `html` element should have set the same `font-size` property (or quivalent).                                                               |
+| Constant                                 | Default | Description                                                                                                                                                                                          |
+| ---------------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <nobr>`$const-relative-units-min`</nobr> | 0       | Any value (in pixels) equal or below this constant will not be converted to relative units. This applies to the [em-always](/fn.md#em-always) and [rem-always](/fn.md#rem-always) functions as well. |
+| <nobr>`$const-relative-unit-root`</nobr> | 16px    | Base value (in pixels) for calculation of relative units. Your `html` element should have set the same `font-size` property (or quivalent).                                                          |
 
 ## template
 
