@@ -197,7 +197,7 @@ rem-always($number)
 
 - `$number: number` - Input number
 
-## str-replate
+## str-replace
 
 Replaces all occurences of `$search` substring with `$replace` in `$string`.
 
