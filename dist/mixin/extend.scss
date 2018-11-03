@@ -6,17 +6,19 @@
 /// @param {string} $group [$export-group] - Group key
 /// @example @include extend(component-name, ( ... ))
 
-@mixin extend($name, $props, $group: if(global-variable-exists(export-group), $export-group, false)) {
-
+@mixin extend(
+  $name,
+  $props,
+  $group: if(global-variable-exists(export-group), $export-group, false)
+) {
   // not found
   $id: map-get(compute-props($name, $group), id);
   @if (map-has-key($system-export, $id) == false) {
     @error err('key-not-found', $id, '(extend)', map-keys($system-import));
   }
 
-  // extend
+  // prettier-ignore
   $system-export: map-merge($system-export, (
     '#{$id}': map-merge(map-get($system-export, $id), $props),
   )) !global;
-
 }

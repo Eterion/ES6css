@@ -5,7 +5,6 @@
 /// @example @include transition(300ms, width, height) // transition: width 300ms, height 300ms
 
 @mixin transition($options, $properties...) {
-
   // add options to each transition property
   $transition: ();
   @each $prop in $properties {
@@ -13,5 +12,4 @@
   }
 
   transition: $transition;
-
 }

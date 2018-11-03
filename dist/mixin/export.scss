@@ -7,8 +7,12 @@
 /// @param {map} $defaults [$export-defaults] - Default properties
 /// @example @include export(component-name, ( ... ))
 
-@mixin export($name, $props: false, $group: if(global-variable-exists(export-group), $export-group, false), $defaults: $export-defaults) {
-
+@mixin export(
+  $name,
+  $props: false,
+  $group: if(global-variable-exists(export-group), $export-group, false),
+  $defaults: $export-defaults
+) {
   // already exists
   $id: map-get(compute-props($name, $group), id);
   @if (map-has-key($system-export, $id)) {
@@ -18,8 +22,10 @@
   // defaults
   $props: map-merge($defaults, if($props, $props, ()));
 
-  // export
+  // selector
   $selector: map-get(compute-props($name, $group), selector);
+
+  // prettier-ignore
   $system-export: map-merge($system-export, (
     '#{$id}': map-merge($props, (
       'name': $selector,
@@ -27,5 +33,4 @@
       'z-index': map-get(compute-props($name, $group), z-index),
     ))
   )) !global;
-
 }

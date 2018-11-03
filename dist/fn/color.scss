@@ -5,21 +5,25 @@
 /// @example color(gray, dark) // returns #4f4f4f
 
 @function color($value, $scale: false) {
-
-  // default
   $color: $value;
 
   // in keys
-  $value: inspect($value);
-  @if (map-has-key($const-color-keys, $value)) {
-    $color: map-get($const-color-keys, $value);
+  @if (map-has-key($const-color-keys, inspect($value))) {
+    $color: map-get($const-color-keys, inspect($value));
   }
 
-  // not color
-  @if (type-of($color) != color) {
+  // not a color
+  @if (type-of($color) != 'color') {
     @error 'Color \"#{$color}\" is not a color, use valid color value or one of the following keys: #{map-keys($const-color-keys)}';
   }
 
-  @return if($scale, scale-color($color, $lightness: percentage(map-key-get($const-color-scale, $scale) / 100)), $color);
+  // scale
+  @if ($scale) {
+    @return scale-color(
+      $color,
+      $lightness: percentage(map-key-get($const-color-scale, $scale) / 100)
+    );
+  }
 
+  @return $color;
 }

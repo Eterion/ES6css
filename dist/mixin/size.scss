@@ -5,8 +5,6 @@
 /// @example @include size(640px 4/3)
 
 @mixin size($size, $method: rem) {
-
-  // default
   $width: $size;
   $height: $size;
 
@@ -16,36 +14,30 @@
   // accept two aspect ratios.
 
   @if (type-of($size) == 'list') {
-
-    // properties
     $width: nth($size, 1);
     $height: nth($size, 2);
 
     // aspect ratio (relative to height)
     @if (type-of($width) == 'number' and unitless($width)) {
-
       // cannot be calculated
       @if (type-of($height) != 'number' or unitless($height)) {
-        @error 'Height property (size) cannot be calculated, because width is skipped or defined as aspect ratio as well.';
+        @error 'Height property (size) cannot be calculated, because width is either skipped or defined as aspect ratio as well.';
       }
 
       // calculate
       $width: $width * $height;
-
     }
 
     // aspect ratio (relative to width)
     @if (type-of($height) == 'number' and unitless($height)) {
-
       // cannot be calculated
       @if (type-of($width) != 'number' or unitless($width)) {
-        @error 'Width property (size) cannot be calculated, because height is skipped or defined as aspect ratio as well.';
+        @error 'Width property (size) cannot be calculated, because height is either skipped or defined as aspect ratio as well.';
       }
 
       // calculate
       $height: $width / $height;
     }
-
   }
 
   // width
@@ -57,5 +49,4 @@
   @if ($height) {
     height: if($method, call(get-function(inspect($method)), $height), $height);
   }
-
 }

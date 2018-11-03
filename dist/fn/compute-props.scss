@@ -3,17 +3,26 @@
 // import mixins.
 
 @function compute-props($name, $group: false) {
-
   $data: (
     'module': $name,
     'group': $group,
     'id': map-key-get($const-export-groups, $group),
   );
 
-  @return (
-    'id': interpolate(if($group, '{group}-{module}', '{module}'), $data),
-    'selector': interpolate(if($group, $const-template-group-selector, $const-template), $data),
-    'z-index': interpolate(if($group, $const-template-group-z-index, $const-template), $data),
+  // module id
+  $id: interpolate(if($group, '{group}-{module}', '{module}'), $data);
+
+  // module selector name
+  $selector: interpolate(
+    if($group, $const-template-group-selector, $const-template),
+    $data
   );
 
+  // module z-index identifier
+  $z-index: interpolate(
+    if($group, $const-template-group-z-index, $const-template),
+    $data
+  );
+
+  @return ('id': $id, 'selector': $selector, 'z-index': $z-index);
 }

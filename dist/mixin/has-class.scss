@@ -4,7 +4,6 @@
 /// @example @include has-class(is-open, is-active) { ... }
 
 @mixin has-class($list...) {
-
   // compose string of classes
   $data: '';
   @each $selector in $list {
@@ -15,5 +14,4 @@
   @at-root #{$data}#{&} {
     @content;
   }
-
 }

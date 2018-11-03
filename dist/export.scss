@@ -2,12 +2,9 @@
 /// @group export
 /// @access public
 
-$export-defaults: map-merge((
-
-  // This property determines the unique status of exported item, essentially
-  // changes state between class and id, where unique property set to false
-  // equals to a class.
-
-  'unique': false,
-
-), if(global-variable-exists(export-defaults), $export-defaults, ()));
+$export-defaults: map-merge(
+  (
+    'unique': false,
+  ),
+  if(global-variable-exists(export-defaults), $export-defaults, ())
+);

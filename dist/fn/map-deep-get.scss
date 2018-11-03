@@ -4,11 +4,10 @@
 /// @param {string|list} $keys - Path to requested key
 
 @function map-deep-get($map, $keys...) {
-
+  // deep get
   @each $key in $keys {
     $map: map-get($map, $key);
   }
 
   @return $map;
-
 }

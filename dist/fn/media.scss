@@ -6,24 +6,23 @@
 /// @example media(desktop) // returns 1680px
 
 @function media($value, $prop: width) {
+  // not a string
+  @if (type-of($value) != 'string') {
+    @return $value;
+  }
 
-  @if (type-of($value) == string) {
+  // not found
+  @if (map-has-key($const-media-scale, $value) == false) {
+    @error err('key-not-found', $value, '(media)', map-keys($const-media-scale));
+  }
 
-    // not found
-    @if (map-has-key($const-media-scale, $value) == false) {
-      @error err('key-not-found', $value, '(media)', map-keys($const-media-scale));
+  // width, height
+  $value: map-get($const-media-scale, $value);
+  @if (type-of($value) == 'map') {
+    @if (index((width, height), $prop)) {
+      $value: map-get($value, $prop);
     }
-
-    // width, height
-    $value: map-get($const-media-scale, $value);
-    @if (type-of($value) == map) {
-      @if (index((width, height), $prop)) {
-        $value: map-get($value, $prop);
-      }
-    }
-
   }
 
   @return $value;
-
 }

@@ -5,23 +5,20 @@
 /// @param {bool} $can-inherit [false] - Determines if inherit can be passed
 
 @function map-key-get($map, $key, $can-inherit: false) {
-
-  @if (type-of($key) == string) {
-
-    // inherit
-    @if ($can-inherit and $key == 'inherit') {
-      @return inherit;
-    }
-
-    // not found
-    @if (map-has-key($map, $key) == false) {
-      @error err('key-not-found', $key, '(map-key-get)', map-keys($map));
-    }
-
-    @return map-get($map, $key);
-
+  // not string
+  @if (type-of($key) != 'string') {
+    @return false;
   }
 
-  @return $key;
+  // inherit
+  @if ($can-inherit and $key == 'inherit') {
+    @return inherit;
+  }
 
+  // not found
+  @if (map-has-key($map, $key) == false) {
+    @error err('key-not-found', $key, '(map-key-get)', map-keys($map));
+  }
+
+  @return map-get($map, $key);
 }

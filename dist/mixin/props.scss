@@ -5,8 +5,10 @@
 /// @param {string} $group [$export-group] - Group key
 /// @example @include props(component-name) { ... }
 
-@mixin props($name, $group: if(global-variable-exists(export-group), $export-group, false)) {
-
+@mixin props(
+  $name,
+  $group: if(global-variable-exists(export-group), $export-group, false)
+) {
   // Set global export group name based on provided group. This is needed in
   // case when $export-group variable is not used and falls back to default
   // value.
@@ -23,6 +25,7 @@
   // exported properties are placed in. This is needed for import nesting to
   // work properly.
 
+  // prettier-ignore
   $system-data: map-merge($system-data, (
     '#{$id}': map-get($system-export, $id),
   )) !global;
@@ -40,6 +43,9 @@
   $system-data: map-remove($system-data, '#{$id}') !global;
 
   // Extract last item from currently active list of modules.
-  $system-import: if(length($system-data) > 0, nth(nth($system-data, length($system-data)), 2), ()) !global;
-
+  $system-import: if(
+    length($system-data) > 0,
+    nth(nth($system-data, length($system-data)), 2),
+    ()
+  ) !global;
 }

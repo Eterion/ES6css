@@ -4,18 +4,17 @@
 // variables.
 
 @function err($key, $values...) {
-
   // not found
   @if ($key == 'key-not-found') {
-    @return if(length(nth($values, 3)) == 0,
-    'The \"#{nth($values, 1)}\" in #{nth($values, 2)} was not found, the requested map is empty.',
-      'The \"#{nth($values, 1)}\" in #{nth($values, 2)} was not found, use one of the following: #{nth($values, 3)}.'
+    @return if(
+      length(nth($values, 3)) == 0,
+      'The "#{nth($values, 1)}" in #{nth($values, 2)} was not found, the requested map is empty.',
+      'The "#{nth($values, 1)}" in #{nth($values, 2)} was not found, use one of the following: #{nth($values, 3)}.'
     );
   }
 
   // already exists
   @if ($key == 'key-exists') {
-    @return 'The \"#{nth($values, 1)}\" in #{nth($values, 2)} already exists, use different value.';
+    @return 'The "#{nth($values, 1)}" in #{nth($values, 2)} already exists, use different value.';
   }
-
 }

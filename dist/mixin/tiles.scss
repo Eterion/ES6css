@@ -6,14 +6,15 @@
 /// @param {map} $legacy [()] - Settings for legacy support, see mixin code for defaults
 
 @mixin tiles($width, $gap: 0, $repeat: auto-fill, $legacy: ()) {
-
-  // defaults
-  $legacy: map-merge((
-    'enable': false,
-    'item': to-class(item),
-    'max-columns': 1,
-    'max-items': 1,
-  ), $legacy);
+  $legacy: map-merge(
+    (
+      'enable': false,
+      'item': to-class(item),
+      'max-columns': 1,
+      'max-items': 1,
+    ),
+    $legacy
+  );
 
   // layout
   display: grid;
@@ -24,8 +25,6 @@
   // individually.
 
   @if (map-key-get($legacy, enable)) {
-
-    // grid
     @include tiles-container($width, $gap, $legacy: $legacy);
 
     // Each tiles item must have defined position in the grid, so amount of
@@ -37,7 +36,6 @@
         @include tiles-item($index, $width, $gap, $legacy);
       }
     }
-
   }
 
   // Modern W3C standard, doesn't require column and item specification, because
@@ -50,5 +48,4 @@
 
   // content
   @content;
-
 }

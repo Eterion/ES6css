@@ -7,16 +7,20 @@
 /// @param {string} $direction [$const-mq-direction] - Determines the direction for media query, can be **up** or **down**
 /// @example @include media-up-to(phone) { ... }
 
-@mixin media-up-to($scale, $prop: width, $operator: and, $direction: $const-mq-direction) {
-
+@mixin media-up-to(
+  $scale,
+  $prop: width,
+  $operator: and,
+  $direction: $const-mq-direction
+) {
   // not found
-  @if (type-of($scale) == string and map-has-key($const-media-scale, $scale) == false) {
-    @error err('key-not-found', $scale, '(media-up-to)', map-keys($const-media-scale));
+  @if (type-of($scale) == 'string') {
+    @if (map-has-key($const-media-scale, $scale) == false) {
+      @error err('key-not-found', $scale, '(media-up-to)', map-keys($const-media-scale));
+    }
   }
-
   // definition
   @media #{media-query(max, $scale, $prop, $operator, $direction)} {
     @content;
   }
-
 }

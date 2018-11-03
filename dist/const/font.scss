@@ -17,10 +17,13 @@ $const-font-weight-scale-defaults: (
   'heavy': 900,
 ) !default;
 
-// (preserve)
+// preserve-defaults
 
-$const-font-weight-scale: if(
-  $const-preserve-defaults,
-  map-merge($const-font-weight-scale-defaults, if(global-variable-exists(const-font-weight-scale), $const-font-weight-scale, ())),
-  if(global-variable-exists(const-font-weight-scale), $const-font-weight-scale, $const-font-weight-scale-defaults)
+$const-font-weight-scale: map-merge(
+  if($const-preserve-defaults, $const-font-weight-scale-defaults, ()),
+  if(
+    global-variable-exists(const-font-weight-scale),
+    $const-font-weight-scale,
+    $const-font-weight-scale-defaults
+  )
 );

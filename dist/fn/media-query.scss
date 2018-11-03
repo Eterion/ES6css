@@ -4,25 +4,30 @@
 // "both" values. The $operator arguments is used to generate media query
 // strings, accepts "and" (default) or "or".
 
-@function media-query($min-max, $value, $prop: width, $operator: and, $direction: $const-mq-direction) {
-
+@function media-query(
+  $min-max,
+  $value,
+  $prop: width,
+  $operator: and,
+  $direction: $const-mq-direction
+) {
   // Calculate amount of reduction.
-  $reduction: if($min-max == if($direction == down, min, max), 0, if($direction == down, -1, 1));
-
+  $reduction: if(
+    $min-max != #{if($direction == down, min, max)},
+    if($direction == down, -1, 1),
+    0
+  );
   // Returns media query string composed of width and height property based on
   // provided arguments. Values are subtracted based on media direction
   // constant.
-
   @if ($prop == both) {
     $str-width: '(#{$min-max}-width: #{media($value, width) + if($direction, $reduction, 0)})';
     $str-height: '(#{$min-max}-height: #{media($value, height) + if($direction, $reduction, 0)})';
     $str-operator: if($operator == and, ' and ', ', ');
     @return '#{$str-width}#{$str-operator}#{$str-height}';
   }
-
   // width, height
   @else {
     @return '(#{$min-max}-#{$prop}: #{media($value, $prop) + if($direction, $reduction, 0)})';
   }
-
 }

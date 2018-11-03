@@ -6,13 +6,11 @@
 /// @example @include z-index
 
 @mixin z-index($name: get(z-index), $position: relative, $map: $const-z-index) {
-
-  // default
   $keys: ();
   $z-index: false;
 
   // list
-  @if (type-of($map) == list) {
+  @if (type-of($map) == 'list') {
     @if (index($map, $name)) {
       $keys: $map;
       $z-index: index($map, $name);
@@ -20,7 +18,7 @@
   }
 
   // groups (map)
-  @else if(type-of($map) == map) {
+  @else if(type-of($map) == 'map') {
     @each $key, $list in $map {
       @if (index($list, $name)) {
         $keys: append($key, $list);
@@ -34,10 +32,10 @@
     @error 'The \"#{$name}\" z-index was not found, please use one of the following: #{$keys}.';
   }
 
+  // position
   @if ($position) {
     position: $position;
   }
-  
-  z-index: $z-index;
 
+  z-index: $z-index;
 }
