@@ -7,18 +7,18 @@
 @function insert-nth($list, $index, $value) {
   // Not a number
   @if (type-of($index) != 'number') {
-    @error "@insert-nth: $index #{quote($index)} is not a number.";
+    @error "Index '#{$index}' in (insert-nth) is not a number.";
   }
 
   // Less than 1
   @if ($index < 1) {
-    @error "@insert-nth: Index must be non-zero integer.";
+    @error 'Index in (insert-nth) must be non-zero integer.';
   }
 
   // More than list length
   @if (length($list) > 0) {
     @if ($index > length($list)) {
-      @error "@insert-nth: Index cannot be more than list length (#{quote(length($list))}).";
+      @error 'Index in (insert-nth) cannot be more than list length (#{length($list)}).';
     }
   }
 

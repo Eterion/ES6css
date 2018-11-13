@@ -29,7 +29,7 @@
 
   // not found
   @if ($z-index == false) {
-    @error 'The \"#{$name}\" z-index was not found, please use one of the following: #{$keys}.';
+    @error "The '#{$name}' in (z-index) was not found, please use one of the following: #{$keys}";
   }
 
   // position

@@ -14,7 +14,7 @@
 
   // not a color
   @if (type-of($color) != 'color') {
-    @error 'Color \"#{$color}\" is not a color, use valid color value or one of the following keys: #{map-keys($const-color-keys)}';
+    @error "Color '#{$color}' in (color) is not a color, use valid color value or one of the following keys: #{map-keys($const-color-keys)}";
   }
 
   // scale
