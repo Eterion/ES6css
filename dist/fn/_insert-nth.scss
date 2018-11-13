@@ -1,0 +1,51 @@
+/// Insert value at list or map index.
+/// @access public
+/// @param {list|map} $list Source data.
+/// @param {number} $index Target index.
+/// @param {number|string|map} $value Value.
+
+@function insert-nth($list, $index, $value) {
+  // Not a number
+  @if (type-of($index) != 'number') {
+    @error "@insert-nth: $index #{quote($index)} is not a number.";
+  }
+
+  // Less than 1
+  @if ($index < 1) {
+    @error "@insert-nth: Index must be non-zero integer.";
+  }
+
+  // More than list length
+  @if (length($list) > 0) {
+    @if ($index > length($list)) {
+      @error "@insert-nth: Index cannot be more than list length (#{quote(length($list))}).";
+    }
+  }
+
+  // Insert
+  $data: ();
+
+  // Replace
+  @if (length($list) == 0) {
+    $data: $value;
+  } @else {
+    @if (type-of($list) == 'map') {
+      @each $key, $item in $list {
+        $i: index($list, #{$key} $item);
+        @if ($i == $index) {
+          $data: map-merge($data, $value);
+        }
+        $data: map-merge($data, (#{$key}: $item));
+      }
+    } @else {
+      @for $i from 1 through length($list) {
+        @if ($i == $index) {
+          $data: append($data, $value);
+        }
+        $data: append($data, nth($list, $i));
+      }
+    }
+  }
+
+  @return $data;
+}
