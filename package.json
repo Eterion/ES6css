@@ -18,6 +18,7 @@
   ],
   "scripts": {
     "clean": "del-cli \"docs/.vuepress/dist\"",
+    "demo": "node-sass \"demo\" -o \"demo\" --output-style expanded",
     "docs": "vuepress build docs",
     "docs-dev": "vuepress dev docs",
     "lint": "stylelint \"**/*.scss\" --fix",
