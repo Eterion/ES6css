@@ -15,19 +15,23 @@
     @error 'Index in (insert-nth) must be non-zero integer.';
   }
 
-  // More than list length
-  @if (length($list) > 0) {
-    @if ($index > length($list)) {
-      @error 'Index in (insert-nth) cannot be more than list length (#{length($list)}).';
-    }
+  // Index out of range
+  @if ($index > length($list) + 1) {
+    @warn "Index '#{$index}' in (insert-nth) is much greater than list length, maximum index should be #{length($list) + 1}.";
   }
 
-  // Insert
+  // Data
   $data: ();
 
   // Replace
   @if (length($list) == 0) {
     $data: $value;
+  } @else if($index >= length($list) + 1) {
+    $data: if(
+      type-of($list) == 'map',
+      map-merge($list, $value),
+      append($list, $value)
+    );
   } @else {
     @if (type-of($list) == 'map') {
       @each $key, $item in $list {
