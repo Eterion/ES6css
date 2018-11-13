@@ -8,7 +8,6 @@ module.exports = {
     editLinks: true,
     lastUpdated: true,
     nav: [
-      { text: 'Guide', link: '/guide' },
       { text: 'Constants', link: '/const' },
       { text: 'Functions', link: '/fn' },
       { text: 'Mixins', link: '/mixin' },
