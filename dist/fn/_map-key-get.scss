@@ -1,8 +1,7 @@
-/// Returns a value from source **$map** based on **$key**. This function is only a wrapper function around the native [**map-get**](http://sass-lang.com/documentation/Sass/Script/Functions.html#map_get-instance_method) function, with the support of inherit value and error handling.
-/// @access public
-/// @param {map} $map - Source map
-/// @param {number|string} $key - Number or key
-/// @param {bool} $can-inherit [false] - Determines if inherit can be passed
+// This function is internal, and is intentionaly not documented. Returns a
+// value from source $map based on $key. This function is only a wrapper
+// function around the native [map-get] function, with the support of inherit
+// value and error handling.
 
 @function map-key-get($map, $key, $can-inherit: false) {
   // not string
