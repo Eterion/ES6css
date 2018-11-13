@@ -14,15 +14,12 @@
   $direction: $const-mq-direction
 ) {
   // not key
-  @if (type-of($scale) != string) {
+  @if (type-of($scale) != 'string') {
     @error 'The (media-only) mixin does not accept direct pixel values.';
-  }
-
-  // not found
+  } // not found
   @if (map-has-key($const-media-scale, $scale) == false) {
     @error err('key-not-found', $scale, '(media-only)', map-keys($const-media-scale));
   }
-
   // first
   $index: index(map-keys($const-media-scale), $scale);
   @if ($index == 1) {
@@ -30,7 +27,6 @@
       @content;
     }
   }
-
   // last
   @else if($index == length(map-keys($const-media-scale))) {
     $previous: nth(map-keys($const-media-scale), $index - 1);
@@ -38,11 +34,10 @@
       @content;
     }
   }
-
   // between
   @else {
     $previous: nth(map-keys($const-media-scale), $index - 1);
-    @media #{media-query(min, $previous, $prop, $operator, $direction)} and #{media-query(max, $scale, $prop, $operator, $direction)} {
+    @media (#{str-slice(media-query(min, $previous, $prop, $operator, $direction), 2, -2)}) and (#{str-slice(media-query(max, $scale, $prop, $operator, $direction), 2, -2)}) {
       @content;
     }
   }

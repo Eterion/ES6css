@@ -1,8 +1,8 @@
 /// Insert value at list or map index.
 /// @access public
-/// @param {list|map} $list Source data.
-/// @param {number} $index Target index.
-/// @param {number|string|map} $value Value.
+/// @param {list|map} $list - Source data.
+/// @param {number} $index - Target index.
+/// @param {number|string|map} $value - Value.
 
 @function insert-nth($list, $index, $value) {
   // Not a number
