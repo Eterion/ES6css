@@ -1,0 +1,13 @@
+// Import ESM
+@import '../../dist/esm';
+
+@each $prop in width, height, both {
+  @each $operator in and, or {
+    /* $prop: #{$prop}, $operator: #{$operator} */
+    div {
+      @include media-up-from(phone, $prop, $operator) {
+        background-color: gray;
+      }
+    }
+  }
+}

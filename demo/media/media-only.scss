@@ -1,0 +1,26 @@
+$const-media-scale: (
+  'tablet': (
+    'width': 1024px,
+    'height': 768px,
+  ),
+);
+
+// Import ESM
+@import '../../dist/esm';
+
+@each $prop in width, height, both {
+  @each $operator in and, or {
+    /* $prop: #{$prop}, $operator: #{$operator} */
+    div {
+      @include media-only(phone, $prop, $operator) {
+        background-color: red;
+      }
+      @include media-only(tablet, $prop, $operator) {
+        background-color: green;
+      }
+      @include media-only(desktop, $prop, $operator) {
+        background-color: blue;
+      }
+    }
+  }
+}
