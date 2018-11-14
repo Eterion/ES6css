@@ -37,8 +37,14 @@
   // between
   @else {
     $previous: nth(map-keys($const-media-scale), $index - 1);
-    @media (#{str-slice(media-query(min, $previous, $prop, $operator, $direction), 2, -2)}) and (#{str-slice(media-query(max, $scale, $prop, $operator, $direction), 2, -2)}) {
-      @content;
+    @if ($prop == both and $operator == or) {
+      @media (#{str-slice(media-query(min, $previous, width, and, $direction), 2, -2)}) and (#{str-slice(media-query(max, $scale, width, and, $direction), 2, -2)}), (#{str-slice(media-query(min, $previous, height, and, $direction), 2, -2)}) and (#{str-slice(media-query(max, $scale, height, and, $direction), 2, -2)}) {
+        @content;
+      }
+    } @else {
+      @media (#{str-slice(media-query(min, $previous, $prop, $operator, $direction), 2, -2)}) and (#{str-slice(media-query(max, $scale, $prop, $operator, $direction), 2, -2)}) {
+        @content;
+      }
     }
   }
 }
