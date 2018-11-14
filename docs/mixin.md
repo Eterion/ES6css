@@ -4,6 +4,14 @@ prev: /fn
 
 # Mixins
 
+## css-custom-properties <Badge  text="@content" type="warn" />
+
+Outputs `:root` element with all properties from detected modules.
+
+```scss
+@include css-custom-properties;
+```
+
 ## export
 
 Creates a new export item, that can be extracted using the [import](#import)

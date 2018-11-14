@@ -93,12 +93,13 @@ Returns a property value from export item. Can be used inside a
 [import](/mixin.md#import) mixin without `$name` and `$group` parameters.
 
 ```scss
-get($prop, $name: false, $group: $export-group || false)
+get($prop, $name: false, $group: $export-group || false, $css-custom-properties: $const-custom-properties)
 ```
 
 - `$prop: string` - Property name
 - `$name: boolean | string` - Module name
 - `$group: boolean | string` - Group key
+- `$css-custom-properties: boolean` - Enable var syntax
 
 ## insert-nth <Badge text="utils" />
 

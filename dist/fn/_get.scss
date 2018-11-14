@@ -4,6 +4,7 @@
 /// @param {string} $prop - Property name
 /// @param {bool|string} $name [false] - Module name
 /// @param {bool|string} $group [$export-group] - Group key
+/// @param {bool} $css-custom-properties [false] - Enable var syntax
 /// @param {map} $data [$system-import] - Source map
 /// @example element { height: rem(get(height) / 2); }
 
@@ -11,6 +12,7 @@
   $prop,
   $name: false,
   $group: if(global-variable-exists(export-group), $export-group, false),
+  $css-custom-properties: $const-custom-properties,
   $data: $system-import
 ) {
   // name and group is provided
@@ -25,6 +27,17 @@
   // not found
   @if (map-has-key($data, $prop) == false) {
     @error err('key-not-found', $prop, '(get)', map-keys($data));
+  }
+
+  // custom properties
+  @if ($css-custom-properties) {
+    @if (index(($system-protected-properties), $prop) == null) {
+      @return if(
+        $const-custom-properties-fallback,
+        var(--#{map-get($data, name)}-#{$prop}, #{map-get($data, $prop)}),
+        var(--#{map-get($data, name)}-#{$prop})
+      );
+    }
   }
 
   @return map-get($data, $prop);

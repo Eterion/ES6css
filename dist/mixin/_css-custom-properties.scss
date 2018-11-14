@@ -1,0 +1,21 @@
+/// Outputs :root element with all properties from detected modules.
+/// @access public
+/// @example @include css-custom-properties { ... }
+
+@mixin css-custom-properties {
+  // disabled
+  @if ($const-custom-properties == false) {
+    @warn 'Detected use of css custom properties without enabling "$const-custom-properties" constant. Root custom properties are generated, however module properties will not use var() reference.';
+  }
+
+  :root {
+    @content;
+    @each $id, $map in $system-export {
+      @each $prop, $value in $map {
+        @if (index($system-protected-properties, $prop) == null) {
+          --#{map-get($map, name)}-#{$prop}: #{$value};
+        }
+      }
+    }
+  }
+}
