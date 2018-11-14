@@ -27,15 +27,13 @@
       @error err('key-not-found', $upper, '(media-between: upper)', map-keys($const-media-scale));
     }
   }
-  // definition (and)
-  @if ($operator == and) {
-    @media (#{str-slice(media-query(min, $lower, $prop, $operator, $direction), 2, -2)}) and (#{str-slice(media-query(max, $upper, $prop, $operator, $direction), 2, -2)}) {
+  // definition
+  @if ($prop == both and $operator == or) {
+    @media (#{str-slice(media-query(min, $lower, width, and, $direction), 2, -2)}) and (#{str-slice(media-query(max, $upper, width, and, $direction), 2, -2)}), (#{str-slice(media-query(min, $lower, height, and, $direction), 2, -2)}) and (#{str-slice(media-query(max, $upper, height, and, $direction), 2, -2)}) {
       @content;
     }
-  }
-  // definition (or)
-  @else if($operator == or) {
-    @media (#{str-slice(media-query(min, $lower, width, $operator, $direction), 2, -2)}) and (#{str-slice(media-query(max, $upper, width, $operator, $direction), 2, -2)}), (#{str-slice(media-query(min, $lower, height, $operator, $direction), 2, -2)}) and (#{str-slice(media-query(max, $upper, height, $operator, $direction), 2, -2)}) {
+  } @else {
+    @media (#{str-slice(media-query(min, $lower, $prop, $operator, $direction), 2, -2)}) and (#{str-slice(media-query(max, $upper, $prop, $operator, $direction), 2, -2)}) {
       @content;
     }
   }
