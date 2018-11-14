@@ -1,8 +1,8 @@
 ---
 home: true
 heroImage: /hero.png
-actionLink: /guide
-actionText: Get Started →
+actionLink: https://github.com/Eterion/esm-scss/tree/master/demo
+actionText: Demo
 features:
   - title: Modules
     details:
@@ -21,7 +21,9 @@ footer: MIT License
 
 ## Example
 
-Simple module example.
+Simple module example, see
+[demo](https://github.com/Eterion/esm-scss/tree/master/demo) folder for more
+examples.
 
 ### 1. Export
 
@@ -52,15 +54,3 @@ Simple module example.
   width: 100px;
 }
 ```
-
-## About
-
-It started as an experimental custom framework for a web application, that would
-eliminate the need to repeat component name multiple times per file. Eventually,
-I've reduced the complexity, removed bunch of stuff that were too specific and
-made it more simple and independent.
-
-The main feature of this thing is the **export** and **import** mechanics,
-inspired by ES6 specification, that allows to create modules with properties and
-using those properties in css, only by using mixin instead of multiple
-variables.
