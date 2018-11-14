@@ -78,8 +78,8 @@ value. Use [css-custom-properties](/mixin.md#css-custom-properties) mixin to
 generate `:root` variables. Additional settings is available, relevant only when
 this constant is enabled.
 
-| Constant                                         | Default | Description                            |
-| ------------------------------------------------ | ------- | -------------------------------------- |
+| Constant                                         | Default | Description                                     |
+| ------------------------------------------------ | ------- | ----------------------------------------------- |
 | <nobr>`$const-custom-properties-fallback`</nobr> | false   | Adds fallback value directly to **var** syntax. |
 
 ## default-key
