@@ -1,0 +1,25 @@
+$const-custom-properties: true;
+
+$const-export-groups: (
+  'component': 'c',
+);
+
+// Import ESM
+@import '../../dist/esm';
+
+@include export(
+  module,
+  (
+    'background-color': orange,
+    'size': 60px,
+  ),
+  component
+);
+
+@include css-custom-properties;
+
+@include import(module, component) {
+  background-color: get(background-color);
+  height: get(size);
+  width: get(size);
+}

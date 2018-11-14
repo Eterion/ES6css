@@ -1,0 +1,10 @@
+:root {
+  --c-module-background-color: orange;
+  --c-module-size: 60px;
+}
+
+.c-module {
+  background-color: var(--c-module-background-color);
+  height: var(--c-module-size);
+  width: var(--c-module-size);
+}
