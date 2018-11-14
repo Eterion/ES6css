@@ -106,7 +106,7 @@ $const-export-groups: ();
 List of group names for export modules, where key represents group name
 ([template](#template) replacement of `{group}` substring), and value represents
 much shorter identificator ([template](#template) replacement of `{id}`
-substring). See [groups](/guide.md#groups) for more information.
+substring).
 
 ## font-weight-scale
 
