@@ -1,6 +1,6 @@
 {
   "name": "esm-scss",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A collection of tools for css development, inspired by ES6 export and import mechanics.",
   "keywords": [
     "css",
