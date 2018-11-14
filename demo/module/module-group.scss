@@ -1,0 +1,21 @@
+$const-export-groups: (
+  'component': 'c',
+);
+
+// Import ESM
+@import '../../dist/esm';
+
+@include export(
+  module,
+  (
+    'background-color': gray,
+    'size': 40px,
+  ),
+  component
+);
+
+@include import(module, component) {
+  background-color: get(background-color);
+  height: get(size);
+  width: get(size);
+}
