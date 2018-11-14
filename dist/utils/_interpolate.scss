@@ -1,0 +1,13 @@
+/// Returns input template where placeholders '{n}' are replaced with data from map.
+/// @access public
+/// @param {string} $template - Template string
+/// @param {map} $data - Map of replacement keys with values
+
+@function interpolate($template, $data) {
+  // replace occurences
+  @each $key, $value in $data {
+    $template: str-replace($template, '{#{$key}}', $value);
+  }
+
+  @return $template;
+}

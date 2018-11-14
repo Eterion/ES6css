@@ -5,7 +5,7 @@ next: /mixin
 
 # Functions
 
-## clear-unit
+## clear-unit <Badge text="utils" />
 
 Returns a `$number` stripped of its unit, if possible.
 
@@ -30,7 +30,7 @@ color($color, $scale: false)
 - `$color: color | string` - Input color or key
 - `$scale: boolean | string` - Scale key
 
-## color-spectrum
+## color-spectrum <Badge text="utils" />
 
 Returns color `$value` according to its position in provided `$list`, where the
 `$list` represents the entire color spectrum.
@@ -93,14 +93,27 @@ Returns a property value from export item. Can be used inside a
 [import](/mixin.md#import) mixin without `$name` and `$group` parameters.
 
 ```scss
-get($prop, $name: false, $group: $export-group || false)
+get($prop, $name: false, $group: $export-group || false, $css-custom-properties: $const-custom-properties)
 ```
 
 - `$prop: string` - Property name
 - `$name: boolean | string` - Module name
 - `$group: boolean | string` - Group key
+- `$css-custom-properties: boolean` - Enable var syntax
 
-## interpolate
+## insert-nth <Badge text="utils" />
+
+Insert value at list or map index.
+
+```scss
+insert-nth($list, $index, $value)
+```
+
+- `$list: list | map` - Source list or map.
+- `$index: number` - Target index.
+- `$value: number | string | map` - Value.
+
+## interpolate <Badge text="utils" />
 
 Returns input template where placeholders `'{n}'` are replaced with data from
 map.
@@ -112,7 +125,7 @@ interpolate($template, $data)
 - `$template: string` - Template string
 - `$data: map` - Map of replacement keys with values
 
-## map-deep-get
+## map-deep-get <Badge text="utils" />
 
 Extended version of the native
 [map-get](http://sass-lang.com/documentation/Sass/Script/Functions.html#map_get-instance_method)
@@ -125,7 +138,7 @@ map-deep-get($map, $keys...)
 - `$map: map` - Source map
 - `$keys: string | list` - Path to requested key
 
-## map-filter
+## map-filter <Badge text="utils" />
 
 Returns a new map with filtered `$keys` only. Throws an error if any value from
 `$keys` in `$map` doesn't exists.
@@ -137,20 +150,17 @@ map-filter($map, $keys...)
 - `$map: map` - Source map
 - `$keys: string | list` - List of filtered keys
 
-## map-key-get
+## map-sort <Badge text="utils" />
 
-Returns a value from source `$map` based on `$key`. This function is only a
-wrapper function around the native
-[map-get](http://sass-lang.com/documentation/Sass/Script/Functions.html#map_get-instance_method)
-function, with the support of inherit value and error handling.
+Sort map (ascending) according to its value. If the value is a map, requested
+sorting keys must be specified.
 
 ```scss
-map-key-get($map, $key, $can-inherit: false)
+map-sort($map, $keys...)
 ```
 
 - `$map: map` - Source map
-- `$key: number | string` - Number or key
-- `$can-inherit: boolean` - Deterimens if inherit can be passed
+- `$keys: string | list` - List of keys (only when map item value is a map).
 
 ## media
 
@@ -197,7 +207,7 @@ rem-always($number)
 
 - `$number: number` - Input number
 
-## str-replate
+## str-replace <Badge text="utils" />
 
 Replaces all occurences of `$search` substring with `$replace` in `$string`.
 
@@ -209,7 +219,7 @@ str-replace($string, $search, $replace: '')
 - `$search: string` - Substring to replace
 - `$replace: string` - New value
 
-## to-class
+## to-class <Badge text="utils" />
 
 Returns a `$class` string converted to class selector if possible. Doesn't
 affect the input value if a class selector is already present.
@@ -220,7 +230,7 @@ to-class($class)
 
 - `$class: string` - Class name
 
-## to-id
+## to-id <Badge text="utils" />
 
 Returns a `$id` string converted to id selector if possible. Doesn't affect the
 input value if a id selector is already present.
@@ -231,7 +241,7 @@ to-id($id)
 
 - `$id: string` - Id name
 
-## to-unicode
+## to-unicode <Badge text="utils" />
 
 Converts `$value` to a unicode string used by css content property. This
 function is available because of a known bug, more information in this github

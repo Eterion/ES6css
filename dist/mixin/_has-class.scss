@@ -1,0 +1,17 @@
+/// Adds a **$list** of classes to a root element. Individual values are converted to a class if possible. New classes are placed at the beginning of the selector, therefore the root element must be either class or id selector.
+/// @access public
+/// @param {string|list} $list - List of class names
+/// @example @include has-class(is-open, is-active) { ... }
+
+@mixin has-class($list...) {
+  // compose string of classes
+  $data: '';
+  @each $selector in $list {
+    $data: str-insert($data, to-class($selector), str-length($data) + 1);
+  }
+
+  // add classes before root selector
+  @at-root #{$data}#{&} {
+    @content;
+  }
+}

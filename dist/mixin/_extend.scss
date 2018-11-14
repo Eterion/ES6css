@@ -1,0 +1,24 @@
+/// Extends already existing item created via [**export**](#mixin-export) mixin. Properties in the extend mixin takes precedence over already existing ones. Throws an error if **$name** in a **$group** doesn't exists.
+/// @group export
+/// @access public
+/// @param {string} $name - Module name
+/// @param {bool|map} $props [false] - Property map
+/// @param {string} $group [$export-group] - Group key
+/// @example @include extend(component-name, ( ... ))
+
+@mixin extend(
+  $name,
+  $props,
+  $group: if(global-variable-exists(export-group), $export-group, false)
+) {
+  // not found
+  $id: map-get(compute-props($name, $group), id);
+  @if (map-has-key($system-export, $id) == false) {
+    @error err('key-not-found', $id, '(extend)', map-keys($system-import));
+  }
+
+  // prettier-ignore
+  $system-export: map-merge($system-export, (
+    '#{$id}': map-merge(map-get($system-export, $id), $props),
+  )) !global;
+}

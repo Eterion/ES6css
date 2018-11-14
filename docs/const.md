@@ -1,5 +1,4 @@
 ---
-prev: /guide
 next: /fn
 ---
 
@@ -65,6 +64,24 @@ compilation may not be successful.
 
 </Tip>
 
+## custom-properties
+
+- Type: `boolean`
+
+```scss
+$const-custom-properties: false;
+```
+
+Enables css custom properties, resulting in values to be rendered with
+[var](https://developer.mozilla.org/en-US/docs/Web/CSS/var) instead of direct
+value. Use [css-custom-properties](/mixin.md#css-custom-properties) mixin to
+generate `:root` variables. Additional settings is available, relevant only when
+this constant is enabled.
+
+| Constant                                         | Default | Description                                     |
+| ------------------------------------------------ | ------- | ----------------------------------------------- |
+| <nobr>`$const-custom-properties-fallback`</nobr> | false   | Adds fallback value directly to **var** syntax. |
+
 ## default-key
 
 - Type: `string`
@@ -89,7 +106,7 @@ $const-export-groups: ();
 List of group names for export modules, where key represents group name
 ([template](#template) replacement of `{group}` substring), and value represents
 much shorter identificator ([template](#template) replacement of `{id}`
-substring). See [groups](/guide.md#groups) for more information.
+substring).
 
 ## font-weight-scale
 

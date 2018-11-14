@@ -1,0 +1,10 @@
+:root {
+  --module-background-color: gray;
+  --module-size: 40px;
+}
+
+.module {
+  background-color: var(--module-background-color);
+  height: var(--module-size);
+  width: var(--module-size);
+}

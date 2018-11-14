@@ -1,0 +1,55 @@
+/// Insert value at list or map index.
+/// @access public
+/// @param {list|map} $list - Source list or map.
+/// @param {number} $index - Target index.
+/// @param {number|string|map} $value - Value.
+
+@function insert-nth($list, $index, $value) {
+  // Not a number
+  @if (type-of($index) != 'number') {
+    @error "Index '#{$index}' in (insert-nth) is not a number.";
+  }
+
+  // Less than 1
+  @if ($index < 1) {
+    @error 'Index in (insert-nth) must be non-zero integer.';
+  }
+
+  // Index out of range
+  @if ($index > length($list) + 1) {
+    @warn "Index '#{$index}' in (insert-nth) is much greater than list length, maximum index should be #{length($list) + 1}.";
+  }
+
+  // Data
+  $data: ();
+
+  // Replace
+  @if (length($list) == 0) {
+    $data: $value;
+  } @else if($index >= length($list) + 1) {
+    $data: if(
+      type-of($list) == 'map',
+      map-merge($list, $value),
+      append($list, $value)
+    );
+  } @else {
+    @if (type-of($list) == 'map') {
+      @each $key, $item in $list {
+        $i: index($list, #{$key} $item);
+        @if ($i == $index) {
+          $data: map-merge($data, $value);
+        }
+        $data: map-merge($data, (#{$key}: $item));
+      }
+    } @else {
+      @for $i from 1 through length($list) {
+        @if ($i == $index) {
+          $data: append($data, $value);
+        }
+        $data: append($data, nth($list, $i));
+      }
+    }
+  }
+
+  @return $data;
+}

@@ -1,0 +1,113 @@
+/* $prop: width, $operator: and */
+@media (max-width: 480px) {
+  div {
+    background-color: red;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1366px) {
+  div {
+    background-color: green;
+  }
+}
+
+@media (min-width: 1367px) {
+  div {
+    background-color: blue;
+  }
+}
+
+/* $prop: width, $operator: or */
+@media (max-width: 480px) {
+  div {
+    background-color: red;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1366px) {
+  div {
+    background-color: green;
+  }
+}
+
+@media (min-width: 1367px) {
+  div {
+    background-color: blue;
+  }
+}
+
+/* $prop: height, $operator: and */
+@media (max-height: 853px) {
+  div {
+    background-color: red;
+  }
+}
+
+@media (min-height: 854px) and (max-height: 1024px) {
+  div {
+    background-color: green;
+  }
+}
+
+@media (min-height: 1025px) {
+  div {
+    background-color: blue;
+  }
+}
+
+/* $prop: height, $operator: or */
+@media (max-height: 853px) {
+  div {
+    background-color: red;
+  }
+}
+
+@media (min-height: 854px) and (max-height: 1024px) {
+  div {
+    background-color: green;
+  }
+}
+
+@media (min-height: 1025px) {
+  div {
+    background-color: blue;
+  }
+}
+
+/* $prop: both, $operator: and */
+@media (max-width: 480px) and (max-height: 853px) {
+  div {
+    background-color: red;
+  }
+}
+
+@media (min-width: 481px) and (min-height: 854px) and (max-width: 1366px) and (max-height: 1024px) {
+  div {
+    background-color: green;
+  }
+}
+
+@media (min-width: 1367px) and (min-height: 1025px) {
+  div {
+    background-color: blue;
+  }
+}
+
+/* $prop: both, $operator: or */
+@media (max-width: 480px), (max-height: 853px) {
+  div {
+    background-color: red;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1366px), (min-height: 854px) and (max-height: 1024px) {
+  div {
+    background-color: green;
+  }
+}
+
+@media (min-width: 1367px), (min-height: 1025px) {
+  div {
+    background-color: blue;
+  }
+}

@@ -1,0 +1,36 @@
+/// Creates a new export item, that can be extracted using the [**import**](#mixin-import) mixin. Includes few automatically computed properties (name, selector, z-index). Throws an error if item with identical **$name** in a **$group** already exists, use [**extend**](#mixin-extend) mixin if you need to modify already existing item.
+/// @group export
+/// @access public
+/// @param {string} $name - Module name
+/// @param {bool|map} $props [false] - Property map
+/// @param {string} $group [$export-group] - Group key
+/// @param {map} $defaults [$export-defaults] - Default properties
+/// @example @include export(component-name, ( ... ))
+
+@mixin export(
+  $name,
+  $props: false,
+  $group: if(global-variable-exists(export-group), $export-group, false),
+  $defaults: $export-defaults
+) {
+  // already exists
+  $id: map-get(compute-props($name, $group), id);
+  @if (map-has-key($system-export, $id)) {
+    @error err('key-exists', $id, '(export)');
+  }
+
+  // defaults
+  $props: map-merge($defaults, if($props, $props, ()));
+
+  // selector
+  $selector: map-get(compute-props($name, $group), selector);
+
+  // prettier-ignore
+  $system-export: map-merge($system-export, (
+    '#{$id}': map-merge($props, (
+      'name': $selector,
+      'selector': call(get-function(inspect(if(map-key-get($props, unique), 'to-id', 'to-class'))), $selector),
+      'z-index': map-get(compute-props($name, $group), z-index),
+    ))
+  )) !global;
+}

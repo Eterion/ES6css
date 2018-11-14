@@ -1,0 +1,33 @@
+$const-color-keys-defaults: (
+  'gray': dimgray,
+  'theme': blue,
+  'success': green,
+  'warn': yellow,
+  'err': red,
+) !default;
+
+$const-color-scale-defaults: (
+  'dark': -50,
+  'regular': 0,
+  'light': 50,
+) !default;
+
+// preserve-defaults
+
+$const-color-keys: map-merge(
+  if($const-preserve-defaults, $const-color-keys-defaults, ()),
+  if(
+    global-variable-exists(const-color-keys),
+    $const-color-keys,
+    $const-color-keys-defaults
+  )
+);
+
+$const-color-scale: map-merge(
+  if($const-preserve-defaults, $const-color-scale-defaults, ()),
+  if(
+    global-variable-exists(const-color-scale),
+    $const-color-scale,
+    $const-color-scale-defaults
+  )
+);

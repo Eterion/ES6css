@@ -1,0 +1,24 @@
+$const-media-scale-defaults: (
+  'phone': (
+    'width': 480px,
+    'height': 853px,
+  ),
+  'desktop': (
+    'width': 1920px,
+    'height': 1080px,
+  ),
+) !default;
+
+// preserve-defaults
+
+$const-media-scale: map-sort(
+  map-merge(
+    if($const-preserve-defaults, $const-media-scale-defaults, ()),
+    if(
+      global-variable-exists(const-media-scale),
+      $const-media-scale,
+      $const-media-scale-defaults
+    )
+  ),
+  width
+);

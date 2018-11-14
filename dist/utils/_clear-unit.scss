@@ -1,0 +1,12 @@
+/// Returns a **$number** stripped of its unit, if possible.
+/// @access public
+/// @param {number} $number - Input number
+/// @example clear-unit(16px) // returns 16
+
+@function clear-unit($number) {
+  @return if(
+    type-of($number) == 'number' and not unitless($number),
+    $number / ($number * 0 + 1),
+    $number
+  );
+}

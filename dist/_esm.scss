@@ -1,0 +1,21 @@
+// Internal variables essential for proper functionality. Must be imported
+// before any functions and mixins.
+// -----
+
+@import 'system';
+
+// Constants are awalys defined with !default flag to allow overwrite. Maps are
+// special case, that requires additional defauls contants, which can be
+// preserved based on other settings. Core functions and mixins (private items
+// are intentionaly not documented).
+// -----
+
+@import 'utils';
+@import 'const';
+@import 'fn';
+@import 'mixin';
+
+// Defaults required for proper import and export functionality.
+// -----
+
+@import 'export';

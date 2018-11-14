@@ -1,0 +1,24 @@
+// System variables are not used for application, the content of these variables
+// is rather dynamic during build process. Primary purpose is to be temporary
+// storage area.
+// -----
+
+// Storage variable used by export() mixin. Everytime an export item is created,
+// new map of properties is added to this variables.
+
+$system-export: ();
+
+// Storage variable used by import() mixin, needed for proper nesting
+// functionality. Stores list of property maps of currently exported item. This
+// variable is truncated outside of current mixin scope.
+
+$system-data: ();
+
+// Storage variable used by import() mixin, stores only the last item from
+// currently available data ($system-data) list. This variable is truncated
+// outside of current mixin scope.
+
+$system-import: ();
+
+// List of property names, that cannot be inserted as css custom properties.
+$system-protected-properties: 'name', 'selector', 'unique', 'z-index';

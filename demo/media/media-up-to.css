@@ -1,0 +1,41 @@
+/* $prop: width, $operator: and */
+@media (max-width: 480px) {
+  div {
+    background-color: gray;
+  }
+}
+
+/* $prop: width, $operator: or */
+@media (max-width: 480px) {
+  div {
+    background-color: gray;
+  }
+}
+
+/* $prop: height, $operator: and */
+@media (max-height: 853px) {
+  div {
+    background-color: gray;
+  }
+}
+
+/* $prop: height, $operator: or */
+@media (max-height: 853px) {
+  div {
+    background-color: gray;
+  }
+}
+
+/* $prop: both, $operator: and */
+@media (max-width: 480px) and (max-height: 853px) {
+  div {
+    background-color: gray;
+  }
+}
+
+/* $prop: both, $operator: or */
+@media (max-width: 480px), (max-height: 853px) {
+  div {
+    background-color: gray;
+  }
+}

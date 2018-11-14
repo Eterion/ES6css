@@ -1,0 +1,41 @@
+/* $prop: width, $operator: and */
+@media (min-width: 481px) and (max-width: 1920px) {
+  div {
+    background-color: gray;
+  }
+}
+
+/* $prop: width, $operator: or */
+@media (min-width: 481px) and (max-width: 1920px) {
+  div {
+    background-color: gray;
+  }
+}
+
+/* $prop: height, $operator: and */
+@media (min-height: 854px) and (max-height: 1080px) {
+  div {
+    background-color: gray;
+  }
+}
+
+/* $prop: height, $operator: or */
+@media (min-height: 854px) and (max-height: 1080px) {
+  div {
+    background-color: gray;
+  }
+}
+
+/* $prop: both, $operator: and */
+@media (min-width: 481px) and (min-height: 854px) and (max-width: 1920px) and (max-height: 1080px) {
+  div {
+    background-color: gray;
+  }
+}
+
+/* $prop: both, $operator: or */
+@media (min-width: 481px) and (max-width: 1920px), (min-height: 854px) and (max-height: 1080px) {
+  div {
+    background-color: gray;
+  }
+}

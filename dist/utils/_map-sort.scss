@@ -1,0 +1,56 @@
+/// Sort map (ascending) according to its value. If the value is a map, requested sorting keys must be specified.
+/// @access public
+/// @param {map} $map - Source map.
+/// @param {string|list} [$keys] - List of keys (only when map item value is a map).
+
+@function map-sort($map, $keys...) {
+  // Not a map
+  @if (type-of($map) != 'map') {
+    @error 'Source map in (map-sort) is not a map.';
+  }
+
+  // Iterate over map items
+  $result: ();
+  @each $map-key, $map-value in $map {
+    $map-index: index($map, $map-key $map-value);
+    $map-sort: if(
+      type-of($map-value) == 'map',
+      map-deep-get($map-value, $keys...),
+      $map-value
+    );
+
+    // Place
+    @if (length($result) == 0) {
+      $result: map-merge($result, (#{$map-key}: $map-value));
+    } @else {
+      $is-placed: false;
+      @each $result-key, $result-value in $result {
+        $result-index: index($result, $result-key $result-value);
+        $result-sort: if(
+          type-of($result-value) == 'map',
+          map-deep-get($result-value, $keys...),
+          $result-value
+        );
+
+        // Before
+        @if ($is-placed == false) {
+          @if ($map-sort < $result-sort) {
+            $result: insert-nth(
+              $result,
+              $result-index,
+              (#{$map-key}: $map-value)
+            );
+            $is-placed: true;
+          }
+        }
+      }
+
+      // After
+      @if ($is-placed == false) {
+        $result: map-merge($result, (#{$map-key}: $map-value));
+      }
+    }
+  }
+
+  @return $result;
+}

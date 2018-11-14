@@ -1,0 +1,50 @@
+/// Wraps the content with a specified media query between provided **$scale** and previous scale in map. Use of [**media-up-from**](#mixin-media-up-from) mixin is highly preferred before any other media mixin (not a requirement). The **$operator** parameter determines relationship between width and height properties, only relevant when **$prop** is set to **both**. Media breakpoints are completely customizable through **$const-media-scale** constant.
+/// @group media
+/// @access public
+/// @param {string} $scale - Scale
+/// @param {string} $prop [width] - Determines what value is returned, can be **width**, **height** or **both**
+/// @param {string} $operator [and] - Determines relationship between width and height, can be **and** or **or**
+/// @param {string} $direction [$const-mq-direction] - Determines the direction for media query, can be **up** or **down**
+/// @example @include media-only(phone) { ... }
+
+@mixin media-only(
+  $scale,
+  $prop: width,
+  $operator: and,
+  $direction: $const-mq-direction
+) {
+  // not key
+  @if (type-of($scale) != 'string') {
+    @error 'The (media-only) mixin does not accept direct pixel values.';
+  } // not found
+  @if (map-has-key($const-media-scale, $scale) == false) {
+    @error err('key-not-found', $scale, '(media-only)', map-keys($const-media-scale));
+  }
+  // first
+  $index: index(map-keys($const-media-scale), $scale);
+  @if ($index == 1) {
+    @media #{media-query(max, $scale, $prop, $operator, $direction)} {
+      @content;
+    }
+  }
+  // last
+  @else if($index == length(map-keys($const-media-scale))) {
+    $previous: nth(map-keys($const-media-scale), $index - 1);
+    @media #{media-query(min, $previous, $prop, $operator, $direction)} {
+      @content;
+    }
+  }
+  // between
+  @else {
+    $previous: nth(map-keys($const-media-scale), $index - 1);
+    @if ($prop == both and $operator == or) {
+      @media (#{str-slice(media-query(min, $previous, width, and, $direction), 2, -2)}) and (#{str-slice(media-query(max, $scale, width, and, $direction), 2, -2)}), (#{str-slice(media-query(min, $previous, height, and, $direction), 2, -2)}) and (#{str-slice(media-query(max, $scale, height, and, $direction), 2, -2)}) {
+        @content;
+      }
+    } @else {
+      @media (#{str-slice(media-query(min, $previous, $prop, $operator, $direction), 2, -2)}) and (#{str-slice(media-query(max, $scale, $prop, $operator, $direction), 2, -2)}) {
+        @content;
+      }
+    }
+  }
+}

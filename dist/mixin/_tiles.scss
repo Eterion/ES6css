@@ -1,0 +1,51 @@
+/// Adds tiles layout to element. Includes legacy support, however the generated layout may not be identical to a modern W3C standard (because legacy syntax doesn't support automatic positioning). Note, enabled legacy support may generate large amount of code.
+/// @access public
+/// @param {number} $width - Column width, in pixels
+/// @param {number} $gap [0] - Gap between rows and columns, in pixels
+/// @param {string} $repeat [auto-fill] - Recurring pattern for repeat function, see [**mdn**](https://developer.mozilla.org/en-US/docs/Web/CSS/repeat)
+/// @param {map} $legacy [()] - Settings for legacy support, see mixin code for defaults
+
+@mixin tiles($width, $gap: 0, $repeat: auto-fill, $legacy: ()) {
+  $legacy: map-merge(
+    (
+      'enable': false,
+      'item': to-class(item),
+      'max-columns': 1,
+      'max-items': 1,
+    ),
+    $legacy
+  );
+
+  // layout
+  display: grid;
+
+  // Include legacy support only when $legacy.enable is set to true (false by
+  // default). This may (and probably will) generate large amount of code,
+  // because legacy code needs to have specified position for each item
+  // individually.
+
+  @if (map-key-get($legacy, enable)) {
+    @include tiles-container($width, $gap, $legacy: $legacy);
+
+    // Each tiles item must have defined position in the grid, so amount of
+    // items must be known in order to generate appropriate amount of code.
+    // Number of expected items is controlled by $legacy.max-items constant.
+
+    & > #{map-key-get($legacy, item)} {
+      @for $index from 1 through map-key-get($legacy, max-items) {
+        @include tiles-item($index, $width, $gap, $legacy);
+      }
+    }
+  }
+
+  // Modern W3C standard, doesn't require column and item specification, because
+  // it can automatically position items based on available width. The auto-fill
+  // value takes care of the number of columns automatically.
+
+  & {
+    @include tiles-container($width, $gap, $repeat, $legacy);
+  }
+
+  // content
+  @content;
+}
