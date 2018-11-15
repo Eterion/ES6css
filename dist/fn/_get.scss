@@ -17,7 +17,7 @@
 ) {
   // name and group is provided
   $id: map-get(compute-props($name, $group), id);
-  @if (type-of($name) == 'string' and type-of($group) == 'string') {
+  @if (type-of($name) == 'string') {
     @if (map-has-key($system-export, $id) == false) {
       @error err('key-not-found', $id, '(get)', map-keys($system-export));
     }
