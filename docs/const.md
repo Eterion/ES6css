@@ -78,9 +78,9 @@ value. Use [css-custom-properties](/mixin.md#css-custom-properties) mixin to
 generate `:root` variables. Additional settings is available, relevant only when
 this constant is enabled.
 
-| Constant                                             | Default | Description                                                                                                                                                                                                                                                            |
-| ---------------------------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <nobr>`$const-custom-properties-fallback`</nobr>     | false   | Adds fallback value directly to **var** syntax.                                                                                                                                                                                                                        |
+| Constant                                             | Default | Description                                                                                                                                                                                                                                                                   |
+| ---------------------------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <nobr>`$const-custom-properties-fallback`</nobr>     | false   | Adds fallback value directly to **var** syntax.                                                                                                                                                                                                                               |
 | <nobr>`$const-custom-properties-redirect-var`</nobr> | false   | When set to true, module properties referencing other **var** values will be redirected instead, effectively reducing total number of variables. This will also exclude all variables with **var** value from [css-custom-properties](/mixin.md#css-custom-properties) mixin. |
 
 ## default-key
