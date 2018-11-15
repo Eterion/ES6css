@@ -13,7 +13,11 @@
     @each $id, $map in $system-export {
       @each $prop, $value in $map {
         @if (index($system-protected-properties, $prop) == null) {
-          --#{map-get($map, name)}-#{$prop}: #{$value};
+          $var: if(str-slice(quote($value), 1, 3) == 'var', true, false);
+          $redirect: $const-custom-properties-redirect-var;
+          @if ($redirect == false or ($redirect and $var == false)) {
+            --#{map-get($map, name)}-#{$prop}: #{$value};
+          }
         }
       }
     }
