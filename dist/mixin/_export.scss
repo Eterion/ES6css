@@ -1,4 +1,4 @@
-/// Creates a new export item, that can be extracted using the [**import**](#mixin-import) mixin. Includes few automatically computed properties (name, selector, z-index). Throws an error if item with identical **$name** in a **$group** already exists, use [**extend**](#mixin-extend) mixin if you need to modify already existing item.
+/// Creates a new export item, that can be extracted using the [**import**](#mixin-import) mixin. Includes few automatically computed properties (name, selector). Throws an error if item with identical **$name** in a **$group** already exists, use [**extend**](#mixin-extend) mixin if you need to modify already existing item.
 /// @group export
 /// @access public
 /// @param {string} $name - Module name
@@ -30,7 +30,6 @@
     '#{$id}': map-merge($props, (
       'name': $selector,
       'selector': call(get-function(inspect(if(map-key-get($props, unique), 'to-id', 'to-class'))), $selector),
-      'z-index': map-get(compute-props($name, $group), z-index),
     ))
   )) !global;
 }

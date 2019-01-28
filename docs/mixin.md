@@ -15,8 +15,8 @@ Outputs `:root` element with all properties from detected modules.
 ## export
 
 Creates a new export item, that can be extracted using the [import](#import)
-mixin. Includes few automatically computed properties (name, selector, z-index).
-Throws an error if item with identical `$name` in a `$group` already exists, use
+mixin. Includes few automatically computed properties (name, selector). Throws
+an error if item with identical `$name` in a `$group` already exists, use
 [extend](#extend) mixin if you need to modify already existing item.
 
 ```scss
@@ -235,18 +235,3 @@ properties with identical options.
 
 - `$options: string` - Options applied to every transition
 - `$properties: string | list` - List of properties
-
-## z-index
-
-Inserts appropriate **z-index** property according to `$name`. The z-index value
-is automatically calculated based on the position in a source map, meaning last
-value has the highest z-index assigned. Throws an error if z-index name doesn't
-exists in a source map. Automatically adds `$position` property, can be disabled
-by setting to **false**.
-
-```scss
-@include z-index($name: get(z-index), $position: relative);
-```
-
-- `$name: string` - Identifier
-- `$position: boolean | string` Position style definition

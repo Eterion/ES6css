@@ -21,4 +21,4 @@ $system-data: ();
 $system-import: ();
 
 // List of property names, that cannot be inserted as css custom properties.
-$system-protected-properties: 'name', 'selector', 'unique', 'z-index';
+$system-protected-properties: 'name', 'selector', 'unique';

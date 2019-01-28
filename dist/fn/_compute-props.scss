@@ -18,11 +18,5 @@
     $data
   );
 
-  // module z-index identifier
-  $z-index: interpolate(
-    if($group, $const-template-group-z-index, $const-template),
-    $data
-  );
-
-  @return ('id': $id, 'selector': $selector, 'z-index': $z-index);
+  @return ('id': $id, 'selector': $selector);
 }
