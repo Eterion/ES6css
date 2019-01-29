@@ -1,0 +1,50 @@
+@function palette(
+  $key,
+  $name: false,
+  $index: false,
+  $steps: $const-monochrome-steps
+) {
+  $palette: ();
+  $color: color($key);
+  $hue: hue($color);
+  $saturation: saturation($color);
+  $lightness: lightness($color);
+  $spectrum: (
+    'orange',
+    'yellow',
+    'lime',
+    'green',
+    'teal',
+    'cyan',
+    'blue',
+    'indigo',
+    'violet',
+    'fuchsia',
+    'pink',
+    'red'
+  );
+  $shift: round(($hue - 2) / 30) * 30 - $hue;
+  // black and gray
+  @each $name in ('black', 'gray') {
+    $values: ();
+    @for $i from 0 to $steps {
+      $values: append($values, monochrome($color, $i, $desaturate: $name));
+    }
+    $palette: map-merge($palette, (#{$name}: $values));
+  }
+  // spectrum
+  @each $name in $spectrum {
+    $values: ();
+    @for $i from 0 to $steps {
+      $values: append(
+        $values,
+        monochrome(
+          hsl(index($spectrum, $name) * 30 + $shift, $saturation, $lightness),
+          $i
+        )
+      );
+    }
+    $palette: map-merge($palette, (#{$name}: $values));
+  }
+  @return $palette;
+}

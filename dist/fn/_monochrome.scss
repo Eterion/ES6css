@@ -1,0 +1,38 @@
+@function monochrome(
+  $key,
+  $index,
+  $desaturate: false,
+  $steps: $const-monochrome-steps
+) {
+  $color: color($key);
+  $hue: hue($color);
+  $saturation: saturation($color);
+  $lightness: lightness($color);
+  @if ($desaturate) {
+    @if ($desaturate == 'black') {
+      $saturation: 0%;
+    } @else if($desaturate == 'gray') {
+      $saturation: percentage(1 / 8) - ($steps - $index - 1) * 0.475;
+    }
+  }
+  // tint (white)
+  @if ($index < $steps / 2) {
+    @if (not $desaturate) {
+      $saturation: $lightness * 1.6;
+    }
+    $edge: (100 - $lightness) / $steps;
+    $lightness-step: (100 - $lightness - 2 * $edge) / ($steps / 2);
+    $lightness: 100 - $edge - $index * $lightness-step;
+  }
+  // shade (black)
+  @else if($index > $steps / 2) {
+    $shade-index: $index - $steps / 2;
+    $lightness-step: $lightness / ($steps - 1);
+    $modifier: 1 - (((0.125 + 1 / $steps) / ($steps / 2)) * $shade-index);
+    $lightness: ($lightness - $lightness-step * $shade-index) * $modifier;
+    @if ($desaturate == 'black') {
+      $lightness: $lightness * 0.85;
+    }
+  }
+  @return hsl($hue, $saturation, $lightness);
+}

@@ -27,7 +27,7 @@ Recommended order of constants is [default-key](#default-key),
 ```scss
 $const-color-keys: (
   'gray': dimgray,
-  'theme': blue,
+  'accent': blue,
   'success': green,
   'warn': yellow,
   'err': red,
