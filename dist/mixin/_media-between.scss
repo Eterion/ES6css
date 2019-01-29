@@ -5,7 +5,7 @@
 /// @param {number|string} $upper - Scale or number
 /// @param {string} $prop [width] - Determines what value is returned, can be **width**, **height** or **both**
 /// @param {string} $operator [and] - Determines relationship between width and height, can be **and** or **or**
-/// @param {string} $direction [$const-mq-direction] - Determines the direction for media query, can be **up** or **down**
+/// @param {string} $direction [$const-media-direction] - Determines the direction for media query, can be **up** or **down**
 /// @example @include media-between(phone, desktop) { ... }
 
 @mixin media-between(
@@ -13,8 +13,11 @@
   $upper,
   $prop: width,
   $operator: and,
-  $direction: $const-mq-direction
+  $direction: $const-media-direction
 ) {
+  // sort
+  $const-media-scale: map-sort($const-media-scale, $const-media-sort);
+
   // not found: lower
   @if (type-of($lower) == 'string') {
     @if (map-has-key($const-media-scale, $lower) == false) {

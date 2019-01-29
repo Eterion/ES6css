@@ -11,14 +11,11 @@ $const-media-scale-defaults: (
 
 // preserve-defaults
 
-$const-media-scale: map-sort(
-  map-merge(
-    if($const-preserve-defaults, $const-media-scale-defaults, ()),
-    if(
-      global-variable-exists(const-media-scale),
-      $const-media-scale,
-      $const-media-scale-defaults
-    )
-  ),
-  width
+$const-media-scale: map-merge(
+  if($const-preserve-defaults, $const-media-scale-defaults, ()),
+  if(
+    global-variable-exists(const-media-scale),
+    $const-media-scale,
+    $const-media-scale-defaults
+  )
 );

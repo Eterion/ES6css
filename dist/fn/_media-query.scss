@@ -9,7 +9,7 @@
   $value,
   $prop: width,
   $operator: and,
-  $direction: $const-mq-direction
+  $direction: $const-media-direction
 ) {
   // Calculate amount of reduction.
   $reduction: if(

@@ -6,6 +6,9 @@
 /// @example media(desktop) // returns 1680px
 
 @function media($value, $prop: width) {
+  // sort
+  $const-media-scale: map-sort($const-media-scale, $const-media-sort);
+
   // not a string
   @if (type-of($value) != 'string') {
     @return $value;

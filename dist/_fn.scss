@@ -1,15 +1,26 @@
 // imports
+@import 'fn/clear-unit';
 @import 'fn/color';
-@import 'fn/em-always';
+@import 'fn/color-spectrum';
 @import 'fn/em';
+@import 'fn/em-always';
 @import 'fn/font-weight';
 @import 'fn/get';
 @import 'fn/hue-name';
+@import 'fn/insert-nth';
+@import 'fn/interpolate';
+@import 'fn/map-deep-get';
+@import 'fn/map-filter';
+@import 'fn/map-sort';
 @import 'fn/media';
 @import 'fn/monochrome';
 @import 'fn/palette';
-@import 'fn/rem-always';
 @import 'fn/rem';
+@import 'fn/rem-always';
+@import 'fn/str-replace';
+@import 'fn/to-class';
+@import 'fn/to-id';
+@import 'fn/to-unicode';
 
 // imports (private)
 @import 'fn/compute-props';
