@@ -1,0 +1,11 @@
+/// Returns color name of provided input color.
+/// @access public
+/// @param {string} $value - Input color, or color-scale key.
+/// @example hue-name(#07c) // returns 'blue'
+
+@function hue-name($color) {
+  @return nth(
+    $system-color-spectrum,
+    clear-unit(round((hue(color($color)) - 2) / 30)) + 1
+  );
+}

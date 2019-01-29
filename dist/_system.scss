@@ -20,5 +20,9 @@ $system-data: ();
 
 $system-import: ();
 
+// List of color names across the color spectrum.
+$system-color-spectrum: 'red', 'orange', 'yellow', 'lime', 'green', 'teal',
+  'cyan', 'blue', 'indigo', 'violet', 'fuchsia', 'pink', 'red';
+
 // List of property names, that cannot be inserted as css custom properties.
 $system-protected-properties: 'name', 'selector', 'unique';
