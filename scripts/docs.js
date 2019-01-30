@@ -141,12 +141,12 @@ new Promise((resolve, reject) => {
           ]
             .filter(Boolean)
             .join(eol),
-          description,
           code(
             `$${context.name}: ${context.value}${
               context.scope === 'default' ? ' !default' : ''
             };`
           ),
+          description,
           top,
         ]
           .filter(Boolean)
@@ -158,8 +158,8 @@ new Promise((resolve, reject) => {
         [
           `### ${context.name}`,
           ['- Type: `Function`'].filter(Boolean).join(eol),
-          description,
           def(context.name, parameter),
+          description,
           parameter ? params(parameter) : false,
           top,
         ]
@@ -179,8 +179,8 @@ new Promise((resolve, reject) => {
           ]
             .filter(Boolean)
             .join(eol),
-          description,
           def(context.name, parameter),
+          description,
           parameter ? params(parameter) : false,
           top,
         ]
