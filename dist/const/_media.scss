@@ -1,4 +1,4 @@
-$const-media-scale-defaults: (
+$const-media-scale-system: (
   'phone': (
     'width': 480px,
     'height': 853px,
@@ -12,10 +12,10 @@ $const-media-scale-defaults: (
 // preserve-defaults
 
 $const-media-scale: map-merge(
-  if($const-preserve-defaults, $const-media-scale-defaults, ()),
+  if($const-preserve-defaults, $const-media-scale-system, ()),
   if(
     global-variable-exists(const-media-scale),
     $const-media-scale,
-    $const-media-scale-defaults
+    $const-media-scale-system
   )
 );

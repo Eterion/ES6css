@@ -1,4 +1,4 @@
-$const-color-keys-defaults: (
+$const-color-keys-system: (
   'gray': dimgray,
   'accent': blue,
   'success': green,
@@ -6,7 +6,7 @@ $const-color-keys-defaults: (
   'err': red,
 ) !default;
 
-$const-color-scale-defaults: (
+$const-color-scale-system: (
   'dark': -50,
   'regular': 0,
   'light': 50,
@@ -15,19 +15,19 @@ $const-color-scale-defaults: (
 // preserve-defaults
 
 $const-color-keys: map-merge(
-  if($const-preserve-defaults, $const-color-keys-defaults, ()),
+  if($const-preserve-defaults, $const-color-keys-system, ()),
   if(
     global-variable-exists(const-color-keys),
     $const-color-keys,
-    $const-color-keys-defaults
+    $const-color-keys-system
   )
 );
 
 $const-color-scale: map-merge(
-  if($const-preserve-defaults, $const-color-scale-defaults, ()),
+  if($const-preserve-defaults, $const-color-scale-system, ()),
   if(
     global-variable-exists(const-color-scale),
     $const-color-scale,
-    $const-color-scale-defaults
+    $const-color-scale-system
   )
 );
