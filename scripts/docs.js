@@ -102,7 +102,7 @@ new Promise((resolve, reject) => {
 
   // Resolve data for readme file.
   .then(({ readme, docs }) => {
-    const variables = docs
+    const constants = docs
       .filter(({ context }) => context.type === 'variable')
       .sort(sort);
     const functions = docs
@@ -116,8 +116,8 @@ new Promise((resolve, reject) => {
       '---',
       '## Contents',
       [
-        '- [Variables](#variables)',
-        ...variables.map(
+        '- [Constants](#constants)',
+        ...constants.map(
           ({ context }) => `  - [${context.name}](#${context.name})`
         ),
         '- [Functions](#functions)',
@@ -129,8 +129,8 @@ new Promise((resolve, reject) => {
           ({ context }) => `  - [${context.name}](#${context.name})`
         ),
       ].join(eol),
-      '## Variables',
-      ...variables.map(({ context, description, type }) =>
+      '## Constants',
+      ...constants.map(({ context, description, type }) =>
         [
           `### ${context.name}`,
           [
