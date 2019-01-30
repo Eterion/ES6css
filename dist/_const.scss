@@ -1,19 +1,174 @@
+/// Enables css custom properties, resulting in values to be rendered with [var](https://developer.mozilla.org/en-US/docs/Web/CSS/var) syntax instead of direct value. Use [css-custom-properties](#css-custom-properties) mixin to generate `:root`. Additional modifier constants are relevant only when this constant is enabled.
+/// @type boolean
+
 $const-custom-properties: false !default;
+
+/// Determines whenever to use [custom property fallback values](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables#Custom_Property_fallback_values). Requires [custom-properties](#const-custom-properties) set to `true`.
+/// @type boolean
+
 $const-custom-properties-fallback: false !default;
+
+/// When set to `true`, module properties referencing to ther values will be redirected instead, effectivelly reducing total number of variables. This will also clean up result form [css-custom-properties](#css-custom-properties) mixin. Requires [custom-properties](#const-custom-properties) set to `true`.
+/// @type boolean
+
 $const-custom-properties-redirect-var: false !default;
-$const-default-key: regular !default;
+
+/// Determines in what direction the generated media queries take priority. This constants affects all media mixins (can be set individually via parameter) and is dependent on [media-scale](#const-media-scale) map. When set to `down`, higher media scale take priority over lower ones, meaning `max` value of lower scale is always one pixel lower than defined. The `up` option is exact opposite of `down` behavior. This functionalitz can be completelz disabled bz setting this  constant to `false`. This also means the media queries may overlap (depends on use) and mess up things on very specific resolutions.
+/// @type down | up | false
+
 $const-media-direction: up !default;
+
+/// Keys in [media-scale](#const-media-scale) constant are automatically sorted by its values. However, if [media-scale](#const-media-scale) is set with `width` and `height` keys, this constant is needed to determine by which key the values should be sorted.
+/// @type width | height
+
 $const-media-sort: width !default;
+
+/// TBD
+/// @type number
+
 $const-monochrome-steps: 10 !default;
+
+/// TBD
+/// @type boolean
+
 $const-preserve-defaults: true !default;
+
+/// TBD
+/// @type boolean
+
 $const-relative-units: false !default;
+
+/// TBD
+/// @type number
+
 $const-relative-units-min: 0 !default;
+
+/// TBD
+/// @type number
 $const-relative-units-root: 16px !default;
+
+/// TBD
+/// @type string
+
 $const-template: '{module}' !default;
+
+/// TBD
+/// @type string
+
 $const-template-group-selector: '{id}-{module}' !default;
 
-// imports
-@import 'const/color';
-@import 'const/export';
-@import 'const/font';
-@import 'const/media';
+/// TBD
+/// @name const-color-keys
+/// @type map
+
+$const-color-keys-system: (
+  'gray': dimgray,
+  'accent': blue,
+  'success': green,
+  'warn': yellow,
+  'err': red,
+) !default;
+
+/// TBD
+/// @name const-color-scale
+/// @type map
+
+$const-color-scale-system: (
+  'dark': -50,
+  'regular': 0,
+  'light': 50,
+) !default;
+
+/// TBD
+/// @type map
+
+$const-export-groups: () !default;
+
+/// Any property in this map is automatically added to every export item. Properties added via [**export**](#mixin-export) or [**extend**](#mixin-extend) mixins take precedence over defaults.
+/// @name const-export-defaults
+/// @type map
+
+$const-export-defaults-system: (
+  'unique': false,
+) !default;
+
+/// TBD
+/// @name const-font-weight-scale
+/// @type map
+
+$const-font-weight-scale-system: (
+  'thin': 100,
+  'extralight': 200,
+  'ultralight': 200,
+  'light': 300,
+  'book': 400,
+  'normal': 400,
+  'regular': 400,
+  'roman': 400,
+  'medium': 500,
+  'semibold': 600,
+  'demibold': 600,
+  'bold': 700,
+  'extrabold': 800,
+  'ultrabold': 800,
+  'black': 900,
+  'heavy': 900,
+) !default;
+
+/// TBD
+/// @name const-media-scale
+/// @type map
+
+$const-media-scale-system: (
+  'phone': (
+    'width': 480px,
+    'height': 853px,
+  ),
+  'desktop': (
+    'width': 1920px,
+    'height': 1080px,
+  ),
+) !default;
+
+// preserve-defaults
+
+$const-color-keys: map-merge(
+  if($const-preserve-defaults, $const-color-keys-system, ()),
+  if(
+    global-variable-exists(const-color-keys),
+    $const-color-keys,
+    $const-color-keys-system
+  )
+);
+
+$const-color-scale: map-merge(
+  if($const-preserve-defaults, $const-color-scale-system, ()),
+  if(
+    global-variable-exists(const-color-scale),
+    $const-color-scale,
+    $const-color-scale-system
+  )
+);
+
+$const-export-defaults: map-merge(
+  $const-export-defaults-system,
+  if(global-variable-exists(const-export-defaults), $const-export-defaults, ())
+);
+
+$const-font-weight-scale: map-merge(
+  if($const-preserve-defaults, $const-font-weight-scale-system, ()),
+  if(
+    global-variable-exists(const-font-weight-scale),
+    $const-font-weight-scale,
+    $const-font-weight-scale-system
+  )
+);
+
+$const-media-scale: map-merge(
+  if($const-preserve-defaults, $const-media-scale-system, ()),
+  if(
+    global-variable-exists(const-media-scale),
+    $const-media-scale,
+    $const-media-scale-system
+  )
+);
