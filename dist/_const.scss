@@ -1,63 +1,119 @@
-/// Enables css custom properties, resulting in values to be rendered with [var](https://developer.mozilla.org/en-US/docs/Web/CSS/var) syntax instead of direct value. Use [css-custom-properties](#css-custom-properties) mixin to generate `:root`. Additional modifier constants are relevant only when this constant is enabled.
+/// Enables css custom properties, resulting in values to be rendered with
+/// [var](https://developer.mozilla.org/en-US/docs/Web/CSS/var) syntax instead
+/// of direct value. Use [css-custom-properties](#css-custom-properties) mixin
+/// to generate `:root` selector.
 /// @type boolean
 
 $const-custom-properties: false !default;
 
-/// Determines whenever to use [custom property fallback values](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables#Custom_Property_fallback_values). Requires [custom-properties](#const-custom-properties) set to `true`.
+/// Determines whenever to use [custom property fallback
+/// values](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables#Custom_Property_fallback_values).
+/// Requires [custom-properties](#const-custom-properties) set to `true`.
 /// @type boolean
 
 $const-custom-properties-fallback: false !default;
 
-/// When set to `true`, module properties referencing to ther values will be redirected instead, effectivelly reducing total number of variables. This will also clean up result form [css-custom-properties](#css-custom-properties) mixin. Requires [custom-properties](#const-custom-properties) set to `true`.
+/// When set to `true`, module properties referencing to their values will be
+/// redirected instead, effectivelly reducing total number of variables. This
+/// will also clean up result of [css-custom-properties](#css-custom-properties)
+/// mixin. Requires [custom-properties](#const-custom-properties) set to `true`.
 /// @type boolean
 
 $const-custom-properties-redirect-var: false !default;
 
-/// Determines in what direction the generated media queries take priority. This constants affects all media mixins (can be set individually via parameter) and is dependent on [media-scale](#const-media-scale) map. When set to `down`, higher media scale take priority over lower ones, meaning `max` value of lower scale is always one pixel lower than defined. The `up` option is exact opposite of `down` behavior. This functionalitz can be completelz disabled bz setting this  constant to `false`. This also means the media queries may overlap (depends on use) and mess up things on very specific resolutions.
+/// Determines in what direction the generated media queries take priority. This
+/// constants affects all media mixins (can be set individually via parameter)
+/// and is dependent on [media-scale](#const-media-scale) map. When set to
+/// `down`, higher media scale takes priority over lower ones, meaning `max`
+/// value of lower scale is always one pixel lower than defined. The `up` option
+/// is exact opposite of `down` behavior. This functionalitz can be completely
+/// disabled by setting this constant to `false`. This also means the media
+/// queries may overlap (depends on use) and mess up things on very specific
+/// resolutions.
 /// @type down | up | false
 
 $const-media-direction: up !default;
 
-/// Keys in [media-scale](#const-media-scale) constant are automatically sorted by its values. However, if [media-scale](#const-media-scale) is set with `width` and `height` keys, this constant is needed to determine by which key the values should be sorted.
+/// Keys in [media-scale](#const-media-scale) constant are automatically sorted
+/// by its values. However, if [media-scale](#const-media-scale) is set with
+/// `width` and `height` keys, this constant is needed to determine by which key
+/// the values should be sorted.
 /// @type width | height
 
 $const-media-sort: width !default;
 
-/// TBD
+/// Set number of [monochrome](#monochrome) color steps.
 /// @type number
 
 $const-monochrome-steps: 10 !default;
 
-/// TBD
+/// This constants affects only few map constants. When set to `true`, your
+/// custom map configuration will be merged with defaults (your values take
+/// priority over defaults). If you wish to completely replace default map
+/// values with your own, set this constant to `false`.
 /// @type boolean
 
 $const-preserve-defaults: true !default;
 
-/// TBD
+/// When enabled, functions [em](#em), [rem](#rem) and other (all relevant
+/// function have mentioned whenever relative units settings affects them) will
+/// recalculate non-relative units to relative values (if possible). Resulting
+/// value is calculated relative to
+/// [relative-units-root](#const-relative-units-root) constant.
 /// @type boolean
 
 $const-relative-units: false !default;
 
-/// TBD
+/// Any value (in pixels) equal or below this constant will not be converted to
+/// relative units. This applies to the [em-always](#em-always) and
+/// [rem-always](#rem-always) functions as well. Requires
+/// [relative-units](#const-relative-units) set to `true`.
 /// @type number
 
 $const-relative-units-min: 0 !default;
 
-/// TBD
+/// Base value (in pixels) for calculation of relative units.
 /// @type number
+
 $const-relative-units-root: 16px !default;
 
-/// TBD
+/// This template represents how the selector of imported module is created.
+/// This is to allow customization of selectors generated by [import](#import)
+/// mixin. The string value can contain placeholders for `{group}` (represents
+/// **key** from [export-groups](#const-export-groups) map item), `{id}`
+/// (represents **value** from [export-groups](#const-export-groups) map item)
+/// and `{module}` (represents module name).
 /// @type string
 
 $const-template: '{module}' !default;
 
-/// TBD
+/// This template is active instead of [template](#const-template) constant,
+/// when [export-groups](#const-export-groups) are used. Placeholders are also
+/// identical.
 /// @type string
 
-$const-template-group-selector: '{id}-{module}' !default;
+$const-template-group: '{id}-{module}' !default;
 
-/// TBD
+/// List of group names for export modules, where key represents group name
+/// ([template](#const-template) replacement of `{group}` placeholder), and
+/// value represents much shorter identifier ([template](#const-template)
+/// replacement of `{id}` placeholder).
+/// @type map
+
+$const-export-groups: () !default;
+
+// ----------
+// MAPS: Map constants require one additional constant to keep original values
+// intact. This is needed for the $const-preserve-default functionality. The
+// default maps end with `system` suffix, which is then merged to properly named
+// map constant at the end of this file.
+// ----------
+
+/// List of keyword and its color values. This is where you want to define your
+/// colors. The keyword for a color can be pretty much anything, including a
+/// valid color value (for example `gray`), the [color](#color) function takes
+/// care of everything and will always check for color keys before using the
+/// actual color.
 /// @name const-color-keys
 /// @type map
 
@@ -69,7 +125,11 @@ $const-color-keys-system: (
   'err': red,
 ) !default;
 
-/// TBD
+/// List of scale keys for the [color](#color) function used as second argument.
+/// The nummber (positive or negative value) represents percentage of lightness
+/// relative to the original source color. Internally uses native
+/// [color-sacle](http://sass-lang.com/documentation/Sass/Script/Functions.html#scale_color-instance_method)
+/// method.
 /// @name const-color-scale
 /// @type map
 
@@ -79,20 +139,11 @@ $const-color-scale-system: (
   'light': 50,
 ) !default;
 
-/// TBD
-/// @type map
-
-$const-export-groups: () !default;
-
-/// Any property in this map is automatically added to every export item. Properties added via [**export**](#mixin-export) or [**extend**](#mixin-extend) mixins take precedence over defaults.
-/// @name const-export-defaults
-/// @type map
-
-$const-export-defaults-system: (
-  'unique': false,
-) !default;
-
-/// TBD
+/// List of available keys for the [font-weight](#font-weight) function. Note,
+/// this function duplicates the
+/// [postcss-font-weight](https://github.com/jonathantneal/postcss-font-weights)
+/// plugin. If you're using this plugin, there's no need to use this function as
+/// well, use the keyword values directly instead.
 /// @name const-font-weight-scale
 /// @type map
 
@@ -115,7 +166,9 @@ $const-font-weight-scale-system: (
   'heavy': 900,
 ) !default;
 
-/// TBD
+/// List of media breakpoints. The values can be defined either directly as
+/// values or as map of width and height properties. However, if defined as
+/// direct values, some of the media functionality will not be available.
 /// @name const-media-scale
 /// @type map
 
@@ -130,8 +183,27 @@ $const-media-scale-system: (
   ),
 ) !default;
 
-// preserve-defaults
+// ----------
+// MAPS: Similar to section above, however these maps are not affected by the
+// $const-preserve-defaults constant. The default map values are still needed,
+// so `system` suffix is still required.
+// ----------
 
+/// Properties in this map are automatically added to every module. Properties
+/// added via [export](#export) or [extend](#extend) mixins take priority over
+/// defaults.
+/// @name const-export-defaults
+/// @type map
+
+$const-export-defaults-system: (
+  'unique': false,
+) !default;
+
+// ----------
+// PRESERVE-DEFAULTS
+// ----------
+
+// color-keys
 $const-color-keys: map-merge(
   if($const-preserve-defaults, $const-color-keys-system, ()),
   if(
@@ -141,6 +213,7 @@ $const-color-keys: map-merge(
   )
 );
 
+// color-scale
 $const-color-scale: map-merge(
   if($const-preserve-defaults, $const-color-scale-system, ()),
   if(
@@ -150,11 +223,7 @@ $const-color-scale: map-merge(
   )
 );
 
-$const-export-defaults: map-merge(
-  $const-export-defaults-system,
-  if(global-variable-exists(const-export-defaults), $const-export-defaults, ())
-);
-
+// font-weight-scale
 $const-font-weight-scale: map-merge(
   if($const-preserve-defaults, $const-font-weight-scale-system, ()),
   if(
@@ -164,6 +233,7 @@ $const-font-weight-scale: map-merge(
   )
 );
 
+// media-scale
 $const-media-scale: map-merge(
   if($const-preserve-defaults, $const-media-scale-system, ()),
   if(
@@ -171,4 +241,14 @@ $const-media-scale: map-merge(
     $const-media-scale,
     $const-media-scale-system
   )
+);
+
+// ----------
+// MERGE
+// ----------
+
+// export-defaults
+$const-export-defaults: map-merge(
+  $const-export-defaults-system,
+  if(global-variable-exists(const-export-defaults), $const-export-defaults, ())
 );

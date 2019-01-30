@@ -14,7 +14,7 @@
 
   // module selector name
   $selector: interpolate(
-    if($group, $const-template-group-selector, $const-template),
+    if($group, $const-template-group, $const-template),
     $data
   );
 
