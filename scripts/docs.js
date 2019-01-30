@@ -54,12 +54,13 @@ function params(data) {
     ...data.map(param =>
       [
         param.name,
-        `<code>${param.type}</code>`,
+        param.type
+          .split('|')
+          .map(text => `\`${text}\``)
+          .join(' or '),
         param.description,
         param.default || '&ndash;',
-      ]
-        .map(text => text.replace(/\s*\|\s*/, '&#124;'))
-        .join('|')
+      ].join('|')
     ),
   ].join(eol);
 }

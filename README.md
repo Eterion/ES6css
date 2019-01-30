@@ -102,13 +102,13 @@ Returns a property value from export item. Can be used inside a
 get($prop, $name: false, $group: $export-group, $css-custom-properties: false, $data: $system-import)
 ```
 
-| Name                  | Type                          | Description       | Default         |
-| --------------------- | ----------------------------- | ----------------- | --------------- |
-| prop                  | <code>string</code>           | Property name     | &ndash;         |
-| name                  | <code>bool&#124;string</code> | Module name       | false           |
-| group                 | <code>bool&#124;string</code> | Group key         | \$export-group  |
-| css-custom-properties | <code>bool</code>             | Enable var syntax | false           |
-| data                  | <code>map</code>              | Source map        | \$system-import |
+| Name                  | Type               | Description       | Default         |
+| --------------------- | ------------------ | ----------------- | --------------- |
+| prop                  | `string`           | Property name     | &ndash;         |
+| name                  | `bool` or `string` | Module name       | false           |
+| group                 | `bool` or `string` | Group key         | \$export-group  |
+| css-custom-properties | `bool`             | Enable var syntax | false           |
+| data                  | `map`              | Source map        | \$system-import |
 
 ```scss
 element {
@@ -135,10 +135,10 @@ and height properties.
 media($value, $prop: width)
 ```
 
-| Name  | Type                            | Description                                                                 | Default |
-| ----- | ------------------------------- | --------------------------------------------------------------------------- | ------- |
-| value | <code>number&#124;string</code> | Scale or number                                                             | &ndash; |
-| prop  | <code>string</code>             | Determines what value is returned, can be **width**, **height** or **both** | width   |
+| Name  | Type                 | Description                                                                 | Default |
+| ----- | -------------------- | --------------------------------------------------------------------------- | ------- |
+| value | `number` or `string` | Scale or number                                                             | &ndash; |
+| prop  | `string`             | Determines what value is returned, can be **width**, **height** or **both** | width   |
 
 ```scss
 media(desktop) // returns 1680px
@@ -156,9 +156,9 @@ Returns a **\$number** stripped of its unit, if possible.
 clear-unit($number)
 ```
 
-| Name   | Type                | Description  | Default |
-| ------ | ------------------- | ------------ | ------- |
-| number | <code>number</code> | Input number | &ndash; |
+| Name   | Type     | Description  | Default |
+| ------ | -------- | ------------ | ------- |
+| number | `number` | Input number | &ndash; |
 
 ```scss
 clear-unit(16px) // returns 16
@@ -177,12 +177,12 @@ where the **\$list** represents the entire color spectrum.
 color-spectrum($list, $value, $saturation: 100%, $lightness: 50%)
 ```
 
-| Name       | Type                            | Description                                  | Default |
-| ---------- | ------------------------------- | -------------------------------------------- | ------- |
-| list       | <code>list</code>               | List of values that represent color spectrum | &ndash; |
-| value      | <code>number&#124;string</code> | Searched value                               | &ndash; |
-| saturation | <code>number</code>             | Saturation (percent)                         | 100%    |
-| lightness  | <code>number</code>             | Lightness (percent)                          | 50%     |
+| Name       | Type                 | Description                                  | Default |
+| ---------- | -------------------- | -------------------------------------------- | ------- |
+| list       | `list`               | List of values that represent color spectrum | &ndash; |
+| value      | `number` or `string` | Searched value                               | &ndash; |
+| saturation | `number`             | Saturation (percent)                         | 100%    |
+| lightness  | `number`             | Lightness (percent)                          | 50%     |
 
 ```scss
 color-spectrum((0, 1, 2, 3, 4, 5, 6, 7, 8, 9), 2) // returns #aaff00
@@ -204,10 +204,10 @@ customizable through **\$const-color-scale** constant.
 color($color, $scale: false)
 ```
 
-| Name  | Type                           | Description        | Default |
-| ----- | ------------------------------ | ------------------ | ------- |
-| color | <code>color&#124;string</code> | Input color or key | &ndash; |
-| scale | <code>bool&#124;string</code>  | Scale key          | false   |
+| Name  | Type                | Description        | Default |
+| ----- | ------------------- | ------------------ | ------- |
+| color | `color` or `string` | Input color or key | &ndash; |
+| scale | `bool` or `string`  | Scale key          | false   |
 
 ```scss
 color(gray, dark) // returns #4f4f4f
@@ -227,9 +227,9 @@ disabled.
 em-always($number)
 ```
 
-| Name   | Type                | Description  | Default |
-| ------ | ------------------- | ------------ | ------- |
-| number | <code>number</code> | Input number | &ndash; |
+| Name   | Type     | Description  | Default |
+| ------ | -------- | ------------ | ------- |
+| number | `number` | Input number | &ndash; |
 
 ```scss
 em-always(16px) // returns 1em
@@ -252,11 +252,11 @@ regardless of global settings.
 em($number, $unit: em, $ignore-const-relative-units: false)
 ```
 
-| Name                        | Type                             | Description                                                                                                 | Default |
-| --------------------------- | -------------------------------- | ----------------------------------------------------------------------------------------------------------- | ------- |
-| number                      | <code>number</code>              | Input number                                                                                                | &ndash; |
-| unit                        | <code>boolean&#124;string</code> | Returned unit                                                                                               | em      |
-| ignore-const-relative-units | <code>boolean</code>             | Internal option, use [**em-always**](#function-em-always) or [**rem-always**](#function-rem-always) instead | false   |
+| Name                        | Type                  | Description                                                                                                 | Default |
+| --------------------------- | --------------------- | ----------------------------------------------------------------------------------------------------------- | ------- |
+| number                      | `number`              | Input number                                                                                                | &ndash; |
+| unit                        | `boolean` or `string` | Returned unit                                                                                               | em      |
+| ignore-const-relative-units | `boolean`             | Internal option, use [**em-always**](#function-em-always) or [**rem-always**](#function-rem-always) instead | false   |
 
 ```scss
 em(16px) // returns 1em
@@ -279,9 +279,9 @@ plugin.
 font-weight($value)
 ```
 
-| Name  | Type                            | Description         | Default |
-| ----- | ------------------------------- | ------------------- | ------- |
-| value | <code>number&#124;string</code> | Number or scale key | &ndash; |
+| Name  | Type                 | Description         | Default |
+| ----- | -------------------- | ------------------- | ------- |
+| value | `number` or `string` | Number or scale key | &ndash; |
 
 ```scss
 font-weight(regular) // returns 400
@@ -299,9 +299,9 @@ Returns color name of provided input color.
 hue-name($value)
 ```
 
-| Name  | Type                | Description                      | Default |
-| ----- | ------------------- | -------------------------------- | ------- |
-| value | <code>string</code> | Input color, or color-scale key. | &ndash; |
+| Name  | Type     | Description                      | Default |
+| ----- | -------- | -------------------------------- | ------- |
+| value | `string` | Input color, or color-scale key. | &ndash; |
 
 ```scss
 hue-name(#07c) // returns 'blue'
@@ -319,11 +319,11 @@ Insert value at list or map index.
 insert-nth($list, $index, $value)
 ```
 
-| Name  | Type                       | Description         | Default |
-| ----- | -------------------------- | ------------------- | ------- |
-| list  | <code>list&#124;map</code> | Source list or map. | &ndash; |
-| index | <code>number</code>        | Target index.       | &ndash; |
-| value | <code>number&#124;string   | map</code>          | Value.  | &ndash; |
+| Name  | Type                          | Description         | Default |
+| ----- | ----------------------------- | ------------------- | ------- |
+| list  | `list` or `map`               | Source list or map. | &ndash; |
+| index | `number`                      | Target index.       | &ndash; |
+| value | `number` or `string` or `map` | Value.              | &ndash; |
 
 [_Back to top_](#table-of-contents)
 
@@ -337,10 +337,10 @@ Returns input template where placeholders '{n}' are replaced with data from map.
 interpolate($template, $data)
 ```
 
-| Name     | Type                | Description                         | Default |
-| -------- | ------------------- | ----------------------------------- | ------- |
-| template | <code>string</code> | Template string                     | &ndash; |
-| data     | <code>map</code>    | Map of replacement keys with values | &ndash; |
+| Name     | Type     | Description                         | Default |
+| -------- | -------- | ----------------------------------- | ------- |
+| template | `string` | Template string                     | &ndash; |
+| data     | `map`    | Map of replacement keys with values | &ndash; |
 
 [_Back to top_](#table-of-contents)
 
@@ -356,10 +356,10 @@ function, with nested maps support.
 map-deep-get($map, $keys)
 ```
 
-| Name | Type                          | Description           | Default |
-| ---- | ----------------------------- | --------------------- | ------- |
-| map  | <code>map</code>              | Source map            | &ndash; |
-| keys | <code>string&#124;list</code> | Path to requested key | &ndash; |
+| Name | Type               | Description           | Default |
+| ---- | ------------------ | --------------------- | ------- |
+| map  | `map`              | Source map            | &ndash; |
+| keys | `string` or `list` | Path to requested key | &ndash; |
 
 [_Back to top_](#table-of-contents)
 
@@ -374,10 +374,10 @@ from **\$keys** in **\$map** doesn't exists.
 map-filter($map, $keys)
 ```
 
-| Name | Type                          | Description           | Default |
-| ---- | ----------------------------- | --------------------- | ------- |
-| map  | <code>map</code>              | Source map            | &ndash; |
-| keys | <code>string&#124;list</code> | List of filtered keys | &ndash; |
+| Name | Type               | Description           | Default |
+| ---- | ------------------ | --------------------- | ------- |
+| map  | `map`              | Source map            | &ndash; |
+| keys | `string` or `list` | List of filtered keys | &ndash; |
 
 [_Back to top_](#table-of-contents)
 
@@ -392,10 +392,10 @@ sorting keys must be specified.
 map-sort($map, $keys)
 ```
 
-| Name | Type                          | Description                                       | Default |
-| ---- | ----------------------------- | ------------------------------------------------- | ------- |
-| map  | <code>map</code>              | Source map.                                       | &ndash; |
-| keys | <code>string&#124;list</code> | List of keys (only when map item value is a map). | &ndash; |
+| Name | Type               | Description                                       | Default |
+| ---- | ------------------ | ------------------------------------------------- | ------- |
+| map  | `map`              | Source map.                                       | &ndash; |
+| keys | `string` or `list` | List of keys (only when map item value is a map). | &ndash; |
 
 [_Back to top_](#table-of-contents)
 
@@ -411,9 +411,9 @@ disabled.
 rem-always($number)
 ```
 
-| Name   | Type                | Description  | Default |
-| ------ | ------------------- | ------------ | ------- |
-| number | <code>number</code> | Input number | &ndash; |
+| Name   | Type     | Description  | Default |
+| ------ | -------- | ------------ | ------- |
+| number | `number` | Input number | &ndash; |
 
 ```scss
 rem-always(16px) // returns 1rem
@@ -436,9 +436,9 @@ regardless of global settings.
 rem($number)
 ```
 
-| Name   | Type                | Description  | Default |
-| ------ | ------------------- | ------------ | ------- |
-| number | <code>number</code> | Input number | &ndash; |
+| Name   | Type     | Description  | Default |
+| ------ | -------- | ------------ | ------- |
+| number | `number` | Input number | &ndash; |
 
 ```scss
 rem(16px) // returns 1rem
@@ -457,11 +457,11 @@ Replaces all occurences of **\$search** substring with **\$replace** in
 str-replace($string, $search, $replace: '')
 ```
 
-| Name    | Type                | Description          | Default |
-| ------- | ------------------- | -------------------- | ------- |
-| string  | <code>string</code> | Initial string       | &ndash; |
-| search  | <code>string</code> | Substring to replace | &ndash; |
-| replace | <code>string</code> | New value            | ''      |
+| Name    | Type     | Description          | Default |
+| ------- | -------- | -------------------- | ------- |
+| string  | `string` | Initial string       | &ndash; |
+| search  | `string` | Substring to replace | &ndash; |
+| replace | `string` | New value            | ''      |
 
 [_Back to top_](#table-of-contents)
 
@@ -476,9 +476,9 @@ affect the input value if a class selector is already present.
 to-class($class)
 ```
 
-| Name  | Type                | Description | Default |
-| ----- | ------------------- | ----------- | ------- |
-| class | <code>string</code> | Class name  | &ndash; |
+| Name  | Type     | Description | Default |
+| ----- | -------- | ----------- | ------- |
+| class | `string` | Class name  | &ndash; |
 
 ```scss
 to-class(element) // returns .element
@@ -497,9 +497,9 @@ the input value if a id selector is already present.
 to-id($id)
 ```
 
-| Name | Type                | Description | Default |
-| ---- | ------------------- | ----------- | ------- |
-| id   | <code>string</code> | Id name     | &ndash; |
+| Name | Type     | Description | Default |
+| ---- | -------- | ----------- | ------- |
+| id   | `string` | Id name     | &ndash; |
 
 ```scss
 to-id(element) // returns #element
@@ -521,9 +521,9 @@ original input value.
 to-unicode($value)
 ```
 
-| Name  | Type                | Description | Default |
-| ----- | ------------------- | ----------- | ------- |
-| value | <code>string</code> | Value       | &ndash; |
+| Name  | Type     | Description | Default |
+| ----- | -------- | ----------- | ------- |
+| value | `string` | Value       | &ndash; |
 
 ```scss
 to-unicode('e655') // returns '\e655'
@@ -547,12 +547,12 @@ need to modify already existing item.
 export($name, $props: false, $group: $export-group, $defaults: $const-export-defaults)
 ```
 
-| Name     | Type                       | Description        | Default                 |
-| -------- | -------------------------- | ------------------ | ----------------------- |
-| name     | <code>string</code>        | Module name        | &ndash;                 |
-| props    | <code>bool&#124;map</code> | Property map       | false                   |
-| group    | <code>string</code>        | Group key          | \$export-group          |
-| defaults | <code>map</code>           | Default properties | \$const-export-defaults |
+| Name     | Type            | Description        | Default                 |
+| -------- | --------------- | ------------------ | ----------------------- |
+| name     | `string`        | Module name        | &ndash;                 |
+| props    | `bool` or `map` | Property map       | false                   |
+| group    | `string`        | Group key          | \$export-group          |
+| defaults | `map`           | Default properties | \$const-export-defaults |
 
 ```scss
 @include export(component-name, (...));
@@ -572,11 +572,11 @@ Throws an error if **\$name** in a **\$group** doesn't exists.
 extend($name, $props: false, $group: $export-group)
 ```
 
-| Name  | Type                       | Description  | Default        |
-| ----- | -------------------------- | ------------ | -------------- |
-| name  | <code>string</code>        | Module name  | &ndash;        |
-| props | <code>bool&#124;map</code> | Property map | false          |
-| group | <code>string</code>        | Group key    | \$export-group |
+| Name  | Type            | Description  | Default        |
+| ----- | --------------- | ------------ | -------------- |
+| name  | `string`        | Module name  | &ndash;        |
+| props | `bool` or `map` | Property map | false          |
+| group | `string`        | Group key    | \$export-group |
 
 ```scss
 @include extend(component-name, (...));
@@ -600,10 +600,10 @@ This mixin allows extra content to be passed (through `@content` directive).
 import($name, $group: $export-group)
 ```
 
-| Name  | Type                | Description | Default        |
-| ----- | ------------------- | ----------- | -------------- |
-| name  | <code>string</code> | Module name | &ndash;        |
-| group | <code>string</code> | Group key   | \$export-group |
+| Name  | Type     | Description | Default        |
+| ----- | -------- | ----------- | -------------- |
+| name  | `string` | Module name | &ndash;        |
+| group | `string` | Group key   | \$export-group |
 
 ```scss
 @include import(component-name) { ... }
@@ -627,10 +627,10 @@ This mixin allows extra content to be passed (through `@content` directive).
 props($name, $group: $export-group)
 ```
 
-| Name  | Type                | Description | Default        |
-| ----- | ------------------- | ----------- | -------------- |
-| name  | <code>string</code> | Module name | &ndash;        |
-| group | <code>string</code> | Group key   | \$export-group |
+| Name  | Type     | Description | Default        |
+| ----- | -------- | ----------- | -------------- |
+| name  | `string` | Module name | &ndash;        |
+| group | `string` | Group key   | \$export-group |
 
 ```scss
 @include props(component-name) { ... }
@@ -655,13 +655,13 @@ This mixin allows extra content to be passed (through `@content` directive).
 media-between($lower, $upper, $prop: width, $operator: and, $direction: $const-media-direction)
 ```
 
-| Name      | Type                            | Description                                                                 | Default                 |
-| --------- | ------------------------------- | --------------------------------------------------------------------------- | ----------------------- |
-| lower     | <code>number&#124;string</code> | Scale or number                                                             | &ndash;                 |
-| upper     | <code>number&#124;string</code> | Scale or number                                                             | &ndash;                 |
-| prop      | <code>string</code>             | Determines what value is returned, can be **width**, **height** or **both** | width                   |
-| operator  | <code>string</code>             | Determines relationship between width and height, can be **and** or **or**  | and                     |
-| direction | <code>string</code>             | Determines the direction for media query, can be **up** or **down**         | \$const-media-direction |
+| Name      | Type                 | Description                                                                 | Default                 |
+| --------- | -------------------- | --------------------------------------------------------------------------- | ----------------------- |
+| lower     | `number` or `string` | Scale or number                                                             | &ndash;                 |
+| upper     | `number` or `string` | Scale or number                                                             | &ndash;                 |
+| prop      | `string`             | Determines what value is returned, can be **width**, **height** or **both** | width                   |
+| operator  | `string`             | Determines relationship between width and height, can be **and** or **or**  | and                     |
+| direction | `string`             | Determines the direction for media query, can be **up** or **down**         | \$const-media-direction |
 
 ```scss
 @include media-between(phone, desktop) { ... }
@@ -686,12 +686,12 @@ This mixin allows extra content to be passed (through `@content` directive).
 media-only($scale, $prop: width, $operator: and, $direction: $const-media-direction)
 ```
 
-| Name      | Type                | Description                                                                 | Default                 |
-| --------- | ------------------- | --------------------------------------------------------------------------- | ----------------------- |
-| scale     | <code>string</code> | Scale                                                                       | &ndash;                 |
-| prop      | <code>string</code> | Determines what value is returned, can be **width**, **height** or **both** | width                   |
-| operator  | <code>string</code> | Determines relationship between width and height, can be **and** or **or**  | and                     |
-| direction | <code>string</code> | Determines the direction for media query, can be **up** or **down**         | \$const-media-direction |
+| Name      | Type     | Description                                                                 | Default                 |
+| --------- | -------- | --------------------------------------------------------------------------- | ----------------------- |
+| scale     | `string` | Scale                                                                       | &ndash;                 |
+| prop      | `string` | Determines what value is returned, can be **width**, **height** or **both** | width                   |
+| operator  | `string` | Determines relationship between width and height, can be **and** or **or**  | and                     |
+| direction | `string` | Determines the direction for media query, can be **up** or **down**         | \$const-media-direction |
 
 ```scss
 @include media-only(phone) { ... }
@@ -716,12 +716,12 @@ This mixin allows extra content to be passed (through `@content` directive).
 media-up-from($scale, $prop: width, $operator: and, $direction: $const-media-direction)
 ```
 
-| Name      | Type                            | Description                                                                 | Default                 |
-| --------- | ------------------------------- | --------------------------------------------------------------------------- | ----------------------- |
-| scale     | <code>number&#124;string</code> | Scale or number                                                             | &ndash;                 |
-| prop      | <code>string</code>             | Determines what value is returned, can be **width**, **height** or **both** | width                   |
-| operator  | <code>string</code>             | Determines relationship between width and height, can be **and** or **or**  | and                     |
-| direction | <code>string</code>             | Determines the direction for media query, can be **up** or **down**         | \$const-media-direction |
+| Name      | Type                 | Description                                                                 | Default                 |
+| --------- | -------------------- | --------------------------------------------------------------------------- | ----------------------- |
+| scale     | `number` or `string` | Scale or number                                                             | &ndash;                 |
+| prop      | `string`             | Determines what value is returned, can be **width**, **height** or **both** | width                   |
+| operator  | `string`             | Determines relationship between width and height, can be **and** or **or**  | and                     |
+| direction | `string`             | Determines the direction for media query, can be **up** or **down**         | \$const-media-direction |
 
 ```scss
 @include media-up-from(phone) { ... }
@@ -746,12 +746,12 @@ This mixin allows extra content to be passed (through `@content` directive).
 media-up-to($scale, $prop: width, $operator: and, $direction: $const-media-direction)
 ```
 
-| Name      | Type                            | Description                                                                 | Default                 |
-| --------- | ------------------------------- | --------------------------------------------------------------------------- | ----------------------- |
-| scale     | <code>number&#124;string</code> | Scale or number                                                             | &ndash;                 |
-| prop      | <code>string</code>             | Determines what value is returned, can be **width**, **height** or **both** | width                   |
-| operator  | <code>string</code>             | Determines relationship between width and height, can be **and** or **or**  | and                     |
-| direction | <code>string</code>             | Determines the direction for media query, can be **up** or **down**         | \$const-media-direction |
+| Name      | Type                 | Description                                                                 | Default                 |
+| --------- | -------------------- | --------------------------------------------------------------------------- | ----------------------- |
+| scale     | `number` or `string` | Scale or number                                                             | &ndash;                 |
+| prop      | `string`             | Determines what value is returned, can be **width**, **height** or **both** | width                   |
+| operator  | `string`             | Determines relationship between width and height, can be **and** or **or**  | and                     |
+| direction | `string`             | Determines the direction for media query, can be **up** or **down**         | \$const-media-direction |
 
 ```scss
 @include media-up-to(phone) { ... }
@@ -791,9 +791,9 @@ This mixin allows extra content to be passed (through `@content` directive).
 has-class($list)
 ```
 
-| Name | Type                          | Description         | Default |
-| ---- | ----------------------------- | ------------------- | ------- |
-| list | <code>string&#124;list</code> | List of class names | &ndash; |
+| Name | Type               | Description         | Default |
+| ---- | ------------------ | ------------------- | ------- |
+| list | `string` or `list` | List of class names | &ndash; |
 
 ```scss
 @include has-class(is-open, is-active) { ... }
@@ -817,10 +817,10 @@ plugin.
 size($size, $method: rem)
 ```
 
-| Name   | Type                          | Description                                                               | Default |
-| ------ | ----------------------------- | ------------------------------------------------------------------------- | ------- |
-| size   | <code>number&#124;list</code> | Size, or space separated list of width and height (set **false** to skip) | &ndash; |
-| method | <code>bool&#124;string</code> | Function called on the value, use **em** or **rem**                       | rem     |
+| Name   | Type               | Description                                                               | Default |
+| ------ | ------------------ | ------------------------------------------------------------------------- | ------- |
+| size   | `number` or `list` | Size, or space separated list of width and height (set **false** to skip) | &ndash; |
+| method | `bool` or `string` | Function called on the value, use **em** or **rem**                       | rem     |
 
 ```scss
 @include size(640px 4/3);
@@ -839,10 +839,10 @@ properties with identical options.
 transition($options, $properties)
 ```
 
-| Name       | Type                          | Description                         | Default |
-| ---------- | ----------------------------- | ----------------------------------- | ------- |
-| options    | <code>string</code>           | Options applied to every transition | &ndash; |
-| properties | <code>string&#124;list</code> | List of properties                  | &ndash; |
+| Name       | Type               | Description                         | Default |
+| ---------- | ------------------ | ----------------------------------- | ------- |
+| options    | `string`           | Options applied to every transition | &ndash; |
+| properties | `string` or `list` | List of properties                  | &ndash; |
 
 ```scss
 @include transition(300ms, width, height);
@@ -852,5 +852,5 @@ transition($options, $properties)
 
 ---
 
-**Last Updated:** Wed Jan 30 2019 09:56:15 GMT+0100 (Central European Standard
+**Last Updated:** Wed Jan 30 2019 09:58:56 GMT+0100 (Central European Standard
 Time)
