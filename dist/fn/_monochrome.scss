@@ -1,13 +1,23 @@
+/// Returns monochrome color scale where index with number 0 is the lightest.
+/// @param {color|string} $value - Color value or key.
+/// @param {number} $index - Color index in the monochrome scale.
+/// @param {boolean|string} $desaturate [false] - Saturation level, can be set to **black**, **gray** or **false**.
+/// @param {number} $steps - Number of monochrome steps.
+
 @function monochrome(
-  $key,
+  $value,
   $index,
   $desaturate: false,
   $steps: $const-monochrome-steps
 ) {
-  $color: color($key);
+  $color: color($value);
+
+  // Color properties.
   $hue: hue($color);
   $saturation: saturation($color);
   $lightness: lightness($color);
+
+  // Set saturation level when desaturate parameter is in use.
   @if ($desaturate) {
     @if ($desaturate == 'black') {
       $saturation: 0%;
@@ -15,24 +25,30 @@
       $saturation: percentage(1 / 8) - ($steps - $index - 1) * 0.475;
     }
   }
-  // tint (white)
+
+  // Tint: set saturation and lightness with rising index number.
   @if ($index < $steps / 2) {
     @if (not $desaturate) {
       $saturation: $lightness * 1.6;
     }
+
     $edge: (100 - $lightness) / $steps;
     $lightness-step: (100 - $lightness - 2 * $edge) / ($steps / 2);
     $lightness: 100 - $edge - $index * $lightness-step;
   }
-  // shade (black)
+
+  // Shaed: set lightness with rising index number.
   @else if($index > $steps / 2) {
     $shade-index: $index - $steps / 2;
     $lightness-step: $lightness / ($steps - 1);
     $modifier: 1 - (((0.125 + 1 / $steps) / ($steps / 2)) * $shade-index);
     $lightness: ($lightness - $lightness-step * $shade-index) * $modifier;
+
     @if ($desaturate == 'black') {
       $lightness: $lightness * 0.85;
     }
   }
+
+  // Return
   @return hsl($hue, $saturation, $lightness);
 }

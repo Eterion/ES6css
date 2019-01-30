@@ -1,50 +1,55 @@
+/// Computes color palette based on a single color. The returned value is different based on provided parameters. If no **name** and **index** is provided, the function returns map of the entire color palette. If **name** is provided, but no **index**, the function returns list of monochrome colors for that specific hue name. If **name** and **index** is provided, only that specific color is returned.
+/// @param {color|string} $value - Color value or key.
+/// @param {boolean|string} $name [false] - Hue name.
+/// @param {boolean|number} $index [false] - Color index in the monochrome scale.
+/// @param {number} $monochrome-steps [$const-monochrome-steps] - Number of monochrome steps.
+
 @function palette(
-  $key,
+  $value,
   $name: false,
   $index: false,
-  $steps: $const-monochrome-steps
+  $monochrome-steps: $const-monochrome-steps
 ) {
+  $color: color($value);
   $palette: ();
-  $color: color($key);
+
+  // Color properties.
   $hue: hue($color);
   $saturation: saturation($color);
   $lightness: lightness($color);
-  $spectrum: (
-    'orange',
-    'yellow',
-    'lime',
-    'green',
-    'teal',
-    'cyan',
-    'blue',
-    'indigo',
-    'violet',
-    'fuchsia',
-    'pink',
-    'red'
-  );
-  $shift: round(($hue - 2) / 30) * 30 - $hue;
-  // black and gray
-  @each $name in ('black', 'gray') {
+
+  // Compute black and gray scales.
+  @each $desaturate in ('black', 'gray') {
     $values: ();
-    @for $i from 0 to $steps {
-      $values: append($values, monochrome($color, $i, $desaturate: $name));
-    }
-    $palette: map-merge($palette, (#{$name}: $values));
-  }
-  // spectrum
-  @each $name in $spectrum {
-    $values: ();
-    @for $i from 0 to $steps {
+    @for $i from 0 to $monochrome-steps {
       $values: append(
         $values,
-        monochrome(
-          hsl(index($spectrum, $name) * 30 + $shift, $saturation, $lightness),
-          $i
-        )
+        monochrome($color, $i, $desaturate: $desaturate)
       );
     }
-    $palette: map-merge($palette, (#{$name}: $values));
+    $palette: map-merge($palette, (#{$desaturate}: $values));
   }
+
+  // Compute spectrum monochrome scales.
+  @for $i from 1 to length($system-color-spectrum) {
+    $base: hsl(($i * 30 + $hue) % 360, $saturation, $lightness);
+    $values: ();
+    @for $k from 0 to $monochrome-steps {
+      $values: append($values, monochrome($base, $k));
+    }
+    $palette: map-merge($palette, (#{hue-name($base)}: $values));
+  }
+
+  // Monochrome scale with specific name.
+  @if ($name) {
+    $palette: map-get($palette, inspect($name));
+  }
+
+  // Spcific color with index.
+  @if ($index) {
+    $palette: nth($palette, $index + 1);
+  }
+
+  // Return
   @return $palette;
 }
