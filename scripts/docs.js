@@ -58,7 +58,7 @@ function params(data) {
         param.description,
         param.default || '&ndash;',
       ]
-        .map(text => text.replace(/\s*\|\s*/, ' &#124; '))
+        .map(text => text.replace(/\s*\|\s*/, '&#124;'))
         .join('|')
     ),
   ].join(eol);
