@@ -4,7 +4,7 @@ import sassdoc from 'sassdoc';
 
 const eol = '\n';
 const hr = /\-{3}/;
-const top = '[_Back to top_](#table-of-contents)';
+const top = '[_Back to top_](#contents)';
 
 /**
  * Returns markdown string for code block.
@@ -56,13 +56,25 @@ function params(data) {
         param.name,
         param.type
           .split('|')
-          .map(text => `\`${text}\``)
+          .map(text => `\`${text.trim()}\``)
           .join(' or '),
         param.description,
         param.default || '&ndash;',
       ].join('|')
     ),
   ].join(eol);
+}
+
+/**
+ * Sort function for documentation items.
+ * @param {object} a Current.
+ * @param {object} b Next.
+ */
+
+function sort(a, b) {
+  if (a.context.name < b.context.name) return -1;
+  if (a.context.name > b.context.name) return 1;
+  return 0;
 }
 
 // Read contents of README.md and extract only static text.
@@ -90,85 +102,90 @@ new Promise((resolve, reject) => {
 
   // Resolve data for readme file.
   .then(({ readme, docs }) => {
-    // console.log(docs.filter(({ context }) => context.type === 'mixin'));
+    const variables = docs
+      .filter(({ context }) => context.type === 'variable')
+      .sort(sort);
+    const functions = docs
+      .filter(({ context }) => context.type === 'function')
+      .sort(sort);
+    const mixins = docs
+      .filter(({ context }) => context.type === 'mixin')
+      .sort(sort);
     return [
       readme,
       '---',
-      '## Table of Contents',
+      '## Contents',
       [
         '- [Variables](#variables)',
-        ...docs
-          .filter(({ context }) => context.type === 'variable')
-          .map(({ context }) => `  - [${context.name}](#${context.name})`),
+        ...variables.map(
+          ({ context }) => `  - [${context.name}](#${context.name})`
+        ),
         '- [Functions](#functions)',
-        ...docs
-          .filter(({ context }) => context.type === 'function')
-          .map(({ context }) => `  - [${context.name}](#${context.name})`),
+        ...functions.map(
+          ({ context }) => `  - [${context.name}](#${context.name})`
+        ),
         '- [Mixins](#mixins)',
-        ...docs
-          .filter(({ context }) => context.type === 'mixin')
-          .map(({ context }) => `  - [${context.name}](#${context.name})`),
+        ...mixins.map(
+          ({ context }) => `  - [${context.name}](#${context.name})`
+        ),
       ].join(eol),
       '## Variables',
-      ...docs
-        .filter(({ context }) => context.type === 'variable')
-        .map(({ context, description, type }) =>
-          [
-            `### ${context.name}`,
-            `Type: \`${type}\``,
-            description,
-            code(
-              `$${context.name}: ${context.value}${
-                context.scope === 'default' ? ' !default' : ''
-              };`
-            ),
-            top,
-          ]
-            .filter(Boolean)
-            .map(text => text.trim())
-            .join(eol.repeat(2))
-        ),
+      ...variables.map(({ context, description, type }) =>
+        [
+          `### ${context.name}`,
+          `Type: ${type
+            .split('|')
+            .map(text => `\`${text.trim()}\``)
+            .join(' or ')}`,
+          description,
+          code(
+            `$${context.name}: ${context.value}${
+              context.scope === 'default' ? ' !default' : ''
+            };`
+          ),
+          top,
+        ]
+          .filter(Boolean)
+          .map(text => text.trim())
+          .join(eol.repeat(2))
+      ),
       '## Functions',
-      ...docs
-        .filter(({ context }) => context.type === 'function')
-        .map(({ context, description, example, parameter }) =>
-          [
-            `### ${context.name}`,
-            'Type: `Function`',
-            description,
-            def(context.name, parameter),
-            parameter ? params(parameter) : false,
-            ...(example
-              ? example.map(data => code(data.code, { lang: data.type }))
-              : []),
-            top,
-          ]
-            .filter(Boolean)
-            .map(text => text.trim())
-            .join(eol.repeat(2))
-        ),
+      ...functions.map(({ context, description, example, parameter }) =>
+        [
+          `### ${context.name}`,
+          'Type: `Function`',
+          description,
+          def(context.name, parameter),
+          parameter ? params(parameter) : false,
+          ...(example
+            ? example.map(data => code(data.code, { lang: data.type }))
+            : []),
+          top,
+        ]
+          .filter(Boolean)
+          .map(text => text.trim())
+          .join(eol.repeat(2))
+      ),
       '## Mixins',
-      ...docs
-        .filter(({ context }) => context.type === 'mixin')
-        .map(({ content, context, description, example, parameter }) =>
-          [
-            `### ${context.name}`,
-            'Type: `Mixin`',
-            description,
-            typeof content !== 'undefined'
-              ? 'This mixin allows extra content to be passed (through `@content` directive).'
-              : false,
-            def(context.name, parameter),
-            parameter ? params(parameter) : false,
-            ...(example
-              ? example.map(data => code(data.code, { lang: data.type }))
-              : []),
-            top,
-          ]
-            .filter(Boolean)
-            .map(text => text.trim())
-            .join(eol.repeat(2))
-        ),
+      ...mixins.map(({ content, context, description, example, parameter }) =>
+        [
+          `### ${context.name}`,
+          'Type: `Mixin`',
+          description,
+          typeof content !== 'undefined'
+            ? 'This mixin allows extra content to be passed (through `@content` directive).'
+            : false,
+          def(context.name, parameter),
+          parameter ? params(parameter) : false,
+          ...(example
+            ? example.map(data => code(data.code, { lang: data.type }))
+            : []),
+          top,
+        ]
+          .filter(Boolean)
+          .map(text => text.trim())
+          .join(eol.repeat(2))
+      ),
       '---',
       `**Last Updated:** ${new Date()}`,
     ]
