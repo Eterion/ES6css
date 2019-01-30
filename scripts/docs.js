@@ -150,16 +150,13 @@ new Promise((resolve, reject) => {
           .join(eol.repeat(2))
       ),
       '## Functions',
-      ...functions.map(({ context, description, example, parameter }) =>
+      ...functions.map(({ context, description, parameter }) =>
         [
           `### ${context.name}`,
           'Type: `Function`',
           description,
           def(context.name, parameter),
           parameter ? params(parameter) : false,
-          ...(example
-            ? example.map(data => code(data.code, { lang: data.type }))
-            : []),
           top,
         ]
           .filter(Boolean)
@@ -167,7 +164,7 @@ new Promise((resolve, reject) => {
           .join(eol.repeat(2))
       ),
       '## Mixins',
-      ...mixins.map(({ content, context, description, example, parameter }) =>
+      ...mixins.map(({ content, context, description, parameter }) =>
         [
           `### ${context.name}`,
           'Type: `Mixin`',
@@ -177,9 +174,6 @@ new Promise((resolve, reject) => {
             : false,
           def(context.name, parameter),
           parameter ? params(parameter) : false,
-          ...(example
-            ? example.map(data => code(data.code, { lang: data.type }))
-            : []),
           top,
         ]
           .filter(Boolean)
