@@ -4,6 +4,7 @@ import sassdoc from 'sassdoc';
 
 const eol = '\n';
 const hr = /\-{3}/;
+const top = '[_Back to top_](#table-of-contents)';
 
 /**
  * Returns markdown string for code block.
@@ -53,11 +54,11 @@ function params(data) {
     ...data.map(param =>
       [
         param.name,
-        `\`${param.type}\``,
+        `<code>${param.type}</code>`,
         param.description,
         param.default || '&ndash;',
       ]
-        .map(text => text.replace(/\s*\|\s*/, ' | '))
+        .map(text => text.replace(/\s*\|\s*/, ' &#124; '))
         .join('|')
     ),
   ].join(eol);
@@ -120,7 +121,7 @@ new Promise((resolve, reject) => {
                 context.scope === 'default' ? ' !default' : ''
               };`
             ),
-            '[Back to top](#table-of-contents)',
+            top,
           ]
             .filter(Boolean)
             .map(text => text.trim())
@@ -132,13 +133,14 @@ new Promise((resolve, reject) => {
         .map(({ context, description, example, parameter }) =>
           [
             `### ${context.name}`,
+            'Type: `Function`',
             description,
             def(context.name, parameter),
             parameter ? params(parameter) : false,
             ...(example
               ? example.map(data => code(data.code, { lang: data.type }))
               : []),
-            '[Back to top](#table-of-contents)',
+            top,
           ]
             .filter(Boolean)
             .map(text => text.trim())
@@ -147,16 +149,20 @@ new Promise((resolve, reject) => {
       '## Mixins',
       ...docs
         .filter(({ context }) => context.type === 'mixin')
-        .map(({ context, description, example, parameter }) =>
+        .map(({ content, context, description, example, parameter }) =>
           [
             `### ${context.name}`,
+            'Type: `Mixin`',
             description,
+            typeof content !== 'undefined'
+              ? 'This mixin allows extra content to be passed (through `@content` directive).'
+              : false,
             def(context.name, parameter),
             parameter ? params(parameter) : false,
             ...(example
               ? example.map(data => code(data.code, { lang: data.type }))
               : []),
-            '[Back to top](#table-of-contents)',
+            top,
           ]
             .filter(Boolean)
             .map(text => text.trim())
