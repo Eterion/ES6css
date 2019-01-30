@@ -19,6 +19,7 @@
   "scripts": {
     "clean": "del-cli \"docs/.vuepress/dist\"",
     "demo": "node-sass \"demo\" -o \"demo\" --output-style expanded",
+    "docs": "node -r @babel/register \"scripts/docs\"",
     "lint": "stylelint \"**/*.scss\" --fix",
     "prettier": "prettier --write \"**/*.{js,scss,md}\"",
     "test": "mocha -r @babel/register"
@@ -36,6 +37,7 @@
     "path": "^0.12.7",
     "prettier": "^1.16.1",
     "sass-true": "^4.0.0",
+    "sassdoc": "^2.5.1",
     "stylelint": "^9.10.1",
     "stylelint-config-prettier": "^4.0.0"
   }
