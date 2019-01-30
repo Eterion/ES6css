@@ -133,10 +133,14 @@ new Promise((resolve, reject) => {
       ...variables.map(({ context, description, type }) =>
         [
           `### ${context.name}`,
-          `Type: ${type
-            .split('|')
-            .map(text => `\`${text.trim()}\``)
-            .join(' or ')}`,
+          [
+            `- Type: ${type
+              .split('|')
+              .map(text => `\`${text.trim()}\``)
+              .join(' or ')}`,
+          ]
+            .filter(Boolean)
+            .join(eol),
           description,
           code(
             `$${context.name}: ${context.value}${
@@ -153,7 +157,7 @@ new Promise((resolve, reject) => {
       ...functions.map(({ context, description, parameter }) =>
         [
           `### ${context.name}`,
-          'Type: `Function`',
+          ['- Type: `Function`'].filter(Boolean).join(eol),
           description,
           def(context.name, parameter),
           parameter ? params(parameter) : false,
@@ -167,11 +171,15 @@ new Promise((resolve, reject) => {
       ...mixins.map(({ content, context, description, parameter }) =>
         [
           `### ${context.name}`,
-          'Type: `Mixin`',
+          [
+            '- Type: `Mixin`',
+            typeof content !== 'undefined'
+              ? '- Content: `true` (through `@content` directive)'
+              : false,
+          ]
+            .filter(Boolean)
+            .join(eol),
           description,
-          typeof content !== 'undefined'
-            ? 'This mixin allows extra content to be passed (through `@content` directive).'
-            : false,
           def(context.name, parameter),
           parameter ? params(parameter) : false,
           top,
