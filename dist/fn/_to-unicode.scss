@@ -4,6 +4,11 @@
 /// @example to-unicode('e655') // returns '\e655'
 
 @function to-unicode($value) {
+  // convert: space
+  @if ($value == ' ') {
+    $value: '00a0';
+  }
+
   // detect unicode
   @if (str-length($value) == 4) {
     // individual characters
