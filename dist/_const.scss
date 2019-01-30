@@ -128,7 +128,7 @@ $const-color-keys-system: (
 /// List of scale keys for the [color](#color) function used as second argument.
 /// The nummber (positive or negative value) represents percentage of lightness
 /// relative to the original source color. Internally uses native
-/// [color-sacle](http://sass-lang.com/documentation/Sass/Script/Functions.html#scale_color-instance_method)
+/// [color-scale](http://sass-lang.com/documentation/Sass/Script/Functions.html#scale_color-instance_method)
 /// method.
 /// @name const-color-scale
 /// @type map
