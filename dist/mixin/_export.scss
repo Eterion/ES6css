@@ -4,14 +4,14 @@
 /// @param {string} $name - Module name
 /// @param {bool|map} $props [false] - Property map
 /// @param {string} $group [$export-group] - Group key
-/// @param {map} $defaults [$export-defaults] - Default properties
+/// @param {map} $defaults [$const-export-defaults] - Default properties
 /// @example @include export(component-name, ( ... ))
 
 @mixin export(
   $name,
   $props: false,
   $group: if(global-variable-exists(export-group), $export-group, false),
-  $defaults: $export-defaults
+  $defaults: $const-export-defaults
 ) {
   // already exists
   $id: map-get(compute-props($name, $group), id);

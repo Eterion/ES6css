@@ -1,1 +1,12 @@
 $const-export-groups: () !default;
+
+/// Any property in this map is automatically added to every export item. Properties added via [**export**](#mixin-export) or [**extend**](#mixin-extend) mixins take precedence over defaults.
+/// @access public
+/// @type Map
+
+$const-export-defaults: map-merge(
+  (
+    'unique': false,
+  ),
+  if(global-variable-exists(const-export-defaults), $const-export-defaults, ())
+);
