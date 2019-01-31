@@ -1,4 +1,5 @@
-/// Returns a **$id** string converted to id selector if possible. Doesn't affect the input value if a id selector is already present.
+/// Returns a **id** string converted to id selector, if possible. Doesn't
+/// affect the input value if a id selector is already present.
 /// @access public
 /// @param {string} $id - Id name
 /// @example to-id(element) // returns #element

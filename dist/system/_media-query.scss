@@ -1,8 +1,12 @@
-// This function is internal, and is intentionaly not documented. Returns
-// properly calculated media query strings for use in media query. The $prop
-// argument determines what value is returned, accepts "width", "height" or
-// "both" values. The $operator arguments is used to generate media query
-// strings, accepts "and" (default) or "or".
+/// Returns properly calculated media query strings for use in media query. The
+/// **prop* parameter determines what value is returned. The **operator**
+/// parameter is used to generate media query strings.
+/// @access private
+/// @param {string} $min-max - (min, max)
+/// @param {number} $value - Number value
+/// @param {string} $prop [width] - (width, height, both)
+/// @param {string} $operator [and] - (and, or)
+/// @param {string} $direction [$const-media-direction] - (down, up)
 
 @function media-query(
   $min-max,
@@ -17,6 +21,7 @@
     0,
     if($direction == down, -1, 1)
   );
+
   // Returns media query string composed of width and height property based on
   // provided arguments. Values are subtracted based on media direction
   // constant.
@@ -26,6 +31,7 @@
     $str-operator: if($operator == and, ' and ', ', ');
     @return '#{$str-width}#{$str-operator}#{$str-height}';
   }
+
   // width, height
   @else {
     @return '(#{$min-max}-#{$prop}: #{media($value, $prop) + if($direction, $reduction, 0)})';

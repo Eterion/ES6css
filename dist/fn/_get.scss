@@ -1,12 +1,13 @@
-/// Returns a property value from export item. Can be used inside a [**import**](#mixin-import) mixin without **$name** and **$group** parameters.
-/// @group export
+/// Returns a property value from imported module item. When used inside
+/// [import](#import) mixin, parameters **name** and **group** are automatically
+/// inferred.
 /// @access public
 /// @param {string} $prop - Property name
 /// @param {bool|string} $name [false] - Module name
 /// @param {bool|string} $group [$export-group] - Group key
 /// @param {bool} $css-custom-properties [false] - Enable var syntax
 /// @param {map} $data [$system-import] - Source map
-/// @example element { height: rem(get(height) / 2); }
+/// @example element { height: get(height); }
 
 @function get(
   $prop,

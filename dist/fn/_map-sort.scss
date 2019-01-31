@@ -1,7 +1,8 @@
-/// Sort map (ascending) according to its value. If the value is a map, requested sorting keys must be specified.
+/// Sort map (ascending) according to its value. If the value is a map, sort
+/// keys must be specified.
 /// @access public
-/// @param {map} $map - Source map.
-/// @param {string|list} $keys - List of keys (only when map item value is a map).
+/// @param {map} $map - Source map
+/// @param {string|list} $keys - Sort by nested key, if possible
 
 @function map-sort($map, $keys...) {
   // Not a map

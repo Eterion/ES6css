@@ -1,4 +1,6 @@
-/// This function is identical to [**rem**](#function-rem) function, except it will always convert to relative units, even if **$const-relative-units** are disabled.
+/// This function is identical to [rem](#rem) function, except it will always
+/// convert to relative units, event if [relative-units](#const-relative-units)
+/// is disabled.
 /// @access public
 /// @param {number} $number - Input number
 /// @example rem-always(16px) // returns 1rem

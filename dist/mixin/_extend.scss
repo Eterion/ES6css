@@ -1,5 +1,6 @@
-/// Extends already existing item created via [**export**](#mixin-export) mixin. Properties in the extend mixin takes precedence over already existing ones. Throws an error if **$name** in a **$group** doesn't exists.
-/// @group export
+/// Extends already existing module item created via [export](#export) mixin.
+/// Properties in the extends mixin take priority over already existing ones.
+/// Throws an error if **name** in **group** doesn't exists.
 /// @access public
 /// @param {string} $name - Module name
 /// @param {bool|map} $props [false] - Property map

@@ -1,5 +1,8 @@
-/// Extracts an item, previously defined via [**export**](#mixin-export) mixin, and allows the use of [**get**](#function-get) function without the need of specified group. This mixin is internally used by [**import**](#mixin-import) mixin. Unlike the [**import**](#mixin-import), this mixin doen't automatically adds generated selector.
-/// @group export
+/// Extracts an module item, previously defined via [export](#export) mixin, and
+/// allows the use of [get](#get) function without the need of specified group.
+/// This mixin is internally used by [import](#import) mixin, however unlike
+/// [import](#import) mixin, this mixin doesn't automatically adds generated
+/// selector.
 /// @access public
 /// @param {string} $name - Module name
 /// @param {string} $group [$export-group] - Group key

@@ -1,4 +1,5 @@
-/// Returns input template where placeholders '{n}' are replaced with data from map.
+/// Returns string composed from provided input template, where placeholders
+/// `{n}` are replaced with data from provided map.
 /// @access public
 /// @param {string} $template - Template string
 /// @param {map} $data - Map of replacement keys with values

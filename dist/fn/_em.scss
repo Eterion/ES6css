@@ -1,8 +1,14 @@
-/// Returns a **$number** recalculated to em units, if possible. Allows scaling based on **$const-relative-units-root** constant. To ensure visibility of all elements, resulting numbers equal or below **$const-relative-units-min** are not recalculated. Requires **$const-relative-units** set to true. Use [**em-always**](#function-em-always) if you wish to convert to relative units, regardless of global settings.
+/// Returns a **number** recalculated to _em_ units, if possible. Allows scaling
+/// based on [relative-units-root](#const-relative-units-root) constant. To
+/// ensure visibility of all elements, resulting numbers equal or below
+/// [relative-units-min](#const-relative-units-min) are not converted. Requires
+/// [relative-units](#const-relative-units) set to `true`. Use
+/// [em-always](#em-always) if you wish to convert to relative units regardless
+/// of global settings.
 /// @access public
 /// @param {number} $number - Input number
 /// @param {boolean|string} $unit [em] - Returned unit
-/// @param {boolean} $ignore-const-relative-units [false] - Internal option, use [**em-always**](#function-em-always) or [**rem-always**](#function-rem-always) instead
+/// @param {boolean} $ignore-const-relative-units [false] - Ignore settings
 /// @example em(16px) // returns 1em
 
 @function em($number, $unit: em, $ignore-const-relative-units: false) {

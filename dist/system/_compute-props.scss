@@ -1,6 +1,8 @@
-// This function is internal, and is intentionaly not documented. Returns
-// computed values from provided name and group for use by export, extend and
-// import mixins.
+/// Returns computed properties from provided name and group for use by
+/// [export](#export), [extend](#extend) and [import](#import) mixins.
+/// @access private
+/// @param {string} $name - Module name.
+/// @param {group} $group [false] - Module group.
 
 @function compute-props($name, $group: false) {
   $data: (
