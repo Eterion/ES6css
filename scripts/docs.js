@@ -102,15 +102,10 @@ new Promise((resolve, reject) => {
 
   // Resolve data for readme file.
   .then(({ readme, docs }) => {
-    const constants = docs
-      .filter(({ context }) => context.type === 'variable')
-      .sort(sort);
-    const functions = docs
-      .filter(({ context }) => context.type === 'function')
-      .sort(sort);
-    const mixins = docs
-      .filter(({ context }) => context.type === 'mixin')
-      .sort(sort);
+    docs = docs.filter(({ access }) => access === 'public').sort(sort);
+    const constants = docs.filter(({ context }) => context.type === 'variable');
+    const functions = docs.filter(({ context }) => context.type === 'function');
+    const mixins = docs.filter(({ context }) => context.type === 'mixin');
     return [
       readme,
       '---',
