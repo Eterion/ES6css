@@ -1,0 +1,47 @@
+/// Returns color **value** accoring to its position in **chars** list, where the **chars** list represents the entire color spectrum.
+/// @access public
+/// @param {number|string|list} $value - Searched value or values in character list, colors of multiple values are mixed together.
+/// @param {string|list} $chars [alphabet] - List of source characters, can be **alphabet**, **numbers** or a list of custom characters
+/// @param {number} $saturation [100] - Saturation (0+100 percent)
+/// @param {number} $lightness [50] - Lightness (0-100 percent)
+
+@function spectrum(
+  $value,
+  $chars: 'alphabet',
+  $saturation: 100,
+  $lightness: 50
+) {
+  // Alphabet
+  @if ($chars == 'alphabet') {
+    $chars: a b c d e f g h i j k l m n o p q r s t u v w x y z;
+  }
+
+  // Numbers
+  @if ($chars == 'numbers') {
+    $chars: 0 1 2 3 4 5 6 7 8 9;
+  }
+
+  // Color
+  $color: hsl(
+    (360 / (length($chars) - 1)) *
+      (index($chars, if(type-of($value) == list, nth($value, 1), $value)) - 1),
+    $saturation * 1%,
+    $lightness * 1%
+  );
+
+  // Mix
+  @if (type-of($value) == list) {
+    @for $n from 2 through length($value) {
+      $color: mix(
+        $color,
+        hsl(
+          (360 / (length($chars) - 1)) * (index($chars, nth($value, $n)) - 1),
+          $saturation * 1%,
+          $lightness * 1%
+        )
+      );
+    }
+  }
+
+  @return $color;
+}
