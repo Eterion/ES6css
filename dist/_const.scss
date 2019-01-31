@@ -2,6 +2,7 @@
 /// [var](https://developer.mozilla.org/en-US/docs/Web/CSS/var) syntax instead
 /// of direct value. Use [css-custom-properties](#css-custom-properties) mixin
 /// to generate `:root` selector.
+/// @access public
 /// @type boolean
 
 $const-custom-properties: false !default;
@@ -9,6 +10,7 @@ $const-custom-properties: false !default;
 /// Determines whenever to use [custom property fallback
 /// values](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables#Custom_Property_fallback_values).
 /// Requires [custom-properties](#const-custom-properties) set to `true`.
+/// @access public
 /// @type boolean
 
 $const-custom-properties-fallback: false !default;
@@ -17,6 +19,7 @@ $const-custom-properties-fallback: false !default;
 /// redirected instead, effectivelly reducing total number of variables. This
 /// will also clean up result of [css-custom-properties](#css-custom-properties)
 /// mixin. Requires [custom-properties](#const-custom-properties) set to `true`.
+/// @access public
 /// @type boolean
 
 $const-custom-properties-redirect-var: false !default;
@@ -30,6 +33,7 @@ $const-custom-properties-redirect-var: false !default;
 /// disabled by setting this constant to `false`. This also means the media
 /// queries may overlap (depends on use) and mess up things on very specific
 /// resolutions.
+/// @access public
 /// @type down | up | false
 
 $const-media-direction: up !default;
@@ -38,11 +42,13 @@ $const-media-direction: up !default;
 /// by its values. However, if [media-scale](#const-media-scale) is set with
 /// `width` and `height` keys, this constant is needed to determine by which key
 /// the values should be sorted.
+/// @access public
 /// @type width | height
 
 $const-media-sort: width !default;
 
 /// Set number of [monochrome](#monochrome) color steps.
+/// @access public
 /// @type number
 
 $const-monochrome-steps: 10 !default;
@@ -51,6 +57,7 @@ $const-monochrome-steps: 10 !default;
 /// custom map configuration will be merged with defaults (your values take
 /// priority over defaults). If you wish to completely replace default map
 /// values with your own, set this constant to `false`.
+/// @access public
 /// @type boolean
 
 $const-preserve-defaults: true !default;
@@ -60,6 +67,7 @@ $const-preserve-defaults: true !default;
 /// recalculate non-relative units to relative values (if possible). Resulting
 /// value is calculated relative to
 /// [relative-units-root](#const-relative-units-root) constant.
+/// @access public
 /// @type boolean
 
 $const-relative-units: false !default;
@@ -68,11 +76,13 @@ $const-relative-units: false !default;
 /// relative units. This applies to the [em-always](#em-always) and
 /// [rem-always](#rem-always) functions as well. Requires
 /// [relative-units](#const-relative-units) set to `true`.
+/// @access public
 /// @type number
 
 $const-relative-units-min: 0 !default;
 
 /// Base value (in pixels) for calculation of relative units.
+/// @access public
 /// @type number
 
 $const-relative-units-root: 16px !default;
@@ -83,6 +93,7 @@ $const-relative-units-root: 16px !default;
 /// **key** from [export-groups](#const-export-groups) map item), `{id}`
 /// (represents **value** from [export-groups](#const-export-groups) map item)
 /// and `{module}` (represents module name).
+/// @access public
 /// @type string
 
 $const-template: '{module}' !default;
@@ -90,6 +101,7 @@ $const-template: '{module}' !default;
 /// This template is active instead of [template](#const-template) constant,
 /// when [export-groups](#const-export-groups) are used. Placeholders are also
 /// identical.
+/// @access public
 /// @type string
 
 $const-template-group: '{id}-{module}' !default;
@@ -98,6 +110,7 @@ $const-template-group: '{id}-{module}' !default;
 /// ([template](#const-template) replacement of `{group}` placeholder), and
 /// value represents much shorter identifier ([template](#const-template)
 /// replacement of `{id}` placeholder).
+/// @access public
 /// @type map
 
 $const-export-groups: () !default;
@@ -114,6 +127,7 @@ $const-export-groups: () !default;
 /// valid color value (for example `gray`), the [color](#color) function takes
 /// care of everything and will always check for color keys before using the
 /// actual color.
+/// @access public
 /// @name const-color-keys
 /// @type map
 
@@ -130,6 +144,7 @@ $const-color-keys-system: (
 /// relative to the original source color. Internally uses native
 /// [color-scale](http://sass-lang.com/documentation/Sass/Script/Functions.html#scale_color-instance_method)
 /// method.
+/// @access public
 /// @name const-color-scale
 /// @type map
 
@@ -144,6 +159,7 @@ $const-color-scale-system: (
 /// [postcss-font-weight](https://github.com/jonathantneal/postcss-font-weights)
 /// plugin. If you're using this plugin, there's no need to use this function as
 /// well, use the keyword values directly instead.
+/// @access public
 /// @name const-font-weight-scale
 /// @type map
 
@@ -169,6 +185,7 @@ $const-font-weight-scale-system: (
 /// List of media breakpoints. The values can be defined either directly as
 /// values or as map of width and height properties. However, if defined as
 /// direct values, some of the media functionality will not be available.
+/// @access public
 /// @name const-media-scale
 /// @type map
 
@@ -192,6 +209,7 @@ $const-media-scale-system: (
 /// Properties in this map are automatically added to every module. Properties
 /// added via [export](#export) or [extend](#extend) mixins take priority over
 /// defaults.
+/// @access public
 /// @name const-export-defaults
 /// @type map
 
