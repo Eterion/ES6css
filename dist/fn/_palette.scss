@@ -3,12 +3,13 @@
 /// value varies based on provided parameters, works in similar way to
 /// [monochrome](#monochrome) function.
 /// @access public
-/// @param {color|string} $value - Color, or color-key
+/// @param {color|string} $color - Color, or color-key
 /// @param {boolean|string} $hue-name [false] - Hue name
 /// @param {boolean|number} $index [false] - Index in the monochrome scale
 /// @param {number} $tint [1] - Modifier of light colors
 /// @param {number} $shade [1] - Modifier of dark colors
 /// @param {boolean|string} $desaturate [false] - Desaturate (boolean, black)
+/// @param {list} $hues [$const-color-hues] - List of hue names
 /// @param {number} $steps [$const-monochrome-steps] - Number of steps
 
 @function palette(
