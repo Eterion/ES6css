@@ -1,11 +1,12 @@
 /// Returns color name of provided input color.
 /// @access public
 /// @param {color|string} $value - Input color, or color-key
+/// @param {list} $hues [$const-color-hues] - List of hue names
 /// @example hue-name(#07c) // returns 'blue'
 
-@function hue-name($color) {
+@function hue-name($color, $hues: $const-color-hues) {
   @return nth(
-    $system-color-names,
-    clear-unit(round((hue(color($color)) - 2) / 30)) + 1
+    join($hues, nth($hues, 1)),
+    clear-unit(round((hue(color($color)) - 2) / (360 / length($hues)))) + 1
   );
 }

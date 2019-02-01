@@ -28,13 +28,6 @@ $system-data: ();
 
 $system-import: ();
 
-/// List of color names accross the entire color spectrum.
-/// @access private
-/// @type list
-
-$system-color-names: 'red', 'orange', 'yellow', 'lime', 'green', 'teal', 'cyan',
-  'blue', 'indigo', 'violet', 'fuchsia', 'pink', 'red';
-
 /// List of protected property names, that cannot be inserted as css custom
 /// properties.
 /// @access private
@@ -45,6 +38,14 @@ $system-protected-properties: 'name', 'selector', 'unique';
 // ----------
 // Constants: global variables used for settings.
 // ----------
+
+/// List of color names accross the entire color spectrum. This list of names is
+/// directly used for [hue-name](#hue-name) and [palette](#palette) functions.
+/// @access public
+/// @type list
+
+$const-color-hues: 'red', 'orange', 'yellow', 'lime', 'green', 'teal', 'cyan',
+  'blue', 'indigo', 'violet', 'fuchsia', 'pink';
 
 /// Enables css custom properties, resulting in values to be rendered with
 /// [var](https://developer.mozilla.org/en-US/docs/Web/CSS/var) syntax instead

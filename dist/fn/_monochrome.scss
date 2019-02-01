@@ -1,64 +1,89 @@
-/// Returns monochrome color, where index with number 0 is the lightest.
+/// Computes monochrome color scale, where index 0 is the lightest. Returned
+/// value varies based on provided parameters. If **index** is not provided,
+/// the function returns entire monochrome color list, instead of specific
+/// color. Light (**tint**) and dark (**shade**) colors can be controlled via
+/// parameters, that accept values higher than 0 (throws error when it's too
+/// high number).
 /// @access public
-/// @param {color|string} $value - Color, or color-key
-/// @param {number} $index - Index in the monochrome scale
+/// @param {color|string} $color - Color, or color-key
+/// @param {boolean|number} $index [false] - Index in the monochrome scale
 /// @param {number} $tint [1] - Modifier of light colors
 /// @param {number} $shade [1] - Modifier of dark colors
 /// @param {boolean|string} $desaturate [false] - Desaturate (boolean, black)
 /// @param {number} $steps [$const-monochrome-steps] - Number of steps
 
 @function monochrome(
-  $value,
-  $index,
+  $color,
+  $index: false,
   $tint: 1,
   $shade: 1,
   $desaturate: false,
   $steps: $const-monochrome-steps
 ) {
-  $color: color($value);
+  $color: color($color);
+  $fraction: 1 / ($steps * 10);
+  $max: $steps / 2;
+  $monochrome: ();
 
-  // Tint
-  @if ($index < $steps / 2) {
-    $edge: 1 / ($steps - 1);
-    $modifier: (1 / ($steps * 10)) * ($tint * 0.55);
-    $sum: 0;
-    @for $n from 1 to $steps / 2 {
-      $sum: $sum + $n * $modifier;
+  @for $n from 0 to $steps {
+    $mix: $color;
+
+    // Tint (white)
+    @if ($n < $max) {
+      $edge: 1 / ($steps - 1);
+      $modifier: $fraction * $tint * 0.55;
+      $sum: 0;
+
+      @for $s from 1 to $max {
+        $sum: $sum + $s * $modifier;
+      }
+
+      @if ($sum >= 1 - $edge * 2) {
+        @error 'Tint (#{$tint}) is too high, use lower value.';
+      }
+
+      $percentage: (1 - $sum - $edge * 2) / $max;
+      $value: $n * $percentage + $n * $modifier;
+      $mix: mix(#fff, $color, percentage(1 - $edge - $value));
     }
-    @if ($sum >= 1 - $edge * 2) {
-      @error 'Tint (#{$tint}) is too high, please lower the value.';
+
+    // Shade (black)
+    @else if($n > $max) {
+      $edge: 1 / $steps;
+      $modifier: $fraction * $shade * 1.15;
+      $sum: 0;
+
+      @for $s from 1 to $max {
+        $sum: $sum + $s * $modifier;
+      }
+
+      @if ($sum >= 1 - $edge * 2) {
+        @error 'Shade (#{$shade}) is too high, use lower value.';
+      }
+
+      $percentage: (1 - $sum - $edge * 2) / $max;
+      $n-mod: $n - $max - 1;
+      $value: $n-mod * $percentage + $n-mod * $modifier;
+      $mix: mix(#000, $color, percentage($edge + $value));
     }
-    $percentage: (1 - $sum - $edge * 2) / ($steps / 2);
-    $value: $index * $percentage + $index * $modifier;
-    $color: mix(#fff, $color, percentage(1 - $edge - $value));
+
+    // Properties
+    $hue: hue($mix);
+    $saturation: saturation($mix);
+    $lightness: lightness($mix);
+
+    // Desaturate
+    @if ($desaturate) {
+      $saturation: $saturation * if($desaturate == 'black', 0.025, 0.175);
+    }
+
+    $monochrome: append($monochrome, hsl($hue, $saturation, $lightness));
   }
 
-  // Shade
-  @else if($index > $steps / 2) {
-    $edge: 1 / $steps;
-    $modifier: (1 / ($steps * 10)) * ($shade * 1.15);
-    $sum: 0;
-    @for $n from 1 to $steps / 2 {
-      $sum: $sum + $n * $modifier;
-    }
-    @if ($sum >= 1 - $edge * 2) {
-      @error 'Shade (#{$shade}) is too high, please lower the value.';
-    }
-    $percentage: (1 - $sum - $edge * 2) / ($steps / 2);
-    $index: $index - ($steps / 2) - 1;
-    $value: $index * $percentage + $index * $modifier;
-    $color: mix(#000, $color, percentage($edge + $value));
+  // Index
+  @if ($index) {
+    @return nth($monochrome, $index + 1);
   }
 
-  // Color properties
-  $hue: hue($color);
-  $saturation: saturation($color);
-  $lightness: lightness($color);
-
-  // Desaturate
-  @if ($desaturate) {
-    $saturation: $saturation * if($desaturate == 'black', 0.025, 0.175);
-  }
-
-  @return hsl($hue, $saturation, $lightness);
+  @return $monochrome;
 }

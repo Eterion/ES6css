@@ -1,28 +1,27 @@
-/// Computes color palette based on a single color. The **name** parameter
-/// accepts `red`, `orange`, `yellow`, `lime`, `green`, `teal`, `cyan`, `blue`,
-/// `indigo`, `violet`, `fuchsia` or `pink` value. The returned value varies
-/// based on provided parameters. If neither **name** or **index** is provided,
-/// the function returns map of entire color palette. If **name** is provided,
-/// but no **index**, the function returns list of monochrome colors for that
-/// specific hue **name**. If **name** and **index** is provided, only that
-/// specific color is returned.
+/// Computes color palette based on single color. The **hue-name** parameter
+/// accepts any value from [color-hues](#const-color-hues) constant. Returned
+/// value varies based on provided parameters, works in similar way to
+/// [monochrome](#monochrome) function.
 /// @access public
 /// @param {color|string} $value - Color, or color-key
-/// @param {boolean|string} $name [false] - Hue name
+/// @param {boolean|string} $hue-name [false] - Hue name
 /// @param {boolean|number} $index [false] - Index in the monochrome scale
 /// @param {number} $tint [1] - Modifier of light colors
 /// @param {number} $shade [1] - Modifier of dark colors
+/// @param {boolean|string} $desaturate [false] - Desaturate (boolean, black)
 /// @param {number} $steps [$const-monochrome-steps] - Number of steps
 
 @function palette(
-  $value,
-  $name: false,
+  $color,
+  $hue-name: false,
   $index: false,
   $tint: 1,
   $shade: 1,
+  $desaturate: false,
+  $hues: $const-color-hues,
   $steps: $const-monochrome-steps
 ) {
-  $color: color($value);
+  $color: color($color);
   $palette: ();
 
   // Properties
@@ -30,36 +29,26 @@
   $saturation: saturation($color);
   $lightness: lightness($color);
 
-  // Black and gray
+  // Desaturate
   @each $id, $desaturate in ('black': 'black', 'gray': true) {
-    $values: ();
-    @for $i from 0 to $steps {
-      $values: append(
-        $values,
-        monochrome($color, $i, $tint, $shade, $desaturate)
-      );
-    }
+    $values: monochrome($color, $index, $tint, $shade, $desaturate, $steps);
     $palette: map-merge($palette, (#{$id}: $values));
   }
 
-  // Colors
-  @for $i from 1 to length($system-color-names) {
-    $base: hsl(($i * 30 + $hue) % 360, $saturation, $lightness);
-    $values: ();
-    @for $k from 0 to $steps {
-      $values: append($values, monochrome($base, $k, $tint, $shade));
-    }
+  // Hues
+  @for $n from 1 through length($hues) {
+    $base: hsl(
+      ($n * (360 / length($hues)) + $hue) % 360,
+      $saturation,
+      $lightness
+    );
+    $values: monochrome($base, $index, $tint, $shade, $desaturate, $steps);
     $palette: map-merge($palette, (#{hue-name($base)}: $values));
   }
 
-  // Monochrome
-  @if ($name) {
-    $palette: map-get($palette, inspect($name));
-  }
-
-  // Color
-  @if ($index) {
-    $palette: nth($palette, $index + 1);
+  // Hue
+  @if ($hue-name) {
+    @return map-get($palette, inspect($hue-name));
   }
 
   @return $palette;
