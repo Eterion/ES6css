@@ -3,9 +3,9 @@
 /// inferred.
 /// @access public
 /// @param {string} $prop - Property name
-/// @param {bool|string} $name [false] - Module name
-/// @param {bool|string} $group [$export-group] - Group key
-/// @param {bool} $css-custom-properties [false] - Enable var syntax
+/// @param {boolean|string} $name [false] - Module name
+/// @param {boolean|string} $group [$export-group] - Group key
+/// @param {boolean} $css-custom-properties [false] - Enable var syntax
 /// @param {map} $data [$system-import] - Source map
 /// @example element { height: get(height); }
 

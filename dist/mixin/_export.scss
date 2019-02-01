@@ -5,7 +5,7 @@
 /// module item.
 /// @access public
 /// @param {string} $name - Module name
-/// @param {bool|map} $props [false] - Property map
+/// @param {boolean|map} $props [false] - Property map
 /// @param {string} $group [$export-group] - Group key
 /// @param {map} $defaults [$const-export-defaults] - Default properties
 /// @example @include export(component-name, ( ... ))

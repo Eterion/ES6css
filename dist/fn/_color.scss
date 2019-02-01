@@ -6,7 +6,7 @@
 /// [color-scale](#const-color-scale) constant.
 /// @access public
 /// @param {color|string} $color - Input color, or color-key
-/// @param {bool|string} $scale [false] - Scale key
+/// @param {boolean|string} $scale [false] - Scale key
 /// @example color(gray, dark) // returns #353535
 
 @function color($value, $scale: false) {

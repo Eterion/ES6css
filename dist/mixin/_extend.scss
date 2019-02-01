@@ -3,7 +3,7 @@
 /// Throws an error if **name** in **group** doesn't exists.
 /// @access public
 /// @param {string} $name - Module name
-/// @param {bool|map} $props [false] - Property map
+/// @param {boolean|map} $props [false] - Property map
 /// @param {string} $group [$export-group] - Group key
 /// @example @include extend(component-name, ( ... ))
 

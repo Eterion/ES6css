@@ -7,7 +7,7 @@
 /// plugin, that works in very similar way.
 /// @access public
 /// @param {number|list} $size - Size, or space separated list
-/// @param {bool|string} $method [rem] - Parser method (false, em, rem)
+/// @param {boolean|string} $method [rem] - Parser method (false, em, rem)
 /// @example @include size(640px 4/3)
 
 @mixin size($size, $method: rem) {
