@@ -13,9 +13,25 @@ const colorHues = [
     'fuchsia',
     'pink',
 ];
+/**
+ * Returns named hue representation of input color.
+ * @param color Input color.
+ * @param options Options.
+ * @param options.hues Custom array of hue names.
+ */
 export function hueName(color, { hues = colorHues } = {}) {
     return [...hues, hues[0]][Math.round((Color(color).hue() - 2) / (360 / hues.length))];
 }
+/**
+ * Computes monochrome color scale, where index 0 is the lightest.
+ * @param color Input color.
+ * @param options Options.
+ * @param options.desaturate Enable desaturation, can be `true` or `'black'`.
+ * @param options.index Returns specific color, starts at 0.
+ * @param options.shade Modifier of dark colors.
+ * @param options.steps Number of steps.
+ * @param options.tint Modifier of light colors.
+ */
 export function monochrome(color, { desaturate = false, index, shade = 1, steps = 10, tint = 1, } = {}) {
     const fraction = 1 / (steps * 10);
     const max = steps / 2;
@@ -74,7 +90,18 @@ export function monochrome(color, { desaturate = false, index, shade = 1, steps 
     }
     return monochrome;
 }
-export function palette(color, { desaturate = false, hueName: name, hues = colorHues, index, shade = 1, steps = 10, tint = 1, } = {}) {
+/**
+ * Computes color palette based on a single color.
+ * @param color Input color.
+ * @param options Options.
+ * @param options.hueName Returns only specific hue values.
+ * @param options.hues Custom array of hue names.
+ * @param options.index Returns specific color, starts at 0.
+ * @param options.shade Modifier of dark colors.
+ * @param options.steps Number of steps.
+ * @param options.tint Modifier of light colors.
+ */
+export function palette(color, { hueName: hueNameOption, hues = colorHues, index, shade = 1, steps = 10, tint = 1, } = {}) {
     let palette = {};
     // Properties
     const hue = Color(color).hue();
@@ -99,7 +126,7 @@ export function palette(color, { desaturate = false, hueName: name, hues = color
         palette = {
             ...palette,
             [hueName(base)]: monochrome(base, {
-                desaturate,
+                desaturate: false,
                 index,
                 shade,
                 steps,
@@ -108,11 +135,19 @@ export function palette(color, { desaturate = false, hueName: name, hues = color
         };
     }
     // Hue
-    if (name) {
-        return palette[name];
+    if (hueNameOption) {
+        return palette[hueNameOption];
     }
     return palette;
 }
+/**
+ * Returns color of value accoring to its position in character list.
+ * @param value Searched value in character list.
+ * @param options Options.
+ * @param options.chars Array of characters, can be `'alpha'` or `'num'` preset.
+ * @param options.saturation Color saturation.
+ * @param options.lightness Color lightness.
+ */
 export function spectrum(value, { chars = 'alpha', saturation = 100, lightness = 50 } = {}) {
     value = Array.isArray(value) ? value : [value];
     if (chars === 'alpha')
