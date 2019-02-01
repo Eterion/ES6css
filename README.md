@@ -127,7 +127,7 @@ that's up to you to make sure it's correct.
 
 ```scss
 $const-color-hues: 'red', 'orange', 'yellow', 'lime', 'green', 'teal', 'cyan',
-  'blue', 'indigo', 'violet', 'fuchsia', 'pink';
+  'blue', 'indigo', 'violet', 'fuchsia', 'pink' !default;
 ```
 
 List of color names accross the entire color spectrum. This list of names is
@@ -723,7 +723,7 @@ accept values higher than 0 (throws error when it's too high number).
 - Type: `Function`
 
 ```scss
-palette($color, $hue-name: false, $index: false, $tint: 1, $shade: 1, $desaturate: false, $hues: $const-color-hues, $steps: $const-monochrome-steps)
+palette($color, $hue-name: false, $index: false, $tint: 1, $shade: 1, $hues: $const-color-hues, $steps: $const-monochrome-steps)
 ```
 
 Computes color palette based on single color. The **hue-name** parameter accepts
@@ -731,16 +731,15 @@ any value from [color-hues](#const-color-hues) constant. Returned value varies
 based on provided parameters, works in similar way to [monochrome](#monochrome)
 function.
 
-| Name                    | Type                | Description                   | Default                               |
-| ----------------------- | ------------------- | ----------------------------- | ------------------------------------- |
-| <nobr>color</nobr>      | `color`, `string`   | Color, or color-key           | &ndash;                               |
-| <nobr>hue-name</nobr>   | `boolean`, `string` | Hue name                      | <nobr>false</nobr>                    |
-| <nobr>index</nobr>      | `boolean`, `number` | Index in the monochrome scale | <nobr>false</nobr>                    |
-| <nobr>tint</nobr>       | `number`            | Modifier of light colors      | <nobr>1</nobr>                        |
-| <nobr>shade</nobr>      | `number`            | Modifier of dark colors       | <nobr>1</nobr>                        |
-| <nobr>desaturate</nobr> | `boolean`, `string` | Desaturate (boolean, black)   | <nobr>false</nobr>                    |
-| <nobr>hues</nobr>       | `list`              | List of hue names             | <nobr>\$const-color-hues</nobr>       |
-| <nobr>steps</nobr>      | `number`            | Number of steps               | <nobr>\$const-monochrome-steps</nobr> |
+| Name                  | Type                | Description                   | Default                               |
+| --------------------- | ------------------- | ----------------------------- | ------------------------------------- |
+| <nobr>color</nobr>    | `color`, `string`   | Color, or color-key           | &ndash;                               |
+| <nobr>hue-name</nobr> | `boolean`, `string` | Hue name                      | <nobr>false</nobr>                    |
+| <nobr>index</nobr>    | `boolean`, `number` | Index in the monochrome scale | <nobr>false</nobr>                    |
+| <nobr>tint</nobr>     | `number`            | Modifier of light colors      | <nobr>1</nobr>                        |
+| <nobr>shade</nobr>    | `number`            | Modifier of dark colors       | <nobr>1</nobr>                        |
+| <nobr>hues</nobr>     | `list`              | List of hue names             | <nobr>\$const-color-hues</nobr>       |
+| <nobr>steps</nobr>    | `number`            | Number of steps               | <nobr>\$const-monochrome-steps</nobr> |
 
 [_Back to top_](#contents)
 
@@ -1144,5 +1143,5 @@ properties with identical options.
 
 ---
 
-**Last Updated:** Fri Feb 01 2019 14:02:42 GMT+0100 (Central European Standard
+**Last Updated:** Fri Feb 01 2019 14:36:59 GMT+0100 (Central European Standard
 Time)
