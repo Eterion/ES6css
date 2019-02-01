@@ -63,6 +63,7 @@ that's up to you to make sure it's correct.
 ## Contents
 
 - [Constants](#constants)
+  - [const-color-hues](#const-color-hues)
   - [const-color-keys](#const-color-keys)
   - [const-color-scale](#const-color-scale)
   - [const-custom-properties](#const-custom-properties)
@@ -119,6 +120,20 @@ that's up to you to make sure it's correct.
   - [transition](#transition)
 
 ## Constants
+
+### const-color-hues
+
+- Type: `list`
+
+```scss
+$const-color-hues: 'red', 'orange', 'yellow', 'lime', 'green', 'teal', 'cyan',
+  'blue', 'indigo', 'violet', 'fuchsia', 'pink';
+```
+
+List of color names accross the entire color spectrum. This list of names is
+directly used for [hue-name](#hue-name) and [palette](#palette) functions.
+
+[_Back to top_](#contents)
 
 ### const-color-keys
 
@@ -437,9 +452,9 @@ clear-unit($number)
 
 Returns a **number** stripped of its unit, if possible.
 
-| Name   | Type     | Description  | Default |
-| ------ | -------- | ------------ | ------- |
-| number | `number` | Input number | &ndash; |
+| Name                | Type     | Description  | Default |
+| ------------------- | -------- | ------------ | ------- |
+| <nobr>number</nobr> | `number` | Input number | &ndash; |
 
 [_Back to top_](#contents)
 
@@ -458,10 +473,10 @@ key identifier present in [color-keys](#const-color-keys) constant. Scaling
 levels are completely customizable through [color-scale](#const-color-scale)
 constant.
 
-| Name  | Type                | Description               | Default |
-| ----- | ------------------- | ------------------------- | ------- |
-| color | `color` or `string` | Input color, or color-key | &ndash; |
-| scale | `bool` or `string`  | Scale key                 | false   |
+| Name               | Type                | Description               | Default            |
+| ------------------ | ------------------- | ------------------------- | ------------------ |
+| <nobr>color</nobr> | `color`, `string`   | Input color, or color-key | &ndash;            |
+| <nobr>scale</nobr> | `boolean`, `string` | Scale key                 | <nobr>false</nobr> |
 
 [_Back to top_](#contents)
 
@@ -481,11 +496,11 @@ visibility of all elements, resulting numbers equal or below
 [em-always](#em-always) if you wish to convert to relative units regardless of
 global settings.
 
-| Name                        | Type                  | Description     | Default |
-| --------------------------- | --------------------- | --------------- | ------- |
-| number                      | `number`              | Input number    | &ndash; |
-| unit                        | `boolean` or `string` | Returned unit   | em      |
-| ignore-const-relative-units | `boolean`             | Ignore settings | false   |
+| Name                                     | Type                | Description     | Default            |
+| ---------------------------------------- | ------------------- | --------------- | ------------------ |
+| <nobr>number</nobr>                      | `number`            | Input number    | &ndash;            |
+| <nobr>unit</nobr>                        | `boolean`, `string` | Returned unit   | <nobr>em</nobr>    |
+| <nobr>ignore-const-relative-units</nobr> | `boolean`           | Ignore settings | <nobr>false</nobr> |
 
 [_Back to top_](#contents)
 
@@ -501,9 +516,9 @@ This function is identical to [em](#em) function, except it will always convert
 to relative units, even if [relative-units](#const-relative-units) constant is
 disabled.
 
-| Name   | Type     | Description  | Default |
-| ------ | -------- | ------------ | ------- |
-| number | `number` | Input number | &ndash; |
+| Name                | Type     | Description  | Default |
+| ------------------- | -------- | ------------ | ------- |
+| <nobr>number</nobr> | `number` | Input number | &ndash; |
 
 [_Back to top_](#contents)
 
@@ -520,9 +535,9 @@ use of readable values without the knowledge of real numbers used by css.
 Complete map of keys and values is set through
 [font-weight-scale](#const-font-weight-scale) constant.
 
-| Name  | Type                 | Description         | Default |
-| ----- | -------------------- | ------------------- | ------- |
-| value | `number` or `string` | Number or scale key | &ndash; |
+| Name               | Type               | Description         | Default |
+| ------------------ | ------------------ | ------------------- | ------- |
+| <nobr>value</nobr> | `number`, `string` | Number or scale key | &ndash; |
 
 [_Back to top_](#contents)
 
@@ -538,13 +553,13 @@ Returns a property value from imported module item. When used inside
 [import](#import) mixin, parameters **name** and **group** are automatically
 inferred.
 
-| Name                  | Type               | Description       | Default         |
-| --------------------- | ------------------ | ----------------- | --------------- |
-| prop                  | `string`           | Property name     | &ndash;         |
-| name                  | `bool` or `string` | Module name       | false           |
-| group                 | `bool` or `string` | Group key         | \$export-group  |
-| css-custom-properties | `bool`             | Enable var syntax | false           |
-| data                  | `map`              | Source map        | \$system-import |
+| Name                               | Type                | Description       | Default                      |
+| ---------------------------------- | ------------------- | ----------------- | ---------------------------- |
+| <nobr>prop</nobr>                  | `string`            | Property name     | &ndash;                      |
+| <nobr>name</nobr>                  | `boolean`, `string` | Module name       | <nobr>false</nobr>           |
+| <nobr>group</nobr>                 | `boolean`, `string` | Group key         | <nobr>\$export-group</nobr>  |
+| <nobr>css-custom-properties</nobr> | `boolean`           | Enable var syntax | <nobr>false</nobr>           |
+| <nobr>data</nobr>                  | `map`               | Source map        | <nobr>\$system-import</nobr> |
 
 [_Back to top_](#contents)
 
@@ -553,14 +568,15 @@ inferred.
 - Type: `Function`
 
 ```scss
-hue-name($value)
+hue-name($value, $hues: $const-color-hues)
 ```
 
 Returns color name of provided input color.
 
-| Name  | Type                | Description               | Default |
-| ----- | ------------------- | ------------------------- | ------- |
-| value | `color` or `string` | Input color, or color-key | &ndash; |
+| Name               | Type              | Description               | Default                         |
+| ------------------ | ----------------- | ------------------------- | ------------------------------- |
+| <nobr>value</nobr> | `color`, `string` | Input color, or color-key | &ndash;                         |
+| <nobr>hues</nobr>  | `list`            | List of hue names         | <nobr>\$const-color-hues</nobr> |
 
 [_Back to top_](#contents)
 
@@ -574,11 +590,11 @@ insert-nth($list, $index, $value)
 
 Insert value at list or map index.
 
-| Name  | Type                          | Description        | Default |
-| ----- | ----------------------------- | ------------------ | ------- |
-| list  | `list` or `map`               | Source list or map | &ndash; |
-| index | `number`                      | Target index       | &ndash; |
-| value | `number` or `string` or `map` | Value              | &ndash; |
+| Name               | Type                      | Description        | Default |
+| ------------------ | ------------------------- | ------------------ | ------- |
+| <nobr>list</nobr>  | `list`, `map`             | Source list or map | &ndash; |
+| <nobr>index</nobr> | `number`                  | Target index       | &ndash; |
+| <nobr>value</nobr> | `number`, `string`, `map` | Value              | &ndash; |
 
 [_Back to top_](#contents)
 
@@ -593,10 +609,10 @@ interpolate($template, $data)
 Returns string composed from provided input template, where placeholders `{n}`
 are replaced with data from provided map.
 
-| Name     | Type     | Description                         | Default |
-| -------- | -------- | ----------------------------------- | ------- |
-| template | `string` | Template string                     | &ndash; |
-| data     | `map`    | Map of replacement keys with values | &ndash; |
+| Name                  | Type     | Description                         | Default |
+| --------------------- | -------- | ----------------------------------- | ------- |
+| <nobr>template</nobr> | `string` | Template string                     | &ndash; |
+| <nobr>data</nobr>     | `map`    | Map of replacement keys with values | &ndash; |
 
 [_Back to top_](#contents)
 
@@ -612,10 +628,10 @@ Extended version of native
 [map-get](http://sass-lang.com/documentation/Sass/Script/Functions.html#map_get-instance_method)
 function, with nested maps support.
 
-| Name | Type               | Description           | Default |
-| ---- | ------------------ | --------------------- | ------- |
-| map  | `map`              | Source map            | &ndash; |
-| keys | `string` or `list` | Path to requested key | &ndash; |
+| Name              | Type             | Description           | Default |
+| ----------------- | ---------------- | --------------------- | ------- |
+| <nobr>map</nobr>  | `map`            | Source map            | &ndash; |
+| <nobr>keys</nobr> | `string`, `list` | Path to requested key | &ndash; |
 
 [_Back to top_](#contents)
 
@@ -630,10 +646,10 @@ map-filter($map, $keys)
 Returns a new map with filtered **keys** only. Throws an error if any value from
 **keys** is not present in **map** keys.
 
-| Name | Type               | Description           | Default |
-| ---- | ------------------ | --------------------- | ------- |
-| map  | `map`              | Source map            | &ndash; |
-| keys | `string` or `list` | List of filtered keys | &ndash; |
+| Name              | Type             | Description           | Default |
+| ----------------- | ---------------- | --------------------- | ------- |
+| <nobr>map</nobr>  | `map`            | Source map            | &ndash; |
+| <nobr>keys</nobr> | `string`, `list` | List of filtered keys | &ndash; |
 
 [_Back to top_](#contents)
 
@@ -648,10 +664,10 @@ map-sort($map, $keys)
 Sort map (ascending) according to its value. If the value is a map, sort keys
 must be specified.
 
-| Name | Type               | Description                     | Default |
-| ---- | ------------------ | ------------------------------- | ------- |
-| map  | `map`              | Source map                      | &ndash; |
-| keys | `string` or `list` | Sort by nested key, if possible | &ndash; |
+| Name              | Type             | Description                     | Default |
+| ----------------- | ---------------- | ------------------------------- | ------- |
+| <nobr>map</nobr>  | `map`            | Source map                      | &ndash; |
+| <nobr>keys</nobr> | `string`, `list` | Sort by nested key, if possible | &ndash; |
 
 [_Back to top_](#contents)
 
@@ -670,10 +686,10 @@ recommended instead of using custom new media rules through this function. Media
 breakpoints are completely customizable through
 [media-scale](#const-media-scale) constant.
 
-| Name  | Type                 | Description                          | Default |
-| ----- | -------------------- | ------------------------------------ | ------- |
-| value | `number` or `string` | Number, or media-scale               | &ndash; |
-| prop  | `string`             | Returned value (width, height, both) | width   |
+| Name               | Type               | Description                          | Default            |
+| ------------------ | ------------------ | ------------------------------------ | ------------------ |
+| <nobr>value</nobr> | `number`, `string` | Number, or media-scale               | &ndash;            |
+| <nobr>prop</nobr>  | `string`           | Returned value (width, height, both) | <nobr>width</nobr> |
 
 [_Back to top_](#contents)
 
@@ -682,17 +698,23 @@ breakpoints are completely customizable through
 - Type: `Function`
 
 ```scss
-monochrome($value, $index, $desaturate: false, $steps: $const-monochrome-steps)
+monochrome($color, $index: false, $tint: 1, $shade: 1, $desaturate: false, $steps: $const-monochrome-steps)
 ```
 
-Returns monochrome color, where index with number 0 is the lightest.
+Computes monochrome color scale, where index 0 is the lightest. Returned value
+varies based on provided parameters. If **index** is not provided, the function
+returns entire monochrome color list, instead of specific color. Light
+(**tint**) and dark (**shade**) colors can be controlled via parameters, that
+accept values higher than 0 (throws error when it's too high number).
 
-| Name       | Type                  | Description                   | Default                  |
-| ---------- | --------------------- | ----------------------------- | ------------------------ |
-| value      | `color` or `string`   | Color, or color-key           | &ndash;                  |
-| index      | `number`              | Index in the monochrome scale | &ndash;                  |
-| desaturate | `boolean` or `string` | Desaturate (boolean, black)   | false                    |
-| steps      | `number`              | Number of steps               | \$const-monochrome-steps |
+| Name                    | Type                | Description                   | Default                               |
+| ----------------------- | ------------------- | ----------------------------- | ------------------------------------- |
+| <nobr>color</nobr>      | `color`, `string`   | Color, or color-key           | &ndash;                               |
+| <nobr>index</nobr>      | `boolean`, `number` | Index in the monochrome scale | <nobr>false</nobr>                    |
+| <nobr>tint</nobr>       | `number`            | Modifier of light colors      | <nobr>1</nobr>                        |
+| <nobr>shade</nobr>      | `number`            | Modifier of dark colors       | <nobr>1</nobr>                        |
+| <nobr>desaturate</nobr> | `boolean`, `string` | Desaturate (boolean, black)   | <nobr>false</nobr>                    |
+| <nobr>steps</nobr>      | `number`            | Number of steps               | <nobr>\$const-monochrome-steps</nobr> |
 
 [_Back to top_](#contents)
 
@@ -701,23 +723,24 @@ Returns monochrome color, where index with number 0 is the lightest.
 - Type: `Function`
 
 ```scss
-palette($value, $name: false, $index: false, $steps: $const-monochrome-steps)
+palette($color, $hue-name: false, $index: false, $tint: 1, $shade: 1, $desaturate: false, $hues: $const-color-hues, $steps: $const-monochrome-steps)
 ```
 
-Computes color palette based on a single color. The **name** parameter accepts
-`red`, `orange`, `yellow`, `lime`, `green`, `teal`, `cyan`, `blue`, `indigo`,
-`violet`, `fuchsia` or `pink` value. The returned value varies based on provided
-parameters. If neither **name** or **index** is provided, the function returns
-map of entire color palette. If **name** is provided, but no **index**, the
-function returns list of monochrome colors for that specific hue **name**. If
-**name** and **index** is provided, only that specific color is returned.
+Computes color palette based on single color. The **hue-name** parameter accepts
+any value from [color-hues](#const-color-hues) constant. Returned value varies
+based on provided parameters, works in similar way to [monochrome](#monochrome)
+function.
 
-| Name  | Type                  | Description                   | Default                  |
-| ----- | --------------------- | ----------------------------- | ------------------------ |
-| value | `color` or `string`   | Color, or color-key           | &ndash;                  |
-| name  | `boolean` or `string` | Hue name                      | false                    |
-| index | `boolean` or `number` | Index in the monochrome scale | false                    |
-| steps | `number`              | Number of steps               | \$const-monochrome-steps |
+| Name                    | Type                | Description                   | Default                               |
+| ----------------------- | ------------------- | ----------------------------- | ------------------------------------- |
+| <nobr>color</nobr>      | `color`, `string`   | Color, or color-key           | &ndash;                               |
+| <nobr>hue-name</nobr>   | `boolean`, `string` | Hue name                      | <nobr>false</nobr>                    |
+| <nobr>index</nobr>      | `boolean`, `number` | Index in the monochrome scale | <nobr>false</nobr>                    |
+| <nobr>tint</nobr>       | `number`            | Modifier of light colors      | <nobr>1</nobr>                        |
+| <nobr>shade</nobr>      | `number`            | Modifier of dark colors       | <nobr>1</nobr>                        |
+| <nobr>desaturate</nobr> | `boolean`, `string` | Desaturate (boolean, black)   | <nobr>false</nobr>                    |
+| <nobr>hues</nobr>       | `list`              | List of hue names             | <nobr>\$const-color-hues</nobr>       |
+| <nobr>steps</nobr>      | `number`            | Number of steps               | <nobr>\$const-monochrome-steps</nobr> |
 
 [_Back to top_](#contents)
 
@@ -737,9 +760,9 @@ visibility of all elements, resulting numbers equal or below
 [rem-always](#rem-always) if you wish to convert to relative units regardless of
 global settings.
 
-| Name   | Type     | Description  | Default |
-| ------ | -------- | ------------ | ------- |
-| number | `number` | Input number | &ndash; |
+| Name                | Type     | Description  | Default |
+| ------------------- | -------- | ------------ | ------- |
+| <nobr>number</nobr> | `number` | Input number | &ndash; |
 
 [_Back to top_](#contents)
 
@@ -755,9 +778,9 @@ This function is identical to [rem](#rem) function, except it will always
 convert to relative units, event if [relative-units](#const-relative-units) is
 disabled.
 
-| Name   | Type     | Description  | Default |
-| ------ | -------- | ------------ | ------- |
-| number | `number` | Input number | &ndash; |
+| Name                | Type     | Description  | Default |
+| ------------------- | -------- | ------------ | ------- |
+| <nobr>number</nobr> | `number` | Input number | &ndash; |
 
 [_Back to top_](#contents)
 
@@ -775,12 +798,12 @@ accepts custom list of characters, `alpha` (alphabet a-z) or `num` (numbers 0-9)
 presets. If the searched **value** is a list of values, the resulting colors
 will be mixed together to produce a single color.
 
-| Name       | Type                           | Description                      | Default |
-| ---------- | ------------------------------ | -------------------------------- | ------- |
-| value      | `number` or `string` or `list` | Searched value in character list | &ndash; |
-| chars      | `string` or `list`             | Source characters (alpha, num)   | alpha   |
-| saturation | `number`                       | Saturation (0-100)               | 100     |
-| lightness  | `number`                       | Lightness (0-100)                | 50      |
+| Name                    | Type                       | Description                      | Default            |
+| ----------------------- | -------------------------- | -------------------------------- | ------------------ |
+| <nobr>value</nobr>      | `number`, `string`, `list` | Searched value in character list | &ndash;            |
+| <nobr>chars</nobr>      | `string`, `list`           | Source characters (alpha, num)   | <nobr>alpha</nobr> |
+| <nobr>saturation</nobr> | `number`                   | Saturation (0-100)               | <nobr>100</nobr>   |
+| <nobr>lightness</nobr>  | `number`                   | Lightness (0-100)                | <nobr>50</nobr>    |
 
 [_Back to top_](#contents)
 
@@ -794,11 +817,11 @@ str-replace($str, $search, $replace: '')
 
 Replaces all occurences of **search** substring with **replace** value.
 
-| Name    | Type     | Description          | Default |
-| ------- | -------- | -------------------- | ------- |
-| str     | `string` | Initial string       | &ndash; |
-| search  | `string` | Substring to replace | &ndash; |
-| replace | `string` | New value            | ''      |
+| Name                 | Type     | Description          | Default         |
+| -------------------- | -------- | -------------------- | --------------- |
+| <nobr>str</nobr>     | `string` | Initial string       | &ndash;         |
+| <nobr>search</nobr>  | `string` | Substring to replace | &ndash;         |
+| <nobr>replace</nobr> | `string` | New value            | <nobr>''</nobr> |
 
 [_Back to top_](#contents)
 
@@ -813,9 +836,9 @@ to-class($class)
 Returns a **class** string converted to class selector, if possible. Doesn't
 affect the input value if a class selector is already present.
 
-| Name  | Type     | Description | Default |
-| ----- | -------- | ----------- | ------- |
-| class | `string` | Class name  | &ndash; |
+| Name               | Type     | Description | Default |
+| ------------------ | -------- | ----------- | ------- |
+| <nobr>class</nobr> | `string` | Class name  | &ndash; |
 
 [_Back to top_](#contents)
 
@@ -830,9 +853,9 @@ to-id($id)
 Returns a **id** string converted to id selector, if possible. Doesn't affect
 the input value if a id selector is already present.
 
-| Name | Type     | Description | Default |
-| ---- | -------- | ----------- | ------- |
-| id   | `string` | Id name     | &ndash; |
+| Name            | Type     | Description | Default |
+| --------------- | -------- | ----------- | ------- |
+| <nobr>id</nobr> | `string` | Id name     | &ndash; |
 
 [_Back to top_](#contents)
 
@@ -851,9 +874,9 @@ automatically detected and converted, everything else is returned in its
 original input value. Several known characters are automatically converted to
 its unicode equivalents.
 
-| Name  | Type     | Description | Default |
-| ----- | -------- | ----------- | ------- |
-| value | `string` | Value       | &ndash; |
+| Name               | Type     | Description | Default |
+| ------------------ | -------- | ----------- | ------- |
+| <nobr>value</nobr> | `string` | Value       | &ndash; |
 
 [_Back to top_](#contents)
 
@@ -885,12 +908,12 @@ mixin. Includes few automatically computed properties (name, selector). Throws
 an error if item with identical **name** in a **group** already exists, use
 [extend](#extend) mixin if you need to modify already existing module item.
 
-| Name     | Type            | Description        | Default                 |
-| -------- | --------------- | ------------------ | ----------------------- |
-| name     | `string`        | Module name        | &ndash;                 |
-| props    | `bool` or `map` | Property map       | false                   |
-| group    | `string`        | Group key          | \$export-group          |
-| defaults | `map`           | Default properties | \$const-export-defaults |
+| Name                  | Type             | Description        | Default                              |
+| --------------------- | ---------------- | ------------------ | ------------------------------------ |
+| <nobr>name</nobr>     | `string`         | Module name        | &ndash;                              |
+| <nobr>props</nobr>    | `boolean`, `map` | Property map       | <nobr>false</nobr>                   |
+| <nobr>group</nobr>    | `string`         | Group key          | <nobr>\$export-group</nobr>          |
+| <nobr>defaults</nobr> | `map`            | Default properties | <nobr>\$const-export-defaults</nobr> |
 
 [_Back to top_](#contents)
 
@@ -906,11 +929,11 @@ Extends already existing module item created via [export](#export) mixin.
 Properties in the extends mixin take priority over already existing ones. Throws
 an error if **name** in **group** doesn't exists.
 
-| Name  | Type            | Description  | Default        |
-| ----- | --------------- | ------------ | -------------- |
-| name  | `string`        | Module name  | &ndash;        |
-| props | `bool` or `map` | Property map | false          |
-| group | `string`        | Group key    | \$export-group |
+| Name               | Type             | Description  | Default                     |
+| ------------------ | ---------------- | ------------ | --------------------------- |
+| <nobr>name</nobr>  | `string`         | Module name  | &ndash;                     |
+| <nobr>props</nobr> | `boolean`, `map` | Property map | <nobr>false</nobr>          |
+| <nobr>group</nobr> | `string`         | Group key    | <nobr>\$export-group</nobr> |
 
 [_Back to top_](#contents)
 
@@ -927,9 +950,9 @@ Adds a **list** of classes to a root element. Individual values are converted to
 a class if possible. New classes are placed at the beginning of the selector,
 therefore the root element must be either class or id selector.
 
-| Name | Type               | Description         | Default |
-| ---- | ------------------ | ------------------- | ------- |
-| list | `string` or `list` | List of class names | &ndash; |
+| Name              | Type             | Description         | Default |
+| ----------------- | ---------------- | ------------------- | ------- |
+| <nobr>list</nobr> | `string`, `list` | List of class names | &ndash; |
 
 [_Back to top_](#contents)
 
@@ -948,10 +971,10 @@ mixin internally uses [props](#props) mixin, with the addition of automatically
 generated selector. The selector is class by default, set `unique` property to
 `true` to enable id selector.
 
-| Name  | Type     | Description | Default        |
-| ----- | -------- | ----------- | -------------- |
-| name  | `string` | Module name | &ndash;        |
-| group | `string` | Group key   | \$export-group |
+| Name               | Type     | Description | Default                     |
+| ------------------ | -------- | ----------- | --------------------------- |
+| <nobr>name</nobr>  | `string` | Module name | &ndash;                     |
+| <nobr>group</nobr> | `string` | Group key   | <nobr>\$export-group</nobr> |
 
 [_Back to top_](#contents)
 
@@ -971,13 +994,13 @@ relationship between width and height properties, only relevant when **prop** is
 set to `both`. Media breakpoints are completely customizable through
 [media-scale](#const-media-scale) constant.
 
-| Name      | Type                 | Description                          | Default                 |
-| --------- | -------------------- | ------------------------------------ | ----------------------- |
-| lower     | `number` or `string` | Number, or media-scale               | &ndash;                 |
-| upper     | `number` or `string` | Number, or media-scale               | &ndash;                 |
-| prop      | `string`             | Returned value (width, height, both) | width                   |
-| operator  | `string`             | Operator (and, or)                   | and                     |
-| direction | `string`             | Direction (down, up)                 | \$const-media-direction |
+| Name                   | Type               | Description                          | Default                              |
+| ---------------------- | ------------------ | ------------------------------------ | ------------------------------------ |
+| <nobr>lower</nobr>     | `number`, `string` | Number, or media-scale               | &ndash;                              |
+| <nobr>upper</nobr>     | `number`, `string` | Number, or media-scale               | &ndash;                              |
+| <nobr>prop</nobr>      | `string`           | Returned value (width, height, both) | <nobr>width</nobr>                   |
+| <nobr>operator</nobr>  | `string`           | Operator (and, or)                   | <nobr>and</nobr>                     |
+| <nobr>direction</nobr> | `string`           | Direction (down, up)                 | <nobr>\$const-media-direction</nobr> |
 
 [_Back to top_](#contents)
 
@@ -997,12 +1020,12 @@ determines relationship between width and height properties, only relevant when
 **prop** is set to `both`. Media breakpoints are completely customizable through
 [media-scale](#const-media-scale) constant.
 
-| Name      | Type     | Description                          | Default                 |
-| --------- | -------- | ------------------------------------ | ----------------------- |
-| scale     | `string` | Key of media-scale                   | &ndash;                 |
-| prop      | `string` | Returned value (width, height, both) | width                   |
-| operator  | `string` | Operator (and, or)                   | and                     |
-| direction | `string` | Direction (down, up)                 | \$const-media-direction |
+| Name                   | Type     | Description                          | Default                              |
+| ---------------------- | -------- | ------------------------------------ | ------------------------------------ |
+| <nobr>scale</nobr>     | `string` | Key of media-scale                   | &ndash;                              |
+| <nobr>prop</nobr>      | `string` | Returned value (width, height, both) | <nobr>width</nobr>                   |
+| <nobr>operator</nobr>  | `string` | Operator (and, or)                   | <nobr>and</nobr>                     |
+| <nobr>direction</nobr> | `string` | Direction (down, up)                 | <nobr>\$const-media-direction</nobr> |
 
 [_Back to top_](#contents)
 
@@ -1022,12 +1045,12 @@ width and height properties, only relevant when **prop** is set to `both`. Media
 breakpoints are completely customizable through
 [media-scale](#const-media-scale) constant.
 
-| Name      | Type                 | Description                          | Default                 |
-| --------- | -------------------- | ------------------------------------ | ----------------------- |
-| scale     | `number` or `string` | Number, or media-scale               | &ndash;                 |
-| prop      | `string`             | Returned value (width, height, both) | width                   |
-| operator  | `string`             | Operator (and, or)                   | and                     |
-| direction | `string`             | Direction (down, up)                 | \$const-media-direction |
+| Name                   | Type               | Description                          | Default                              |
+| ---------------------- | ------------------ | ------------------------------------ | ------------------------------------ |
+| <nobr>scale</nobr>     | `number`, `string` | Number, or media-scale               | &ndash;                              |
+| <nobr>prop</nobr>      | `string`           | Returned value (width, height, both) | <nobr>width</nobr>                   |
+| <nobr>operator</nobr>  | `string`           | Operator (and, or)                   | <nobr>and</nobr>                     |
+| <nobr>direction</nobr> | `string`           | Direction (down, up)                 | <nobr>\$const-media-direction</nobr> |
 
 [_Back to top_](#contents)
 
@@ -1047,12 +1070,12 @@ determines relationship between width and height properties, only relevant when
 **prop** is set to `both`. Media breakpoints are completely customizable through
 [media-scale](#const-media-scale) constant.
 
-| Name      | Type                 | Description                          | Default                 |
-| --------- | -------------------- | ------------------------------------ | ----------------------- |
-| scale     | `number` or `string` | Number, or media-scale               | &ndash;                 |
-| prop      | `string`             | Returned value (width, height, both) | width                   |
-| operator  | `string`             | Operator (and, or)                   | and                     |
-| direction | `string`             | Direction (down, up)                 | \$const-media-direction |
+| Name                   | Type               | Description                          | Default                              |
+| ---------------------- | ------------------ | ------------------------------------ | ------------------------------------ |
+| <nobr>scale</nobr>     | `number`, `string` | Number, or media-scale               | &ndash;                              |
+| <nobr>prop</nobr>      | `string`           | Returned value (width, height, both) | <nobr>width</nobr>                   |
+| <nobr>operator</nobr>  | `string`           | Operator (and, or)                   | <nobr>and</nobr>                     |
+| <nobr>direction</nobr> | `string`           | Direction (down, up)                 | <nobr>\$const-media-direction</nobr> |
 
 [_Back to top_](#contents)
 
@@ -1071,10 +1094,10 @@ mixin is internally used by [import](#import) mixin, however unlike
 [import](#import) mixin, this mixin doesn't automatically adds generated
 selector.
 
-| Name  | Type     | Description | Default        |
-| ----- | -------- | ----------- | -------------- |
-| name  | `string` | Module name | &ndash;        |
-| group | `string` | Group key   | \$export-group |
+| Name               | Type     | Description | Default                     |
+| ------------------ | -------- | ----------- | --------------------------- |
+| <nobr>name</nobr>  | `string` | Module name | &ndash;                     |
+| <nobr>group</nobr> | `string` | Group key   | <nobr>\$export-group</nobr> |
 
 [_Back to top_](#contents)
 
@@ -1094,10 +1117,10 @@ parameter to `false`. This mixin is alternative to
 [postcss-short-size](https://github.com/jonathantneal/postcss-short-size)
 plugin, that works in very similar way.
 
-| Name   | Type               | Description                    | Default |
-| ------ | ------------------ | ------------------------------ | ------- |
-| size   | `number` or `list` | Size, or space separated list  | &ndash; |
-| method | `bool` or `string` | Parser method (false, em, rem) | rem     |
+| Name                | Type                | Description                    | Default          |
+| ------------------- | ------------------- | ------------------------------ | ---------------- |
+| <nobr>size</nobr>   | `number`, `list`    | Size, or space separated list  | &ndash;          |
+| <nobr>method</nobr> | `boolean`, `string` | Parser method (false, em, rem) | <nobr>rem</nobr> |
 
 [_Back to top_](#contents)
 
@@ -1112,14 +1135,14 @@ transition($options, $properties)
 Shortcut mixin for transition property. Allows to apply multiple transition
 properties with identical options.
 
-| Name       | Type               | Description        | Default |
-| ---------- | ------------------ | ------------------ | ------- |
-| options    | `string`           | Transition options | &ndash; |
-| properties | `string` or `list` | List of properties | &ndash; |
+| Name                    | Type             | Description        | Default |
+| ----------------------- | ---------------- | ------------------ | ------- |
+| <nobr>options</nobr>    | `string`         | Transition options | &ndash; |
+| <nobr>properties</nobr> | `string`, `list` | List of properties | &ndash; |
 
 [_Back to top_](#contents)
 
 ---
 
-**Last Updated:** Thu Jan 31 2019 14:54:33 GMT+0100 (Central European Standard
+**Last Updated:** Fri Feb 01 2019 14:02:42 GMT+0100 (Central European Standard
 Time)
