@@ -2,52 +2,62 @@
 /// @access public
 /// @param {color|string} $value - Color, or color-key
 /// @param {number} $index - Index in the monochrome scale
+/// @param {number} $tint [1] - Modifier of light colors
+/// @param {number} $shade [1] - Modifier of dark colors
 /// @param {boolean|string} $desaturate [false] - Desaturate (boolean, black)
 /// @param {number} $steps [$const-monochrome-steps] - Number of steps
 
 @function monochrome(
   $value,
   $index,
+  $tint: 1,
+  $shade: 1,
   $desaturate: false,
   $steps: $const-monochrome-steps
 ) {
   $color: color($value);
+
+  // Tint
+  @if ($index < $steps / 2) {
+    $edge: 1 / ($steps - 1);
+    $modifier: (1 / ($steps * 10)) * ($tint * 0.55);
+    $sum: 0;
+    @for $n from 1 to $steps / 2 {
+      $sum: $sum + $n * $modifier;
+    }
+    @if ($sum >= 1 - $edge * 2) {
+      @error 'Tint (#{$tint}) is too high, please lower the value.';
+    }
+    $percentage: (1 - $sum - $edge * 2) / ($steps / 2);
+    $value: $index * $percentage + $index * $modifier;
+    $color: mix(#fff, $color, percentage(1 - $edge - $value));
+  }
+
+  // Shade
+  @else if($index > $steps / 2) {
+    $edge: 1 / $steps;
+    $modifier: (1 / ($steps * 10)) * ($shade * 1.15);
+    $sum: 0;
+    @for $n from 1 to $steps / 2 {
+      $sum: $sum + $n * $modifier;
+    }
+    @if ($sum >= 1 - $edge * 2) {
+      @error 'Shade (#{$shade}) is too high, please lower the value.';
+    }
+    $percentage: (1 - $sum - $edge * 2) / ($steps / 2);
+    $index: $index - ($steps / 2) - 1;
+    $value: $index * $percentage + $index * $modifier;
+    $color: mix(#000, $color, percentage($edge + $value));
+  }
 
   // Color properties
   $hue: hue($color);
   $saturation: saturation($color);
   $lightness: lightness($color);
 
-  // Set saturation level when desaturate parameter is in use
+  // Desaturate
   @if ($desaturate) {
-    $saturation: percentage(1 / 8) - ($steps - $index - 1) * 0.475;
-
-    @if ($desaturate == 'black') {
-      $saturation: 0%;
-    }
-  }
-
-  // Tint: set saturation and lightness with rising index number
-  @if ($index < $steps / 2) {
-    @if (not $desaturate) {
-      $saturation: $lightness * 1.6;
-    }
-
-    $edge: (100 - $lightness) / $steps;
-    $lightness-step: (100 - $lightness - 2 * $edge) / ($steps / 2);
-    $lightness: 100 - $edge - $index * $lightness-step;
-  }
-
-  // Shade: set lightness with rising index number
-  @else if($index > $steps / 2) {
-    $shade-index: $index - $steps / 2;
-    $lightness-step: $lightness / ($steps - 1);
-    $modifier: 1 - (((0.125 + 1 / $steps) / ($steps / 2)) * $shade-index);
-    $lightness: ($lightness - $lightness-step * $shade-index) * $modifier;
-
-    @if ($desaturate == 'black') {
-      $lightness: $lightness * 0.85;
-    }
+    $saturation: $saturation * if($desaturate == 'black', 0.025, 0.175);
   }
 
   @return hsl($hue, $saturation, $lightness);

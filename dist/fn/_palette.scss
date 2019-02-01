@@ -10,12 +10,16 @@
 /// @param {color|string} $value - Color, or color-key
 /// @param {boolean|string} $name [false] - Hue name
 /// @param {boolean|number} $index [false] - Index in the monochrome scale
+/// @param {number} $tint [1] - Modifier of light colors
+/// @param {number} $shade [1] - Modifier of dark colors
 /// @param {number} $steps [$const-monochrome-steps] - Number of steps
 
 @function palette(
   $value,
   $name: false,
   $index: false,
+  $tint: 1,
+  $shade: 1,
   $steps: $const-monochrome-steps
 ) {
   $color: color($value);
@@ -30,7 +34,10 @@
   @each $id, $desaturate in ('black': 'black', 'gray': true) {
     $values: ();
     @for $i from 0 to $steps {
-      $values: append($values, monochrome($color, $i, $desaturate));
+      $values: append(
+        $values,
+        monochrome($color, $i, $tint, $shade, $desaturate)
+      );
     }
     $palette: map-merge($palette, (#{$id}: $values));
   }
@@ -40,7 +47,7 @@
     $base: hsl(($i * 30 + $hue) % 360, $saturation, $lightness);
     $values: ();
     @for $k from 0 to $steps {
-      $values: append($values, monochrome($base, $k));
+      $values: append($values, monochrome($base, $k, $tint, $shade));
     }
     $palette: map-merge($palette, (#{hue-name($base)}: $values));
   }
