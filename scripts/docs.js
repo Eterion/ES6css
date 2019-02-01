@@ -183,8 +183,6 @@ new Promise((resolve, reject) => {
           .map(text => text.trim())
           .join(eol.repeat(2))
       ),
-      '---',
-      `**Last Updated:** ${new Date()}`,
     ]
       .filter(Boolean)
       .map(text => text.trim())

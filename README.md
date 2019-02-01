@@ -1140,8 +1140,3 @@ properties with identical options.
 | <nobr>properties</nobr> | `string`, `list` | List of properties | &ndash; |
 
 [_Back to top_](#contents)
-
----
-
-**Last Updated:** Fri Feb 01 2019 14:36:59 GMT+0100 (Central European Standard
-Time)
