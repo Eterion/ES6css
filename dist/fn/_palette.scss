@@ -8,7 +8,6 @@
 /// @param {boolean|number} $index [false] - Index in the monochrome scale
 /// @param {number} $tint [1] - Modifier of light colors
 /// @param {number} $shade [1] - Modifier of dark colors
-/// @param {boolean|string} $desaturate [false] - Desaturate (boolean, black)
 /// @param {list} $hues [$const-color-hues] - List of hue names
 /// @param {number} $steps [$const-monochrome-steps] - Number of steps
 
@@ -18,7 +17,6 @@
   $index: false,
   $tint: 1,
   $shade: 1,
-  $desaturate: false,
   $hues: $const-color-hues,
   $steps: $const-monochrome-steps
 ) {
@@ -31,9 +29,16 @@
   $lightness: lightness($color);
 
   // Desaturate
-  @each $id, $desaturate in ('black': 'black', 'gray': true) {
-    $values: monochrome($color, $index, $tint, $shade, $desaturate, $steps);
-    $palette: map-merge($palette, (#{$id}: $values));
+  @each $key, $value in ('black': 'black', 'gray': true) {
+    $values: monochrome(
+      $color,
+      $index,
+      $tint,
+      $shade,
+      $desaturate: $value,
+      $steps
+    );
+    $palette: map-merge($palette, (#{$key}: $values));
   }
 
   // Hues
@@ -43,7 +48,14 @@
       $saturation,
       $lightness
     );
-    $values: monochrome($base, $index, $tint, $shade, $desaturate, $steps);
+    $values: monochrome(
+      $base,
+      $index,
+      $tint,
+      $shade,
+      $desaturate: false,
+      $steps
+    );
     $palette: map-merge($palette, (#{hue-name($base)}: $values));
   }
 
