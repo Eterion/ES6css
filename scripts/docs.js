@@ -53,13 +53,13 @@ function params(data) {
     '-|-|-|-',
     ...data.map(param =>
       [
-        param.name,
+        `<nobr>${param.name}</nobr>`,
         param.type
           .split('|')
           .map(text => `\`${text.trim()}\``)
-          .join(' or '),
+          .join(', '),
         param.description,
-        param.default || '&ndash;',
+        param.default ? `<nobr>${param.default}</nobr>` : '&ndash;',
       ].join('|')
     ),
   ].join(eol);
