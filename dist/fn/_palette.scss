@@ -36,7 +36,7 @@
       $tint,
       $shade,
       $desaturate: $value,
-      $steps
+      $steps: $steps
     );
     $palette: map-merge($palette, (#{$key}: $values));
   }
@@ -54,7 +54,7 @@
       $tint,
       $shade,
       $desaturate: false,
-      $steps
+      $steps: $steps
     );
     $palette: map-merge($palette, (#{hue-name($base)}: $values));
   }
