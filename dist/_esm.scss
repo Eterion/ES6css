@@ -45,7 +45,7 @@ $system-protected-properties: 'name', 'selector', 'unique';
 /// @type list
 
 $const-color-hues: 'red', 'orange', 'yellow', 'lime', 'green', 'teal', 'cyan',
-  'blue', 'indigo', 'violet', 'fuchsia', 'pink';
+  'blue', 'indigo', 'violet', 'fuchsia', 'pink' !default;
 
 /// Enables css custom properties, resulting in values to be rendered with
 /// [var](https://developer.mozilla.org/en-US/docs/Web/CSS/var) syntax instead
