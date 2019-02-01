@@ -24,6 +24,7 @@
     "demo": "node-sass \"demo\" -o \"demo\" --output-style expanded",
     "docs": "node -r @babel/register \"scripts/docs\"",
     "lint": "stylelint \"**/*.scss\" --fix",
+    "prepack": "yarn clean && yarn build && yarn demo && yarn docs && yarn prettier && yarn test",
     "prettier": "prettier --write \"**/*.{js,scss,md}\"",
     "test": "mocha -r @babel/register"
   },
