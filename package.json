@@ -10,6 +10,8 @@
     "sass",
     "scss"
   ],
+  "main": "dist/index.js",
+  "typings": "dist/index",
   "repository": "https://github.com/Eterion/esm-scss.git",
   "author": "Eterion <Eterion@users.noreply.github.com>",
   "license": "MIT",
@@ -17,7 +19,8 @@
     "dist"
   ],
   "scripts": {
-    "clean": "del-cli \"docs/.vuepress/dist\"",
+    "build": "tsc",
+    "clean": "del-cli \"dist/index.{js,d.ts}\"",
     "demo": "node-sass \"demo\" -o \"demo\" --output-style expanded",
     "docs": "node -r @babel/register \"scripts/docs\"",
     "lint": "stylelint \"**/*.scss\" --fix",
@@ -28,6 +31,7 @@
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
     "@babel/register": "^7.0.0",
+    "@types/color": "^3.0.0",
     "del-cli": "^1.1.0",
     "fs": "^0.0.1-security",
     "husky": "^1.3.1",
@@ -39,6 +43,10 @@
     "sass-true": "^4.0.0",
     "sassdoc": "^2.5.1",
     "stylelint": "^9.10.1",
-    "stylelint-config-prettier": "^4.0.0"
+    "stylelint-config-prettier": "^4.0.0",
+    "typescript": "^3.2.4"
+  },
+  "dependencies": {
+    "color": "^3.1.0"
   }
 }
