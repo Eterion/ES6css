@@ -244,20 +244,20 @@ export function spectrum(
   if (chars === 'alpha') chars = 'abcdefghijklmnopqrstuvwxyz'.split('');
   if (chars === 'num') chars = '0123456789'.split('');
   chars = chars.map(char => char.toString().toLowerCase());
-  let color: Color = Color({
-    hue:
-      (360 / chars.length) * chars.indexOf(value[0].toString().toLowerCase()),
-    saturationl: saturation,
-    lightness,
-  });
+  let color: Color = Color(
+    `hsl(${(360 / chars.length) *
+      chars.indexOf(
+        value[0].toString().toLowerCase()
+      )}, ${saturation}%, ${lightness}%)`
+  );
   value.slice(1).forEach(char => {
     color = color.mix(
-      Color({
-        hue:
-          (360 / chars.length) * chars.indexOf(char.toString().toLowerCase()),
-        saturationl: saturation,
-        lightness,
-      })
+      Color(
+        `hsl(${(360 / chars.length) *
+          chars.indexOf(
+            char.toString().toLowerCase()
+          )}, ${saturation}%, ${lightness}%)`
+      )
     );
   });
   return color.hex();

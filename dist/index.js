@@ -155,17 +155,11 @@ export function spectrum(value, { chars = 'alpha', saturation = 100, lightness =
     if (chars === 'num')
         chars = '0123456789'.split('');
     chars = chars.map(char => char.toString().toLowerCase());
-    let color = Color({
-        hue: (360 / chars.length) * chars.indexOf(value[0].toString().toLowerCase()),
-        saturationl: saturation,
-        lightness,
-    });
+    let color = Color(`hsl(${(360 / chars.length) *
+        chars.indexOf(value[0].toString().toLowerCase())}, ${saturation}%, ${lightness}%)`);
     value.slice(1).forEach(char => {
-        color = color.mix(Color({
-            hue: (360 / chars.length) * chars.indexOf(char.toString().toLowerCase()),
-            saturationl: saturation,
-            lightness,
-        }));
+        color = color.mix(Color(`hsl(${(360 / chars.length) *
+            chars.indexOf(char.toString().toLowerCase())}, ${saturation}%, ${lightness}%)`));
     });
     return color.hex();
 }
